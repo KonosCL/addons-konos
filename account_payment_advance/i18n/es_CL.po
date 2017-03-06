@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c-20161123\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-17 08:35+0000\n"
-"PO-Revision-Date: 2017-02-18 09:31-0400\n"
+"POT-Creation-Date: 2017-03-06 21:53+0000\n"
+"PO-Revision-Date: 2017-03-06 18:54-0400\n"
 "Last-Translator: Nelson Ramírez <info@konos.cl>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,12 +28,22 @@ msgid "Payments"
 msgstr "Pagos"
 
 #. module: account_payment_advance
+#: model:ir.model.fields,field_description:account_payment_advance.field_account_payment_advance_ok
+msgid "Register advance"
+msgstr "Registrar Anticipo"
+
+#. module: account_payment_advance
+#: model:ir.model.fields,help:account_payment_advance.field_account_payment_advance_ok
+msgid "Select if you want to establish a features of advance"
+msgstr "Seleccionar si desea establecer cuenta de anticipos."
+
+#. module: account_payment_advance
 #: model:ir.model.fields,help:account_payment_advance.field_account_payment_advance_account_id
 msgid "This account will be used instead of the default one as the receivable account for the current partner"
 msgstr "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta pendiente de cobro del asociado actual."
 
 #. module: account_payment_advance
-#: code:addons/account_payment_advance/model/account_payment.py:27
+#: code:addons/account_payment_advance/model/account_payment.py:33
 #, python-format
 msgid "Transfer account not defined on the company."
 msgstr "Cuenta de transferencia no está definida en la compañía."

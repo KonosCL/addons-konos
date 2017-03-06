@@ -10,6 +10,9 @@ from openerp.tools.safe_eval import safe_eval as eval
 
 class AccountPayment(models.Model):
     _inherit = "account.payment"
+    advance_ok = fields.Boolean(
+        string='Register advance', 
+        help="Select if you want to establish a features of advance")
     advance_account_id = fields.Many2one('account.account',
         string="Account", 
         domain="[('deprecated', '=', False)]",
@@ -20,17 +23,20 @@ class AccountPayment(models.Model):
     @api.one
     @api.depends('invoice_ids', 'payment_type', 'partner_type', 'partner_id')
     def _compute_destination_account_id(self):
+        """ inherited and overwrite original method
+            Add the condition that evaluates if exists account advance and it placed as has account destiny if condition applied.
+        """
         if self.invoice_ids:
-            self.destination_account_id = self.invoice_ids[0].account_id.id
+            self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.invoice_ids[0].account_id.id
         elif self.payment_type == 'transfer':
             if not self.company_id.transfer_account_id.id:
                 raise UserError(_('Transfer account not defined on the company.'))
-            self.destination_account_id = self.company_id.transfer_account_id.id
+            self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.company_id.transfer_account_id.id
         elif self.partner_id:
             if self.partner_type == 'customer':
-                self.destination_account_id = self.advance_account_id and self.advance_account_id.id or self.partner_id.property_account_receivable_id.id
+                self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.partner_id.property_account_receivable_id.id
             else:
-                self.destination_account_id = self.advance_account_id and self.advance_account_id.id or self.partner_id.property_account_payable_id.id
+                self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.partner_id.property_account_payable_id.id
 
 
 
@@ -45,9 +51,6 @@ class AccountPayment(models.Model):
 
     @api.onchange('payment_type')
     def _onchange_payment_type(self):
-    	res = self._onchange_partner_id()
+        res = self._onchange_partner_id()
         if self.payment_type:
             return {'domain': {'payment_method': [('payment_type', '=', self.payment_type)]}}  
-           
-
-
