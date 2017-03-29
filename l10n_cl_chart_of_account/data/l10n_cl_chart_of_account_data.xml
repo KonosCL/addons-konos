@@ -682,7 +682,13 @@
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
         
-        
+        <record id="210709" model="account.account.template">
+            <field name="name">Retención Judicial</field>
+            <field name="code">210709</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_liabilities" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>      
         
         <record id="220102" model="account.account.template">
             <field name="name">Obligaciones Leasing L/Plazo</field>
