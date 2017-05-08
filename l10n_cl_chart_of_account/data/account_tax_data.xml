@@ -143,7 +143,7 @@
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
       <field name="name">Impuesto Unico de Segunda Categoría </field>
       <field name="description">Impuesto Unico de 2da Categoría </field>
-      <field name="amount">-10</field>
+      <field name="amount">0</field>
       <field name="sequence" eval="2"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
