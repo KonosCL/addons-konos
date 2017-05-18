@@ -282,8 +282,25 @@
             <field name="reconcile" eval="False"/>
             <field ref="account.data_account_type_current_assets" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
-        </record>      
-        
+        </record>  
+    
+        <record id="111001" model="account.account.template">
+            <field name="name">Cheques por Cobrar Cobranza Judicial</field>
+            <field name="code">111001</field>
+            <field name="reconcile" eval="True"/>
+            <field ref="account.data_account_type_receivable" name="user_type_id"/>
+            <field name="reconcile">1</field>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
+ 
+        <record id="111002" model="account.account.template">
+            <field name="name">Deudores por Venta Cobranza Judicial</field>
+            <field name="code">111002</field>
+            <field name="reconcile" eval="True"/>
+            <field ref="account.data_account_type_receivable" name="user_type_id"/>
+            <field name="reconcile">1</field>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
        
         <record id="120101" model="account.account.template">
             <field name="name">Terreno</field>
