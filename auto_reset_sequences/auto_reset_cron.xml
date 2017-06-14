@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+        <record model="ir.cron" id="reset_seq_cron">
+            <field name="name">Auto reset sequence</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'ir.sequence'"/>
+            <field name="function" eval="'cron_autoreset'"/>
+            <field name="args" eval="'()'"/>
+        </record>    
+           
+    </data>
+</openerp>

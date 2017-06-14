@@ -1,0 +1,15 @@
+<openerp>
+	<data>
+        <record id="view_sequence_form_inherit" model="ir.ui.view">
+            <field name="name">sequence_autoreset</field>
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+            	<field name="code" position="after">
+            		<field name="reset_monthly"/>
+            		<field name="reset_yearly"/>
+            	</field>
+            </field>
+        </record>
+	</data>
+</openerp>
