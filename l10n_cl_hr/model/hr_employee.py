@@ -10,11 +10,9 @@ class HrEmployee(models.Model):
     last_name = fields.Char("Last Name")
     middle_name = fields.Char("Middle Name", help='Employees middle name')
     mothers_name = fields.Char("Mothers Name", help='Employees mothers name')
-
-
-
-
-
+    type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
+              
+              
     @api.multi
     @api.onchange('firstname', 'mothers_name', 'middle_name' , 'last_name')
     def get_name(self):

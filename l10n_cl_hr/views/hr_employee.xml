@@ -5,6 +5,9 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_id']" position="before">
+                <field name="type_id"/>
+            </xpath>
             <xpath expr="//label[@for='name']" position="replace">
                 <label for="firstname" class="oe_edit_only"/>
             </xpath>
@@ -30,6 +33,10 @@
                     	<field name="mothers_name"/>
                  	</h1>
             </xpath>
+
         </field>
     </record>
+
+
+
 </odoo>
