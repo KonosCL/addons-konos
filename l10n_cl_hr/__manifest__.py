@@ -23,6 +23,7 @@
     'category': 'Localization',
     'author': 'Konos, '
               u'''Blanco Martin & Asociados''',
+    'website': 'http://konos.cl',
     'license': 'AGPL-3',
     'depends': ['hr_payroll'],
     'contributors': [
@@ -36,16 +37,16 @@
 Chilean Payroll Salary Rules.
 ============================
 
-    -Configuration of hr_payroll for Chile localization.
-    -All main contributions rules for Chile payslip.
-    * New payslip report
+    -Payroll configuration for Chile localization.
+    -All contributions rules for Chile payslip.
+    * Employee Basic Info
     * Employee Contracts
-    * Allow to configure Basic / Gross / Net Salary
     * Attendance, Holidays and Sick Licence   
     * Employee PaySlip
-    * Allowance / Deduction
+    * Allowances / Deductions / Company Inputs
+    * Extra Time
     * Pention Chilean Indicators
-    * Libro de Remuneraciones 
+    * Payroll Books 
     * Previred Plain Text
     , ...
     Report
