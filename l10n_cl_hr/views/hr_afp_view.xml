@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="hr_afp_form" model="ir.ui.view">
+            <field name="name">hr.afp.form</field>
+            <field name="model">hr.afp</field>
+            <field name="arch" type="xml">
+                <form string="AFP">
+		    <table class="table-condensed" width="100%">
+			<thead>
+			    <tr>
+                    <td>
+				        <div class="oe_title">FONDOS DE PENSION</div>
+				            <group col="2">
+                                <field name="codigo" string="Codigo"></field>
+                                <field name="rut" string="RUT"></field>
+                                <field name="name"></field>
+                                <field name="rate"></field>
+                                <field name="sis"></field>
+                                <field name="independiente"></field>
+				            </group>
+                    </td>
+                </tr>
+            </thead>
+		    </table>
+                </form>
+            </field>
+        </record>
+
+        
+        <act_window id="hr_afp_action"
+                    name="Fondos de Pensión"
+                    res_model="hr.afp"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="hr_afp_menu"
+                  parent="menu_cl_hr_payroll_configuration"
+                  action="hr_afp_action"
+                  sequence="14"
+        />
+    </data>
+</openerp>

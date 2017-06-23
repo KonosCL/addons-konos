@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<openerp>						
+    <data>						
+
+        <!-- Empleado Inputs -->
+        <record id="hr_employee_data_demo" model="hr.employee">
+            <field name="name">Nelson</field>
+            <field name="last_name">Ramírez</field>
+            <field name="identification_id">24625430-K</field>
+        </record>
+
+        <!-- Contratos Inputs -->
+        <record id="hr_contract_data_demo" model="hr.contract">
+            <field name="name">00001</field>
+            <field name="employee_id" ref="hr_employee_data_demo"/>
+            <field name="type_id"     ref="hr_contract_type_not_defined"/>
+            <field name="date_start">2016-01-01</field>
+            <field name="wage">1085000</field>
+            <field name="colacion">60000</field>
+            <field name="movilizacion">75000</field>
+            <field name="viatico_santiago">60000</field>
+            <field name="carga_familiar">1</field>
+            <field name="isapre_id"     ref="hr_isapre_colmena"/>
+            <field name="isapre_cotizacion_uf">7.02000</field>
+            <field name="afp_id"     ref="hr_afp_modelo"/>
+            <field name="mutual_seguridad">TRUE</field>
+            <field name="struct_id"     ref="hr_struct_cl"/>
+            <field name="working_hours"     ref="hr_resource_monthly"/>
+        </record>
+    </data>						
+</openerp>						

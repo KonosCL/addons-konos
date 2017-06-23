@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_indicadores_previsionales,hr.indicadores,model_hr_indicadores,base.group_hr_manager,1,1,1,1
+access_hr_libro_remuneraciones,hr.salary.employee.month,model_hr_salary_employee_month,base.group_hr_manager,1,1,1,1
+access_hr_isapres,hr.isapre,model_hr_isapre,base.group_hr_manager,1,1,1,1
+access_hr_caf,hr.caf,model_hr_caf,base.group_hr_manager,1,1,1,1
+access_hr_afp,access_hr_afp,model_hr_afp,base.group_hr_manager,1,1,1,1
+access_hr_indicadores,access_hr_indicadores,model_hr_indicadores,base.group_hr_manager,1,1,1,1
+access_hr_isapre,access_hr_isapre,model_hr_isapre,base.group_hr_manager,1,1,1,1
+access_hr_type_employee,access_hr_type_employee,model_hr_type_employee,base.group_hr_manager,1,1,1,1
+access_hr_mutual,access_hr_mutual,model_hr_mutual,base.group_hr_manager,1,1,1,1
+access_hr_ccaf,access_hr_ccaf,model_hr_ccaf,base.group_hr_manager,1,1,1,1
