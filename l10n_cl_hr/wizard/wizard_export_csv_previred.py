@@ -104,10 +104,10 @@ class WizardExportCsvPrevired(models.TransientModel):
     @api.model
     def get_tipo_trabajador(self, employee):
 
-        if employee.type_id.id_type is False:
+        if employee.type_id is False:
           return 0
         else:
-            tipo_trabajador = employee.type_id.id_type
+            tipo_trabajador = employee.type_id
 
         #Codigo    Glosa
         #id_type

@@ -23,7 +23,6 @@
     'category': 'Localization',
     'author': 'Konos, '
               u'''Blanco Martin & Asociados''',
-    'website': 'http://konos.cl',
     'license': 'AGPL-3',
     'depends': ['hr_payroll'],
     'contributors': [
