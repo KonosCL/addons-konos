@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>	
+	<openerp>
+	<data>
+	<template id="hr_payroll.report_payslip">
+	<t t-call="report.layout">
+        <t t-foreach="docs" t-as="o">
+            <div class="page">
+                <h3 align="center">LIQUIDACION DE SUELDO</h3>
+                  <span  t-raw="o.name.replace('January', 'ENERO').replace('February', 'FEBRERO').replace('March', 'Marzo').replace('April', 'ABRIL').replace('May', 'MAYO').replace('June', 'JUNIO').replace('July', 'JULIO').replace('August', 'AGOSTO').replace('September', 'SEPTIEMBRE').replace('October', 'OCTUBRE').replace('November', 'NOVIEMBRE').replace('December', 'DICIEMBRE').replace('para', 'MES DE:').replace('-', ' del ').replace('salarial de', ' ').replace('for', ' ').replace('Salary Slip of ', ' ').replace('31', ' 30')"/>
+                     <table class="table-condensed " width="100%">
+                        <thead>
+                           <tr>
+                                 <td colspan="2" width="50%"><strong>RAZON SOCIAL:</strong></td>
+                                 <td colspan="2"><strong>RUT EMPRESA:</strong></td>
+                           </tr>
+                           <tr>
+                                 <th colspan="2"><span t-field="res_company.name"/></th>
+                                 <t t-if="res_company.vat"><th colspan="2"><span  t-raw="res_company.vat.replace('CL', ' ')"/></th></t>
+                                 <t t-if="not res_company.vat"><th colspan="2">55.555.555-5</th></t>
+                                 
+                            </tr>
+                       </thead>
+                   </table>
+                  <table class="table-condensed" width="100%">
+                       <thead>
+                          <tr>
+                              <td><strong>R.U.T</strong></td>
+                              <td><strong>TRABAJADOR</strong></td>
+                              <td><strong>C.C.</strong></td>
+                          </tr>
+                          <tr>
+                              <td><span t-field="o.employee_id.identification_id"/></td>
+                              <td>
+                                <span t-field="o.employee_id.name"/>
+                              </td>
+                              <td>001</td>
+                          </tr>
+                          <tr>
+                              <td><strong>CARGO</strong></td>
+                              <td><strong>FECHA INGRESO</strong></td>
+                              <td><strong></strong></td>
+                          </tr>
+                          <tr>
+                              <th><span t-field="o.contract_id.job_id"/></th>
+                              <th><span t-field="o.contract_id.date_start"/></th>
+                              <th></th>
+                          </tr>                          
+                        </thead>
+                  </table>
+                  <table class="table-condensed " width="100%">
+                    <thead>
+                        <tr>
+                            <td width="35%"><strong>A.F.P</strong></td>
+                            <td width="35%"><strong>ISAPRE</strong></td>
+                            <td width="30%"><span t-field="o.contract_id.afp_id"/></td>
+                        </tr>
+                        <tr>
+                            <td><span t-field="o.contract_id.afp_id"/></td>
+                            <td><span t-field="o.contract_id.isapre_id"/></td>
+
+
+
+
+                            <t t-if="('FONASA' == o.contract_id.isapre_id.name)">   
+                                <td><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('SALUD' == p.code)"><span t-raw="formatLang(round(p.amount), digits=get_digits(dp='Payroll'))"/></t></t></td>
+                            </t>
+                            <t t-if="('FONASA' != o.contract_id.isapre_id.name)">   
+                                <td><span t-raw="formatLang(round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf), digits=get_digits(dp='Payroll'))"/></td>
+                            </t>
+                        </tr>
+                         <tr>
+                            <t t-if="('MODELO' == o.contract_id.afp_id.name)"> 
+                                <th><span t-raw="o.indicadores_id.tasa_afp_modelo"/></th>
+                            </t>
+                            <t t-if="('CUPRUM' == o.contract_id.afp_id.name)"> 
+                                <th><span t-raw="o.indicadores_id.tasa_afp_cuprum"/></th>
+                            </t>
+                            <t t-if="('HABITAT' == o.contract_id.afp_id.name)"> 
+                                <th><span t-raw="o.indicadores_id.tasa_afp_habitat"/></th>
+                            </t>
+                            <t t-if="('PLANVITAL' == o.contract_id.afp_id.name)"> 
+                                <th><span t-raw="o.indicadores_id.tasa_afp_planvital"/></th>
+                            </t>
+                            <t t-if="('PROVIDA' == o.contract_id.afp_id.name)"> 
+                                <th><span t-raw="o.indicadores_id.tasa_afp_provida"/></th>
+                          </t>
+                          <t t-if="('CAPITAL' == o.contract_id.afp_id.name)"> 
+                            <th><span t-raw="o.indicadores_id.tasa_afp_capital"/></th>
+                          </t>
+                            <th/>
+                            <th><span t-field="o.contract_id.isapre_cotizacion_uf"/></th>
+                        </tr>
+                    </thead>
+                  </table>
+
+                 <table class="table-condensed " width="100%">
+                    <thead>
+                          <tr>
+                                  <td><strong>DIAS</strong></td>
+                                  <td><strong>HORAS EXTRA</strong></td>
+                                  <td><strong>DESCUENTO</strong></td>
+                                  <td colspan="3"><strong>CARGAS</strong></td>
+                                  <td><strong>IMPONIBLE</strong></td>
+                                  <td><strong>TRIBUTABLE</strong></td>
+                          </tr>
+
+                      <tr>
+                       <th>
+
+                          <t t-set="f" t-value="0"/>
+                            <t t-foreach="o.worked_days_line_ids" t-as="p">
+                              <t t-if="('WORK100' == p.code)"> <t t-set= "f" t-value="f+p.number_of_days"/>
+                            </t>
+                          </t>
+                          <span t-if="3>f"><t t-esc="str(int(f))" /></span>
+                        
+                          <t t-set="i" t-value="0"/>
+                            <t t-foreach="o.worked_days_line_ids" t-as="p">
+                              <t t-if="('No_Trabajado' == p.code) or ('Licencia' == p.code) "> <t t-set= "i" t-value="i+p.number_of_days"/>
+                            </t>
+                          </t>
+                          <span t-if="not 3>f"><t t-esc="str(int(30-i))" /></span>
+
+
+
+
+                        </th>
+                        <th align="center">
+                          <t t-foreach="o.input_line_ids" t-as="p">
+                            <t t-if="('HEX' == p.code)">
+                              <span t-raw="p.amount"/>
+                            </t>
+                          </t>
+                        </th>
+                        <th align="center">
+                          <t t-foreach="o.input_line_ids" t-as="p">
+                            <t t-if="('HEX100' == p.code)">
+                              <span t-raw="p.amount"/>
+                            </t>
+                          </t>
+                        </th>
+                        <th>
+                          <span t-field="o.contract_id.carga_familiar"/>
+                        </th>
+                        <th>
+                          <span t-field="o.contract_id.carga_familiar_maternal"/>
+                        </th>
+                         <th>
+                          <span t-field="o.contract_id.carga_familiar_invalida"/>
+                        </th>                       
+                        <th>
+                          <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+                            <t t-if="('TOTIM' == p.code)">
+                              <span t-esc="formatLang(p.amount, digits=get_digits(dp='Payroll'))"/>
+                            </t>
+                          </t>
+                        </th>
+                        <th>
+                          <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+                            <t t-if="'TRIBU' == p.code">
+                              <span t-esc="formatLang(p.amount, digits=get_digits(dp='Payroll'))"/>
+                            </t>
+                          </t>
+                        </th>
+                      </tr>
+                    </thead>
+                 </table>
+                <table class=" table-condensed " width="100%">
+                    <thead>
+                       <tr>
+                          <th align="center" colspan="1"><strong>HABERES</strong></th>
+                          <th align="center" colspan="1"><strong>                                 </strong></th>
+                          <th align="center" colspan="1"><strong>                                 </strong></th>
+                          <th align="center" colspan="1"><strong>                                 </strong></th>
+                          <th align="center" colspan="1"><strong>                                 </strong></th>
+                          <th align="center" colspan="1"><strong>                                 </strong></th>
+                          <th align="center" colspan="1"><strong>DESCUENTOS</strong></th>
+                       </tr>
+                    </thead>
+                </table>
+                <table class="table table-condensed">
+                  <tbody>
+                     <tr>       
+                         <td>
+                             <table class="table-condensed" width="100%">           
+                               <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+                                   <t t-if=" ('No Imponible' ==p.category_id.name) or ('No Imponible - Otros' ==p.category_id.name) or ('Imponible' ==p.category_id.name) or ('TOTIM' == p.code) or ('TOTNOI' == p.code)">
+                                       <td><span t-field="p.name"/></td>
+                                       <td style="text-align:right"><span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/></td>
+                                   </t>
+                               </tr>
+                             </table>    
+                         </td>
+                         <td>
+                              <table class="table-condensed" width="100%">
+                                 <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
+                                    <t t-if="('Prevision' ==p.category_id.name) or ('Salud' ==p.category_id.name) or ('Descuentos' ==p.category_id.name) or ('Otros Descuentos' ==p.category_id.name) or ('TOD' == p.code) or ('TODELE' == p.code)">
+                                       <td><span t-field="p.name"/></td>
+                                       <td style="text-align:right"><span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/></td>
+                                    </t>
+                                 </tr>
+                              </table>
+                        </td>
+                      </tr>
+                   </tbody>
+                </table>
+                <table class="table-condensed" width="100%">
+                   <thead>
+                    <tr>
+                      <th/>
+                    </tr>
+                  </thead>
+                </table>
+                <table class="table-condensed" width="100%">
+                  <thead>
+                    <tr>
+                      <td><strong>TOTAL HABERES</strong></td>
+                      <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)"> <span t-esc="formatLang(p.amount, digits=get_digits(dp='Payroll'))"/></t></t></td>
+                      <td><strong>TOTAL DESCUENTOS</strong></td>
+                      <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)"> <span t-esc="formatLang(p.amount, digits=get_digits(dp='Payroll'))"/></t></t></td>
+                    </tr>
+                    <tr>
+                      <td><strong>FECHA</strong></td>
+                      <td><span t-field="o.date_to"/></td>
+                      <td><strong>ALCANCE LIQUIDO</strong></td>
+                      <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"> <span t-esc="formatLang(p.amount, digits=get_digits(dp='Payroll'))"/></t></t></td>
+                    </tr>
+                    <tr>
+                      <th>SON</th>
+                      <th colspan="3"><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"><span t-esc="convert(p.amount,'Peso')"/></t></t></th>
+
+                    </tr>
+                  </thead>
+                </table>
+                <table class="table-condensed" width="100%">
+                  <tr>
+                    <td colspan="3">Recibí conforme el alcance el alcance líquido de la presente liquidación, no teniendo cargo o cobro alguna que hacer por otro concepto</td><td/>
+                  </tr>
+                  <tr>
+                    <td colspan="3"></td><td/>
+                  </tr>
+                </table>
+                <table class="table-condensed" width="100%">
+                  <thead>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                    <tr>
+                      <td/><td/><td/><td/>
+                    </tr>
+                  </thead>
+                </table>
+                <table class="table-condensed" width="100%">
+                  <tr>
+                    <td><strong>FIRMA DEL EMPLEADOR</strong></td>
+                    <td/><td/>
+                    <td/><td/>
+                    <td align="right"><strong>FIRMA DEL TRABAJADOR</strong></td>
+                  </tr>
+                </table>
+              </div>
+            </t>
+          </t>
+</template>
+</data>
+</openerp>

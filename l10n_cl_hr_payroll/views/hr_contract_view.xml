@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    	
+	 <record id="hr_contract_chile_view" model="ir.ui.view">	
+            <field name="name">hr.contract.chile.view</field>	
+            <field name="model">hr.contract</field>	
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>	
+            <field name="arch" type="xml">	
+            	<field name="wage" position="after">
+            		<field name="otros_imp" string="Otros Imponible"/>
+            		<field name="otro_no_imp" string="Otros No Imponible"/>
+            		<field name="colacion" string="Asig. de Colación"/>
+            		<field name="movilizacion" string="Asig. de Movilización"/>
+            		<field name="viatico_santiago" string="Asig. de Viático"/>
+                    <field name="gratificacion_legal" string="Gratificación Legal Anual"/>
+            		<field name="carga_familiar"/>
+                    <field name="carga_familiar_maternal"/>
+                    <field name="carga_familiar_invalida"/>
+		        </field>	
+ 
+            	<group name="salary_and_advantages" position="after">	
+			<group col="3" string="Descuentos"> 
+			<field name="pension"/><label string="" nolabel="1"  />
+			<field name="afp_id" string="AFP" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/><label string="" nolabel="1"  />
+			<field name="isapre_id" string="Salud" required="1"/><label string="" nolabel="1" />
+			<field name="isapre_cotizacion_uf" digits="(14, 5)" string="Cotización Pactada en UF"  attrs="{'invisible': [('isapre_id', '=', 1)]}"/><label string="" nolabel="1" />
+            <field name="isapre_fun" string="Contrato Isapre FUN" attrs="{'invisible': [('isapre_id', '=', 1)]}"/><label string="" nolabel="1" />
+            <field name="seguro_complementario" string="Seguro Complementario"/><field name="seguro_complementario_moneda" nolabel="1" />
+
+			<field name="aporte_voluntario" string="Aporte Voluntario"/><field name="aporte_voluntario_moneda" nolabel="1" />
+			<field name="mutual_seguridad"/><label string="" nolabel="1" />
+			<field name="anticipo_sueldo"/><label string="" nolabel="1" />
+			</group>
+            	</group>
+                <field name="working_hours" position="replace">
+                    <field name="working_hours" required="1"/>
+                </field>
+                <field name="type_id" position="replace">
+                    <field name="type_id" select="3"/>
+                </field>
+             </field>	
+     </record>	
+
+     <record id="hr_contract_view_tree_inherit_l10n_lv_hr" model="ir.ui.view">
+        <field name="name">hr.contract.view.tree.inherit.l10n</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="replace">
+                <field name="complete_name"/>
+            </field>          
+        </field>
+     </record>
+    </data>
+</openerp>
