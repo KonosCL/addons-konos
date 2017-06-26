@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_sii_document_type_form" model="ir.ui.view">
+            <field name="name">sii.document_type.form</field>
+            <field name="model">sii.document_type</field>
+            <field name="arch" type="xml">
+                <form string="SII Document type">
+                    <group>
+                        <field name="name"/>
+                        <field name='code'/>
+                        <field name='sii_code'/>
+                        <field name='active'/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sii_document_type_tree" model="ir.ui.view">
+            <field name="name">sii.document_type.tree</field>
+            <field name="model">sii.document_type</field>
+            <field name="arch" type="xml">
+                <tree string="SII Document type">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="sii_code"/>
+                    <field name='active'/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_sii_document_type">
+            <field name="name">SII Document type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sii.document_type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Document Types" action="act_sii_document_type" id="menu_action_sii_document_type" parent="l10n_cl_partner_activities.menu_sii_config"/>
+
+    </data>
+</odoo>

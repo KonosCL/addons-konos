@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id="no_product" model="product.template">
+      <field name="name">Modifica Documento</field>
+      <field name="default_code">NO_PRODUCT</field>
+      <field name="lst_price">0</field>
+      <field name="taxes_ids" eval="False" />
+    </record>-->
+</odoo>

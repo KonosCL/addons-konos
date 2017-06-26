@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="False">
+        <record model='sii.responsability' id='res_CF'>
+            <field name='code'>CF</field>
+            <field name='tp_sii_code'>0</field>
+            <field name='name'>Consumidor Final</field>
+	        <field name='active' eval="True"/>
+        </record>
+        <record model='sii.responsability' id='res_IVARI'>
+            <field name='code'>IVARI</field>
+            <field name='tp_sii_code'>1</field>
+            <field name='name'>IVA Afecto / 1ra Categoría</field>
+	        <field name='active' eval="True"/>
+        </record>
+        <record model='sii.responsability' id='res_BH'>
+            <field name='code'>BHON</field>
+            <field name='tp_sii_code'>2</field>
+            <field name='name'>Emisor de Boleta 2da Categoría</field>
+            <field name='active' eval="True"/>
+        </record>        
+        <record model='sii.responsability' id='res_IVAE'>
+            <field name='code'>IVAE</field>
+            <field name='tp_sii_code'>0</field>
+            <field name='name'>IVA Exento</field>
+            <field name='active' eval="False"/>
+        </record>
+        <record model='sii.responsability' id='res_EXT'>
+            <field name='code'>EXT</field>
+            <field name='tp_sii_code'>3</field>
+            <field name='name'>Extranjero</field>
+	        <field name='active' eval="True"/>
+        </record>
+    </data>
+</odoo>

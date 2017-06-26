@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_currency_form">
+            <field name="name">res.currency.form</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="model">res.currency</field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//group[last()]" position="inside">
+                    <group string="SII">
+                        <field name="sii_code"/>
+                        <field name="sii_desc"/>
+                        <field name="sii_dt_from"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

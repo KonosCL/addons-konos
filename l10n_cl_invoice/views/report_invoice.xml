@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document" inherit_id="account.report_invoice_document" name="Chile Invoice">
+                <xpath expr="//span[@t-field='o.number']" position="replace">
+                    <span t-field="o.journal_document_class_id.sii_document_class_id.document_letter_id.name"/>
+                </xpath>
+                
+        </template>
+    </data>
+</odoo>

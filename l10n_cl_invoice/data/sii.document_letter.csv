@@ -1,0 +1,12 @@
+id,active,name,receptor_ids/id,issuer_ids/id,vat_discriminated
+dl_a,True,A,"res_IVAE,res_IVARI,res_BH",res_IVARI,True
+dl_b,True,B,"res_CF,res_IVAE,res_BH",res_IVARI,False
+dl_c,True,C,"res_IVAE,res_IVARI,res_BH","res_IVAE,res_IVARI",False
+dl_m,True,M,"res_IVAE,res_IVARI,res_BH",res_BH,False
+dl_e,True,E,res_EXT,res_IVARI,False
+dl_x,True,X,"res_IVAE,res_IVARI",res_IVARI,True
+dl_i,True,I,res_IVARI,res_IVARI,True
+dl_s,True,S,res_IVARI,res_IVARI,True
+dl_d,True,D,res_IVARI,res_IVARI,True
+dl_t,True,T,res_IVARI,res_IVARI,True
+dl_l,True,L,res_IVARI,res_IVARI,True

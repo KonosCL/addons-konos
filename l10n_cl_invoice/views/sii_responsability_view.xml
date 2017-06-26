@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_sii_responsability_form" model="ir.ui.view">
+            <field name="name">sii.responsability.form</field>
+            <field name="model">sii.responsability</field>
+            <field name="arch" type="xml">
+                <form string="SII Responsability">
+                    <group>
+                        <field name="name"/>
+                        <field name='code'/>
+                        <field name='tp_sii_code'/>
+                        <field name='issued_letter_ids'/>
+                        <field name='received_letter_ids'/>
+                        <field name='active'/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sii_responsability_tree" model="ir.ui.view">
+            <field name="name">sii.responsability.tree</field>
+            <field name="model">sii.responsability</field>
+            <field name="arch" type="xml">
+                <tree string="SII Responsability">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name='tp_sii_code'/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_sii_responsability">
+            <field name="name">SII Responsability</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sii.responsability</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Responsabilities" action="act_sii_responsability" id="menu_action_sii_responsability" parent="l10n_cl_partner_activities.menu_sii_config"/>
+
+    </data>
+</odoo>

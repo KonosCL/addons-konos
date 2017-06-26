@@ -1,0 +1,2 @@
+"id","name","active","tax_ids/tax_src_id/id","tax_ids/tax_dest_id/id"
+"exempt_fp","Ventas Locales Exentas","True","l10n_cl_chart.IVAV_19",""

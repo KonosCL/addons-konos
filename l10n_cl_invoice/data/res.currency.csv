@@ -1,0 +1,15 @@
+id,sii_code,name,symbol
+base.CLP,CLP,CLP,CL$
+base.AUD,AUD,AUD,AU$
+base.CAD,CAD,CAD,CA$
+base.GBP,GBP,GBP,£
+base.JPY,JPY,JPY,¥
+base.MXN,MXN,MXN,MX$
+base.USD,USD,USD,U$S
+base.UYU,UYU,UYU,UY$
+base.VEF,VEF,VEF,VE$
+base.ARS,ARS,ARS,AR$
+base.EUR,EUR,EUR,€
+base.UTM,UTM,UTM,UTM
+base.UF,UF,UF,UF
+

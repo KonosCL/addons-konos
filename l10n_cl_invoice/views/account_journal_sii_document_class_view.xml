@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_journal_sii_document_class_tree" model="ir.ui.view">
+            <field name="name">Journal Afip Documents Tree</field>
+            <field name="model">account.journal.sii_document_class</field>
+            <field name="arch" type="xml">
+                <tree string="Journal SII Documents" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="sii_document_class_id"/>
+                    <field name='sequence_id' required="context.get('journal_type',False)in('sale','sale_refund','general')" invisible="context.get('journal_type',False)not in['sale','sale_refund','general']"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_journal_sii_document_class_form" model="ir.ui.view">
+            <field name="name">Journal Afip Documents Form</field>
+            <field name="model">account.journal.sii_document_class</field>
+            <field name="arch" type="xml">
+                <form string="Journal SII Documents">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="journal_id"/>
+                                <field name="sii_document_class_id"/>
+                                <field name="sequence_id" required="True"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

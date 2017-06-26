@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="False">
+        <record model='sii.document_type' id='dt_RUT'>
+            <field name='code'>RUT</field>
+            <field name='name'>RUT</field>
+            <field name='sii_code'>81</field>
+            <field name='active' eval="True"/>
+        </record> 
+        <record model='sii.document_type' id='dt_RUN'>
+            <field name='code'>RUN</field>
+            <field name='name'>Cédula</field>
+            <field name='sii_code'>82</field>
+            <field name='active' eval="True"/>
+        </record> 
+        <record model='sii.document_type' id='dt_CIe'>
+            <field name='code'>CIe</field>
+            <field name='name'>CI extranjera</field>
+            <field name='sii_code'>91</field>
+            <field name='active' eval="True"/>
+        </record> 
+        <record model='sii.document_type' id='dt_PAS'>
+            <field name='code'>PAS</field>
+            <field name='name'>Pasaporte</field>
+            <field name='sii_code'>94</field>
+            <field name='active' eval="True"/>
+        </record> 
+        <record model='sii.document_type' id='dt_DNI'>
+            <field name='code'>DNI</field>
+            <field name='name'>DNI Extranjero</field>
+            <field name='sii_code'>96</field>
+            <field name='active' eval="True"/>
+        </record> 
+        <record model='sii.document_type' id='dt_Sigd'>
+            <field name='code'>Sigd</field>
+            <field name='name'>Sin identificar/venta global diaria</field>
+            <field name='sii_code'>99</field>
+            <field name='active' eval="True"/>
+        </record> 
+    </data>
+</odoo>
+        

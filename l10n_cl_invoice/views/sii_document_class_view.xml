@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_sii_document_class_form" model="ir.ui.view">
+            <field name="name">sii.document_class.form</field>
+            <field name="model">sii.document_class</field>
+            <field name="arch" type="xml">
+                <form string="SII Document Class">
+                    <group>
+                        <field name="name"/>
+                        <field name='sii_code'/>
+                        <field name='doc_code_prefix'/>
+                        <field name='code_template'/>
+                        <field name='document_letter_id'/>
+                        <field name='report_name'/>
+                        <field name='document_type'/>
+                        <field name='active'/>
+                        <field name='dte'/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sii_document_class_tree" model="ir.ui.view">
+            <field name="name">sii.document_class.tree</field>
+            <field name="model">sii.document_class</field>
+            <field name="arch" type="xml">
+                <tree string="SII Document Class">
+                    <field name="name"/>
+                    <field name="sii_code"/>
+                    <field name="doc_code_prefix"/>
+                    <field name="code_template"/>
+                    <field name="document_letter_id"/>
+                    <field name='report_name'/>
+                    <field name='document_type'/>
+                    <field name='dte'/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_sii_document_class">
+            <field name="name">SII Document Class</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sii.document_class</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Document Classes" action="act_sii_document_class" id="menu_action_sii_document_class" parent="l10n_cl_partner_activities.menu_sii_config"/>
+
+    </data>
+</odoo>

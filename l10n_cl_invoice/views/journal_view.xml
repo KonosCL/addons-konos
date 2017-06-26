@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_journal_cl_filter" model="ir.ui.view">
+            <field name="model">account.journal</field>
+            <field name="name">account.journal.cl.filter</field>
+            <field name="inherit_id" ref="account.view_account_journal_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="sii_code" />
+                    <field name="sucursal_id" />
+                    <field name="point_of_sale_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_journal_cl_form" model="ir.ui.view">
+            <field name="model">account.journal</field>
+            <field name="name">account.journal.cl.form</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="sucursal_id" />
+                    <field name="sii_code" />
+                    <field name="use_documents" attrs="{'invisible': [('type','not in',['purchase','sale','purchase_refund','sale_refund','general'])]}"/>
+                </field>
+
+                <notebook position="inside">
+                    <page string="Documents" attrs="{'invisible': ['|',('use_documents','=',False),('type','not in',['purchase','sale','purchase_refund','sale_refund','general'])]}">
+                        <button name="%(action_account_journal_document_config_form)d"
+                                string="Create Journal Documents" type="action"
+                                context="{'type':type, 'excempt_documents': excempt_documents}"/>
+                        <group>
+                            <field name="point_of_sale_id" attrs="{'invisible': ['|',('type','not in',['sale','sale_refund'])],'required': [('use_documents','=',True),('type','in',['sale','sale_refund'])]}" context="{'default_company_id':company_id}"/>
+                            <field name="point_of_sale" attrs="{'invisible': ['|',('type','not in',['sale','sale_refund'])]}"/>
+                            <field name="journal_activities_ids"
+                                   attrs="{'invisible': ['|',('type','not in',['purchase','sale','purchase_refund','sale_refund'])],'required': [('use_documents','=',True),('type','in',['sale','sale_refund'])]}" context="{'default_company_id':company_id}"
+                                   placeholder="Giros del Diario" widget="many2many_tags"
+                                   options="{'no_create': True}"
+                                   domain="[('partner_ids', '=', company_id)]"/>
+                            <field name="excempt_documents" readonly="True"/>
+                            <!--attrs="{'readonly': [('type', 'like', 'sale')]}"-->
+                        </group>
+                        <field name='journal_document_class_ids' context="{'journal_type':type}"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

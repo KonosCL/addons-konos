@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_sii_point_of_sale_form" model="ir.ui.view">
+            <field name="name">sii.point_of_sale.form</field>
+            <field name="model">sii.point_of_sale</field>
+            <field name="arch" type="xml">
+                <form string="SII Point Of Sale">
+                    <group>
+                        <field name="name"/>
+                        <field name='number'/>
+                        <field name='company_id'/>
+                        <field name='code'/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sii_point_of_sale_tree" model="ir.ui.view">
+            <field name="name">sii.point_of_sale.tree</field>
+            <field name="model">sii.point_of_sale</field>
+            <field name="arch" type="xml">
+                <tree string="SII Point Of Sale">
+                    <field name="name"/>
+                    <field name='number'/>
+                    <field name='company_id'/>                 
+                    <field name='code'/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_sii_point_of_sale">
+            <field name="name">SII Point Of Sale</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sii.point_of_sale</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Point Of Sales" action="act_sii_point_of_sale" id="menu_action_sii_point_of_sale" parent="l10n_cl_partner_activities.menu_sii_config"/>
+
+    </data>
+</odoo>

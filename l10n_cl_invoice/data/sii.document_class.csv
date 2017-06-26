@@ -1,0 +1,51 @@
+id,active,document_letter_id/id,sii_code,dte,doc_code_prefix,document_type,report_name,name,code_template
+dc_I_f_dtn,True,dl_i,29,False,FAI ,invoice,FAI ,Factura de Inicio,FAI
+dc_a_f_dtn,True,dl_a,30,False,FAC ,invoice,FACTURA ,Factura,FVA
+dc_y_f_dtn,True,dl_c,32,False,FNA ,invoice,F-EXENTA ,Factura de Ventas y Servicios no Afectos o Exentos de IVA,FVE
+dc_a_f_dte,True,dl_a,33,True,FAC ,invoice,FACTURA ,Factura Electrónica,FVA
+dc_y_f_dte,True,dl_c,34,True,FNA ,invoice,F-EXENTA ,Factura no Afecta o Exenta Electrónica,FVE
+dc_l_f_dtn,True,dl_l,40,False,FAL ,invoice,L-FACTURAM ,Liquidación Factura,LFM
+dc_l_f_dte,True,dl_l,43,True,FAL ,invoice,L-FACTURAE ,Liquidación Factura Electrónica,LFE
+dc_fc_f_dtn,True,dl_a,45,False,FAC ,invoice_in,FACTURA ,Factura de Compra,FCA
+dc_fc_f_dte,True,dl_a,46,True,FAC ,invoice_in,FACTURA ,Factura de Compra Electrónica,FCA
+dc_nd_f_dtn,True,dl_a,55,False,N/D ,debit_note,NOTA DE DEBITO ,Nota de Débito,NDA
+dc_nd_f_dte,True,dl_a,56,True,N/D ,debit_note,NOTA DE DEBITO ,Nota de Débito Electrónica,NDA
+dc_nc_f_dtn,True,dl_a,60,False,N/C ,credit_note,NOTA DE CREDITO ,Nota de Crédito,NCA
+dc_nc_f_dte,True,dl_a,61,True,N/C ,credit_note,NOTA DE CREDITO ,Nota de Crédito Electrónica,NCA
+dc_s_f_dtn,True,dl_s,108,False,REG ,,SOL REGISTRO ,SRF Solicitud de Registro de Factura,SRF
+dc_ftf_f_dtn,True,dl_a,901,False,FAC ,invoice,FACTURA ,Factura de ventas a empresas del territorio preferencial ( Res. Ex. N° 1057,FVA
+dc_din_f_dtn,True,dl_d,914,False,DIN ,,DEC ING ,Declaración de Ingreso (DIN),DIN
+dc_dizf_f_dtn,True,dl_d,911,False,DIN ,,DEC ING ,Declaración de Ingreso a Zona Franca Primaria,DIN
+dc_ftt_f_dtn,True,dl_a,904,False,FTR ,invoice,FACT TR ,Factura de Traspaso,FTT
+dc_frr_f_dtn,True,dl_a,905,False,FRX ,invoice,FACT RX ,Factura de Reexpedición,FRR
+dc_bzf_f_dtn,True,dl_b,906,False,BZF ,invoice,BOLETA ZF ,Boletas Venta Módulos ZF (todas),BZF
+dc_fzf_f_dtn,True,dl_a,907,False,FZF ,invoice,FACTURA ZF ,Facturas Venta Módulo ZF (todas),FZF
+dc_tca_f_dtn,True,dl_t,500,False,TCA ,,TC-A ,Ajuste aumento Tipo de Cambio (código 500),TCA
+dc_tcd_f_dtn,True,dl_t,501,False,TCD ,,TC-D ,Ajuste disminución Tipo de Cambio (código 501),TCD
+dc_b_f_dtn,True,dl_b,35,False,BOL ,invoice,BOL ,Boleta de Venta,BOL
+dc_b_e_dtn,True,dl_b,38,False,BEX,invoice,BEX ,Boleta exenta,BEX
+dc_b_f_dte,True,dl_b,39,True,BEL,invoice,BEL ,Boleta Electrónica,BEL
+dc_b_e_dte,True,dl_b,41,True,BXE,invoice,BXE ,Boleta Exenta Electrónica,BXE
+dc_m_f_dtn,True,dl_m,70,False,BHO ,invoice,BHO ,Boleta de Honorarios,BHO
+dc_m_d_dtn,True,dl_m,71,True,BHE ,invoice,BHE ,Boleta de Honorarios Electrónica,BHE
+dc_oc,True,,801,False,OC,,OC ,Orden de Compra,OC
+dc_li,True,,103,False,LIQ,,LIQ ,Liquidación,LIQ
+dc_gd,True,,50,False,GD,stock_picking,GD ,Guía de Despacho,GD
+dc_gd_dte,True,,52,True,GDE,stock_picking,GDE ,Guía de Despacho Electrónica,GDE
+dc_fe_dte,True,,110,True,FCXE,,FCXE ,Factura de Exportación Electrónica,FCXE
+dc_ndex_dte,True,,111,True,NDXE,,NDXE ,Nota de Débito de Exportación Electrónica,NDXE
+dc_ncex_dte,True,,112,True,NCXE,,NCXE ,Nota de Crédito de Exportación Electrónica,NCXE
+dc_ndp,True,,802,False,NP,,NP ,Nota de pedido,NP
+dc_cont,True,,803,False,CONT,,CONT ,Contrato,CONT
+dc_resol,True,,804,False,RES,,RES ,Resolución,RES
+dc_prchc,True,,805,False,PCHC,,PCHC ,Proceso ChileCompra,PCHC
+dc_fichc,True,,806,False,FCHC,,FCHC ,Ficha ChileCompra,FCHC
+dc_dus,True,,807,False,DUS,,DUS ,DUS,DUS
+dc_bl_cemb,True,,808,False,B/L,,B/L ,B/L (Conocimiento de embarque),B/L
+dc_awb,True,,809,False,AWB,,AWB ,AWB Airway Bill,AWB
+dc_mic_dta,True,,810,False,MDT,,MDT ,MIC/DTA,MDT
+dc_cpor,True,,811,False,CPR,,CPR ,Carta de Porte,CPR
+dc_res_sna,True,,812,False,RSN,,RSN ,Resolución del SNA donde califica Servicios de Exportación,RSN
+dc_pasap,True,,813,False,PSP,,PSP ,Pasaporte,PSP
+dc_cd_bol,True,,814,False,CRTD,,CRTD ,Certificado de Depósito Bolsa Prod. Chile.,CRTD
+dc_vp_pren,True,,815,False,VLPR,,VLPR ,Vale de Prenda Bolsa Prod. Chile,VLPR

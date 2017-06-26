@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_res_partner_form_sii_docs" model="ir.ui.view">
+            <field name="name">res.partner.form.sii.docs</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!--<field name="property_account_position" position="before">-->
+                <field name="ref" position="replace"/>
+                <field name="category_id" position="before">
+                    <field name="ref" placeholder="Reference/Name fantasy"/>
+                </field>
+
+                <field name="website" position="after">
+                    <field name="document_type_id" colspan="1"/>
+                    <field name="document_number" colspan="1"/>
+                    <field name="responsability_id" widget="selection"/>
+                </field>
+                <!--<field name="last_reconciliation_date" position="before">
+                    <field name="responsability_id" widget="selection"/>
+                    <field name="iibb"/>
+                    <field name="start_date"/>
+                </field>
+
+                <field name="last_reconciliation_date" position="attributes">
+                    <attribute name="attrs">{'invisible':1}</attribute>
+                </field>
+      			-->
+                <field name="property_account_position_id" position="attributes">
+                    <attribute name="attrs">{'invisible':1}</attribute>
+                </field>
+
+                <field name="vat" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </field>
+
+                <field name="partner_activities_ids" position="before">
+                    <field name="tp_sii_code" invisible="True"/>
+                    <field name="partner_activities_ids"
+                        placeholder="Giros del Partner" widget="many2many_tags"
+                        options="{'no_create': True}"
+                        domain="[('parent_id', '>=', 1),
+                        ('tax_category', '=', tp_sii_code)]"
+                        invisible="True"/>
+                        <!-- posiblemente marcado como obsoleto, ya que se necesita el giro tipo sii solamente en la compañia-->
+                </field>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
