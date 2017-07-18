@@ -4,66 +4,53 @@
 
         <!-- Indicadores Inputs -->
 
-        <record id="hr_indicadores_junio_2017" model="hr.indicadores">
-            <field name="name">Junio 2017</field>
-            <field name="uf">26665.09</field>
-            <field name="utm">46740</field>
-            <field name="asignacion_familiar_primer">277016</field>
-            <field name="asignacion_familiar_segundo">404613</field>
-            <field name="asignacion_familiar_tercer">631058</field>
+        <record id="hr_indicadores_julio_2017" model="hr.indicadores">
+            <field name="name">Julio 2017</field>
+            <field name="uf">26597.33</field>
+            <field name="utm">46787</field>
+            <field name="uta">561444</field>
+            <field name="asignacion_familiar_primer">283312</field>
+            <field name="asignacion_familiar_segundo">413808</field>
+            <field name="asignacion_familiar_tercer">645400</field>
             <field name="caja_compensacion">0.60</field>
-            <field name="asignacion_familiar_monto_a">10844</field>
-            <field name="asignacion_familiar_monto_b">6655</field>
-            <field name="asignacion_familiar_monto_c">2104</field>
+            <field name="asignacion_familiar_monto_a">11091</field>
+            <field name="asignacion_familiar_monto_b">6806</field>
+            <field name="asignacion_familiar_monto_c">2151</field>
             <field name="fonasa">6.40</field>
             <field name="mutual_seguridad">0.95</field>
             <field name="pensiones_ips">18.84</field>
-            <field name="sueldo_minimo">264000</field>
+            <field name="sueldo_minimo">270000</field>
+            <field name="sueldo_minimo_otro">201561</field>
             <field name="tope_imponible_afp">75.7</field>
             <field name="tope_imponible_ips">60</field>
-            <field name="tope_imponible_salud">5.201</field>
+            <field name="tope_imponible_salud">5.299</field>
             <field name="tope_imponible_seguro_cesantia">113.5</field>
-            <field name="uta">560880</field>
             <field name="deposito_convenido">900</field>
-            <field name="sueldo_minimo_otro">197082</field>
             <field name="contrato_plazo_fijo_empleador">2.40</field>
             <field name="contrato_plazo_fijo_trabajador">0.60</field>
             <field name="contrato_plazo_indefinido_empleador">3.0</field>
             <field name="contrato_plazo_indefinido_empleador_otro">0.8</field>
-            <field name="tasa_afp_cuprum">11.48</field>
             <field name="tasa_afp_capital">11.44</field>
+            <field name="tasa_afp_cuprum">11.48</field>
+            <field name="tasa_afp_habitat">11.27</field>
+            <field name="tasa_afp_planvital">10.41</field>
             <field name="tasa_afp_provida">11.45</field>
             <field name="tasa_afp_modelo">10.77</field>
-            <field name="tasa_afp_planvital">10.41</field>
-            <field name="tasa_afp_habitat">11.27</field>
             <field name="tasa_sis_cuprum">1.41</field>
             <field name="tasa_sis_capital">1.41</field>
             <field name="tasa_sis_provida">1.41</field>
             <field name="tasa_sis_planvital">1.41</field>
             <field name="tasa_sis_habitat">1.41</field>
             <field name="tasa_sis_modelo">1.41</field>
-            <field name="tasa_independiente_cuprum">12.89</field>
             <field name="tasa_independiente_capital">12.85</field>
-            <field name="tasa_independiente_provida">12.86</field>
-            <field name="tasa_independiente_planvital">11.82</field>
+            <field name="tasa_independiente_cuprum">12.89</field>
             <field name="tasa_independiente_habitat">12.68</field>
+            <field name="tasa_independiente_planvital">11.82</field>
+            <field name="tasa_independiente_provida">12.86</field>
             <field name="tasa_independiente_modelo">12.18</field>
             <field name="tope_anual_apv">600</field>
             <field name="tope_mensual_apv">50</field>
         </record>
-
-        <!-- CONTRIBUTION REGISTER     -->						
-        <record id="contrib_register_employees" model="hr.contribution.register">						
-            <field name="name">Employees</field>						
-            <field name="partner_id" eval="False"/>						
-        </record>
-            <record id="contrib_register_previred" model="hr.contribution.register">
-            <field name="name">Previred</field>
-        </record>
-        <record id="contrib_register_sii" model="hr.contribution.register">
-            <field name="name">SII</field>
-        </record>	
-
 
         <!-- ISAPRES     -->
 
@@ -301,7 +288,23 @@
             <field name="name">Sueldo Empresarial</field>
             <field name="codigo">1</field>
         </record>
-				
+
+
+     <!-- Tipos de Contribuyentes -->
+
+
+        <record id="contrib_register_previred" model="hr.contribution.register">
+            <field name="name">Previred</field>
+        </record>
+
+        <record id="contrib_register_sii" model="hr.contribution.register">
+            <field name="name">SII</field>
+        </record>
+
+
+
+
+						
        <!-- Salary Rules -->						
         <record id="hr_rule_1" model="hr.salary.rule">						
             <field name="name">SUELDO BASE</field>						
