@@ -635,7 +635,7 @@ elif contract.afp_id.name == 'MODELO':
 	tasa = payslip.indicadores_id.tasa_afp_modelo
 elif contract.afp_id.name == 'PLANVITAL':
 	tasa = payslip.indicadores_id.tasa_afp_planvital
-elif contract.afp_id.name == 'PROVIDAL':
+elif contract.afp_id.name == 'PROVIDA':
 	tasa = payslip.indicadores_id.tasa_afp_provida
 else:
 	tasa = 0
@@ -748,7 +748,7 @@ elif contract.afp_id.name == 'MODELO':
 	tasa = payslip.indicadores_id.tasa_sis_modelo
 elif contract.afp_id.name == 'PLANVITAL':
 	tasa = payslip.indicadores_id.tasa_sis_planvital
-elif contract.afp_id.name == 'PROVIDAL':
+elif contract.afp_id.name == 'PROVIDA':
 	tasa = payslip.indicadores_id.tasa_sis_provida
 else:
 	tasa = 0
