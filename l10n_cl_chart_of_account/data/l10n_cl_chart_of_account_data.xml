@@ -435,8 +435,8 @@
         <record id="130107" model="account.account.template">
             <field name="name">Cuentas por Cobrar por operaciones de factoring</field>
             <field name="code">130107</field>
-            <field name="reconcile" eval="False"/>
-            <field ref="account.data_account_type_non_current_assets" name="user_type_id"/>
+            <field name="reconcile" eval="True"/>
+            <field ref="account.data_account_type_receivable" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
         
