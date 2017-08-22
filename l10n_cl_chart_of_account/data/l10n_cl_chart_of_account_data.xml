@@ -91,8 +91,8 @@
         <record id="110401" model="account.account.template">
             <field name="name">Cheques a Fecha Por Cobrar</field>
             <field name="code">110401</field>
-            <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_receivable" name="user_type_id"/>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_assets" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -287,8 +287,8 @@
         <record id="111001" model="account.account.template">
             <field name="name">Cheques por Cobrar Cobranza Judicial</field>
             <field name="code">111001</field>
-            <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_receivable" name="user_type_id"/>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_assets" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -431,6 +431,14 @@
             <field ref="account.data_account_type_non_current_assets" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
+    
+        <record id="130107" model="account.account.template">
+            <field name="name">Cuentas por Cobrar por operaciones de factoring</field>
+            <field name="code">130107</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_non_current_assets" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
         
         
         <record id="210101" model="account.account.template">
@@ -516,8 +524,8 @@
          <record id="210301" model="account.account.template">
             <field name="name">Cheques Girados y No Cobrados</field>
             <field name="code">210301</field>
-            <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_payable" name="user_type_id"/>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_liabilities" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
         
@@ -984,6 +992,14 @@
             <field ref="account.data_account_type_expenses" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
+    
+         <record id="510107" model="account.account.template">
+            <field name="name">Consultorías</field>
+            <field name="code">510107</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_expenses" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
 
         <record id="530201" model="account.account.template">
             <field name="name">Costo de Existencias Vendidas</field>
@@ -1129,7 +1145,22 @@
             <field ref="account.data_account_type_expenses" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
-        
+ 
+        <record id="620102" model="account.account.template">
+            <field name="name">Gastos Financieros por Operaciones de Factoring</field>
+            <field name="code">620102</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_expenses" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
+ 
+         <record id="620103" model="account.account.template">
+            <field name="name">Intereses por Operaciones de Factoring</field>
+            <field name="code">620103</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_expenses" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
         
         <record id="620201" model="account.account.template">
             <field name="name">Diferencia Tipo de Cambio</field>
