@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_payment_advance_view">
+                <field name="name">account.payment.advance.view</field>
+                <field name="model">account.payment</field>
+                <field name="inherit_id" ref="account.view_account_payment_form"/>
+                <field name="arch" type="xml">
+                    <field name="communication" position="after">
+                        <field name="advance_ok"/>
+                        <field name="advance_account_id"  domain="[('reconcile', '=', True)]" attrs="{'invisible':[('advance_ok', '!=', True)]}"/>
+                    </field>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_payment_invoice_view">
+                <field name="name">account.payment.invoice.view</field>
+                <field name="model">account.payment</field>
+                <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+                <field name="arch" type="xml">
+                    <field name="communication" position="after">
+                        <field name="advance_ok" invisible="1"/>
+                        <field name="advance_account_id"  domain="[('reconcile', '=', True)]" invisible="1"/>
+                    </field>
+                </field>
+        </record>
+
+
+
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
