@@ -3,6 +3,8 @@
 
 # Copyright (c) 2017 Konos http://www.konos.cl
 
+from . import models
+
 from odoo import api, SUPERUSER_ID
 from odoo.addons import account
 
