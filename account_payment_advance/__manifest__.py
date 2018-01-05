@@ -27,7 +27,9 @@ This module allows the user to select an account before entering a payment.
     "js": [], 
     "css": [], 
     "qweb": [], 
-    "installable": True, 
+    "installable": False,
     "auto_install": False, 
     "active": False
+
+
 }
