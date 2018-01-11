@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cl_balance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0-20161123\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-22 19:57+0000\n"
+"PO-Revision-Date: 2017-11-22 16:58-0300\n"
+"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "<strong>Date from :</strong>"
+msgstr "<strong>Fecha desde:</strong>"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "<strong>Date to :</strong>"
+msgstr "<strong>Fecha hasta:</strong>"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "<strong>Display Account:</strong>"
+msgstr "<strong>Ver cuenta:</strong>"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "<strong>Target Moves:</strong>"
+msgstr "<strong>Movimientos señalados:</strong>"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Acreedor"
+msgstr "Acreedor"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Activo"
+msgstr "Activo"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "All Entries"
+msgstr "Todos los asientos"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "All Posted Entries"
+msgstr "Todos los asientos asentados"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "All accounts"
+msgstr "Todas las cuentas"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Balance de 8 Columnas"
+msgstr "Balance de 8 Columnas"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Crédito"
+msgstr "Crédito"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Cuenta"
+msgstr "Cuenta"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Código"
+msgstr "Código"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Deudor"
+msgstr "Deudor"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Débitos"
+msgstr "Débitos"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Ganancia"
+msgstr "Ganancia"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Pasivo"
+msgstr "Pasivo"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Pérdida"
+msgstr "Pérdida"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Resultado"
+msgstr "Resultado"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "Sumas"
+msgstr "Sumas"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "With balance not equal to zero"
+msgstr "Con saldo distinto a 0"
+
+#. module: l10n_cl_balance
+#: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
+msgid "With movements"
+msgstr "Con movimientos"

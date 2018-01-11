@@ -1,0 +1,238 @@
+<odoo>
+    <data>
+        <template id="balance_de_8_columnas" inherit_id="account.report_trialbalance">
+	    <xpath expr="//div[@class='page']" position="replace">
+                    <div class="page">
+                <h2><span t-esc="res_company.name"/></h2>
+                <h3>Balance de 8 Columnas</h3>
+                <div class="row mt32">
+                     <div class="col-xs-4">
+                                            <strong>Display Account:</strong>
+                                            <p>
+                                                <span t-if="data['display_account'] == 'all'">All accounts</span>
+                                                <span t-if="data['display_account'] == 'movement'">With movements</span>
+                                                <span t-if="data['display_account'] == 'not_zero'">With balance not equal to zero</span>
+                                            </p>
+                                        </div>
+                    <div class="col-xs-4">
+                        <p>
+                            <t t-if="data['date_from']"><strong>Date from :</strong> <span t-esc="data['date_from']"/><br/></t>
+                            <t t-if="data['date_to']"><strong>Date to :</strong> <span t-esc="data['date_to']"/></t>
+                        </p>
+                    </div>
+                </div>
+                <div class="row mb32">
+                    <div class="col-xs-3">
+                        <strong>Target Moves:</strong>
+                        <p>
+                            <span t-if="data['target_move'] == 'all'">All Entries</span>
+                            <span t-if="data['target_move'] == 'posted'">All Posted Entries</span>
+                        </p>
+                    </div>
+                </div>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Cuenta</th>
+                            <th class="text-right">Débitos</th>
+                            <th class="text-right">Crédito</th>
+                            <th class="text-right">Deudor</th>
+                            <th class="text-right">Acreedor</th>
+                            <th class="text-right">Activo</th>
+                            <th class="text-right">Pasivo</th>
+                            <th class="text-right">Pérdida</th>
+                            <th class="text-right">Ganancia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="debitos" t-value="0"/>
+                        <t t-set="creditos" t-value="0"/>
+                        <t t-set="deudor" t-value="0"/>
+                        <t t-set="acreedor" t-value="0"/>
+                        <t t-set="activo" t-value="0"/>
+                        <t t-set="pasivo" t-value="0"/>
+                        <t t-set="perdida" t-value="0"/>
+                        <t t-set="ganancia" t-value="0"/>
+                        <t t-set="resultados" t-value="0"/>
+                        <tr t-foreach="Accounts" t-as="account">
+                        
+
+                            
+                                <t t-set="style" t-value="'font-weight:normal;'"/>
+                                <t t-set="debitos" t-value="debitos+account['debit']"/>
+                                <t t-set="creditos" t-value="creditos+account['credit']"/>
+
+
+                            <td>
+                                <span t-att-style="style" t-esc="account['code']"/>                                     
+                            </td>
+                            <td>
+                                
+                                <span t-att-style="style" t-esc="account['name']"/>
+                            </td>
+                            <td class="text-right">
+                                 <span t-att-style="style" t-esc="account['debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+                            <td class="text-right">
+                                <span t-att-style="style" t-esc="account['credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+
+
+                            
+                            <td class="text-right">
+                            <t t-if="account['balance'] > 0">
+                                <span t-att-style="style" t-esc="account['balance']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                <t t-set="deudor" t-value="deudor+account['balance']"/>
+                            </t>
+                            </td>
+                            <td class="text-right">
+                                <t t-if="0 > account['balance']">
+
+                                    <span t-att-style="style" t-esc="account['balance']*-1" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    <t t-set="acreedor" t-value="acreedor-account['balance']"/>
+                                </t>
+                            </td> 
+
+                            <td class="text-right">
+                                <t t-if="account['code'].startswith('1') or account['code'].startswith('2') or account['code'].startswith('3') or account['code'].startswith('9') ">
+                                <t t-if="account['balance'] > 0">
+                                    <span t-att-style="style" t-esc="account['balance']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+
+
+                                    <t t-set="activo" t-value="activo+account['balance']"/>
+                                </t>
+                                </t>
+                            </td> 
+
+                            <td class="text-right">
+                                <t t-if="account['code'].startswith('2') or account['code'].startswith('1') or account['code'].startswith('3') or account['code'].startswith('9') ">
+                                <t t-if="0 > account['balance']">
+                                    <span t-att-style="style" t-esc="account['balance']*-1" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    <t t-set="pasivo" t-value="pasivo-account['balance']"/>
+                                </t>
+                                </t>
+                            </td> 
+
+                            <td class="text-right">
+                                <t t-if="account['code'].startswith('5') or account['code'].startswith('6') or account['code'].startswith('4') ">
+                                <t t-if="account['balance']>0">
+                                    <span t-att-style="style" t-esc="account['balance']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    <t t-set="perdida" t-value="perdida+account['balance']"/>
+                                </t>
+                                </t>
+                            </td> 
+
+
+                            <td class="text-right">
+                                <t t-if="account['code'].startswith('5') or account['code'].startswith('6') or account['code'].startswith('4')  ">
+                                <t t-if="0 > account['balance']">
+                                    <span t-att-style="style" t-esc="account['balance']*-1" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    <t t-set="ganancia" t-value="ganancia-account['balance']"/>
+                                </t>
+                                </t>
+                            </td> 
+                        </tr>
+
+
+
+
+ <tr>
+                            <th></th>
+                            <th>Sumas</th>
+
+                            <th class="text-right"><span t-esc="debitos" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="creditos" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="deudor" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="acreedor" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="activo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="pasivo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="perdida" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="ganancia" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                               </tr>
+
+                        <tr>
+                            <th></th>
+                            <th>Resultado</th>
+
+                            <th class="text-right"></th>
+                            <th class="text-right"></th>
+                            <th class="text-right"></th>
+                            <th class="text-right"></th>
+
+<t t-if="0 > activo-pasivo">
+<th class="text-right"><span t-esc="pasivo-activo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+<th class="text-right"></th>                       
+</t>
+
+<t t-if="0 > pasivo-activo">
+<th class="text-right"></th>  
+<th class="text-right"><span t-esc="activo-pasivo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>             
+</t>
+
+ <t t-if="0 > perdida-ganancia">
+
+<th class="text-right"><span t-esc="ganancia-perdida" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+<th class="text-right"></th>
+</t>   
+
+<t t-if="0 > ganancia-perdida">
+<th class="text-right"></th>
+<th class="text-right"><span t-esc="perdida-ganancia" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+</t>
+
+                       
+
+
+
+
+
+                               </tr>
+
+
+
+                        <tr>
+                            <th></th>
+                            <th>Sumas</th>
+
+                            <th class="text-right"><span t-esc="debitos" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="creditos" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="deudor" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="acreedor" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="activo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="activo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="perdida" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                            <th class="text-right"><span t-esc="perdida" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
+                               </tr>
+                    </tbody>
+                </table>
+            </div>            
+	    </xpath>
+        </template>
+
+ 
+        <record id="paperformat_balance" model="report.paperformat">
+            <field name="name">Horizontal Oficio</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">280</field>
+            <field name="page_width">216</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">20</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">15</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="account.action_report_trial_balance" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="l10n_cl_balance.paperformat_balance" />
+        </record>
+
+
+
+
+    </data>
+</odoo>
