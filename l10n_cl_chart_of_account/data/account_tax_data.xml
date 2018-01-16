@@ -145,13 +145,15 @@
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
       <field name="name">Impuesto Unico de Segunda Categoría </field>
       <field name="description">Impuesto Unico de 2da Categoría </field>
-      <field name="amount">-10</field>
+      <field name="amount">0</field>
       <field name="sequence" eval="2"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="refund_account_id" ref="210704"/>
       <field name="account_id" ref="210704"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_22'), ref('tag_cl_21')])]"/>
+      <field name="sii_type">R</field>
+      <field name="retencion">10.000</field>
     </record>
 
     <record id="retencion_iva" model="account.tax.template">
@@ -216,6 +218,7 @@
       <field name="sii_code">14</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="6"/>
       <field name="refund_account_id" ref="110704"/>
       <field name="account_id" ref="110704"/>
     </record>
@@ -228,6 +231,7 @@
       <field name="sii_code">24</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="7"/>
       <field name="refund_account_id" ref="110704"/>
       <field name="account_id" ref="110704"/>
     </record>
@@ -240,6 +244,7 @@
       <field name="sii_code">25</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="8"/>
       <field name="refund_account_id" ref="110704"/>
       <field name="account_id" ref="110704"/>
     </record>
@@ -252,6 +257,7 @@
       <field name="sii_code">26</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="8"/>
       <field name="refund_account_id" ref="110704"/>
       <field name="account_id" ref="110704"/>
     </record>
