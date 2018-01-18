@@ -43,6 +43,7 @@
                                                 <field name="contrato_plazo_indefinido_empleador"> </field>
                                                 <field name="contrato_plazo_indefinido_trabajador"> </field>
                                                 <field name="contrato_plazo_indefinido_empleador_otro"> </field>
+                                                <field name="contrato_plazo_indefinido_trabajador_otro"> </field>
 										    </group>  
 									 </td>
 									 <td>

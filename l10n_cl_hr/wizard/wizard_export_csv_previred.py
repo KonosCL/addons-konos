@@ -307,7 +307,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                   "Rut Pagadora Subsidio", "DV Pagadora Subsidio", 
                   "Centro de Costos", "Sucursal", "Agencia", "Obra", "Region"
                   ]
-        writer.writerow(header)
+        #writer.writerow(header)
         
         
         
