@@ -60,7 +60,7 @@ class hr_contract(models.Model):
     isapre_fun = fields.Char('Número de FUN',  help="Indicar N° Contrato de Salud a Isapre")    
     movilizacion = fields.Float(
         'Asig. Movilización', help="Movilización")
-    mutual_seguridad = fields.Boolean('Mutual Seguridad')
+    mutual_seguridad = fields.Boolean('Mutual Seguridad', default=True)
     otro_no_imp = fields.Float(
         'Otros No Imponible', help="Otros Haberes No Imponibles")
     otros_imp = fields.Float(
