@@ -251,7 +251,7 @@ class WizardExportCsvPrevired(models.TransientModel):
         return cadena
 
 
-   @api.model
+    @api.model
     def _arregla_str(self, texto, size=1):
         c = 0
         cadena = ""
