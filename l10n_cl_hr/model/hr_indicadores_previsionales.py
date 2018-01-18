@@ -67,6 +67,9 @@ class hr_indicadores_previsionales(models.Model):
     contrato_plazo_indefinido_empleador_otro = fields.Float(
         'Contrato Plazo Indefinido 11 anos o mas', 
         help="Contrato Plazo Indefinido 11 anos")
+    contrato_plazo_indefinido_trabajador = fields.Float(
+        'Contrato Plazo Indefinido Trabajador', 
+        help="Contrato Plazo Indefinido Trabajador")
     caja_compensacion = fields.Float(
         'Caja Compensación', 
         help="Caja de Compensacion")

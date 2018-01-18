@@ -26,10 +26,10 @@
             <field name="tope_imponible_salud">5.299</field>
             <field name="tope_imponible_seguro_cesantia">113.5</field>
             <field name="deposito_convenido">900</field>
-            <field name="contrato_plazo_fijo_empleador">2.40</field>
-            <field name="contrato_plazo_fijo_trabajador">0.60</field>
-            <field name="contrato_plazo_indefinido_empleador">3.0</field>
-            <field name="contrato_plazo_indefinido_empleador_otro">0.8</field>
+            <field name="contrato_plazo_fijo_empleador">3.0</field>
+            <field name="contrato_plazo_fijo_trabajador">0.0</field>
+            <field name="contrato_plazo_indefinido_empleador">0.6</field>
+            <field name="contrato_plazo_indefinido_trabajador">2.4</field>
             <field name="tasa_afp_capital">11.44</field>
             <field name="tasa_afp_cuprum">11.48</field>
             <field name="tasa_afp_habitat">11.27</field>
@@ -663,9 +663,9 @@ elif contract.type_id.name == 'Sueldo Empresarial':
 elif contract.type_id.name == 'Plazo Fijo':
      result = 0 
 elif TOTIM >=round(payslip.indicadores_id.tope_imponible_seguro_cesantia*payslip.indicadores_id.uf):
-     result =round(payslip.indicadores_id.tope_imponible_seguro_cesantia*payslip.indicadores_id.uf*payslip.indicadores_id.contrato_plazo_fijo_trabajador/100) 
+     result =round(payslip.indicadores_id.tope_imponible_seguro_cesantia*payslip.indicadores_id.uf*payslip.indicadores_id.contrato_plazo_indefinido_trabajador/100)
 elif contract.type_id.name == 'Plazo Indefinido':
-     result = round(TOTIM*payslip.indicadores_id.contrato_plazo_fijo_trabajador/100) 
+     result = round(TOTIM*payslip.indicadores_id.contrato_plazo_indefinido_trabajador/100)
 else:
      result = 0</field>						
         </record>
@@ -721,9 +721,9 @@ if contract.pension is True:
 elif contract.type_id.name == 'Sueldo Empresarial':
      result = 0 
 elif contract.type_id.name == 'Plazo Indefinido':
-     result = round(totimpo*2.4/100) 
+     result = round(totimpo*indicadores_id.contrato_plazo_indefinido_empleador/100)
 elif contract.type_id.name == 'Plazo Fijo':
-     result = round(totimpo*3/100) 
+     result = round(totimpo*payslip.indicadores_id.contrato_plazo_fijo_empleador/100) 
 else:
      result = 0</field>						
         </record>

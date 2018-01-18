@@ -39,10 +39,10 @@
 												<field name="deposito_convenido"> </field>
 										    </group> 										
 										    <group col="2" name="unemployment_insurance" string="Seguro de Cesantía AFC">
-												<field name="contrato_plazo_fijo_empleador"> </field>
-												<field name="contrato_plazo_fijo_trabajador"> </field>
-												<field name="contrato_plazo_indefinido_empleador"> </field>
-												<field name="contrato_plazo_indefinido_empleador_otro"> </field>
+                                                <field name="contrato_plazo_fijo_empleador"> </field>
+                                                <field name="contrato_plazo_indefinido_empleador"> </field>
+                                                <field name="contrato_plazo_indefinido_trabajador"> </field>
+                                                <field name="contrato_plazo_indefinido_empleador_otro"> </field>
 										    </group>  
 									 </td>
 									 <td>
