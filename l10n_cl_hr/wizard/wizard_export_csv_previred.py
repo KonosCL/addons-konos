@@ -249,6 +249,37 @@ class WizardExportCsvPrevired(models.TransientModel):
             cadena += texto[c]
             c += 1
         return cadena
+
+
+   @api.model
+    def _arregla_str(self, texto, size=1):
+        c = 0
+        cadena = ""
+        special_chars = [
+         [u'á', 'a'],
+         [u'é', 'e'],
+         [u'í', 'i'],
+         [u'ó', 'o'],
+         [u'ú', 'u'],
+         [u'ñ', 'n'],
+         [u'Á', 'A'],
+         [u'É', 'E'],
+         [u'Í', 'I'],
+         [u'Ó', 'O'],
+         [u'Ú', 'U'],
+         [u'Ñ', 'N']]
+
+        while c < size and c < len(texto):
+            cadena += texto[c]
+            c += 1
+
+        
+        for char in special_chars:
+          try:
+            cadena = cadena.replace(char[0], char[1])
+          except:
+            pass
+        return cadena
     
     @api.multi
     def action_generate_csv(self):
@@ -339,9 +370,9 @@ class WizardExportCsvPrevired(models.TransientModel):
             rut = rut.replace('.','')
             line_employee = [self._acortar_str(rut, 11), 
                              self._acortar_str(rut_dv, 1),
-                             self._acortar_str(payslip.employee_id.last_name.upper(), 30)  if payslip.employee_id.last_name else "", 
-                             self._acortar_str(payslip.employee_id.mothers_name.upper(), 30)  if payslip.employee_id.mothers_name else "",
-                             "%s %s" % (self._acortar_str(payslip.employee_id.name.upper(), 15), self._acortar_str(payslip.employee_id.middle_name.upper(), 15) if payslip.employee_id.middle_name else ''),
+                             self._arregla_str(payslip.employee_id.last_name.upper(), 30)  if payslip.employee_id.last_name else "", 
+                             self._arregla_str(payslip.employee_id.mothers_name.upper(), 30)  if payslip.employee_id.mothers_name else "",
+                             "%s %s" % (self._arregla_str(payslip.employee_id.name.upper(), 15), self._arregla_str(payslip.employee_id.middle_name.upper(), 15) if payslip.employee_id.middle_name else ''),
                              sexo_data.get(payslip.employee_id.gender, "") if payslip.employee_id.gender else "",
                              self.get_nacionalidad(payslip.employee_id.country_id.id),
                              self.get_tipo_pago(payslip.employee_id),

@@ -66,10 +66,10 @@ class hr_indicadores_previsionales(models.Model):
         help="Contrato Plazo Fijo")
     contrato_plazo_indefinido_empleador_otro = fields.Float(
         'Contrato Plazo Indefinido 11 anos o mas', 
-        help="Contrato Plazo Indefinido 11 anos")
+        help="Contrato Plazo Indefinido 11 anos Empleador")
     contrato_plazo_indefinido_trabajador_otro = fields.Float(
         'Contrato Plazo Indefinido 11 anos o mas', 
-        help="Contrato Plazo Indefinido 11 anos")
+        help="Contrato Plazo Indefinido 11 anos Trabajador")
     contrato_plazo_indefinido_trabajador = fields.Float(
         'Contrato Plazo Indefinido Trabajador', 
         help="Contrato Plazo Indefinido Trabajador")
