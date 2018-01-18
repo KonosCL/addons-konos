@@ -529,6 +529,10 @@ try:
  dias = dias + worked_days.No_Trabajado.number_of_days 
 except: 
  dias = dias
+try: 
+ dias = dias + worked_days.Vacaciones.number_of_days 
+except: 
+ dias = dias        
 
 if 3 > worked_days.WORK100.number_of_days:
     result = round((contract.colacion / 30) * worked_days.WORK100.number_of_days)
@@ -555,7 +559,10 @@ try:
  dias = dias + worked_days.No_Trabajado.number_of_days 
 except: 
  dias = dias
-
+try: 
+ dias = dias + worked_days.Vacaciones.number_of_days 
+except: 
+ dias = dias            
 if 3 > worked_days.WORK100.number_of_days:
     result = round((contract.movilizacion / 30) * worked_days.WORK100.number_of_days)
 else:
@@ -580,6 +587,10 @@ try:
  dias = dias + worked_days.No_Trabajado.number_of_days 
 except: 
  dias = dias
+try: 
+ dias = dias + worked_days.Vacaciones.number_of_days 
+except: 
+ dias = dias
 if 3 > worked_days.WORK100.number_of_days:
     result = round((contract.otro_no_imp / 30) * worked_days.WORK100.number_of_days)
 else:
@@ -601,6 +612,10 @@ except:
  dias = 0.0
 try: 
  dias = dias + worked_days.No_Trabajado.number_of_days 
+except: 
+ dias = dias
+try: 
+ dias = dias + worked_days.Vacaciones.number_of_days 
 except: 
  dias = dias
 if 3 > worked_days.WORK100.number_of_days:
