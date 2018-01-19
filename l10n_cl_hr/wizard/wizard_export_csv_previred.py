@@ -380,13 +380,13 @@ class WizardExportCsvPrevired(models.TransientModel):
                              date_stop_format,
                              self.get_regimen_provisional(payslip.contract_id),
                              self.get_tipo_trabajador(payslip.employee_id),
-                             self.get_dias_trabajados(payslip and payslip[0] or False),
+                             int(self.get_dias_trabajados(payslip and payslip[0] or False)),
                              self.get_tipo_linea(payslip and payslip[0] or False),
                              self.get_codigo_movimiento(payslip and payslip[0] or False),
                              #16 Fecha inicio movimiento personal (dia-mes-año)
-                             '00-00-0000',
+                             payslip.date_from if payslip.date_from else '00-00-0000', 
                              #17 Fecha fin movimiento personal (dia-mes-año)
-                             payslip.contract_id.date_end if payslip.contract_id.date_end else '00-00-0000', 
+                             payslip.date_to if payslip.date_to else '00-00-0000', 
                              self.get_tramo_asignacion_familiar(payslip, self.get_payslip_lines_value_2(payslip,'TOTIM')),
                              #19 NCargas Simples
                              payslip.contract_id.carga_familiar,
@@ -401,7 +401,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #25 Solicitud Trabajador Joven TODO SUBSIDIO JOVEN
                              "N",
                              payslip.contract_id.afp_id.codigo,
-                             self.get_imponible_afp(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM')),
+                             int(self.get_imponible_afp(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM'))),
                              #AFP SIS APV 0 0 0 0 0 0
                              self.get_payslip_lines_value_2(payslip,'AFP'),
                              self.get_payslip_lines_value_2(payslip,'SIS'),
@@ -524,7 +524,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #TODO ES HACER PANTALLA CON DATOS EMPRESA
                              payslip.indicadores_id.ccaf_id.codigo if payslip.indicadores_id.ccaf_id.codigo else "00",
                              #84 Renta Imponible CCAF 
-                             self.get_imponible_afp(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM')) if (self.get_dias_trabajados(payslip and payslip[0] or False)>0) else "00",
+                             int(self.get_imponible_afp(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM'))) if (self.get_dias_trabajados(payslip and payslip[0] or False)>0) else "00",
                              #85 Creditos Personales CCAF TODO
                              self.get_payslip_lines_value_2(payslip,'PCCAF') if self.get_payslip_lines_value_2(payslip,'PCCAF') else "0",
                              #86 Descuento Dental CCAF
