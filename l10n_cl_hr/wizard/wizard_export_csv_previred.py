@@ -378,15 +378,22 @@ class WizardExportCsvPrevired(models.TransientModel):
                              self.get_tipo_pago(payslip.employee_id),
                              date_start_format,
                              date_stop_format,
+                             #11
                              self.get_regimen_provisional(payslip.contract_id),
+                             #12
                              self.get_tipo_trabajador(payslip.employee_id),
+                             #13
                              int(self.get_dias_trabajados(payslip and payslip[0] or False)),
+                             #14
                              self.get_tipo_linea(payslip and payslip[0] or False),
-                             self.get_codigo_movimiento(payslip and payslip[0] or False),
+                             #15
+                             payslip.movimientos_personal,
                              #16 Fecha inicio movimiento personal (dia-mes-año)
-                             payslip.date_from if payslip.date_from else '00-00-0000', 
+                             datetime.strptime(payslip.date_from, DF).strftime("%d/%m/%Y") if payslip.date_from else '00/00/0000', 
+                             #payslip.date_from if payslip.date_from else '00/00/0000', 
                              #17 Fecha fin movimiento personal (dia-mes-año)
-                             payslip.date_to if payslip.date_to else '00-00-0000', 
+                             datetime.strptime(payslip.date_to, DF).strftime("%d/%m/%Y") if payslip.date_to else '00/00/0000', 
+                             #payslip.date_to if payslip.date_to else '00-00-0000', 
                              self.get_tramo_asignacion_familiar(payslip, self.get_payslip_lines_value_2(payslip,'TOTIM')),
                              #19 NCargas Simples
                              payslip.contract_id.carga_familiar,
@@ -400,10 +407,13 @@ class WizardExportCsvPrevired(models.TransientModel):
                              "0",
                              #25 Solicitud Trabajador Joven TODO SUBSIDIO JOVEN
                              "N",
+                             #26
                              payslip.contract_id.afp_id.codigo,
+                             #27
                              int(self.get_imponible_afp(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM'))),
                              #AFP SIS APV 0 0 0 0 0 0
-                             self.get_payslip_lines_value_2(payslip,'AFP'),
+                             #28 
+                             self.get_payslip_lines_value_2(payslip,'PREV'),
                              self.get_payslip_lines_value_2(payslip,'SIS'),
                              self.get_payslip_lines_value_2(payslip,'APV') if self.get_payslip_lines_value_2(payslip,'APV') else "0",
                              #31 Renta Imp. Sust.AFP
@@ -455,26 +465,42 @@ class WizardExportCsvPrevired(models.TransientModel):
                              " ",
                              #54 Nombres
                              " ",
+                             "0",
                              #55 Codigo Movimiento de Persona
-                             "00",
+                             #Tabla N°7: Movimiento de Personal
+                             #Código Glosa
+                             #0 Sin Movimiento en el Mes
+                             #1 Contratación a plazo indefinido
+                             #2 Retiro
+                             #3 Subsidios
+                             #4 Permiso Sin Goce de Sueldos
+                             #5 Incorporación en el Lugar de Trabajo
+                             #6 Accidentes del Trabajo
+                             #7 Contratación a plazo fijo
+                             #8 Cambio Contrato plazo fijo a plazo indefinido
+                             #11 Otros Movimientos (Ausentismos)
+                             #12 Reliquidación, Premio, Bono
+                             #TODO LIQUIDACION
+                             
+                             "00",            
                              #56 Fecha inicio movimiento personal (dia-mes-año)
-                             '00-00-0000',
+                             "0",
                              #57 Fecha fin movimiento personal (dia-mes-año)
-                             '00-00-0000',
+                             "0",
                              #58 Codigo de la AFP
                              "0",
                              #59 Monto Capitalizacion Voluntaria
                              "0",
                              #60 Monto Ahorro Voluntario
                              "0",
+                     
                              #61 Numero de periodos de cotizacion
                              "0",
-                             #6- Datos IPS - ISL - FONASA
                              #62 Codigo EX-Caja Regimen
                              "0",
                              #63 Tasa Cotizacion Ex-Caja Prevision
                              "0",
-                             #64 Renta Imponible IPS 
+                             #64 Renta Imponible IPS    Obligatorio si es IPS Obligatorio si es IPS Obligatorio si es INP si no, 0000
                              self.get_payslip_lines_value_2(payslip,'TOTIM') if payslip.contract_id.isapre_id.codigo=='07' else "0",
                              #65 Cotizacion Obligatoria IPS 
                              "0",
@@ -487,7 +513,9 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #69 Cotizacion Desahucio
                              "0",
                              #70 Cotizacion Fonasa
-                             self.get_payslip_lines_value_2(payslip,'SALUD') if payslip.contract_id.isapre_id.codigo=='07' else "0",
+                             #"0",
+                             self.get_payslip_lines_value_2(payslip,'FONASA') if payslip.contract_id.isapre_id.codigo=='07' else "0",
+                             
                              #71 Cotizacion Acc. Trabajo (ISL)
                              "0",
                              #72 Bonificacion Ley 15.386 
@@ -496,14 +524,14 @@ class WizardExportCsvPrevired(models.TransientModel):
                              "0",
                              #74 Bonos Gobierno
                              "0",
-                             "0",
                              #7- Datos Salud ISAPRE
                              #75 Codigo Institucion de Salud 
                              payslip.contract_id.isapre_id.codigo,
                              #76 Numero del FUN
                              " " if payslip.contract_id.isapre_id.codigo=='07' else payslip.contract_id.isapre_fun if payslip.contract_id.isapre_fun else "",
                              #77 Renta Imponible Isapre REVISAR  Tope Imponible Salud 5,201
-                             "0" if payslip.contract_id.isapre_id.codigo=='07' else self.get_payslip_lines_value_2(payslip,'TOTIM'),
+                             #"0" if payslip.contract_id.isapre_id.codigo=='07' else self.get_payslip_lines_value_2(payslip,'TOTIM'),
+                             "0" if payslip.contract_id.isapre_id.codigo=='07' else self.get_imponible_salud(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM')),
                              #78 Moneda Plan Isapre UF Pesos TODO Poner % Pesos o UF
                              #Tabla N17: Tipo Moneda del plan pactado Isapre
                              #Codigo Glosa
