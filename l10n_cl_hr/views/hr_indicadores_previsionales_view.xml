@@ -10,6 +10,10 @@
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" placeholder="Referencia de Fecha"/></h1>
+                        <group col="4" string="Período"> 
+                              <field name="month"/>
+                              <field name="year"/>
+                        </group>
                     </div>
                          <notebook>
                            <page string="Previred" name="previred">

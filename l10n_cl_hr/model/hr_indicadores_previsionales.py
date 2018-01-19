@@ -33,6 +33,15 @@
 ##############################################################################
 
 from odoo import api, fields, models, tools, _
+from datetime import datetime
+
+MONTH_LIST= [('1', 'Enero'), 
+        ('2', 'Febrero'), ('3', 'Marzo'), 
+        ('4', 'Abril'), ('5', 'Mayo'), 
+        ('6', 'Junio'), ('7', 'Julio'), 
+        ('8', 'Agosto'), ('9', 'Septiembre'), 
+        ('10', 'Octubre'), ('11', 'Noviembre'),
+        ('12', 'Diciembre')]
 
 class hr_indicadores_previsionales(models.Model):
 
@@ -146,4 +155,6 @@ class hr_indicadores_previsionales(models.Model):
         'UF Otros',  help="UF Seguro Complementario")
     mutualidad_id = fields.Many2one('hr.mutual', 'MUTUAL')
     ccaf_id = fields.Many2one('hr.ccaf', 'CCAF')
+    month = fields.Selection(MONTH_LIST, string='Mes', required=True, default=MONTH_LIST[int(datetime.now().strftime('%m'))-1])
+    year = fields.Integer('Año', required=True, default=datetime.now().strftime('%Y'))
 

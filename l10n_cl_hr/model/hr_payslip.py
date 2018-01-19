@@ -59,11 +59,7 @@ class HrPayslip(models.Model):
      ('7', 'Contratación a plazo fijo'),
      ('8', 'Cambio Contrato plazo fijo a plazo indefinido'),
      ('11', 'Otros Movimientos (Ausentismos)'),
-     ('12', 'Reliquidación, Premio, Bono')
-
-
-
-     
+     ('12', 'Reliquidación, Premio, Bono')     
      ), 'Movimientos Perosnal', default="0")
 
 
@@ -86,4 +82,6 @@ class HrPayslip(models.Model):
     def create(self, vals):
         if 'indicadores_id' in self.env.context:
             vals['indicadores_id'] = self.env.context.get('indicadores_id')
+        if 'movimientos_personal' in context:
+            vals['movimientos_personal'] = self.env.context.get('movimientos_personal')
         return super(HrPayslip, self).create(vals)
