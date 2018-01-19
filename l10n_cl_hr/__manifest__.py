@@ -5,8 +5,7 @@
 {
     'name': 'Chilean Payroll & Human Resources',
     'category': 'Localization',
-    'author': 'Konos, '
-              u'''Blanco Martin & Asociados''',
+    'author': 'Konos',
     'website': 'http://konos.cl',
     'license': 'AGPL-3',
     'depends': ['hr_payroll'],
@@ -14,9 +13,11 @@
         "Nelson Ramirez <info@konos.cl>",
         "Daniel Blanco Martn <daniel@blancomartin.com>",
         "Carlos Lopez Mite <celm1990@hotmail.com>",
+        "Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>",
+        "Francisco Lorca <fcolorca1979@gmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '10.0.0.30',
+    'version': '10.0.1.0',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
@@ -39,7 +40,6 @@ Chilean Payroll & Human Resources.
     'data': [
         'views/hr_indicadores_previsionales_view.xml',
         'views/hr_salary_rule_view.xml',
-
         'views/hr_contract_view.xml',
         'views/hr_employee.xml',
         'views/hr_payslip_view.xml',

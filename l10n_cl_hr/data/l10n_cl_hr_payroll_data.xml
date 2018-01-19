@@ -6,27 +6,29 @@
 
         <!-- Indicadores Inputs -->
 
-        <record id="hr_indicadores_julio_2017" model="hr.indicadores">
-            <field name="name">Julio 2017</field>
-            <field name="uf">26597.33</field>
-            <field name="utm">46787</field>
-            <field name="uta">561444</field>
-            <field name="asignacion_familiar_primer">283312</field>
-            <field name="asignacion_familiar_segundo">413808</field>
-            <field name="asignacion_familiar_tercer">645400</field>
+        <record id="hr_indicadores_enero_2018" model="hr.indicadores">
+            <field name="month">1</field>
+            <field name="year">2018</field>
+            <field name="name">Enero 2018</field>
+            <field name="uf">26824.94</field>
+            <field name="utm">47019</field>
+            <field name="uta">564228</field>
+            <field name="asignacion_familiar_primer">289608</field>
+            <field name="asignacion_familiar_segundo">423004</field>
+            <field name="asignacion_familiar_tercer">659743</field>
             <field name="caja_compensacion">0.60</field>
-            <field name="asignacion_familiar_monto_a">11091</field>
-            <field name="asignacion_familiar_monto_b">6806</field>
-            <field name="asignacion_familiar_monto_c">2151</field>
+            <field name="asignacion_familiar_monto_a">11337</field>
+            <field name="asignacion_familiar_monto_b">6957</field>
+            <field name="asignacion_familiar_monto_c">2199</field>
             <field name="fonasa">6.40</field>
             <field name="mutual_seguridad">0.95</field>
             <field name="pensiones_ips">18.84</field>
-            <field name="sueldo_minimo">270000</field>
-            <field name="sueldo_minimo_otro">201561</field>
-            <field name="tope_imponible_afp">75.7</field>
+            <field name="sueldo_minimo">276000</field>
+            <field name="sueldo_minimo_otro">206041</field>
+            <field name="tope_imponible_afp">78.3</field>
             <field name="tope_imponible_ips">60</field>
             <field name="tope_imponible_salud">7</field>
-            <field name="tope_imponible_seguro_cesantia">113.5</field>
+            <field name="tope_imponible_seguro_cesantia">117.5</field>
             <field name="deposito_convenido">900</field>
             <field name="contrato_plazo_fijo_empleador">3</field>
             <field name="contrato_plazo_fijo_trabajador">0</field>
