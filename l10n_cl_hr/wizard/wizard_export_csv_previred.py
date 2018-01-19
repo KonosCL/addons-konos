@@ -242,6 +242,16 @@ class WizardExportCsvPrevired(models.TransientModel):
             return 0
 
     @api.model
+    def get_imponible_salud(self, payslip, TOTIM):
+        result = 0
+        if TOTIM >= round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
+          #return "0.0"
+          return int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))
+        else:
+          #return 0
+          return int(round(TOTIM))
+
+    @api.model
     def _acortar_str(self, texto, size=1):
         c = 0
         cadena = ""

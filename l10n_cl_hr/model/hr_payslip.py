@@ -64,17 +64,6 @@ class HrPayslip(models.Model):
 
 
 
-                                 #0 Sin Movimiento en el Mes
-                             #1 Contratación a plazo indefinido
-                             #2 Retiro
-                             #3 Subsidios
-                             #4 Permiso Sin Goce de Sueldos
-                             #5 Incorporación en el Lugar de Trabajo
-                             #6 Accidentes del Trabajo
-                             #7 Contratación a plazo fijo
-                             #8 Cambio Contrato plazo fijo a plazo indefinido
-                             #11 Otros Movimientos (Ausentismos)
-                             #12 Reliquidación, Premio, Bono
 
 
 
@@ -82,6 +71,6 @@ class HrPayslip(models.Model):
     def create(self, vals):
         if 'indicadores_id' in self.env.context:
             vals['indicadores_id'] = self.env.context.get('indicadores_id')
-        if 'movimientos_personal' in context:
+        if 'movimientos_personal' in self.env.context:
             vals['movimientos_personal'] = self.env.context.get('movimientos_personal')
         return super(HrPayslip, self).create(vals)
