@@ -526,7 +526,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #84 Renta Imponible CCAF 
                              self.get_imponible_afp(payslip and payslip[0] or False, self.get_payslip_lines_value_2(payslip,'TOTIM')) if (self.get_dias_trabajados(payslip and payslip[0] or False)>0) else "00",
                              #85 Creditos Personales CCAF TODO
-                             "0",
+                             self.get_payslip_lines_value_2(payslip,'PCCAF') if self.get_payslip_lines_value_2(payslip,'PCCAF') else "0",
                              #86 Descuento Dental CCAF
                              "0",
                              #87 Descuentos por Leasing TODO
@@ -574,6 +574,6 @@ class WizardExportCsvPrevired(models.TransientModel):
                              ]
             writer.writerow(line_employee)
         self.write({'file_data': base64.encodestring(output.getvalue()),
-                    'file_name': "Previred_%s.csv" % (self.date_to),
+                    'file_name': "Previred_%s.txt" % (self.date_to),
                     })
         return self.show_view('Previred Generado', self._name, 'l10n_cl_hr_payroll.wizard_export_csv_previred_form_view', self.id)

@@ -16,7 +16,7 @@
         "Carlos Lopez Mite <celm1990@hotmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '10.0.0.25',
+    'version': '10.0.0.30',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================

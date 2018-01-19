@@ -72,17 +72,17 @@
  						</page>
  						  <page string="Instituciones Relacionadas">
                             <group col="2">
-                               	<group col="2" name="quotations" string="Cotizaciones">
-					                            <field name="ccaf_id" string="Nombre"/>
-												<field name="caja_compensacion" string="Tasa"> </field>
-					                            <field name="fonasa"> </field>
-												<field name="pensiones_ips" string="Fondo de Pensiones"> </field>
-					                            <field name="tope_imponible_salud" digits="(4, 3)"> </field>
-										    </group>   
-							    <group col="2" name="mutual_insurance" string="Mutual de Seguridad">
-					                            <field name="mutualidad_id" string="Nombre"/>		
-												<field name="mutual_seguridad"> </field>
-								</group>
+                               <group col="2" name="quotations" string="Cotizaciones">
+                                                <field name="ccaf_id" string="Caja de Compensación"/>
+                                                <field name="caja_compensacion" string="Tasa"> </field>
+                                                <field name="fonasa"> </field>
+                                                <field name="pensiones_ips" string="Fondo de Pensiones"> </field>
+                                                <field name="tope_imponible_salud" digits="(4, 3)" string="Tope Imponible Salud %"> </field>
+                                            </group>   
+                                <group col="2" name="mutual_insurance" string="Instituciones de Seguridad">
+                                                <field name="mutualidad_id" string="Nombre"/>       
+                                                <field name="mutual_seguridad"> </field>
+                                </group>
                             </group>
                         </page>
                     </notebook>
