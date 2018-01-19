@@ -342,7 +342,8 @@ class WizardExportCsvPrevired(models.TransientModel):
         
         
         
-        payslip_recs = payslip_model.search([('date_to','=',self.date_to),
+        #Debemos colocar que tome todo el mes y no solo el día exacto TODO
+        payslip_recs = payslip_model.search([('date_from','=',self.date_from),
                                              ])
 
         date_start = self.date_from
@@ -540,7 +541,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              "1" if payslip.contract_id.isapre_id.codigo=='07' else "2",
                              #79 Cotizacion Pactada
                              # Yo Pensaba payslip.contract_id.isapre_cotizacion_uf,
-                             "0",
+                             "0" if payslip.contract_id.isapre_id.codigo=='07' else payslip.contract_id.isapre_cotizacion_uf,
                              #80 Cotizacion Obligatoria Isapre
                              "0" if payslip.contract_id.isapre_id.codigo=='07' else self.get_payslip_lines_value_2(payslip,'SALUD'),
                              #81 Cotizacion Adicional Voluntaria

@@ -984,7 +984,7 @@ elif payslip.indicadores_id.utm*70 > TRIBU:
 elif payslip.indicadores_id.utm*90 > TRIBU:
  result = TRIBU*0.23-(payslip.indicadores_id.utm*11.14)
 elif payslip.indicadores_id.utm*120 > TRIBU:
- result = TRIBU*0.304-(payslip.indicadores_id.utm*17.85)
+ result = TRIBU*0.304-(payslip.indicadores_id.utm*17.80)
 elif payslip.indicadores_id.utm*150 > TRIBU:
  result = TRIBU*0.355-(payslip.indicadores_id.utm*23.92)
 else:
