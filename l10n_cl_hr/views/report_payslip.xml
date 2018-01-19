@@ -6,7 +6,7 @@
         <t t-foreach="docs" t-as="o">
             <div class="page">
                 <h3 align="center">LIQUIDACION DE SUELDO</h3>
-                  <span  t-raw="o.name.replace('January', 'ENERO').replace('February', 'FEBRERO').replace('March', 'Marzo').replace('April', 'ABRIL').replace('May', 'MAYO').replace('June', 'JUNIO').replace('July', 'JULIO').replace('August', 'AGOSTO').replace('September', 'SEPTIEMBRE').replace('October', 'OCTUBRE').replace('November', 'NOVIEMBRE').replace('December', 'DICIEMBRE').replace('para', 'MES DE:').replace('-', ' del ').replace('salarial de', ' ').replace('for', ' ').replace('Salary Slip of ', ' ').replace('31', ' 30')"/>
+                  <span  t-raw="o.name"/>
                      <table class="table-condensed " width="100%">
                         <thead>
                            <tr>
@@ -52,7 +52,7 @@
                         <tr>
                             <td width="35%"><strong>A.F.P</strong></td>
                             <td width="35%"><strong>ISAPRE</strong></td>
-                            <td width="30%"><span t-field="o.contract_id.afp_id"/></td>
+                            <td width="30%"><strong><span t-field="o.contract_id.afp_id"/></strong></td>
                         </tr>
                         <tr>
                             <td><span t-field="o.contract_id.afp_id"/></td>
@@ -185,8 +185,23 @@
                              <table class="table-condensed" width="100%">           
                                <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                                    <t t-if=" ('No Imponible' ==p.category_id.name) or ('No Imponible - Otros' ==p.category_id.name) or ('Imponible' ==p.category_id.name) or ('TOTIM' == p.code) or ('TOTNOI' == p.code)">
-                                       <td><span t-field="p.name"/></td>
-                                       <td style="text-align:right"><span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/></td>
+                                       <td>
+                                         <t t-if=" ('Subtotal' ==p.category_id.name)">
+                                           <strong><span t-field="p.name"/></strong>
+                                         </t>
+ 
+                                         <t t-if=" ('Subtotal' !=p.category_id.name)">
+                                           <span t-field="p.name"/>
+                                         </t>
+                                       </td>
+                                        <td style="text-align:right">
+                                         <t t-if=" ('Subtotal' ==p.category_id.name)">
+                                           <strong><span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/></strong>
+                                         </t>
+                                         <t t-if=" ('Subtotal' !=p.category_id.name)">
+                                           <span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/>
+                                         </t> 
+                                       </td>
                                    </t>
                                </tr>
                              </table>    
@@ -195,8 +210,25 @@
                               <table class="table-condensed" width="100%">
                                  <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                                     <t t-if="('Prevision' ==p.category_id.name) or ('Salud' ==p.category_id.name) or ('Descuentos' ==p.category_id.name) or ('Otros Descuentos' ==p.category_id.name) or ('TOD' == p.code) or ('TODELE' == p.code)">
-                                       <td><span t-field="p.name"/></td>
-                                       <td style="text-align:right"><span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/></td>
+                                       <td>
+                                           <t t-if=" ('Subtotal' ==p.category_id.name)">
+                                             <strong><span t-field="p.name"/></strong>
+                                           </t>
+ 
+                                           <t t-if=" ('Subtotal' !=p.category_id.name)">
+                                             <span t-field="p.name"/>
+                                           </t>
+                                        </td>
+ 
+                                        <td style="text-align:right">
+                                         <t t-if=" ('Subtotal' ==p.category_id.name)">
+                                           <strong><span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/></strong>
+                                         </t>
+                                         <t t-if=" ('Subtotal' !=p.category_id.name)">
+                                           <span t-esc="formatLang(p.total, digits=get_digits(dp='Payroll'))"/>
+                                         </t> 
+ 
+                                       </td>
                                     </t>
                                  </tr>
                               </table>
