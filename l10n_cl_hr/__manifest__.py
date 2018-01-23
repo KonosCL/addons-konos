@@ -68,7 +68,7 @@ Chilean Payroll Salary Rules.
         'wizard/wizard_export_csv_previred_view.xml',
     ],
     'demo': ['demo/l10n_cl_hr_payroll_demo.xml'],
-    'installable': True,
+    'installable': False,
     'application': False,
     'auto_install': False
 }
