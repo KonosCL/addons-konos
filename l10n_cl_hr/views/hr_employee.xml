@@ -9,7 +9,7 @@
                 <field name="type_id" required="1"/>
             </xpath>
             <xpath expr="//label[@for='name']" position="replace">
-                <label for="firstname" class="oe_edit_only"/>
+                <label for="firstname" class="oe_edit_only" required="1"/>
             </xpath>
             <xpath expr="//field[@name='name']" position="attributes">
                 <attribute name="invisible">1</attribute>
@@ -26,7 +26,7 @@
                  	</h1>
                 <label for="last_name" class="oe_edit_only"/>
                 	<h1>
-                    	<field name="last_name"/>
+                    	<field name="last_name" required="1"/>
                  	</h1>
                 <label for="mothers_name" class="oe_edit_only"/>
                 	<h1>

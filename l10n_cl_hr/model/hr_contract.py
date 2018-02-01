@@ -31,55 +31,38 @@
 #
 ##############################################################################
 
-
 from odoo import api, fields, models, tools, _
+from odoo.exceptions import UserError
+
 
 class hr_contract(models.Model):
 
     _inherit = 'hr.contract'
     _description = 'Employee Contract'
-
+    """
+    Employee contract allows to add different values in fields.
+    Fields are used in salary rule computation.
+    """
     afp_id = fields.Many2one('hr.afp', 'AFP')
-    aporte_voluntario = fields.Float(
-        'Ahorro Previsional Voluntario (APV)', help="Ahorro Previsional Voluntario (APV)")
-    anticipo_sueldo = fields.Float(
-        'Anticipo de Sueldo',
-        help="Anticipo De Sueldo Realizado Contablemente")
-    carga_familiar = fields.Integer(
-        'Carga Familiar Simple',
-        help="Carga familiar para el cálculo de asignación familiar simple")
-    carga_familiar_maternal = fields.Integer(
-        'Carga Familiar Maternal',
-        help="Carga familiar para el cálculo de asignación familiar maternal")
-    carga_familiar_invalida = fields.Integer(
-        'Carga Familiar Inválida',
-        help="Carga familiar para el cálculo de asignación familiar inválida")            
+    aporte_voluntario = fields.Float('Ahorro Previsional Voluntario (APV)', help="Ahorro Previsional Voluntario (APV)")
+    anticipo_sueldo = fields.Float('Anticipo de Sueldo',help="Anticipo De Sueldo Realizado Contablemente")
+    carga_familiar = fields.Integer('Carga Familiar Simple',help="Carga familiar para el cálculo de asignación familiar simple")
+    carga_familiar_maternal = fields.Integer('Carga Familiar Maternal',help="Carga familiar para el cálculo de asignación familiar maternal")
+    carga_familiar_invalida = fields.Integer('Carga Familiar Inválida',help="Carga familiar para el cálculo de asignación familiar inválida")            
     colacion = fields.Float('Asig. Colación', help="Colación")
     isapre_id = fields.Many2one('hr.isapre', 'ISAPRE')
     isapre_cotizacion_uf = fields.Float('Cotización Pactada en UF',  help="Cotización Pactada")
     isapre_fun = fields.Char('Número de FUN',  help="Indicar N° Contrato de Salud a Isapre")    
-    movilizacion = fields.Float(
-        'Asig. Movilización', help="Movilización")
+    movilizacion = fields.Float('Asig. Movilización', help="Movilización")
     mutual_seguridad = fields.Boolean('Mutual Seguridad', default=True)
-    otro_no_imp = fields.Float(
-        'Otros No Imponible', help="Otros Haberes No Imponibles")
-    otros_imp = fields.Float(
-        'Otros Imponible', help="Otros Haberes Imponibles")
+    otro_no_imp = fields.Float('Otros No Imponible', help="Otros Haberes No Imponibles")
+    otros_imp = fields.Float('Otros Imponible', help="Otros Haberes Imponibles")
     pension = fields.Boolean('Pensionado')
-    # seguro_complementario_id = fields.Many2one('hr.seguro.complementario',
-    #    'Seguro Complementario')
-    seguro_complementario = fields.Float(
-        'Cotización UF',  help="Seguro Complementario")
-    viatico_santiago = fields.Float(
-        'Viático Santiago',  help="Viático Santiago")
-    # complete_name = fields.related('employee_id', 'complete_name', type='char', string='Name', store=True)
-    # city_id = fields.Many2one('res.country.state.city', "CityID") 
-    # city =  fields.Char(related='city_id.name', "City") 
+    seguro_complementario = fields.Float('Cotización UF',  help="Seguro Complementario")
+    viatico_santiago = fields.Float('Viático Santiago',  help="Viático Santiago")
     complete_name = fields.Char(related='employee_id.firstname')
     last_name = fields.Char(related='employee_id.last_name')
     gratificacion_legal = fields.Boolean('Gratificación Legal Anual')
     isapre_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
     aporte_voluntario_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
     seguro_complementario_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
-
-    #COLOCAR PLAZON indefinidico por defecto Valor get_type
