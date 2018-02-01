@@ -1,107 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>						
-<openerp>						
+<odoo>						
     <data>						
 
-
-
-        <!-- Indicadores Inputs -->
-
-        <record id="hr_indicadores_enero_2018" model="hr.indicadores">
-            <field name="month">1</field>
-            <field name="year">2018</field>
-            <field name="name">Enero 2018</field>
-            <field name="uf">26824.94</field>
-            <field name="utm">47019</field>
-            <field name="uta">564228</field>
-            <field name="asignacion_familiar_primer">289608</field>
-            <field name="asignacion_familiar_segundo">423004</field>
-            <field name="asignacion_familiar_tercer">659743</field>
-            <field name="caja_compensacion">0.60</field>
-            <field name="asignacion_familiar_monto_a">11337</field>
-            <field name="asignacion_familiar_monto_b">6957</field>
-            <field name="asignacion_familiar_monto_c">2199</field>
-            <field name="fonasa">6.40</field>
-            <field name="mutual_seguridad">0.95</field>
-            <field name="pensiones_ips">18.84</field>
-            <field name="sueldo_minimo">276000</field>
-            <field name="sueldo_minimo_otro">206041</field>
-            <field name="tope_imponible_afp">78.3</field>
-            <field name="tope_imponible_ips">60</field>
-            <field name="tope_imponible_salud">7</field>
-            <field name="tope_imponible_seguro_cesantia">117.5</field>
-            <field name="deposito_convenido">900</field>
-            <field name="contrato_plazo_fijo_empleador">3</field>
-            <field name="contrato_plazo_fijo_trabajador">0</field>
-            <field name="contrato_plazo_indefinido_empleador">2.4</field>
-            <field name="contrato_plazo_indefinido_trabajador">0.6</field>
-            <field name="contrato_plazo_indefinido_empleador_otro">0.8</field>
-            <field name="tasa_afp_capital">11.44</field>
-            <field name="tasa_afp_cuprum">11.48</field>
-            <field name="tasa_afp_habitat">11.27</field>
-            <field name="tasa_afp_planvital">10.41</field>
-            <field name="tasa_afp_provida">11.45</field>
-            <field name="tasa_afp_modelo">10.77</field>
-            <field name="tasa_sis_cuprum">1.41</field>
-            <field name="tasa_sis_capital">1.41</field>
-            <field name="tasa_sis_provida">1.41</field>
-            <field name="tasa_sis_planvital">1.41</field>
-            <field name="tasa_sis_habitat">1.41</field>
-            <field name="tasa_sis_modelo">1.41</field>
-            <field name="tasa_independiente_capital">12.85</field>
-            <field name="tasa_independiente_cuprum">12.89</field>
-            <field name="tasa_independiente_habitat">12.68</field>
-            <field name="tasa_independiente_planvital">11.82</field>
-            <field name="tasa_independiente_provida">12.86</field>
-            <field name="tasa_independiente_modelo">12.18</field>
-            <field name="tope_anual_apv">600</field>
-            <field name="tope_mensual_apv">50</field>
-        </record>
-
-
-        <!-- ISAPRES     -->
-
-        <record id="hr_isapre_fonasa" model="hr.isapre">
-            <field name="codigo">07</field>            
-            <field name="rut">61603000-0</field>
-            <field name="name">FONASA</field>
-        </record>
-
-        <record id="hr_isapre_colmena" model="hr.isapre">
-            <field name="codigo">04</field>
-            <field name="rut">94954000-6</field>
-            <field name="name">COLMENA GOLDEN CROSS</field>
-        </record>
-
-        <record id="hr_isapre_banmedica" model="hr.isapre">
-            <field name="codigo">01</field>
-            <field name="rut">96572800-7</field>
-            <field name="name">BANMEDICA</field>
-        </record>
-
-        <record id="hr_isapre_consalud" model="hr.isapre">
-            <field name="codigo">02</field>
-            <field name="rut">96856780-2</field>
-            <field name="name">CONSALUD</field>
-        </record>
-
-        <record id="hr_isapre_masvida" model="hr.isapre">
-            <field name="codigo">17</field>
-            <field name="rut"> </field>
-            <field name="name">MAS VIDA</field>
-        </record>
-
-        <record id="hr_isapre_vidatres" model="hr.isapre">
-            <field name="codigo">03</field>
-            <field name="rut"> </field>
-            <field name="name">VIDA TRES</field>
-        </record>
-
-        <record id="hr_isapre_cruzblanca" model="hr.isapre">
-            <field name="codigo">05</field>
-            <field name="rut"> </field>
-            <field name="name">CRUZ BLANCA</field>
-        </record>
-    
 
        <!-- AFP -->
 
@@ -1278,4 +1178,4 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="id_type">3</field>
         </record>
     </data>						
-</openerp>						
+</odoo>						

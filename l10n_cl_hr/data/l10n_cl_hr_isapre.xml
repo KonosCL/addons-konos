@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>						
+
+
+        <!-- ISAPRES     -->
+
+        <record id="hr_isapre_fonasa" model="hr.isapre">
+            <field name="codigo">07</field>            
+            <field name="rut">61603000-0</field>
+            <field name="name">FONASA</field>
+        </record>
+
+        <record id="hr_isapre_colmena" model="hr.isapre">
+            <field name="codigo">04</field>
+            <field name="rut">94954000-6</field>
+            <field name="name">COLMENA GOLDEN CROSS</field>
+        </record>
+
+        <record id="hr_isapre_banmedica" model="hr.isapre">
+            <field name="codigo">01</field>
+            <field name="rut">96572800-7</field>
+            <field name="name">BANMEDICA</field>
+        </record>
+
+        <record id="hr_isapre_consalud" model="hr.isapre">
+            <field name="codigo">02</field>
+            <field name="rut">96856780-2</field>
+            <field name="name">CONSALUD</field>
+        </record>
+
+        <record id="hr_isapre_masvida" model="hr.isapre">
+            <field name="codigo">17</field>
+            <field name="rut"> </field>
+            <field name="name">MAS VIDA</field>
+        </record>
+
+        <record id="hr_isapre_vidatres" model="hr.isapre">
+            <field name="codigo">03</field>
+            <field name="rut"> </field>
+            <field name="name">VIDA TRES</field>
+        </record>
+
+        <record id="hr_isapre_cruzblanca" model="hr.isapre">
+            <field name="codigo">05</field>
+            <field name="rut"> </field>
+            <field name="name">CRUZ BLANCA</field>
+        </record>
+    </data>
+</odoo>                     

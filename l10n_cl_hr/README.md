@@ -31,8 +31,11 @@ https://www.youtube.com/watch?v=raLA72Sfcds
 
 
  
- **Contribuyentes**
-* Nelson Ramírez <info@konos.cl>
+ **Colaboradores**
+ - Daniel Blanco Martn <daniel@blancomartin.com>
+ - Carlos Lopez Mite <celm1990@hotmail.com>
+ - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
+ - Francisco Lorca <fcolorca1979@gmail.com>
 
  
 
@@ -73,13 +76,8 @@ https://www.youtube.com/watch?v=raLA72Sfcds
 
 
  
- **Contribuyentes**
-* Nelson Ramírez <info@konos.cl>
-
- 
-
-
-
-
+ **Colaboradores**
+ - Daniel Blanco Martn <daniel@blancomartin.com>
+ - Carlos Lopez Mite <celm1990@hotmail.com>
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
  - Francisco Lorca <fcolorca1979@gmail.com>

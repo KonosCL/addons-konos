@@ -1,58 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>    	
-	 <record id="hr_contract_chile_view" model="ir.ui.view">	
-            <field name="name">hr.contract.chile.view</field>	
-            <field name="model">hr.contract</field>	
-            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>	
-            <field name="arch" type="xml">
-            <data>
-                <xpath expr="//field[@name='wage']" position="after">
-            		<field name="otros_imp" string="Otros Imponible"/>
-            		<field name="otro_no_imp" string="Otros No Imponible"/>
-            		<field name="colacion" string="Asig. de Colación"/>
-            		<field name="movilizacion" string="Asig. de Movilización"/>
-            		<field name="viatico_santiago" string="Asig. de Viático"/>
-                    <field name="gratificacion_legal" string="Gratificación Legal Anual"/>
-            		<field name="carga_familiar"/>
-                    <field name="carga_familiar_maternal"/>
-                    <field name="carga_familiar_invalida"/>
-		        </xpath>	
+        <!-- Contract View -->
+        <record id="hr_contract_chile_view" model="ir.ui.view">	
+                <field name="name">hr.contract.chile.view</field>	
+                <field name="model">hr.contract</field>	
+                <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>	
+                <field name="arch" type="xml">
+                        <xpath expr="//div[@name='wage']" position="after">
+                            <field name="otros_imp" string="Otros Imponible" invisible="1"/>
+                            <field name="otro_no_imp" string="Otros No Imponible" invisible="1"/>
+                            <label for="colacion"/>
+                            <div name="colacion">
+                                <field name="colacion" string="Asig. de Colación"/>
+                            </div>
+                            <label for="movilizacion"/>
+                            <div name="movilizacion">
+                                <field name="movilizacion" string="Asig. de Movilización"/> 
+                            </div>
+                            <label for="viatico_santiago"/>
+                            <div name="viatico_santiago">     
+                                <field name="viatico_santiago" string="Asig. de Viático"/>
+                            </div>
+                            <label for="gratificacion_legal"/>
+                            <div name="gratificacion_legal">
+                                <field name="gratificacion_legal" string="Gratificación Manual"/>
+                            </div>
+                            <label for="anticipo_sueldo"/>
+                            <div name="anticipo_sueldo">
+                                <field name="anticipo_sueldo" string="Anticipo de Sueldo"/>
+                            </div>
 
-                <xpath expr="//group[@name='salary_and_advantages']" position="after">	
-        			<group col="3" string="Descuentos"> 
-        			<field name="pension"/><label string="" nolabel="1"  />
-        			<field name="afp_id" string="AFP" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/><label string="" nolabel="1"  />
-        			<field name="isapre_id" string="Salud" required="1"/><label string="" nolabel="1" />
-        			<field name="isapre_cotizacion_uf" digits="(14, 5)" string="Cotización Pactada en UF"  attrs="{'invisible': [('isapre_id', '=', 1)]}"/><label string="" nolabel="1" />
-                    <field name="isapre_fun" string="Contrato Isapre FUN" attrs="{'invisible': [('isapre_id', '=', 1)]}"/><label string="" nolabel="1" />
-                    <field name="seguro_complementario" string="Seguro Complementario"/><field name="seguro_complementario_moneda" nolabel="1" />
-
-        			<field name="aporte_voluntario" string="Aporte Voluntario"/><field name="aporte_voluntario_moneda" nolabel="1" />
-        			<field name="mutual_seguridad"/><label string="" nolabel="1" />
-        			<field name="anticipo_sueldo"/><label string="" nolabel="1" />
-        			</group>
-            	</xpath>
-
-                <xpath expr="//field[@name='type_id']" position="replace">
-                    <field name="type_id" select="3"/>
-                </xpath>
-            </data>
-             </field>	
-     </record>	
+                        </xpath>
 
 
-     <record id="hr_contract_view_tree_inherit_l10n_lv_hr" model="ir.ui.view">
-        <field name="name">hr.contract.view.tree.inherit.l10n</field>
-        <field name="model">hr.contract</field>
-        <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
-        <field name="arch" type="xml">
-            <data>
-                <xpath expr="//field[@name='employee_id']" position="replace">
-                    <field name="complete_name"/>
-                </xpath>  
-            </data>       
-        </field>
-     </record>
-    </data>
+
+                        <xpath expr="//field[@name='type_id']" position="replace">
+                            <field name="type_id" select="3"/>
+                        </xpath>
+                        <xpath expr="//page[@name='information']" position="after">
+                             <page string="Carga Familiar" name="information">
+                                <group name="health">
+                                    <group name="health1" string="Carga Familiar">
+                                        <label for="carga_familiar"/>
+                                        <div name="carga_familiar">
+                                            <field name="carga_familiar"/>
+                                        </div>
+                                           <label for="carga_familiar_maternal"/>
+                                        <div name="carga_familiar_maternal">
+                                            <field name="carga_familiar_maternal"/>
+                                        </div>
+                                        <label for="carga_familiar_invalida"/>
+                                        <div name="carga_familiar_invalida">
+                                            <field name="carga_familiar_invalida"/>
+                                        </div>
+                                      </group>
+                                 </group>
+                             </page> 
+                             <page string="Salud" name="health">
+                                <group name="health2">
+                                    <group name="health3" string="Salud">
+                                        <label for="isapre_id"/>
+                                        <div name="isapre_id">
+                                            <field name="isapre_id" string="Salud" required="1"/>
+                                        </div>
+                                        <label for="isapre_fun"/>
+                                        <div name="isapre_fun">
+                                            <field name="isapre_fun" string="Contrato Isapre FUN" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
+                                        </div>
+                                        <label for="seguro_complementario"/>
+                                        <div name="seguro_complementario">
+                                            <field name="seguro_complementario" string="Seguro Complementario"/>
+                                        </div>
+                                        <label for="mutual_seguridad"/>
+                                        <div name="mutual_seguridad">
+                                            <field name="mutual_seguridad"/>
+                                        </div>
+                                      </group>
+                                 </group>
+                             </page>   
+                             <page string="Fondos de Pensión" name="afp">
+                                <group name="fondos">
+                                    <group name="pens" string="AFP">
+  
+                                      </group>
+                                 </group>
+                             </page>          
+                        </xpath>
+                </field>	
+        </record>	
 </odoo>
+
+
+  
+                    
+  
+
+
+
+
+
+
+
