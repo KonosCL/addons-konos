@@ -44,7 +44,7 @@
 
     </data>
 
-           <!-- FPaper Format -->
+           <!-- 
 
         <record id="report_paper_format_nuevo" model="report.paperformat">
             <field name="name">A4 Horizontal</field>
@@ -61,4 +61,6 @@
         <record id="hr_salary_books" model="ir.actions.report.xml">
             <field name="paperformat_id" ref="report_paper_format_nuevo" />
         </record>
+
+        FIX -->
 </openerp>

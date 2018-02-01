@@ -32,9 +32,6 @@
 			<field name="anticipo_sueldo"/><label string="" nolabel="1" />
 			</group>
             	</group>
-                <field name="working_hours" position="replace">
-                    <field name="working_hours" required="1"/>
-                </field>
                 <field name="type_id" position="replace">
                     <field name="type_id" select="3"/>
                 </field>
