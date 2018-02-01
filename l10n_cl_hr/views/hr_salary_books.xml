@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="action_salary_books" model="ir.actions.act_window">
+            <field name="name">Libro de Remuneraciones Haberes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.salary.employee.month</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            name="Libro de Remuneraciones"
+            parent="menu_cl_hr_payroll_reports"
+            sequence="10" icon="STOCK_PRINT"
+            action="action_salary_books"
+            id="menu_salary_books"
+           />
+
+        <record id="view_salary_employee_month" model="ir.ui.view">
+            <field name="name">Libro de Remuneraciones</field>
+            <field name="model">hr.salary.employee.month</field>
+            <field name="arch" type="xml">
+            <form string="Libro de Remuneraciones">
+                <label string="Este wizard permite imprimir el total haberes."/>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" class="oe_highlight"/>or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                    <group>
+                        <field name="end_date"/>
+                    </group>               
+            </form>
+            </field>
+        </record>
+        <report 
+            id="hr_salary_books"
+            string="Libro de Remuneraciones"
+            model="hr.salary.employee.month"
+            report_type="qweb-pdf"
+            file="l10n_cl_hr.report_hrsalarybymonth"
+            name="l10n_cl_hr.report_hrsalarybymonth"/>
+
+    </data>
+
+           <!-- FPaper Format -->
+
+        <record id="report_paper_format_nuevo" model="report.paperformat">
+            <field name="name">A4 Horizontal</field>
+            <field name="format">A4</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_right">4</field>
+            <field name="margin_left">4</field>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+        
+        <record id="hr_salary_books" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="report_paper_format_nuevo" />
+        </record>
+</openerp>

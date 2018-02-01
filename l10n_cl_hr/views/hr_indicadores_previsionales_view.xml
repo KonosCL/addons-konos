@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_indicadores_previsionales_view" model="ir.ui.view">
+            <field name="name">hr.indicadores.view</field>
+            <field name="model">hr.indicadores</field>
+            <field name="arch" type="xml">
+                <form string="Indicadores Previsionales">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Referencia de Fecha"/></h1>
+                            <group col="4" string="Período"> 
+                                  <field name="month"/>
+                                  <field name="year"/>
+                            </group>
+                        </div>
+                         <notebook>
+                           <page string="Previred" name="previred">
+                                <table > 
+                                    <tr> 
+                                        <td width="42%">
+                                            <group col="2" name="uf" string="Valor UF"> 
+                                                 <field name="uf" string="UF Previred"> </field>
+                                            </group>
+                                            <group col="2" name="utm" string="Otros Valores"> 
+                                                <field name="utm" > </field><field name="uta"  />
+                                            </group>   
+
+                                        </td>
+
+                                         <td width="58%" >
+                                               <group col="4" name="mandatory_quotations" string="Tasa Cotización Obligatorio AFP"> 
+                                                    <field name="tasa_afp_capital"/><field name="tasa_sis_capital" nolabel="1"/><field name="tasa_independiente_capital" nolabel="1"/>
+                                                    <field name="tasa_afp_cuprum"/><field name="tasa_sis_cuprum" nolabel="1"/><field name="tasa_independiente_cuprum" nolabel="1"/>  
+                                                    <field name="tasa_afp_habitat"/><field name="tasa_sis_habitat" nolabel="1"/><field name="tasa_independiente_habitat" nolabel="1"/> 
+                                                    <field name="tasa_afp_planvital"/><field name="tasa_sis_planvital" nolabel="1"/><field name="tasa_independiente_planvital" nolabel="1"/>
+                                                    <field name="tasa_afp_provida"/><field name="tasa_sis_provida" nolabel="1"/><field name="tasa_independiente_provida" nolabel="1"/>
+                                                    <field name="tasa_afp_modelo"/> <field name="tasa_sis_modelo" nolabel="1"/><field name="tasa_independiente_modelo" nolabel="1"/>
+                                              </group>
+                                        </td>
+
+                                    </tr>
+
+
+
+
+
+
+
+                                    <tr>
+
+                                        <td width="42%">
+
+                                            <group col="2" name="top" string="Rentas Topes Imponibles">
+                                                <field name="tope_imponible_afp" string="Tope AFP" > </field>
+                                                <field name="tope_imponible_ips" string="Tope IPS" > </field>
+                                                <field name="tope_imponible_seguro_cesantia" string="Seguro Censantía" > </field>
+                                            </group>               
+
+                                        </td>
+
+
+
+
+                                     <td width="58%">
+
+
+                                        <group col="4" name="family_bonus" string="Asignación Familiar">
+                                            <field name="asignacion_familiar_monto_a" string="Tramo A"> </field> 
+                                            <field name="asignacion_familiar_primer" string="Hasta"> </field>
+                                            <field name="asignacion_familiar_monto_b" string="Tramo B"> </field>
+                                            <field name="asignacion_familiar_segundo"  string="Hasta"> </field>
+                                            <field name="asignacion_familiar_monto_c" string="Tramo C"> </field>
+                                            <field name="asignacion_familiar_tercer"  string="Hasta"> </field>
+                                       </group>
+
+
+                                    </td>
+                                  </tr>
+
+
+
+
+</table >
+<table >
+
+                                <tr>
+                                    <td>
+
+                                        <group col="4" name="minimum_rent" string="Rentas Mínimas Imponibles">
+                                                <field name="sueldo_minimo" string="Sueldo Mínimo">  </field>
+                                                <field name="sueldo_minimo_otro" string="Sueldo Mínimo Otro">  </field>
+                                            </group> 
+                                            <group col="4" name="voluntary_saving" string="Ahorro Previsional Voluntario">
+                                                <field name="tope_anual_apv"> </field>
+                                                <field name="tope_mensual_apv"> </field>
+                                            </group>  
+              
+                                        
+                                            <group col="4" name="unemployment_insurance" string="Seguro de Cesantía AFC">
+                                                <field name="contrato_plazo_fijo_empleador" string="Fijo Empleador">  </field>
+                                                <field name="contrato_plazo_indefinido_empleador" string="Ind Empleador"> </field>
+                                                <field name="contrato_plazo_indefinido_trabajador"  string="Ind Trabajador"> </field>
+                                                <field name="contrato_plazo_indefinido_empleador_otro"  string="Ind Empleador 11 años"> </field>
+                                                <field name="contrato_plazo_indefinido_trabajador_otro"  string="Ind Trabajador 11 años"> </field>
+                                            </group>  
+                                            <group col="2" name="deposit_agreement" string="Depósito Convenido">
+                                                <field name="deposito_convenido"> </field>
+                                            </group>   
+                                    </td>
+                                    
+                                </tr>
+
+
+                                </table>                
+                        </page>
+                          <page string="Instituciones Relacionadas">
+                            <group col="2">
+                               <group col="2" name="quotations" string="Cotizaciones">
+                                                <field name="ccaf_id" string="Caja de Compensación"/>
+                                                <field name="caja_compensacion" string="Tasa"> </field>
+                                                <field name="fonasa"> </field>
+                                                <field name="pensiones_ips" string="Fondo de Pensiones"> </field>
+                                                <field name="tope_imponible_salud" digits="(4, 3)" string="Tope Imponible Salud %"> </field>
+                                            </group>   
+                                <group col="2" name="mutual_insurance" string="Instituciones de Seguridad">
+                                                <field name="mutualidad_id" string="Nombre"/>       
+                                                <field name="mutual_seguridad"> </field>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+
+
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    <!-- Menu View -->
+    <menuitem id="menu_cl_hr_payroll_indicators" name="Payroll Indicators" parent="hr_payroll.menu_hr_payroll_root" sequence="10"/>
+
+    <menuitem id="menu_cl_hr_payroll_reports" name="Reports" parent="hr_payroll.menu_hr_payroll_root" sequence="11"/>
+
+    <menuitem id="menu_cl_hr_payroll_configuration" name="Chilean Configuration" parent="hr_payroll.menu_hr_payroll_root" sequence="12"/>
+
+
+
+        <act_window id="hr_indicadores_previsionales_action"
+                    name="Indicadores"
+                    res_model="hr.indicadores"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="hr_indicadores_previsionales_menu"
+                  parent="menu_cl_hr_payroll_indicators"
+                  action="hr_indicadores_previsionales_action"
+                  sequence="10"
+        />
+
+
+        <act_window id="hr_isapre_action"
+                    name="Isapres"
+                    res_model="hr.isapre"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="hr_isapres_menu"
+                  parent="menu_cl_hr_payroll_configuration"
+                  action="hr_isapre_action"
+                  sequence="11"
+        />
+
+        <act_window id="hr_ccaf_action"
+                    name="CCAF"
+                    res_model="hr.ccaf"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+
+        <menuitem id="hr_ccaf_menu"
+                  parent="menu_cl_hr_payroll_configuration"
+                  action="hr_ccaf_action"
+                  sequence="12"
+        />
+
+    
+
+        <act_window id="hr_mutual_action"
+                    name="Mutualidad"
+                    res_model="hr.mutual"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="hr_mutual_menu"
+                  parent="menu_cl_hr_payroll_configuration"
+                  action="hr_mutual_action"
+                  sequence="13"
+        />  
+
+
+    </data>
+</odoo>

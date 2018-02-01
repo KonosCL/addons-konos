@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<delete model="ir.rule" id="hr_payroll.property_rule_employee_payslip" />
+
+	</data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="hr_contribution_register_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contribution.register.form.inherit</field>
+            <field name="model">hr.contribution.register</field>
+            <field name="inherit_id" ref="hr_payroll.hr_contribution_register_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                	<field name="partner_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
