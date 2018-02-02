@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
+<odoo>
 	<data>
 		<record model="ir.ui.view" id="wizard_export_csv_previred_form_view">
 			<field name="name">wizard.export.csv.previred.form</field>
@@ -42,4 +42,4 @@
 
 
 	</data>
-</openerp>
+</odoo>
