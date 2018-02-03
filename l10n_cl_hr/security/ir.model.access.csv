@@ -7,3 +7,4 @@ access_hr_isapre,hr.isapre,model_hr_isapre,hr_payroll.group_hr_payroll_manager,1
 access_hr_type_employee,hr.type.employee,model_hr_type_employee,hr_payroll.group_hr_payroll_manager,1,1,1,1
 access_hr_mutual,hr.mutual,model_hr_mutual,hr_payroll.group_hr_payroll_manager,1,1,1,1
 access_hr_ccaf,hr.ccaf,model_hr_ccaf,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_hr_seguro_complementario,hr.seguro.complementario,model_hr_seguro_complementario,hr_payroll.group_hr_payroll_manager,1,1,1,1

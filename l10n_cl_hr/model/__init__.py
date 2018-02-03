@@ -43,3 +43,4 @@ from . import hr_type_employee
 from . import hr_mutualidad
 from . import hr_ccaf
 from . import hr_contract
+from . import hr_seguro_complementario
