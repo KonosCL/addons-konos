@@ -25,11 +25,11 @@ import csv
 import base64
 from datetime import datetime
 import logging
-from openerp import models, api, fields
+from odoo import models, api, fields
 import time
-import openerp.addons.decimal_precision as dp
-from openerp.tools.translate import _
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT as DF
+import odoo.addons.decimal_precision as dp
+from odoo.tools.translate import _
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DF
 from dateutil import relativedelta
 
 class WizardExportCsvPrevired(models.TransientModel):

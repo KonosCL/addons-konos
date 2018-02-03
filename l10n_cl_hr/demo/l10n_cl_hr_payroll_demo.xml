@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>						
-<openerp>						
+<odoo>						
     <data>						
 
         <!-- Empleado Inputs -->
@@ -28,4 +28,4 @@
             <field name="working_hours"     ref="hr_resource_monthly"/>
         </record>
     </data>						
-</openerp>						
+</odoo>						
