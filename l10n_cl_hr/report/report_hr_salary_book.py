@@ -22,27 +22,24 @@
 ##############################################################################
 
 import time
-from openerp.osv import osv
-from openerp.report import report_sxw
+from odoo import models, api
 
 
-class report_hr_salary_employee_bymonth(report_sxw.rml_parse):
+class report_hr_salary_employee_bymonth(models.AbstractModel):
+    _name = 'report.l10n_cl_hr.report_hrsalarybymonth'
 
-    def __init__(self, cr, uid, name, context):
-        super(report_hr_salary_employee_bymonth, self).__init__(
-            cr, uid, name, context=context)
+    @api.model
+    def get_report_values(self, docids, data=None):
 
-        self.localcontext.update({
+        return {
             'time': time,
             'get_employee': self.get_employee,
             'get_employee2': self.get_employee2,
             'get_analytic': self.get_analytic,
-        })
-
-        self.context = context
-        self.mnths = []
-        self.mnths_total = []
-        self.total = 0.0
+            'mnths': [],
+            'mnths_total': [],
+            'total': 0.0,
+        }
 
     def get_worked_days(self, form, emp_id, emp_salary, mes, ano):
 
@@ -58,7 +55,7 @@ and (to_char(date_to,'yyyy')= %s) and ('WORK100' = p.code)
         if max is None:
             emp_salary.append(0.00)
         elif  3>max[0]:
-            emp_salary.append(max[0]) 
+            emp_salary.append(max[0])
         else:
             self.cr.execute(
             '''select number_of_days from hr_payslip_worked_days as p
@@ -67,9 +64,9 @@ where r.employee_id = %s  and (to_char(date_to,'mm')= %s)
 and (to_char(date_to,'yyyy')= %s) and (('No_Trabajado' = p.code) or ('Licencia' = p.code))
 group by number_of_days''', (emp_id, mes, ano,))
             max = self.cr.fetchone()
-            try: 
-                emp_salary.append(30 - max[0]) 
-            except: 
+            try:
+                emp_salary.append(30 - max[0])
+            except:
                 emp_salary.append(30.00)
 
 
@@ -176,7 +173,7 @@ order by last_name''', (last_month, last_year,))
             for index in id_data:
                 emp_salary.append(id_data[cont][0])
                 emp_salary.append(id_data[cont][1])
-                emp_salary.append(id_data[cont][2])                
+                emp_salary.append(id_data[cont][2])
                 emp_salary.append(id_data[cont][3])
                 emp_salary.append(id_data[cont][4])
                 emp_salary.append(id_data[cont][5])
@@ -285,9 +282,9 @@ order by last_name''', (last_month, last_year))
         return salary_list
 
 
-class wrapped_report_employee_salary_bymonth(osv.AbstractModel):
+class wrapped_report_employee_salary_bymonth(models.AbstractModel):
     _name = 'report.l10n_cl_hr.report_hrsalarybymonth'
-    _inherit = 'report.abstract_report'
+    #_inherit = 'report.abstract_report'
     _template = 'l10n_cl_hr.report_hrsalarybymonth'
     _wrapped_report_class = report_hr_salary_employee_bymonth
 

@@ -24,15 +24,15 @@
 #-------------------------------------------------------------
 #SPANISH
 #-------------------------------------------------------------
-from openerp.tools.translate import _
+from odoo.tools.translate import _
 
 units_29 = ( 'CERO', 'UN', 'DOS', 'TRES', 'CUATRO', 'CINCO', 'SEIS',
           'SIETE', 'OCHO', 'NUEVE', 'DIEZ', 'ONCE', 'DOCE',
           'TRECE', 'CATORCE', 'QUINCE', 'DIECISÉIS', 'DIECISIETE', 'DIECIOCHO',
           'DIECINUEVE', 'VEINTE', 'VEINTIÚN', 'VEINTIDÓS', 'VEINTITRÉS', 'VEINTICUATRO',
-          'VEINTICINCO', 'VEINTISÉIS', 'VEINTISIETE', 'VEINTIOCHO', 'VEINTINUEVE' )       
+          'VEINTICINCO', 'VEINTISÉIS', 'VEINTISIETE', 'VEINTIOCHO', 'VEINTINUEVE' )
 
-tens = ( 'TREINTA', 'CUARENTA', 'CINCUENTA', 'SESENTA', 'SETENTA', 'OCHENTA', 'NOVENTA', 'CIEN')       
+tens = ( 'TREINTA', 'CUARENTA', 'CINCUENTA', 'SESENTA', 'SETENTA', 'OCHENTA', 'NOVENTA', 'CIEN')
 
 # La numeración comentada es anglosajona, donde un billón son mil millones. Sin embargo, en la española
 # el billón es un millón de millones.
@@ -100,19 +100,19 @@ def spanish_number(val):
             mod = 1000 ** didx
             l = val // mod
             r = val - (l * mod)
-            
+
             # Varios casos especiales:
             # Si l==1 y didx==1 (caso concreto del "mil"), no queremos que diga "un mil", sino "mil".
             # Si se trata de un millón y órdenes superiores (didx>0), sí queremos el "un".
             # Si l > 1 no queremos que diga "cinco millón", sino "cinco millones".
-            if l == 1: 
+            if l == 1:
                 if didx == 1:
                     ret = denom[didx]
                 else:
                     ret = _convert_nnn(l) + ' ' + denom[didx]
-            else:        
+            else:
                 ret = _convert_nnn(l) + ' ' + denom_plural[didx]
-         
+
             if r > 0:
                 ret = ret + ' ' + spanish_number(r)
             return ret
@@ -123,17 +123,17 @@ def amount_to_text_es(number, currency):
     # uppercase y se pone en plural añadiendo una "s" al final del nombre. Esto no cubre todas
     # las posibilidades (nombres compuestos de moneda), pero sirve para las más comunes.
     units_name = currency.upper()
-    int_part, dec_part = str(number).split('.')       
+    int_part, dec_part = str(number).split('.')
     start_word = spanish_number(int(int_part))
     end_word = spanish_number(int(dec_part))
     cents_number = int(dec_part)
     cents_name = (cents_number > 1) and 'CÉNTIMOS' or 'CÉNTIMO'
     final_result = start_word +' ' + units_name
-    
+
     # Añadimos la "s" de plural al nombre de la moneda si la parte entera NO es UN euro
     if int(int_part) != 1:
         final_result += 'S'
-        
+
     if int(dec_part) > 0:
         final_result += ' CON ' + end_word +' '+cents_name
     return final_result
@@ -152,15 +152,15 @@ def amount_to_text(nbr, lang='es', currency='euros'):
         1654: thousands six cent cinquante-quatre.
     """
     import netsvc
-    
+
     if not _translate_funcs.has_key(lang):
-        print "WARNING: no translation function found for lang: '%s'" % (lang,)
+        print ("WARNING: no translation function found for lang: '%s'" % (lang,))
         lang = 'es'
     return _translate_funcs[lang](abs(nbr), currency)
 
 #if __name__=='__main__':
 #    from sys import argv
-#    
+#
 #    lang = 'nl'
 #    if len(argv) < 2:
 #        for i in range(1,200):

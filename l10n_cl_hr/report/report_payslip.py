@@ -1,62 +1,51 @@
+# -*- encoding: utf-8 -*-
+from odoo import api, models
 
-from openerp.report import report_sxw
-from amount_to_text_es import amount_to_text_es
-from openerp.osv import osv
+class payslip_report(models.AbstractModel):
+    _inherit = 'report.hr_payroll.report_payslipdetails'
 
+    @api.model
+    def get_report_values(self, docids, data=None):
+        payslips = super(payslip_report, self).get_report_values(docids, data)
+        #payslips.update({
+#        	'get_payslip_lines': self.get_payslip_lines(),
+#            #'convert': self.convert(),
+#            'get_leave':self.get_leave(),
+#        })
+        return payslips
 
-class payslip_report(report_sxw.rml_parse):
-
-    def __init__(self, cr, uid, name, context):
-        super(payslip_report, self).__init__(cr, uid, name, context)
-        self.localcontext.update({
-        	'get_payslip_lines': self.get_payslip_lines,
-            'convert': self.convert,
-            'get_leave':self.get_leave,
-        })
-
-
+    @api.multi
     def convert(self,amount, cur):
-        amt_en = amount_to_text_es(amount, cur)
+        amt_en = cur.amount_to_text(amount)
         return amt_en
 
-
-    def get_payslip_lines(self, obj):
-        payslip_line = self.pool.get('hr.payslip.line')
+    @api.multi
+    def get_payslip_lines(self):
+        payslip_line = self.env['hr.payslip.line']
         res = []
         ids = []
-        for id in range(len(obj)):
-            if obj[id].appears_on_payslip is True:
-                ids.append(obj[id].id)
+        for rec in self:
+            if rec.appears_on_payslip is True:
+                ids.append(rec.id)
         if ids:
-            res = payslip_line.browse(self.cr, self.uid, ids)
+            res = payslip_line.browse(ids)
         return res
 
-    def get_leave(self,obj):
+    @api.multi
+    def get_leave(self, obj):
           res = []
           ids = []
-          for id in range(len(obj)):
-              if obj[id].type == 'leaves':
-                 ids.append(obj[id].id)
-          payslip_line = self.pool.get('hr.payslip.line')
-          if len(ids):
-              res = payslip_line.browse(self.cr, self.uid, ids)
+          for rec in self:
+              if rec.type == 'leaves':
+                 ids.append(rec.id)
+          payslip_line = self.env['hr.payslip.line']
+          if ids:
+              res = payslip_line.browse(ids)
           return res
 
 
-class wrapped_report_payslip(osv.AbstractModel):
-    _name = 'report.hr_payroll.report_payslip'
-    _inherit = 'report.abstract_report'
-    _template = 'hr_payroll.report_payslip'
-    _wrapped_report_class = payslip_report
-
-
- 
-
-
-      
-
-
-
-
-
-
+#class wrapped_report_payslip(models.AbstractModel):
+#    _name = 'report.hr_payroll.report_payslip'
+#    #_inherit = 'report.abstract_report'
+#    _template = 'hr_payroll.report_payslip'
+#    _wrapped_report_class = payslip_report
