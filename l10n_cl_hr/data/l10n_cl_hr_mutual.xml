@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>						
+
+
+
+       <!-- MUTUAL     --> 
+
+        <record id="hr_mutual_sin" model="hr.mutual">
+            <field name="codigo">00</field>
+            <field name="name">SIN MUTUAL</field>
+        </record> 
+
+        <record id="hr_mutual_achs" model="hr.mutual">
+            <field name="codigo">01</field>
+            <field name="name">ASOCIACION CHILENA DE SEGURIDAD (ACHS)</field>
+        </record> 
+
+        <record id="hr_mutual_cchc" model="hr.mutual">
+            <field name="codigo">02</field>
+            <field name="name">MUTUAL DE SEGURIDAD CCHC</field>
+        </record> 
+
+        <record id="hr_mutual_ist" model="hr.mutual">
+            <field name="codigo">03</field>
+            <field name="name">INSTITUTO DE SEGURIDAD DEL TRABAJO I.S.T</field>
+        </record>
+
+ 
+       
+    </data>
+</odoo>                     
