@@ -57,8 +57,6 @@ Chilean Payroll & Human Resources.
         'data/hr_type_employee.xml',
         'data/resource_calendar_attendance.xml',
         'data/hr_contract_type.xml',
-        'wizard/wizard_export_csv_previred_view.xml',
-
         'security/ir.model.access.csv',
     ],
     'demo': ['demo/l10n_cl_hr_payroll_demo.xml'],

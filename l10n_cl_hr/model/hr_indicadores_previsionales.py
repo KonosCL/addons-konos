@@ -157,4 +157,6 @@ class hr_indicadores_previsionales(models.Model):
     ccaf_id = fields.Many2one('hr.ccaf', 'CCAF')
     month = fields.Selection(MONTH_LIST, string='Mes', required=True, default=MONTH_LIST[int(datetime.now().strftime('%m'))-1])
     year = fields.Integer('Año', required=True, default=datetime.now().strftime('%Y'))
+    gratificacion_legal = fields.Boolean('Gratificación L. Manual')
+    mutual_seguridad_bool = fields.Boolean('Mutual Seguridad', default=True)
 

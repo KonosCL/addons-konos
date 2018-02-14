@@ -21,10 +21,6 @@
                             <div name="viatico_santiago">     
                                 <field name="viatico_santiago" string="Asig. de Viático"/>
                             </div>
-                            <label for="gratificacion_legal"/>
-                            <div name="gratificacion_legal">
-                                <field name="gratificacion_legal" string="Gratificación Manual"/>
-                            </div>
                             <label for="anticipo_sueldo"/>
                             <div name="anticipo_sueldo">
                                 <field name="anticipo_sueldo" string="Anticipo de Sueldo"/>
@@ -39,20 +35,11 @@
                         </xpath>
                         <xpath expr="//page[@name='information']" position="after">
                              <page string="Carga Familiar" name="information">
-                                
                                     <group name="health1" string="Carga Familiar">
-                                       
-                
-                                            <field name="carga_familiar"/>
-                                        
-                                        
-                                            <field name="carga_familiar_maternal"/>
-                                       
-                                        
-                                            <field name="carga_familiar_invalida"/>
-                                   
-                                      </group>
-                                 
+                                        <field name="carga_familiar" string="Carga Simple"/>
+                                        <field name="carga_familiar_maternal"  string="Carga Maternal"/>
+                                        <field name="carga_familiar_invalida"  string="Carga Inválida"/>
+                                    </group>
                              </page> 
                              <page string="Salud" name="health">
                                 <group name="health2">
@@ -65,46 +52,30 @@
                                         <div name="isapre_moneda">
                                             <field name="isapre_moneda" />
                                         </div>
-                                        <label for="isapre_cotizacion_uf"/>
+                                        <label for="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización Pactada"/>
                                         <div name="isapre_cotizacion_uf">
                                             <field name="isapre_cotizacion_uf"  attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización"/>
                                         </div>
-                                       <label for="isapre_fun"/>
+                                       <label for="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
                                         <div name="isapre_fun">
                                             <field name="isapre_fun" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
                                         </div>
                                       </group>
-
-
-
-
 
                                       <group name="health8" string="Seguro Complementario">
                                       <label for="seguro_complementario_id"/>
                                         <div name="seguro_complementario_id">
                                             <field name="seguro_complementario_id"/>
                                         </div>
- 
-
                                         <label for="seguro_complementario_moneda"/>
                                         <div name="seguro_complementario_moneda">
                                             <field name="seguro_complementario_moneda"/>
                                         </div>
-                                      <label for="seguro_complementario"/>
+                                      <label for="seguro_complementario" string="Cotización Pactada"/>
                                         <div name="seguro_complementario">
                                             <field name="seguro_complementario" string="Cotización"/>
                                         </div>
-
-                                                 <label for="mutual_seguridad"/>
-                                        <div name="mutual_seguridad">
-                                            <field name="mutual_seguridad"/>
-                                        </div>
                                       </group>
-
-   
-
-
-
                                  </group>
                              </page>   
                              <page string="Fondos de Pensión" name="afp">
@@ -118,12 +89,14 @@
                                         <div name="afp_id">
                                             <field name="afp_id" string="AFP" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/><label string="" nolabel="1"  />
                                         </div>
-                                        <label for="aporte_voluntario"/>
+                                        <label for="aporte_voluntario" string="Tipo Moneda"/>
                                         <div name="aporte_voluntario">
-                                            <field name="aporte_voluntario" string="Aporte Voluntario"/><field name="aporte_voluntario_moneda" nolabel="1" />
+                                            <field name="aporte_voluntario_moneda"/>
                                         </div>
-                                        
-  
+                                        <label for="aporte_voluntario" string="Aporte Voluntario"/>
+                                        <div name="aporte_voluntario">
+                                            <field name="aporte_voluntario" string="Aporte Voluntario"/>
+                                        </div>
                                       </group>
                                  </group>
                              </page>          
