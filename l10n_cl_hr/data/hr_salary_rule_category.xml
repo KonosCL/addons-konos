@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>
+    
+       <!-- Rule Category -->
+                    
+        <record id="IMPONIBLE" model="hr.salary.rule.category">                     
+            <field name="name">Imponible</field>                        
+            <field name="code">IMPONIBLE</field>                        
+        </record>                       
+                        
+        <record id="NOIMPO" model="hr.salary.rule.category">                        
+            <field name="name">No Imponible</field>                     
+            <field name="code">NOIMPO</field>             
+        </record>                       
+                        
+        <record id="DED" model="hr.salary.rule.category">                       
+            <field name="name">Descuentos</field>                       
+            <field name="code">DED</field>                      
+        </record>                                      
+                        
+        <record id="COMP" model="hr.salary.rule.category">                      
+            <field name="name">Aporte Empresa</field>                       
+            <field name="code">COMP</field>                     
+        </record>                       
+                        
+        <record id="ODESC" model="hr.salary.rule.category">                     
+            <field name="name">Otros Descuentos</field>                     
+            <field name="code">ODESC</field>                        
+        </record>                       
+        <record id="PREV" model="hr.salary.rule.category">                      
+            <field name="name">Prevision</field>                        
+            <field name="code">PREV</field>                     
+        </record>                       
+        <record id="SALUD" model="hr.salary.rule.category">                     
+            <field name="name">Salud</field>                        
+            <field name="code">SALUD</field>                        
+        </record>                      
+                        
+        <record id="SUBT" model="hr.salary.rule.category">                      
+            <field name="name">Subtotal</field>                     
+            <field name="code">SUBT</field>                     
+        </record>                       
+
+ 
+    </data>						
+</odoo>						
