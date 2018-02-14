@@ -21,7 +21,6 @@
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
-
     -Payroll configuration for Chile localization.
     -All contributions rules for Chile payslip.
     * Employee Basic Info
@@ -67,4 +66,3 @@ Chilean Payroll & Human Resources.
     'application': False,
     'auto_install': False
 }
-
