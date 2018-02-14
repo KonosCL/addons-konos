@@ -54,9 +54,10 @@ Chilean Payroll & Human Resources.
         'data/l10n_cl_hr_isapre.xml',
         'data/l10n_cl_hr_afp.xml',
         'data/l10n_cl_hr_mutual.xml',
-        'data/hr_salary_rule_category',
+        'data/hr_salary_rule_category.xml',
         'data/hr_type_employee.xml',
         'data/resource_calendar_attendance.xml',
+        'data/hr_contract_type.xml',
         'wizard/wizard_export_csv_previred_view.xml',
 
         'security/ir.model.access.csv',

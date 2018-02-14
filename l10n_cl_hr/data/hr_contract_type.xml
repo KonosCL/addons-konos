@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>                   
+
+       <!-- Contract Types -->
+        <record id="hr_contract_type_not_defined" model="hr.contract.type">
+            <field name="name">Plazo Indefinido</field>
+            <field name="codigo">1</field>
+        </record>
+
+        <record id="hr_contract_type_fixed" model="hr.contract.type">
+            <field name="name">Plazo Fijo</field>
+            <field name="codigo">7</field>
+        </record>
+
+        <record id="hr_contract_type_more_eleven" model="hr.contract.type">
+            <field name="name">Indefinido 11 anos o mas</field>
+            <field name="codigo">1</field>
+        </record>
+
+        <record id="hr_contract_type_enterprice_wage" model="hr.contract.type">
+            <field name="name">Sueldo Empresarial</field>
+            <field name="codigo">1</field>
+        </record>
+
+
+    </data>						
+</odoo>						
