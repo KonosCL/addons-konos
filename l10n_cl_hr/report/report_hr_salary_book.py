@@ -54,27 +54,27 @@ class report_hr_salary_employee_bymonth(models.AbstractModel):
 
     def get_worked_days(self, form, emp_id, emp_salary, mes, ano):
 
-        self.cr.execute(
+        self.env.cr.execute(
             '''select sum(number_of_days) from hr_payslip_worked_days as p
 left join hr_payslip as r on r.id = p.payslip_id
 where r.employee_id = %s  and (to_char(date_to,'mm')= %s)
 and (to_char(date_to,'yyyy')= %s) and ('WORK100' = p.code)
 ''', (emp_id, mes, ano,))
 
-        max = self.cr.fetchone()
+        max = self.env.cr.fetchone()
 
         if max is None:
             emp_salary.append(0.00)
         elif  3>max[0]:
             emp_salary.append(max[0])
         else:
-            self.cr.execute(
+            self.env.cr.execute(
             '''select number_of_days from hr_payslip_worked_days as p
 left join hr_payslip as r on r.id = p.payslip_id
 where r.employee_id = %s  and (to_char(date_to,'mm')= %s)
 and (to_char(date_to,'yyyy')= %s) and (('No_Trabajado' = p.code) or ('Licencia' = p.code))
 group by number_of_days''', (emp_id, mes, ano,))
-            max = self.cr.fetchone()
+            max = self.env.cr.fetchone()
             try:
                 emp_salary.append(30 - max[0])
             except:
@@ -85,7 +85,7 @@ group by number_of_days''', (emp_id, mes, ano,))
 
     def get_employe_basic_info(self, emp_salary, cod_id, mes, ano):
 
-        self.cr.execute(
+        self.env.cr.execute(
             '''select sum(pl.total) from hr_payslip_line as pl
 left join hr_payslip as p on pl.slip_id = p.id
 left join hr_employee as emp on emp.id = p.employee_id
@@ -94,7 +94,7 @@ where p.state = 'done' and (pl.code like %s) and (to_char(p.date_to,'mm')=%s)
 and (to_char(p.date_to,'yyyy')=%s)
 group by r.name, p.date_to''', (cod_id, mes, ano,))
 
-        max = self.cr.fetchone()
+        max = self.env.cr.fetchone()
 
         if max is None:
             emp_salary.append(0.00)
@@ -110,7 +110,7 @@ group by r.name, p.date_to''', (cod_id, mes, ano,))
         last_month = form['end_date'][5:7]
         cont = 0
 
-        self.cr.execute(
+        self.env.cr.execute(
             '''select sum(pl.total), w.name from hr_payslip_line as pl
 left join hr_payslip as p on pl.slip_id = p.id
 left join hr_employee as emp on emp.id = p.employee_id
@@ -120,7 +120,7 @@ where p.state = 'done' and (to_char(p.date_to,'mm')=%s)
 and (to_char(p.date_to,'yyyy')=%s)
 group by w.name order by name''', (last_month, last_year,))
 
-        id_data = self.cr.fetchall()
+        id_data = self.env.cr.fetchall()
         if id_data is None:
             emp_salary.append(0.00)
             emp_salary.append(0.00)
@@ -139,7 +139,7 @@ group by w.name order by name''', (last_month, last_year,))
 
     def get_salary(self, emp_id, emp_salary, cod_id, mes, ano):
 
-        self.cr.execute(
+        self.env.cr.execute(
             '''select sum(pl.total) from hr_payslip_line as pl
 left join hr_payslip as p on pl.slip_id = p.id
 left join hr_employee as emp on emp.id = p.employee_id
@@ -148,7 +148,7 @@ where p.state = 'done' and p.employee_id = %s and (pl.code like %s)
 and (to_char(p.date_to,'mm')=%s) and (to_char(p.date_to,'yyyy')=%s)
 group by r.name, p.date_to,emp.id''', (emp_id, cod_id, mes, ano,))
 
-        max = self.cr.fetchone()
+        max = self.env.cr.fetchone()
 
         if max is None:
             emp_salary.append(0.00)
@@ -164,7 +164,7 @@ group by r.name, p.date_to,emp.id''', (emp_id, cod_id, mes, ano,))
         last_month = form['end_date'][5:7]
         cont = 0
 
-        self.cr.execute(
+        self.env.cr.execute(
             '''select emp.id, emp.identification_id, emp.firstname, emp.middle_name, emp.last_name, emp.mothers_name
 from hr_payslip as p left join hr_employee as emp on emp.id = p.employee_id
 left join hr_contract as r on r.id = p.contract_id
@@ -173,7 +173,7 @@ and (to_char(p.date_to,'yyyy')=%s)
 group by emp.id, emp.name_related, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id
 order by last_name''', (last_month, last_year,))
 
-        id_data = self.cr.fetchall()
+        id_data = self.env.cr.fetchall()
         if id_data is None:
             emp_salary.append(0.00)
             emp_salary.append(0.00)
@@ -231,7 +231,7 @@ order by last_name''', (last_month, last_year,))
         last_month = form['end_date'][5:7]
         cont = 0
 
-        self.cr.execute(
+        self.env.cr.execute(
             '''select emp.id, emp.identification_id, emp.firstname, emp.middle_name, emp.last_name, emp.mothers_name
 from hr_payslip as p left join hr_employee as emp on emp.id = p.employee_id
 left join hr_contract as r on r.id = p.contract_id
@@ -240,7 +240,7 @@ and (to_char(p.date_to,'yyyy')=%s)
 group by emp.id, emp.name_related, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id
 order by last_name''', (last_month, last_year))
 
-        id_data = self.cr.fetchall()
+        id_data = self.env.cr.fetchall()
         if id_data is None:
             emp_salary.append(0.00)
             emp_salary.append(0.00)
