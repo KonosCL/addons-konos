@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<data>
     <template id="report_hrsalarybymonth">
         <t t-call="web.html_container">
         <t t-call="web.internal_layout">
+          <t t-foreach="docs" t-as="o">
             <div class="page">
                 <div class="text-center">
 	                <h2>Libro de Remuneraciones</h2>
 	                <p>
-	                    Fecha <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
-
-
+	                    Fecha <u><span t-field="o.end_date"/></u>
 	                </p>
                 </div>
                 <table class="table table-condensed">
@@ -32,21 +30,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="get_employee2(data['form'])" t-as="e">
+                        <t t-foreach="get_employee2" t-as="e">
                             <tr>
                                 <td align="left"><span t-esc="e[0]"/></td>
                                 <td align="left"><span t-esc="e[1]"/></td>
                                 <td align="left"><span t-esc="e[2]"/> <span t-esc="e[3]"/> <span t-esc="e[4]"/> <span t-esc="e[5]"/></td>
                                 <td align="left"><span t-raw="int(e[6])"/></td>
-                                <td align="left"><span t-raw="formatLang(round(e[7]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[8]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[9]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[10]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[11]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[12]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[13]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[14]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[15]), digits=get_digits(dp='Payroll'))"/></td>
+                                <td align="left"><span t-esc="round(e[7])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[8])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[9])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[10])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[11])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[12])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[13])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[14])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[15])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                             </tr>
                         </t>
                     </tbody>
@@ -59,13 +57,16 @@
             </div>
         </t>
         </t>
-        <t t-call="report.html_container">
-        <t t-call="report.internal_layout">
+      </t>
+
+      <t t-call="web.html_container">
+      <t t-call="web.internal_layout">
+        <t t-foreach="docs" t-as="o">
             <div class="page">
                 <div class="text-center">
 	                <h2>Libro de Remuneraciones</h2>
 	                <p>
-	                    To <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
+	                    To <u><span t-field="o.end_date"/></u>
 	                </p>
                 </div>
                 <table class="table table-condensed">
@@ -87,21 +88,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="get_employee(data['form'])" t-as="e">
+                        <t t-foreach="get_employee" t-as="e">
                             <tr>
                                 <td align="left"><span t-esc="e[0]"/></td>
                                 <td align="left"><span t-esc="e[1]"/></td>
                                 <td align="left"><span t-esc="e[2]"/> <span t-esc="e[3]"/> <span t-esc="e[4]"/> <span t-esc="e[5]"/></td>
                                 <td align="left"><span t-raw="int(e[6])"/></td>
-                                <td align="left"><span t-raw="formatLang(round(e[7]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[8]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[9]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[10]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[11]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[12]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[13]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[14]), digits=get_digits(dp='Payroll'))"/></td>
-                                <td align="right"><span t-raw="formatLang(round(e[15]), digits=get_digits(dp='Payroll'))"/></td>
+                                <td align="left"><span t-esc="round(e[7])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[8])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[9])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[10])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[11])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[12])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[13])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[14])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[15])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                             </tr>
                         </t>
                     </tbody>
@@ -114,6 +115,6 @@
             </div>
         </t>
         </t>
+      </t>
     </template>
-</data>
 </odoo>

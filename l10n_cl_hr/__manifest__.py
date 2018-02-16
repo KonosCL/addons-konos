@@ -8,8 +8,11 @@
     'author': 'Konos',
     'website': 'http://konos.cl',
     'license': 'AGPL-3',
-    'depends': ['hr_payroll'],
-    'contributors': [
+    'depends': [
+            'hr_payroll',
+            'hr_payroll_account',
+        ],
+        'contributors': [
         "Nelson Ramirez <info@konos.cl>",
         "Daniel Blanco Martn <daniel@blancomartin.com>",
         "Carlos Lopez Mite <celm1990@hotmail.com>",
@@ -61,6 +64,6 @@ Chilean Payroll & Human Resources.
     ],
     'demo': ['demo/l10n_cl_hr_payroll_demo.xml'],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False
 }
