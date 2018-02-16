@@ -170,7 +170,7 @@ from hr_payslip as p left join hr_employee as emp on emp.id = p.employee_id
 left join hr_contract as r on r.id = p.contract_id
 where p.state = 'done'  and (to_char(p.date_to,'mm')=%s)
 and (to_char(p.date_to,'yyyy')=%s)
-group by emp.id, emp.name_related, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id
+group by emp.id, emp.name, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id
 order by last_name''', (last_month, last_year,))
 
         id_data = self.env.cr.fetchall()
@@ -237,7 +237,7 @@ from hr_payslip as p left join hr_employee as emp on emp.id = p.employee_id
 left join hr_contract as r on r.id = p.contract_id
 where p.state = 'done'  and (to_char(p.date_to,'mm')=%s)
 and (to_char(p.date_to,'yyyy')=%s)
-group by emp.id, emp.name_related, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id
+group by emp.id, emp.name, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id
 order by last_name''', (last_month, last_year))
 
         id_data = self.env.cr.fetchall()
