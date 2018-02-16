@@ -25,12 +25,12 @@ Chilean Payroll & Human Resources.
     -All contributions rules for Chile payslip.
     * Employee Basic Info
     * Employee Contracts
-    * Attendance, Holidays and Sick Licence   
+    * Attendance, Holidays and Sick Licence
     * Employee PaySlip
     * Allowances / Deductions / Company Inputs
     * Extra Time
     * Pention Chilean Indicators
-    * Payroll Books 
+    * Payroll Books
     * Previred Plain Text
     , ...
     Report
@@ -48,12 +48,12 @@ Chilean Payroll & Human Resources.
         'views/report_payslip.xml',
         'views/report_hrsalarybymonth.xml',
         'views/hr_salary_books.xml',
+        'data/hr_salary_rule_category.xml',
         'data/l10n_cl_hr_payroll_data.xml',
         'data/l10n_cl_hr_indicadores.xml',
         'data/l10n_cl_hr_isapre.xml',
         'data/l10n_cl_hr_afp.xml',
         'data/l10n_cl_hr_mutual.xml',
-        'data/hr_salary_rule_category.xml',
         'data/hr_type_employee.xml',
         'data/resource_calendar_attendance.xml',
         'data/hr_contract_type.xml',

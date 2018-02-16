@@ -48,6 +48,4 @@ class hr_salary_employee_bymonth(models.TransientModel):
         res = self.read()
         res = res and res[0] or {}
         data.update({'form': res})
-        return self.env['report'].get_action(self, 'l10n_cl_hr.report_hrsalarybymonth', data=data)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+        return self.env.ref('l10n_cl_hr.report_hrsalarybymonth').report_action(self, data=data)
