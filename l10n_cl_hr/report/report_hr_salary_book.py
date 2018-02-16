@@ -50,6 +50,7 @@ class report_hr_salary_employee_bymonth(models.AbstractModel):
                 'mnths': [],
                 'mnths_total': [],
                 'total': 0.0,
+                'company_id': self.env.user.company_id,
         }
 
     def get_worked_days(self, form, emp_id, emp_salary, mes, ano):
