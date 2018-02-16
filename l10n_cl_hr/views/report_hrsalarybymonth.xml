@@ -117,11 +117,4 @@
         </t>
       </t>
     </template>
-    <report
-            id="action_report_hrsalarybymonth"
-            string="Libro de Remuneraciones Haberes"
-            model="hr.salary.employee.month"
-            report_type="qweb-pdf"
-            file="l10n_cl_hr.report_hrsalarybymonth"
-            name="l10n_cl_hr.report_hrsalarybymonth"/>
 </odoo>
