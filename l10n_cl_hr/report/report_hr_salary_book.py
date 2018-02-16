@@ -30,15 +30,26 @@ class report_hr_salary_employee_bymonth(models.AbstractModel):
 
     @api.model
     def get_report_values(self, docids, data=None):
+        if not data.get('form') or not self.env.context.get('active_model') or not self.env.context.get('active_id'):
+            raise UserError(_("Form content is missing, this report cannot be printed."))
 
+        model = self.env.context.get('active_model')
+        docs = self.env[model].browse(self.env.context.get('active_id'))
+        get_employee2 = self.get_employee2(data['form'])
+        get_employee = self.get_employee(data['form'])
+        get_analytic = self.get_analytic(data['form'])
         return {
-            'time': time,
-            'get_employee': self.get_employee,
-            'get_employee2': self.get_employee2,
-            'get_analytic': self.get_analytic,
-            'mnths': [],
-            'mnths_total': [],
-            'total': 0.0,
+                'docids':docids,
+                'doc_model': model,
+                'data': data,
+                'docs': docs,
+                'time': time,
+                'get_employee': get_employee,
+                'get_employee2': get_employee2,
+                'get_analytic': get_analytic,
+                'mnths': [],
+                'mnths_total': [],
+                'total': 0.0,
         }
 
     def get_worked_days(self, form, emp_id, emp_salary, mes, ano):
