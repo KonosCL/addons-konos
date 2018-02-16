@@ -280,12 +280,3 @@ order by last_name''', (last_month, last_year))
                 emp_salary = []
 
         return salary_list
-
-
-class wrapped_report_employee_salary_bymonth(models.AbstractModel):
-    _name = 'report.l10n_cl_hr.report_hrsalarybymonth'
-    #_inherit = 'report.abstract_report'
-    _template = 'l10n_cl_hr.report_hrsalarybymonth'
-    _wrapped_report_class = report_hr_salary_employee_bymonth
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

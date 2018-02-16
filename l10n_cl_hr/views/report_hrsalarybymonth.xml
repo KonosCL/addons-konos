@@ -2,14 +2,14 @@
 <odoo>
 <data>
     <template id="report_hrsalarybymonth">
-        <t t-call="report.html_container">
-        <t t-call="report.internal_layout">
+        <t t-call="web.html_container">
+        <t t-call="web.internal_layout">
             <div class="page">
                 <div class="text-center">
 	                <h2>Libro de Remuneraciones</h2>
 	                <p>
-	                    Fecha <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u> 
-	                    
+	                    Fecha <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
+
 
 	                </p>
                 </div>
@@ -28,7 +28,7 @@
                             <th>Asig Familiar</th>
                             <th>Otro No Imp</th>
                             <th>Tot. No Imp</th>
-                            <th>Haberes</th>                           
+                            <th>Haberes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +65,7 @@
                 <div class="text-center">
 	                <h2>Libro de Remuneraciones</h2>
 	                <p>
-	                    To <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u> 
+	                    To <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
 	                </p>
                 </div>
                 <table class="table table-condensed">
