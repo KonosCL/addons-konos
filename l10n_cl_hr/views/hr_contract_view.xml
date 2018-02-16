@@ -17,7 +17,7 @@
                             <div name="movilizacion">
                                 <field name="movilizacion" string="Asig. de Movilización"/> 
                             </div>
-                            <label for="viatico_santiago"/>
+                            <label for="viatico_santiago" string="Asig. de Viático"/>
                             <div name="viatico_santiago">     
                                 <field name="viatico_santiago" string="Asig. de Viático"/>
                             </div>
@@ -44,13 +44,13 @@
                              <page string="Salud" name="health">
                                 <group name="health2">
                                     <group name="health3" string="Institución de Salud">
-                                        <label for="isapre_id"/>
+                                        <label for="isapre_id" string="Nombre"/>
                                         <div name="isapre_id">
                                             <field name="isapre_id" string="Salud" required="1"/>
                                         </div>
-                                        <label for="isapre_moneda"/>
+                                        <label for="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
                                         <div name="isapre_moneda">
-                                            <field name="isapre_moneda" />
+                                            <field name="isapre_moneda" attrs="{'invisible': [('isapre_id', '=', 1)]}"/>
                                         </div>
                                         <label for="isapre_cotizacion_uf" attrs="{'invisible': [('isapre_id', '=', 1)]}" string="Cotización Pactada"/>
                                         <div name="isapre_cotizacion_uf">
@@ -89,6 +89,8 @@
                                         <div name="afp_id">
                                             <field name="afp_id" string="AFP" attrs="{'invisible': [('pension', '!=', False)],'required': [('pension', '==', False)]}"/><label string="" nolabel="1"  />
                                         </div>
+                                    </group>
+                                    <group name="APV" string="Aporte Previsional Voluntario">
                                         <label for="aporte_voluntario" string="Tipo Moneda"/>
                                         <div name="aporte_voluntario">
                                             <field name="aporte_voluntario_moneda"/>
