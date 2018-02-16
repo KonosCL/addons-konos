@@ -97,10 +97,13 @@ group by r.name, p.date_to''', (cod_id, mes, ano,))
 
         max = self.env.cr.fetchone()
 
-        if max[0] is None:
-            emp_salary.append(0.00)
-        else:
+        try:
             emp_salary.append(max[0])
+        except:
+            emp_salary.append(0.00)
+
+
+            
 
         return emp_salary
 
@@ -151,10 +154,10 @@ group by r.name, p.date_to,emp.id''', (emp_id, cod_id, mes, ano,))
 
         max = self.env.cr.fetchone()
 
-        if max[0] is None:
-            emp_salary.append(0.00)
-        else:
+        try:
             emp_salary.append(max[0])
+        except:
+            emp_salary.append(0.00)
 
         return emp_salary
 
