@@ -59,6 +59,7 @@ Chilean Payroll & Human Resources.
         'data/l10n_cl_hr_mutual.xml',
         'data/hr_type_employee.xml',
         'data/resource_calendar_attendance.xml',
+        'data/hr_holidays_status.xml',
         'data/hr_contract_type.xml',
         'security/ir.model.access.csv',
     ],

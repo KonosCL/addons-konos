@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>						
+    <data>						
+
+
+     <!-- Tipos de Faltas -->
+        <record id="hr_holidays_status_licencia" model="hr.holidays.status">
+            <field name="name">Licencia</field>
+            <field name="limit">True</field>
+        </record>
+
+        <record id="hr_holidays_sin_pago" model="hr.holidays.status">
+            <field name="name">No_Trabajado</field>
+            <field name="limit">True</field>
+        </record>
+
+
+    </data>
+</odoo>                     

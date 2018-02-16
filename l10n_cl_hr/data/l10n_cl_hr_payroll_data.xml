@@ -901,10 +901,6 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
 
 
 
-        <record id="hr_resource_monthly" model="resource.calendar">
-            <field name="name">Mensual</field>
-        </record>
-
 
 
 
