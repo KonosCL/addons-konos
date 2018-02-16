@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<data>
     <template id="report_hrsalarybymonth">
         <t t-call="web.html_container">
         <t t-call="web.internal_layout">
+          <t t-foreach="docs" t-as="o">
             <div class="page">
                 <div class="text-center">
 	                <h2>Libro de Remuneraciones</h2>
 	                <p>
-	                    Fecha <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
-
-
+	                    Fecha <u><span t-field="o.end_date"/></u>
 	                </p>
                 </div>
                 <table class="table table-condensed">
@@ -32,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="get_employee2(data['form'])" t-as="e">
+                        <t t-foreach="get_employee2" t-as="e">
                             <tr>
                                 <td align="left"><span t-esc="e[0]"/></td>
                                 <td align="left"><span t-esc="e[1]"/></td>
@@ -59,13 +57,16 @@
             </div>
         </t>
         </t>
-        <t t-call="report.html_container">
-        <t t-call="report.internal_layout">
+      </t>
+
+      <t t-call="web.html_container">
+      <t t-call="web.internal_layout">
+        <t t-foreach="docs" t-as="o">
             <div class="page">
                 <div class="text-center">
 	                <h2>Libro de Remuneraciones</h2>
 	                <p>
-	                    To <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
+	                    To <u><span t-field="o.end_date"/></u>
 	                </p>
                 </div>
                 <table class="table table-condensed">
@@ -87,7 +88,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="get_employee(data['form'])" t-as="e">
+                        <t t-foreach="o.get_employee" t-as="e">
                             <tr>
                                 <td align="left"><span t-esc="e[0]"/></td>
                                 <td align="left"><span t-esc="e[1]"/></td>
@@ -114,6 +115,13 @@
             </div>
         </t>
         </t>
+      </t>
     </template>
-</data>
+    <report
+            id="action_report_hrsalarybymonth"
+            string="Libro de Remuneraciones Haberes"
+            model="hr.salary.employee.month"
+            report_type="qweb-pdf"
+            file="l10n_cl_hr.report_hrsalarybymonth"
+            name="l10n_cl_hr.report_hrsalarybymonth"/>
 </odoo>

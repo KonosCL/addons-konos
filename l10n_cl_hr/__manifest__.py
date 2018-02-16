@@ -61,6 +61,6 @@ Chilean Payroll & Human Resources.
     ],
     'demo': ['demo/l10n_cl_hr_payroll_demo.xml'],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False
 }
