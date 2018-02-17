@@ -12,6 +12,11 @@
             'hr_payroll',
             'hr_payroll_account',
         ],
+    'external_dependencies': {
+        'python': [
+                'num2words',
+                ]
+        },
         'contributors': [
         "Nelson Ramirez <info@konos.cl>",
         "Daniel Blanco Martn <daniel@blancomartin.com>",

@@ -260,7 +260,7 @@
                     </tr>
                     <tr>
                       <th>SON</th>
-                      <th colspan="3"><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code) and (p.amount>0)"></t></t></th>
+                      <th colspan="3"><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code) and (p.amount>0)"> <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" /></t></t></th>
 
                     </tr>
                   </thead>
