@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=raLA72Sfcds
 
 ## Credits
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/635" />
+<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -31,8 +31,11 @@ https://www.youtube.com/watch?v=raLA72Sfcds
 
 
  
- **Contribuyentes**
-* Nelson Ramírez <info@konos.cl>
+ **Colaboradores**
+ - Daniel Blanco Martín <daniel@blancomartin.com>
+ - Carlos Lopez Mite <celm1990@hotmail.com>
+ - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
+ - Francisco Lorca <fcolorca1979@gmail.com>
 
  
 
@@ -49,7 +52,7 @@ https://www.youtube.com/watch?v=raLA72Sfcds
  
 ## Créditos
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/635" />
+<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -73,13 +76,9 @@ https://www.youtube.com/watch?v=raLA72Sfcds
 
 
  
- **Contribuyentes**
-* Nelson Ramírez <info@konos.cl>
-
  
-
-
-
-
+ **Colaboradores**
+ - Daniel Blanco Martín <daniel@blancomartin.com>
+ - Carlos Lopez Mite <celm1990@hotmail.com>
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
  - Francisco Lorca <fcolorca1979@gmail.com>
