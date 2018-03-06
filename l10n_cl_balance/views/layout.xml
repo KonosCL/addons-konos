@@ -1,7 +1,7 @@
 <openerp>
     <data>
         <template id="balance_de_8_columnas" inherit_id="account.report_trialbalance">
-	    <xpath expr="//div[@class='page']" position="replace">
+        <xpath expr="//div[@class='page']" position="replace">
                     <div class="page">
                 <h2><span t-esc="res_company.name"/></h2>
                 <h3>Balance de 8 Columnas</h3>
@@ -207,7 +207,7 @@
                     </tbody>
                 </table>
             </div>            
-	    </xpath>
+        </xpath>
         </template>
 
  
@@ -219,9 +219,9 @@
             <field name="page_width">216</field>
             <field name="orientation">Landscape</field>
             <field name="margin_top">20</field>
-            <field name="margin_bottom">20</field>
-            <field name="margin_left">7</field>
-            <field name="margin_right">7</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
             <field name="header_line" eval="False" />
             <field name="header_spacing">15</field>
             <field name="dpi">90</field>
