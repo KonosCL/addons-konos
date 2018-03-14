@@ -139,14 +139,14 @@
                       </td>
                       <td align="center">
                         <t t-foreach="o.input_line_ids" t-as="p">
-                          <t t-if="('HEX' == p.code)">
+                          <t t-if="(p.code in ['HEX50', 'HEX100'])">
                             <span t-raw="p.amount"/>
                           </t>
                         </t>
                       </td>
                       <td>
                         <t t-foreach="o.input_line_ids" t-as="p">
-                          <t t-if="('HEX100' == p.code)">
+                          <t t-if="('HEXDE' == p.code)">
                             <span t-raw="p.amount"/>
                           </t>
                         </t>
