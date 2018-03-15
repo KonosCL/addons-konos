@@ -261,4 +261,5 @@
       <field name="refund_account_id" ref="110704"/>
       <field name="account_id" ref="110704"/>
     </record>
+
 </odoo>

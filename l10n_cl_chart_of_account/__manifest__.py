@@ -5,7 +5,7 @@
 
 {
     'name': 'Chile Localization Chart Account SII',
-    'version': '1.0',
+    'version': '1.1',
     'description': """
 Chilean accounting chart and tax localization.
 ==============================================
@@ -23,4 +23,3 @@ basado en plan de cuentas del Servicio de Impuestos Internos
         'data/account_chart_template_data.yml',
     ],
 }
-
