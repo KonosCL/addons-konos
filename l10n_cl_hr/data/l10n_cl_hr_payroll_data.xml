@@ -149,7 +149,7 @@ else:
             <field name="code">PROD</field>
             <field name="category_id" ref="IMPONIBLE"/>
             <field name="condition_select">python</field>
-            <field name="condition_python">result = inputs.PROD.amount > 0</field>
+            <field name="condition_python">result = (inputs.PROD and inputs.PROD.amount > 0)</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.PROD.amount</field>
         </record>
@@ -160,7 +160,7 @@ else:
             <field name="code">COMI</field>
             <field name="category_id" ref="IMPONIBLE"/>
             <field name="condition_select">python</field>
-            <field name="condition_python">result = inputs.COMI.amount > 0</field>
+            <field name="condition_python">result = (inputs.COMI and inputs.COMI.amount > 0)</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.COMI.amount</field>
         </record>
@@ -183,7 +183,7 @@ else:
             <field name="code">AGUI</field>
             <field name="category_id" ref="IMPONIBLE"/>
             <field name="condition_select">python</field>
-            <field name="condition_python">result = inputs.AGUI.amount > 0</field>
+            <field name="condition_python">result = (inputs.AGUI and inputs.AGUI.amount > 0)</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = inputs.AGUI.amount</field>
         </record>
