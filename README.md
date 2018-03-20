@@ -1,2 +1,2 @@
 # addons-konos
-Konos Addons
+Este repositorio tiene como finalidad agrupar algunos módulos básicos para la localización chilena.
