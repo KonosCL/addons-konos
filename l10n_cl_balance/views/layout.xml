@@ -85,7 +85,7 @@
                       </t>
                   </td>
                   <td class="text-right">
-                      <t t-if="account['code'].startswith('1') or account['code'].startswith('2') or account['code'].startswith('3') or account['code'].startswith('9') ">
+                      <t t-if="account['ident'] in [1,2,3,4,5,6,7,8,9,10,11] ">
                         <t t-if="account['balance'] > 0">
                           <span t-att-style="style" t-esc="account['balance']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
                           <t t-set="activo" t-value="activo+account['balance']"/>
@@ -93,7 +93,7 @@
                       </t>
                   </td>
                   <td class="text-right">
-                      <t t-if="account['code'].startswith('2') or account['code'].startswith('1') or account['code'].startswith('3') or account['code'].startswith('9') ">
+                      <t t-if="account['ident'] in [1,2,3,4,5,6,7,8,9,10,11] ">
                       <t t-if="0 > account['balance']">
                           <span t-att-style="style" t-esc="account['balance']*-1" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
                           <t t-set="pasivo" t-value="pasivo-account['balance']"/>
@@ -101,7 +101,7 @@
                       </t>
                   </td>
                   <td class="text-right">
-                      <t t-if="account['code'].startswith('5') or account['code'].startswith('6') or account['code'].startswith('4') ">
+                      <t t-if="account['ident'] in [12,13,14,15,16] ">
                       <t t-if="account['balance']>0">
                           <span t-att-style="style" t-esc="account['balance']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
                           <t t-set="perdida" t-value="perdida+account['balance']"/>
@@ -109,7 +109,7 @@
                       </t>
                   </td>
                   <td class="text-right">
-                      <t t-if="account['code'].startswith('5') or account['code'].startswith('6') or account['code'].startswith('4')  ">
+                      <t t-if="account['ident'] in [12,13,14,15,16] ">
                       <t t-if="0 > account['balance']">
                           <span t-att-style="style" t-esc="account['balance']*-1" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
                           <t t-set="ganancia" t-value="ganancia-account['balance']"/>
@@ -170,8 +170,5 @@
         </div>
 	    </xpath>
     </template>
-    <record id="account.action_report_trial_balance" model="ir.actions.report.xml">
-        <field name="paperformat_id" ref="l10n_cl_balance.paperformat_balance" />
-    </record>
   </data>
 </odoo>
