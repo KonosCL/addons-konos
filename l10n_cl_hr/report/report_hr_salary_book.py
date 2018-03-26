@@ -63,25 +63,10 @@ and (to_char(date_to,'yyyy')= %s) and ('WORK100' = p.code)
 ''', (emp_id, mes, ano,))
 
         max = self.env.cr.fetchone()
-
         if max[0] is None:
             emp_salary.append(0.00)
-        elif  3>max[0]:
-            emp_salary.append(max[0])
         else:
-            self.env.cr.execute(
-            '''select number_of_days from hr_payslip_worked_days as p
-left join hr_payslip as r on r.id = p.payslip_id
-where r.employee_id = %s  and (to_char(date_to,'mm')= %s)
-and (to_char(date_to,'yyyy')= %s) and (('No_Trabajado' = p.code) or ('Licencia' = p.code))
-group by number_of_days''', (emp_id, mes, ano,))
-            max = self.env.cr.fetchone()
-            try:
-                emp_salary.append(30 - max[0])
-            except:
-                emp_salary.append(30.00)
-
-
+            emp_salary.append(max[0])
         return emp_salary
 
     def get_employe_basic_info(self, emp_salary, cod_id, mes, ano):

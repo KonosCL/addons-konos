@@ -128,14 +128,7 @@
                             <t t-set= "f" t-value="f+p.number_of_days"/>
                           </t>
                         </t>
-                        <span t-if="3>f"><t t-esc="str(int(f))" /></span>
-                        <t t-set="i" t-value="0"/>
-                        <t t-foreach="o.worked_days_line_ids" t-as="p">
-                          <t t-if="('No_Trabajado' == p.code) or ('Licencia' == p.code) ">
-                            <t t-set= "i" t-value="i+p.number_of_days"/>
-                          </t>
-                        </t>
-                        <span t-if="not 3>f"><t t-esc="str(int(30-i))" /></span>
+                        <span><t t-esc="str(int(f))"/></span>
                       </td>
                       <td align="center">
                         <t t-foreach="o.input_line_ids" t-as="p">

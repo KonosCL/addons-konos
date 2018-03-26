@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-# Chilean Payroll
 # Odoo / OpenERP, Open Source Management Solution
-# Copyright (c) 2017 Blanco Martin y Asociados
-# Nelson Ramírez Sánchez - Daniel Blanco
-# http://blancomartin.cl
+# Copyright (c) 2018 Konos
+# Nelson Ramírez Sánchez
+# http://konos.cl
 #
 # Derivative from Odoo / OpenERP / Tiny SPRL
 #
