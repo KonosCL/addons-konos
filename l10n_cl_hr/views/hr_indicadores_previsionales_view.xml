@@ -8,8 +8,7 @@
                 <form string="Indicadores Previsionales">
                     <sheet>
                         <div>
-                            <label for="name" class="oe_edit_only"/>
-                            <h1><field name="name" placeholder="Referencia de Fecha"/></h1>
+                            <field name="name" invisible="1"/>
                             <group col="4" string="Período"> 
                                   <field name="month"/>
                                   <field name="year"/>

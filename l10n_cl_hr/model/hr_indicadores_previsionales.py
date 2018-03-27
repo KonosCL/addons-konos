@@ -41,12 +41,13 @@ MONTH_LIST= [('1', 'Enero'),
         ('10', 'Octubre'), ('11', 'Noviembre'),
         ('12', 'Diciembre')]
 
+
 class hr_indicadores_previsionales(models.Model):
 
     _name = 'hr.indicadores'
     _description = 'Indicadores Previsionales'
 
-    name = fields.Char('Nombre', required=True)
+    name = fields.Char('Nombre')
     asignacion_familiar_primer = fields.Float(
         'Asignación Familiar Tramo 1', 
         help="Asig Familiar Primer Tramo")
@@ -153,8 +154,14 @@ class hr_indicadores_previsionales(models.Model):
         'UF Otros',  help="UF Seguro Complementario")
     mutualidad_id = fields.Many2one('hr.mutual', 'MUTUAL')
     ccaf_id = fields.Many2one('hr.ccaf', 'CCAF')
-    month = fields.Selection(MONTH_LIST, string='Mes', required=True, default=MONTH_LIST[int(datetime.now().strftime('%m'))-1])
+    month = fields.Selection(MONTH_LIST, string='Mes', required=True)
     year = fields.Integer('Año', required=True, default=datetime.now().strftime('%Y'))
     gratificacion_legal = fields.Boolean('Gratificación L. Manual')
     mutual_seguridad_bool = fields.Boolean('Mutual Seguridad', default=True)
 
+
+
+    @api.multi
+    @api.onchange('month')
+    def get_name(self):
+        self.name = str(self.month).replace('10', 'Octubre').replace('11', 'Noviembre').replace('12', 'Diciembre').replace('1', 'Enero').replace('2', 'Febrero').replace('3', 'Marzo').replace('4', 'Abril').replace('5', 'Mayo').replace('6', 'Junio').replace('7', 'Julio').replace('8', 'Agosto').replace('9', 'Septiembre') + " " + str(self.year)

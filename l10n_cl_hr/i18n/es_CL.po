@@ -437,7 +437,7 @@ msgstr "Employee Contract"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_middle_name
 msgid "Employees middle name"
-msgstr "Employees middle name"
+msgstr "Segundo Nombre"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee_mothers_name
@@ -770,7 +770,7 @@ msgstr "Mes"
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee_middle_name
 msgid "Middle Name"
-msgstr "Middle Name"
+msgstr "Segundo Nombre"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores_tasa_afp_modelo
