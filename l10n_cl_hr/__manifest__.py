@@ -25,7 +25,7 @@
         "Francisco Lorca <fcolorca1979@gmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '11.0.1.0.10',
+    'version': '11.0.1.0.11',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
@@ -56,6 +56,7 @@ Chilean Payroll & Human Resources.
         'views/report_payslip.xml',
         'views/report_hrsalarybymonth.xml',
         'views/hr_salary_books.xml',
+        'views/hr_holiday_views.xml',
         'data/hr_salary_rule_category.xml',
         'data/l10n_cl_hr_payroll_data.xml',
         'data/l10n_cl_hr_indicadores.xml',

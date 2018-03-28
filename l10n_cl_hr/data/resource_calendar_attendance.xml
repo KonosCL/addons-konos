@@ -51,31 +51,6 @@
             <field name="calendar_id"     ref="hr_resource_monthly_cl"/>
         </record>
 
-        <record id="hr_resource_calendar_attendance_sat" model="resource.calendar.attendance">
-            <field name="name">Todo el dia</field>
-            <field name="hour_from">8.5</field>
-            <field name="hour_to">18.5</field>
-            <field name="dayofweek">5</field>
-            <field name="calendar_id"     ref="hr_resource_monthly_cl"/>
-        </record>
-
-        <record id="hr_resource_calendar_attendance_sun" model="resource.calendar.attendance">
-            <field name="name">Todo el dia</field>
-            <field name="hour_from">8.5</field>
-            <field name="hour_to">18.5</field>
-            <field name="dayofweek">6</field>
-            <field name="calendar_id"     ref="hr_resource_monthly_cl"/>
-        </record>
-
-
-
-        <record id="hr_resource_calendar_attendance_mon" model="resource.calendar.attendance">
-            <field name="name">Todo el dia</field>
-            <field name="hour_from">8.5</field>
-            <field name="hour_to">18.5</field>
-            <field name="dayofweek">0</field>
-            <field name="calendar_id"     ref="hr_resource_monthly_cl"/>
-        </record>
 
  
        

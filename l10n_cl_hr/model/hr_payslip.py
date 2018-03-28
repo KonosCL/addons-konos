@@ -111,6 +111,15 @@ class HrPayslip(models.Model):
 
             # compute worked days
             work_data = contract.employee_id.get_work_days_data(day_from, day_to, calendar=contract.resource_calendar_id)
+            #Dias laborados reales para calcular la semana corrida
+            effective = {
+                'name': _("Effective Working Days"),
+                'sequence': 2,
+                'code': 'EFF100',
+                'number_of_days': work_data['days'],
+                'number_of_hours': work_data['hours'],
+                'contract_id': contract.id,
+            }
 
             # En el caso de que se trabajen menos de 5 días tomaremos los dias trabajados en los demás casos 30 días - las faltas
             # Estos casos siempre se podrán modificar manualmente directamente en la nomina.
@@ -130,6 +139,8 @@ class HrPayslip(models.Model):
                 'contract_id': contract.id,
             }
 
+
             res.append(attendances)
+            res.append(effective)
             res.extend(leaves.values())
         return res
