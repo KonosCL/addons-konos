@@ -61,4 +61,66 @@
             </field>
         </field>
     </record>
+
+    <record id="view_invoice_tax_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tax.sii.tree</field>
+        <field name="model">account.invoice.tax</field>
+        <field name="inherit_id" ref="account.view_invoice_tax_tree" />
+        <field name="arch" type="xml">
+            <field name="base" position="after">
+                <field name="amount_retencion" />
+                <field name='retencion_account_id' />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_invoice_tax_form" model="ir.ui.view">
+        <field name="name">account.invoice.tax.sii.tree</field>
+        <field name="model">account.invoice.tax</field>
+        <field name="inherit_id" ref="account.view_invoice_tax_form" />
+        <field name="arch" type="xml">
+            <field name="base" position="after">
+                <field name="amount_retencion" />
+                <field name='retencion_account_id' />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_invoice_form" model="ir.ui.view">
+      <field name="model">account.invoice</field>
+      <field name="name">account.invoice.sii.form</field>
+      <field name="inherit_id" ref="account.invoice_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//page/field[@name='tax_line_ids']/tree/field[@name='account_id']" position="after">
+          <field name="retencion_account_id" />
+        </xpath>
+
+        <xpath expr="//page/field[@name='tax_line_ids']/tree/field[@name='amount']" position="after">
+          <field name="amount_retencion" />
+        </xpath>
+
+        <field name="amount_tax" position="after">
+          <field name="amount_retencion" attrs="{'invisible':[('amount_retencion', '=', 0)]}" />
+        </field>
+      </field>
+    </record>
+
+    <record id="view_supplier_invoice_form" model="ir.ui.view">
+      <field name="name">l10n_cl.invoice.form</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_supplier_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='account_id']" position="after">
+          <field name="retencion_account_id" />
+        </xpath>
+
+        <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']" position="after">
+          <field name="amount_retencion" />
+        </xpath>
+
+        <field name="amount_tax" position="after">
+          <field name="amount_retencion" attrs="{'invisible':[('amount_retencion', '=', 0)]}" />
+        </field>
+      </field>
+    </record>
 </odoo>

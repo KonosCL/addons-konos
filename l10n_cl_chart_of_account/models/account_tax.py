@@ -26,7 +26,7 @@ class AccountTaxTemplate(models.Model):
             string="Activo Fijo",
             default=False,
         )
-    
+
     def _get_tax_vals(self, company, tax_template_to_tax):
         """ This method generates a dictionnary of all the values for the tax that will be created.
         """
@@ -66,4 +66,18 @@ class AccountTax(models.Model):
     activo_fijo = fields.Boolean(
             string="Activo Fijo",
             default=False,
+        )
+    
+
+class AccountInvoiceTax(models.Model):
+    _inherit = "account.invoice.tax"
+
+    amount_retencion = fields.Monetary(
+            string="Retención",
+            default=0.00,
+        )
+    retencion_account_id = fields.Many2one(
+            'account.account',
+            string='Tax Account',
+            domain=[('deprecated', '=', False)],
         )
