@@ -14,6 +14,14 @@
         </record>
 
 
+        <!-- Decimal Precision -->
+
+        <record forcecreate="True" id="hr_payroll.decimal_payroll" model="decimal.precision">
+            <field name="name">Payroll</field>
+            <field name="digits">0</field>
+        </record>
+
+
 
 
 
