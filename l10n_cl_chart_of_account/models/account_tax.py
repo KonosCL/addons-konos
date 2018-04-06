@@ -67,17 +67,3 @@ class AccountTax(models.Model):
             string="Activo Fijo",
             default=False,
         )
-    
-
-class AccountInvoiceTax(models.Model):
-    _inherit = "account.invoice.tax"
-
-    amount_retencion = fields.Monetary(
-            string="Retención",
-            default=0.00,
-        )
-    retencion_account_id = fields.Many2one(
-            'account.account',
-            string='Tax Account',
-            domain=[('deprecated', '=', False)],
-        )
