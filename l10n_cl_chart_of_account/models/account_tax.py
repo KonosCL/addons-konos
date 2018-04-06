@@ -26,7 +26,7 @@ class AccountTaxTemplate(models.Model):
             string="Activo Fijo",
             default=False,
         )
-    
+
     def _get_tax_vals(self, company, tax_template_to_tax):
         """ This method generates a dictionnary of all the values for the tax that will be created.
         """
