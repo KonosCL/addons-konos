@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Account Payment Advance", 
-    "version": "11.1.1", 
+    "version": "11.1.2", 
     "author": "Konos", 
     "category": "Generic Modules/Accounting", 
     "description": """

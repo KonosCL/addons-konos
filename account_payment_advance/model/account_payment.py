@@ -16,8 +16,7 @@ class AccountPayment(models.Model):
     advance_account_id = fields.Many2one('account.account',
         string="Account", 
         domain="[('deprecated', '=', False)]",
-        help="This account will be used instead of the default one as the receivable account for the current partner", 
-        required=True)
+        help="This account will be used instead of the default one as the receivable account for the current partner")
 
 
     @api.one
