@@ -8,7 +8,7 @@
                 <field name="arch" type="xml">
                     <field name="communication" position="after">
                         <field name="advance_ok"/>
-                        <field name="advance_account_id"  domain="[('reconcile', '=', True)]" attrs="{'invisible':[('advance_ok', '!=', True)]}"/>
+                        <field name="advance_account_id"  domain="[('reconcile', '=', True)]" attrs="{'invisible':[('advance_ok', '!=', True)], 'required':[('advance_ok', '!=', False)]}"/>
                     </field>
                 </field>
         </record>
