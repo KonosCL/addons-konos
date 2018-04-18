@@ -67,6 +67,11 @@ msgstr "Todas las cuentas"
 msgid "Balance de 8 Columnas"
 msgstr "Balance de 8 Columnas"
 
+#. module: account
+#: model:ir.model,name:account.model_account_balance_report
+msgid "Trial Balance Report"
+msgstr "Balance de 8 Columnas"
+
 #. module: l10n_cl_balance
 #: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
 msgid "Crédito"
