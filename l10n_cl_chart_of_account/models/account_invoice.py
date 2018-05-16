@@ -23,6 +23,8 @@ class AccountInvoice(models.Model):
         #@TODO Buscar una mejor forma de aplicar retención
         for inv in self:
             amount_retencion = 0
+            neto = 0
+            amount_tax = 0
             included = False
             for tax in inv.tax_line_ids:
                 if tax.tax_id.price_include:
