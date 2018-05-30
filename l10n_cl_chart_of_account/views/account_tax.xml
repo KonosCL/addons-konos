@@ -11,6 +11,7 @@
                 <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
+                <field name="sii_detailed" />
             </field>
 
         </field>
@@ -42,6 +43,7 @@
                 <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
+                <field name="sii_detailed" />
             </field>
 
         </field>

@@ -26,6 +26,10 @@ class AccountTaxTemplate(models.Model):
             string="Activo Fijo",
             default=False,
         )
+    sii_detailed = fields.Boolean(
+            string='Desglose de IVA',
+            default=False,
+        )
 
     def _get_tax_vals(self, company, tax_template_to_tax):
         """ This method generates a dictionnary of all the values for the tax that will be created.
@@ -38,6 +42,7 @@ class AccountTaxTemplate(models.Model):
             'retencion': self.retencion,
             'no_rec': self.no_rec,
             'activo_fijo': self.activo_fijo,
+            'sii_detailed': self.sii_detailed,
         })
         return val
 
@@ -65,5 +70,9 @@ class AccountTax(models.Model):
         )
     activo_fijo = fields.Boolean(
             string="Activo Fijo",
+            default=False,
+        )
+    sii_detailed = fields.Boolean(
+            string='Desglose de IVA',
             default=False,
         )
