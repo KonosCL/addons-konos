@@ -3,9 +3,8 @@
 #
 #    Odoo, Open Source Management Solution Chilean Payroll
 #
-#    Copyright (c) 2015 Blanco Martin y Asociados - Nelson Ramirez Sanchez
-#    Daniel Blanco
-#    http://blancomartin.cl
+#    Copyright (c) 2018 Konos - Nelson Ramirez Sanchez
+#    http://konos.cl
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -22,6 +21,7 @@
 #
 ##############################################################################
 from . import hr_form_employee_book
+
 
 
 

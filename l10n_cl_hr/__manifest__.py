@@ -23,9 +23,10 @@
         "Carlos Lopez Mite <celm1990@hotmail.com>",
         "Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>",
         "Francisco Lorca <fcolorca1979@gmail.com>",
+        "Marcel Rodriguez <jmrv1981@hotmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '11.0.1.0.12',
+    'version': '11.0.1.2.0',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
@@ -52,7 +53,6 @@ Chilean Payroll & Human Resources.
         'views/hr_payslip_view.xml',
         'views/hr_afp_view.xml',
         'views/hr_payslip_run_view.xml',
-        'views/hr_contribution_register_view.xml',
         'views/report_payslip.xml',
         'views/report_hrsalarybymonth.xml',
         'views/hr_salary_books.xml',
@@ -67,6 +67,7 @@ Chilean Payroll & Human Resources.
         'data/resource_calendar_attendance.xml',
         'data/hr_holidays_status.xml',
         'data/hr_contract_type.xml',
+        'data/account_journal.xml',
         'security/ir.model.access.csv',
     ],
     'demo': ['demo/l10n_cl_hr_payroll_demo.xml'],

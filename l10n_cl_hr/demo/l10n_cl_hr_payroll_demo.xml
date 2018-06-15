@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>						
-<odoo>						
-    <data>						
+<?xml version="1.0" encoding="utf-8"?>                      
+<odoo>                      
+    <data>                      
 
         <!-- Empleado Inputs -->
         <record id="hr_employee_data_demo" model="hr.employee">
+            <field name="firstname">Nelson</field>
+            <field name="middle_name">Jorge</field>
             <field name="name">Nelson</field>
             <field name="last_name">Ramírez</field>
+            <field name="mothers_name">Sánchez</field>
             <field name="identification_id">24625430-K</field>
         </record>
 
@@ -25,7 +28,10 @@
             <field name="afp_id"     ref="hr_afp_modelo"/>
             <field name="mutual_seguridad">TRUE</field>
             <field name="struct_id"     ref="hr_struct_cl"/>
-            <field name="working_hours"     ref="hr_resource_monthly"/>
+            <field name="resource_calendar_id"     ref="hr_resource_monthly_cl"/>
+            <field name="journal_id"     ref="payroll_journal"/>
         </record>
-    </data>						
-</odoo>						
+    </data>                     
+</odoo>     
+            
+				

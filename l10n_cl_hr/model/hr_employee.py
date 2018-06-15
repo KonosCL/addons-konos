@@ -17,22 +17,32 @@ class HrEmployee(models.Model):
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
     formated_vat = fields.Char(translate=True, string='Printable VAT', store=True,help='Show formatted vat')
               
-              
+    @api.model
+    def _get_computed_name(self, last_name, firstname, last_name2=None, middle_name=None):
+        names = list()
+        if firstname:
+        	names.append(firstname)
+        if middle_name:
+        	names.append(middle_name)
+        if last_name:
+        	names.append(last_name)
+        if last_name2:
+        	names.append(last_name2)
+
+        return " ".join(names)
+
+
     @api.multi
     @api.onchange('firstname', 'mothers_name', 'middle_name' , 'last_name')
     def get_name(self):
         for employee in self:
             if employee.firstname and employee.last_name:
-                employee.name = u" ".join((p for p in (self.last_name, self.mothers_name, self.firstname, self.middle_name) if p))
+                employee.name = self._get_computed_name(
+                    employee.last_name, employee.firstname, employee.mothers_name, employee.middle_name)
 
 
 
-    @api.model
-    def _get_computed_name(self, last_name, firstname):
-        """Compute the 'name' field according to splitted data.
-        You can override this method to change the order of lastname and
-        firstname the computed name"""
-        return u" ".join((p for p in (last_name, mothers_name, firstname, middle_name) if p))
+
 
     @api.onchange('identification_id')
     def onchange_document(self):
@@ -46,11 +56,11 @@ class HrEmployee(models.Model):
             identification_id[-1])
 
     def check_identification_id_cl (self, identification_id):
-        _logger.info('Por Aqui no Pasa ni de Vaina')
         body, vdig = '', ''
         if len(identification_id) > 9:
             identification_id = identification_id.replace('-','',1).replace('.','',2)
         if len(identification_id) != 9:
+            raise UserError(u'El Rut no tiene formato')
             return False
         else:
             body, vdig = identification_id[:-1], identification_id[-1].upper()
@@ -62,8 +72,10 @@ class HrEmployee(models.Model):
             if operar == vdig:
                 return True
             else:
+                raise UserError(u'El Rut no tiene formato')
                 return False
         except IndexError:
+            raise UserError(u'El Rut no tiene formato')
             return False
 
 
@@ -78,8 +90,9 @@ class HrEmployee(models.Model):
                     ('id','!=', r.id),
                 ])
             if r.identification_id !="55.555.555-5" and employee:
-                raise UserError(_('El Rut debe ser único'))
+                raise UserError(u'El Rut debe ser único')
                 return False
+
 
 
 

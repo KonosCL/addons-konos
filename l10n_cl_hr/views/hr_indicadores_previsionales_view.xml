@@ -106,6 +106,13 @@
                                             </group>
                                         </group>
                                 </page>
+                                 <page string="Otros Indicadores">
+                                        <group col="2" name="ine" string="Instituto Nacional de Estadísticas">
+                                           
+                                                            <field name="ipc" string="IPC"/>
+                                            
+                                        </group>
+                                </page>
                             </notebook>
                         </div>
                     </sheet>

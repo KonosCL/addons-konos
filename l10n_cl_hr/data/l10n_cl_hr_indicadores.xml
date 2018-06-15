@@ -55,6 +55,7 @@
             <field name="tasa_independiente_modelo">12.18</field>
             <field name="tope_anual_apv">600</field>
             <field name="tope_mensual_apv">50</field>
+            <field name="ipc">0</field>
         </record>
     </data>                               
 </odoo>     

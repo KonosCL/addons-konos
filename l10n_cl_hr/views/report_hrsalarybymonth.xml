@@ -30,6 +30,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <t t-set="sb" t-value="0"/>
+                        <t t-set="hex" t-value="0"/>
+                        <t t-set="gl" t-value="0"/>
+                        <t t-set="oi" t-value="0"/>
+                        <t t-set="ti" t-value="0"/>
+                        <t t-set="af" t-value="0"/>
+                        <t t-set="on" t-value="0"/>
+                        <t t-set="tn" t-value="0"/>
+                        <t t-set="h" t-value="0"/>
+                        
+
                         <t t-foreach="get_employee2" t-as="e">
                             <tr>
                                 <td align="left"><span t-esc="e[0]"/></td>
@@ -45,12 +56,37 @@
                                 <td align="right"><span t-esc="round(e[13])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[14])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[15])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+
+                                
+                                <t t-set="sb" t-value="sb+round(e[7])"/>
+                                <t t-set="hex" t-value="hex+round(e[8])"/>
+                                <t t-set="gl" t-value="gl+round(e[9])"/>
+                                <t t-set="oi" t-value="oi+round(e[10])"/>
+                                <t t-set="ti" t-value="ti+round(e[11])"/>
+                                <t t-set="af" t-value="af+round(e[12])"/>
+                                <t t-set="on" t-value="on+round(e[13])"/>
+                                <t t-set="tn" t-value="tn+round(e[14])"/>
+                                <t t-set="h" t-value="h+round(e[15])"/>
+
+
                             </tr>
                         </t>
                     </tbody>
                     <tfoot>
                         <tr class="border-black">
                                 <td><strong>Total</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                 <td  class="text-left"><span t-esc="sb" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="hex" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="gl" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="oi" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="ti" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="af" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="on" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="tn" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="h" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -88,7 +124,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <t t-set="sb" t-value="0"/>
+                        <t t-set="hex" t-value="0"/>
+                        <t t-set="gl" t-value="0"/>
+                        <t t-set="oi" t-value="0"/>
+                        <t t-set="ti" t-value="0"/>
+                        <t t-set="af" t-value="0"/>
+                        <t t-set="on" t-value="0"/>
+                        <t t-set="tn" t-value="0"/>
+                        <t t-set="h" t-value="0"/>
                         <t t-foreach="get_employee" t-as="e">
+
                             <tr>
                                 <td align="left"><span t-esc="e[0]"/></td>
                                 <td align="left"><span t-esc="e[1]"/></td>
@@ -103,12 +149,36 @@
                                 <td align="right"><span t-esc="round(e[13])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[14])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[15])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+
+
+
+                                <t t-set="sb" t-value="sb+round(e[7])"/>
+                                <t t-set="hex" t-value="hex+round(e[8])"/>
+                                <t t-set="gl" t-value="gl+round(e[9])"/>
+                                <t t-set="oi" t-value="oi+round(e[10])"/>
+                                <t t-set="ti" t-value="ti+round(e[11])"/>
+                                <t t-set="af" t-value="af+round(e[12])"/>
+                                <t t-set="on" t-value="on+round(e[13])"/>
+                                <t t-set="tn" t-value="tn+round(e[14])"/>
+                                <t t-set="h" t-value="h+round(e[15])"/>
                             </tr>
                         </t>
                     </tbody>
                     <tfoot>
                         <tr class="border-black">
                                 <td><strong>Total</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                 <td  class="text-left"><span t-esc="sb" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="hex" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="gl" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="oi" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="ti" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="af" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="on" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="tn" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="h" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                         </tr>
                     </tfoot>
                 </table>

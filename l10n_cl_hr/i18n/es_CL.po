@@ -247,7 +247,7 @@ msgstr "Colación"
 #. module: l10n_cl_hr
 #: model:ir.model,name:l10n_cl_hr.model_hr_contract_type
 msgid "Contract Type"
-msgstr "Tipo de contrato"
+msgstr "Tipo de Contrato"
 
 #. module: l10n_cl_hr
 #: selection:hr.payslip,movimientos_personal:0

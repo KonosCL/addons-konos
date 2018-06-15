@@ -158,7 +158,8 @@ class hr_indicadores_previsionales(models.Model):
     year = fields.Integer('Año', required=True, default=datetime.now().strftime('%Y'))
     gratificacion_legal = fields.Boolean('Gratificación L. Manual')
     mutual_seguridad_bool = fields.Boolean('Mutual Seguridad', default=True)
-
+    ipc = fields.Float(
+        'IPC',  required=True, help="Indice de Precios al Consumidor (IPC)")
 
 
     @api.multi

@@ -273,6 +273,8 @@ else:
 
 if contract.pension is True:
     result = 0
+elif contract.sin_afp is True:
+    result = 0
 elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
     result =round( round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)*tasa /100)
 else:
@@ -401,6 +403,8 @@ else:
     GRATI = GRATI
 
 if contract.pension is True:
+    result = 0
+elif contract.sin_afp is True:
     result = 0
 elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
     result = round(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)*tasa /100)
@@ -617,9 +621,12 @@ else:
             <field name="code">ASUE</field>
             <field name="category_id" ref="ODESC"/>
             <field name="condition_select">python</field>
-            <field name="condition_python">result = contract.anticipo_sueldo > 0</field>
+            <field name="condition_python">result = (contract.anticipo_sueldo > 0) or (inputs.ASUE.amount > 0)</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = contract.anticipo_sueldo</field>
+            <field name="amount_python_compute">if  (inputs.ASUE.amount > 0):
+     result = inputs.ASUE.amount
+else:
+     result = contract.anticipo_sueldo</field>
         </record>
 
        <record id="hr_rule_38_1" model="hr.salary.rule">
@@ -775,6 +782,12 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="code">PCCAF</field>
             <field name="name">PRESTAMO CCAF</field>
             <field name="input_id" ref="hr_rule_12"/>
+        </record>
+
+        <record id="hr_rule_input_anticipo_sueldo" model="hr.rule.input">
+            <field name="code">ASUE</field>
+            <field name="name">ANTICIPO DE SUELDO</field>
+            <field name="input_id" ref="hr_rule_38"/>
         </record>
  <!-- Estructura Inputs -->
 

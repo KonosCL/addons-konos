@@ -51,7 +51,9 @@
             <field name="calendar_id"     ref="hr_resource_monthly_cl"/>
         </record>
 
-
+        <record id="base.main_company" model="res.company">
+            <field name="resource_calendar_id" ref="hr_resource_monthly_cl"/>
+        </record>
  
        
     </data>

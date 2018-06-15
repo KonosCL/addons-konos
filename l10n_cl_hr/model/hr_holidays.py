@@ -33,9 +33,9 @@ class HRHolidays(models.Model):
         return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
 
 
-#    @api.onchange('holiday_status_id')
-#    def _onchange_holiday_status_id(self):
-#        self._check_and_recompute_days()
+    @api.onchange('holiday_status_id')
+    def _onchange_holiday_status_id(self):
+        self._check_and_recompute_days()
 
 
 
@@ -74,3 +74,4 @@ class HRHolidays(models.Model):
     ####################################################
     # ORM Overrides methods
     ####################################################
+
