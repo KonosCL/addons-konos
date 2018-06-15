@@ -1,0 +1,133 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_import_bank_statement_line
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0-20161123\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-05 20:57+0000\n"
+"PO-Revision-Date: 2018-03-05 17:59-0300\n"
+"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_CL\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.ui.view,arch_db:bi_import_bank_statement_line.view_bank_statement_form_inherit_import_lines
+msgid "Add Lines"
+msgstr "Agregar Líneas"
+
+#. module: bi_import_bank_statement_line
+#: selection:account.bank.statement.wizard,bank_opt:0
+msgid "Banco Estado"
+msgstr "Banco Estado"
+
+#. module: bi_import_bank_statement_line
+#: selection:account.bank.statement.wizard,bank_opt:0
+msgid "Banco de Chile"
+msgstr "Banco de Chile"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_bank_opt
+msgid "Bank opt"
+msgstr "Opción"
+
+#. module: bi_import_bank_statement_line
+#: selection:account.bank.statement.wizard,file_opt:0
+msgid "CSV"
+msgstr "CSV"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.ui.view,arch_db:bi_import_bank_statement_line.bank_statement_import_line_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: bi_import_bank_statement_line
+#: selection:account.bank.statement.wizard,file_opt:0
+msgid "Excel"
+msgstr "Excel"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_file
+msgid "File"
+msgstr "Archivo"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_file_opt
+msgid "File opt"
+msgstr "Archivo Opción"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.ui.view,arch_db:bi_import_bank_statement_line.bank_statement_import_line_wizard
+msgid "Import"
+msgstr "Importar"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.ui.view,arch_db:bi_import_bank_statement_line.bank_statement_import_line_wizard
+msgid "Import Bank Statement Lines"
+msgstr "Importar Líneas de extracto bancario"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model.fields,field_description:bi_import_bank_statement_line.field_account_bank_statement_wizard_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: bi_import_bank_statement_line
+#: code:addons/bi_import_bank_statement_line/models/bank_statement.py:61
+#, python-format
+msgid "Not a valid file!"
+msgstr "Archivo no válido!"
+
+#. module: bi_import_bank_statement_line
+#: selection:account.bank.statement.wizard,bank_opt:0
+msgid "Santander"
+msgstr "Santander"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.model,name:bi_import_bank_statement_line.model_account_bank_statement_wizard
+msgid "account.bank.statement.wizard"
+msgstr "account.bank.statement.wizard"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.actions.act_window,name:bi_import_bank_statement_line.action_bank_statement_import_line_wizard
+msgid "action bank statement import line wizard"
+msgstr "action bank statement import line wizard"
+
+#. module: bi_import_bank_statement_line
+#: model:ir.ui.view,arch_db:bi_import_bank_statement_line.bank_statement_import_line_wizard
+msgid "or"
+msgstr "o"
