@@ -1,4 +1,4 @@
-# cl_import_bank_statement_line
+# l10n_cl_import_bank_statement_line
 
 Odoo - Import Chilean Bank Statement Lines from Excel/CSV
 ==========================================================
