@@ -10,6 +10,7 @@
     """,
     'author': 'Konos',
     'website': 'http://www.konos.cl',
+    'license': 'AGPL-3',
     'depends': ['account'],
     'data': ["views/bank_statement.xml"
              ],
