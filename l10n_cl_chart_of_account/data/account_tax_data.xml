@@ -115,8 +115,8 @@
 
     <record id="IVAV_19" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
-      <field name="name">IVA 19% Venta </field>
-      <field name="description">IVA 19% Venta </field>
+      <field name="name">IVA 19% Venta</field>
+      <field name="description">IVA 19% Venta</field>
       <field name="amount">19</field>
       <field name="sii_code">14</field>
       <field name="amount_type">percent</field>
@@ -129,8 +129,8 @@
 
     <record id="IVAC_19" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
-      <field name="name">IVA 19% Compra </field>
-      <field name="description">IVA 19% Compra </field>
+      <field name="name">IVA 19% Compra</field>
+      <field name="description">IVA 19% Compra</field>
       <field name="amount">19</field>
       <field name="sii_code">14</field>
       <field name="sequence" eval="1"/>
@@ -143,8 +143,8 @@
 
     <record id="I_IU2C" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
-      <field name="name">Impuesto Unico de Segunda Categoría </field>
-      <field name="description">Impuesto Unico de 2da Categoría </field>
+      <field name="name">Impuesto Unico de Segunda Categoría</field>
+      <field name="description">Impuesto Unico de 2da Categoría</field>
       <field name="amount">0</field>
       <field name="sequence" eval="2"/>
       <field name="amount_type">percent</field>
