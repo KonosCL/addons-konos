@@ -5,7 +5,7 @@
 
 {
     'name': 'Chile Localization Chart Account SII',
-    'version': '1.6',
+    'version': '1.7',
     'description': """
 Chilean accounting chart and tax localization.
 ==============================================
@@ -15,7 +15,7 @@ basado en plan de cuentas del Servicio de Impuestos Internos
     """,
     'author': 'Konos',
     'website': 'http://www.konos.cl',
-    'category': 'Localization',
+    'category': 'Localization/Chile',
     'depends': ['account'],
     'data': [
             'views/account_tax.xml',
