@@ -141,6 +141,38 @@
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
     </record>
 
+    <record id="IVAV_17" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">IVA 19% Venta (Faenamiento Carnes)</field>
+      <field name="description">IVA 19% Venta</field>
+      <field name="amount">19</field>
+      <field name="sii_code">17</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">sale</field>
+      <field name="sequence" eval="1"/>
+      <field name="refund_account_id" ref="210701"/>
+      <field name="account_id" ref="210701"/>
+      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
+      <field name="sii_type" >R</field>
+      <field name="retencion">5.000</field>
+    </record>
+
+    <record id="IVAV_18" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">IVA 19% Venta (Carnes)</field>
+      <field name="description">IVA 19% Venta</field>
+      <field name="amount">19</field>
+      <field name="sii_code">18</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">sale</field>
+      <field name="sequence" eval="1"/>
+      <field name="refund_account_id" ref="210701"/>
+      <field name="account_id" ref="210701"/>
+      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
+      <field name="sii_type" >R</field>
+      <field name="retencion">5.000</field>
+    </record>
+
     <record id="I_IU2C" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
       <field name="name">Impuesto Unico de Segunda Categoría</field>
