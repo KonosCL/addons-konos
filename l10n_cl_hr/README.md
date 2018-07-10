@@ -4,7 +4,7 @@ Odoo - Chilean Payroll & Human Resources
 Customization for Chilean Human Resources & Payroll
 You can check functionality in the following video:
 
-https://www.youtube.com/watch?v=raLA72Sfcds
+https://youtu.be/6m9fuuCny7g
 
 ## Credits
 <p>
@@ -49,7 +49,7 @@ Odoo - Chilean Payroll & Human Resources
 
 Personalización para manejo de Recursos Humanos y Remuneraciones en Chile
 Puede chequear la funcionalidad del este módulo en el siguiente video:
-https://www.youtube.com/watch?v=raLA72Sfcds
+https://youtu.be/6m9fuuCny7g
  
 ## Créditos
 <p>
