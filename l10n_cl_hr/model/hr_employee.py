@@ -15,8 +15,8 @@ class HrEmployee(models.Model):
     middle_name = fields.Char("Middle Name", help='Employees middle name')
     mothers_name = fields.Char("Mothers Name", help='Employees mothers name')
     type_id = fields.Many2one('hr.type.employee', 'Tipo de Empleado')
-    formated_vat = fields.Char(translate=True, string='Printable VAT', store=True,help='Show formatted vat')
-              
+    formated_vat = fields.Char(translate=True, string='Printable VAT', store=True, help='Show formatted vat')
+
     @api.model
     def _get_computed_name(self, last_name, firstname, last_name2=None, middle_name=None):
         names = list()
@@ -31,18 +31,13 @@ class HrEmployee(models.Model):
 
         return " ".join(names)
 
-
     @api.multi
-    @api.onchange('firstname', 'mothers_name', 'middle_name' , 'last_name')
+    @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name')
     def get_name(self):
         for employee in self:
             if employee.firstname and employee.last_name:
                 employee.name = self._get_computed_name(
                     employee.last_name, employee.firstname, employee.mothers_name, employee.middle_name)
-
-
-
-
 
     @api.onchange('identification_id')
     def onchange_document(self):
@@ -61,7 +56,6 @@ class HrEmployee(models.Model):
             identification_id = identification_id.replace('-','',1).replace('.','',2)
         if len(identification_id) != 9:
             raise UserError(u'El Rut no tiene formato')
-            return False
         else:
             body, vdig = identification_id[:-1], identification_id[-1].upper()
         try:
@@ -73,11 +67,8 @@ class HrEmployee(models.Model):
                 return True
             else:
                 raise UserError(u'El Rut no tiene formato')
-                return False
         except IndexError:
             raise UserError(u'El Rut no tiene formato')
-            return False
-
 
     @api.constrains('identification_id')
     def _rut_unique(self):
@@ -86,13 +77,8 @@ class HrEmployee(models.Model):
                 continue
             employee = self.env['hr.employee'].search(
                 [
-                    ('identification_id','=', r.identification_id),
-                    ('id','!=', r.id),
+                    ('identification_id', '=', r.identification_id),
+                    ('id', '!=', r.id),
                 ])
-            if r.identification_id !="55.555.555-5" and employee:
+            if r.identification_id != "55.555.555-5" and employee:
                 raise UserError(u'El Rut debe ser único')
-                return False
-
-
-
-
