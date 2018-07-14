@@ -17,7 +17,7 @@
                 'num2words',
                 ]
         },
-        'contributors': [
+    'contributors': [
         "Nelson Ramirez <info@konos.cl>",
         "Daniel Blanco Martn <daniel@blancomartin.com>",
         "Carlos Lopez Mite <celm1990@hotmail.com>",
@@ -26,7 +26,7 @@
         "Marcel Rodriguez <jmrv1981@hotmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '11.0.1.2.0',
+    'version': '11.0.1.2.1',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
