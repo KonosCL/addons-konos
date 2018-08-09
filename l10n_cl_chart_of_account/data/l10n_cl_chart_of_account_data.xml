@@ -74,7 +74,7 @@
             <field name="name">Anticipo Proveedores Nacionales</field>
             <field name="code">110304</field>
             <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_prepayments" name="user_type_id"/>
+            <field ref="account.data_account_type_payable" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -83,7 +83,7 @@
             <field name="name">Anticipo Proveedores Internacionales</field>
             <field name="code">110305</field>
             <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_prepayments" name="user_type_id"/>
+            <field ref="account.data_account_type_payable" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -128,7 +128,7 @@
             <field name="name">Anticipos de Viáticos</field>
             <field name="code">110503</field>
             <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_prepayments" name="user_type_id"/>
+            <field ref="account.data_account_type_payable" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -146,7 +146,7 @@
             <field name="name">Anticipo de Honorarios</field>
             <field name="code">110505</field>
             <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_prepayments" name="user_type_id"/>
+            <field ref="account.data_account_type_payable" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -155,7 +155,7 @@
             <field name="name">Anticipo de Aguinaldo</field>
             <field name="code">110506</field>
             <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_prepayments" name="user_type_id"/>
+            <field ref="account.data_account_type_payable" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
