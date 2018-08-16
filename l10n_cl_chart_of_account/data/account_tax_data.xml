@@ -149,7 +149,7 @@
       <field name="sii_code">17</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
-      <field name="sequence" eval="1"/>
+      <field name="sequence" eval="2"/>
       <field name="refund_account_id" ref="210701"/>
       <field name="account_id" ref="210701"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
@@ -165,7 +165,7 @@
       <field name="sii_code">18</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
-      <field name="sequence" eval="1"/>
+      <field name="sequence" eval="3"/>
       <field name="refund_account_id" ref="210701"/>
       <field name="account_id" ref="210701"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
