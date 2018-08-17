@@ -7,6 +7,7 @@
     'name':'Chilean 8 Column Balance',
     'description':'Formato de Balance de 8 Columnas para Chile',
     'category': 'Localization/Chile',
+    'license': 'AGPL-3',
     'version':'0.1.1',
     'author':'Konos',
     'website':'http://konos.cl',
