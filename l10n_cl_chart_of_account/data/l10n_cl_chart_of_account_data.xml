@@ -91,17 +91,17 @@
         <record id="110401" model="account.account.template">
             <field name="name">Cheques a Fecha Por Cobrar</field>
             <field name="code">110401</field>
-            <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_receivable" name="user_type_id"/>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_assets" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
         
         <record id="110402" model="account.account.template">
-            <field name="name">Cuenta Por Cobrar 3eros</field>
+            <field name="name">Cheques Protestados</field>
             <field name="code">110402</field>
-            <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_receivable" name="user_type_id"/>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_assets" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -110,7 +110,7 @@
             <field name="name">Anticipo de Remuneraciones</field>
             <field name="code">110501</field>
             <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_prepayments" name="user_type_id"/>
+            <field ref="account.data_account_type_payable" name="user_type_id"/>
             <field name="reconcile">1</field>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
@@ -465,7 +465,7 @@
         </record>
 
         <record id="210202" model="account.account.template">
-            <field name="name">Cuentas por Pagar Importaciones</field>
+            <field name="name">Cuentas por Pagar Internacionales</field>
             <field name="code">210202</field>
             <field name="reconcile" eval="True"/>
             <field ref="account.data_account_type_payable" name="user_type_id"/>
@@ -483,8 +483,8 @@
          <record id="210301" model="account.account.template">
             <field name="name">Cheques Girados y No Cobrados</field>
             <field name="code">210301</field>
-            <field name="reconcile" eval="True"/>
-            <field ref="account.data_account_type_payable" name="user_type_id"/>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_current_liabilities" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
         
@@ -945,6 +945,30 @@
             <field ref="account.data_account_type_expenses" name="user_type_id"/>
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
+        
+        <record id="510107" model="account.account.template">
+            <field name="name">Publicidad</field>
+            <field name="code">510107</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_expenses" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
+        
+        <record id="510108" model="account.account.template">
+            <field name="name">Teléfonos</field>
+            <field name="code">510108</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_expenses" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
+        
+        <record id="510109" model="account.account.template">
+            <field name="name">Gastos en Computación</field>
+            <field name="code">510109</field>
+            <field name="reconcile" eval="False"/>
+            <field ref="account.data_account_type_expenses" name="user_type_id"/>
+            <field name="chart_template_id" ref="cl_chart_template_sii"/>
+        </record>
 
         <record id="530201" model="account.account.template">
             <field name="name">Compras - Categoría de productos 01</field>
@@ -1053,7 +1077,7 @@
         </record>
         
         <record id="610108" model="account.account.template">
-            <field name="name">Electricidad</field>
+            <field name="name">Electricidad - Luz</field>
             <field name="code">610108</field>
             <field name="reconcile" eval="False"/>
             <field ref="account.data_account_type_expenses" name="user_type_id"/>

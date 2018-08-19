@@ -5,7 +5,7 @@
 
 {
     'name': 'Chile Localization Chart Account SII',
-    'version': '1.7',
+    'version': '1.8',
     'description': """
 Chilean accounting chart and tax localization.
 ==============================================
