@@ -14,7 +14,7 @@ class AccountInvoiceTax(models.Model):
             string='Tax Account',
             domain=[('deprecated', '=', False)],
         )
-    
+
     def _getNeto(self, currency):
         neto = 0
         for tax in self:
@@ -72,3 +72,12 @@ class AccountInvoice(models.Model):
         default=0.00,
         compute='_compute_amount',
     )
+
+
+class AccountInvoiceLine(models.Model):
+    _inherit = 'account.invoice.line'
+
+    # TODO: eliminar este campo en versiones futuras
+    # odoo en V11 ya agrega un campo para guardar el precio incluido impuestos
+    # este campo es innecesario a partir de V11
+    price_tax_included = fields.Monetary(string='Amount', readonly=True, compute='_compute_price')

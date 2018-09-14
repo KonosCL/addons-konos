@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_invoice_form" model="ir.ui.view">
+            <field name="model">account.invoice</field>
+            <field name="name">account.invoice.sii.form</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+              <xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='amount_total']" position="after">
+                <field name="price_tax_included" invisible="True"/>
+              </xpath>
+            </field>
+          </record>
+
+        <record id="view_supplier_invoice_form" model="ir.ui.view">
+            <field name="name">l10n_cl.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='amount_total']" position="after">
+                <field name="price_tax_included"  invisible="True"/>
+              </xpath>                
+            </field>
+        </record>
+    </data>
+</odoo>
