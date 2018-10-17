@@ -36,7 +36,7 @@
             <field name="inherit_id" ref="account.view_bank_statement_form"/>
             <field name="arch" type="xml">
                 <button name="%(account.action_bank_reconcile_bank_statements)d" position="before">
-                      <button name="l10n_cl_import_bank_statement_line.action_bank_statement_import_line_wizard" string="Add Lines" type="action" />
+                      <button name="l10n_cl_import_bank_statement_line.action_bank_statement_import_line_wizard" string="Importar" type="action" />
                 </button>
             </field>
         </record>

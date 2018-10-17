@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bank_statement_excel_wizard_form" model="ir.ui.view">
+        <field name="name">bank.statement.excel.wizard.form</field>
+        <field name="model">bank.statement.excel.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        <form string="Reporte Partidas de Transito" version="7.0">
+            <label string="Desea Imprimir las Partidas de Tránsito ? "/>
+            <footer>
+	    	<button string="Imprimir Reporte" name="bank_statement_history_excel" type="object" class="oe_highlight"/>
+	    	   or
+                <button string="Cancel" class="oe_link" special="cancel" />
+            </footer>
+        </form>
+        </field>
+    </record>
+    <record id="action_bank_statement_excel_wizard" model="ir.actions.act_window">
+        <field name="name">statement invoice History Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bank.statement.excel.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+	
+    <record id="view_bank_statement_history_excel" model="ir.ui.view">
+        <field name="name">statement.history.form</field>
+        <field name="model">bank.statement.excel</field>
+        <field name="arch" type="xml">
+            <form string="Excel Report file" version="7.0">
+                <group>
+                    <field name="excel_file" readonly="1" filename="file_name"/>
+                    <field name="file_name" invisible="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    
+
+    <record id="action_bank_statement_excel_form" model="ir.actions.act_window">
+        <field name="name">Reporte de Cuentas de Transito</field>
+        <field name="view_id" ref="view_bank_statement_history_excel"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="res_model">bank.statement.excel</field>
+        <field name="target">new</field>
+    </record>
+
+    <act_window id="act_bank_statement"
+            name="Reporte de Cuentas de Transito"
+            res_model="bank.statement.excel.wizard" 
+            src_model="account.bank.statement"
+            view_mode="form" 
+            target="new"
+            key2="client_action_multi"
+    />
+</odoo>

@@ -77,39 +77,31 @@ class account_bank_statement_wizard(models.TransientModel):
             workbook = xlrd.open_workbook(fp.name)
             sheet = workbook.sheet_by_index(0)
             contador = 0
-            
             if self.bank_opt == 'santander':
                 for row_no in range(sheet.nrows):
-                    if row_no <= 0:
-                        fields = map(lambda row:row.value.encode('utf-8'), sheet.row(row_no))
-                    else:
-                        line = list(map(lambda row:isinstance(row.value, str) and row.value.encode('utf-8') or str(row.value), sheet.row(row_no)))
-
-                        #Aqui colocaremos todos los if
-                        try:
-                            date_string = datetime.strptime(line[3], '%d/%m/%Y').strftime('%Y-%m-%d')
-                        except:
-                            date_string = '01-01-01'
-                            contador = contador + 1
-                        if date_string != '01-01-01' and contador <=100:
-                            contador = 100
-                            values.update( {'date':date_string,
-                                            'ref': line[4].decode("utf-8"),
-                                            'partner': line[7],
-                                            'memo': line[1].decode("utf-8"),
-                                            'amount': line[0],
-                                           })
-                            res = self._create_statement_lines(values)
+                    line = list(map(lambda row:isinstance(row.value, str) and row.value.encode('utf-8') or str(row.value), sheet.row(row_no)))
+                    try:
+                        fecha=line[3].decode("utf-8")
+                        date_string = datetime.strptime(fecha, '%d/%m/%Y').strftime('%Y-%m-%d')
+                        values.update( {'date':date_string,
+                                        'ref': 'TEST',
+                                        'partner': line[7],
+                                        'memo': line[1].decode("utf-8"),
+                                        'amount': line[0],
+                                       })
+                        res = self._create_statement_lines(values)
+                    except:
+                        _logger.warning('No encuentra Fecha')
             elif self.bank_opt == 'chile':
                 for row_no in range(sheet.nrows):
                     if row_no <= 1:
                         fields = map(lambda row:row.value.encode('utf-8'), sheet.row(row_no))
                     else:
                         line = list(map(lambda row:isinstance(row.value, str) and row.value.encode('utf-8') or str(row.value), sheet.row(row_no)))
-                        data = line[0].decode("utf-8").split(";")
+                        data = line[0].decode("utf-8").split(",")
                         fecha=data[0]
                         date_string = datetime.strptime(fecha, '%d/%m/%Y').strftime('%Y-%m-%d')
-                        if data[3]=='00000000000': 
+                        if data[3]=='0': 
                             values.update( {'date':date_string,
                                             'ref': data[1],
                                             'partner': 'X',
@@ -226,7 +218,6 @@ class AccountBankStatementLine(models.Model):
             :param additional_domain:
             :param overlook_partner:
         """
-        _logger.debug('PAsa por aquí')
         if partner_id is None:
             partner_id = self.partner_id.id
 
@@ -239,12 +230,17 @@ class AccountBankStatementLine(models.Model):
         domain_matching = [('reconciled', '=', False)]
         if partner_id or overlook_partner:
             domain_matching = expression.AND([domain_matching, [('account_id.internal_type', 'in', ['payable', 'receivable'])]])
+           #ELIMINARIAMOS CUENTAS POR COBRAR Y PAGAR
+           #domain_matching = domain_matching
         else:
             # TODO : find out what use case this permits (match a check payment, registered on a journal whose account type is other instead of liquidity)
             domain_matching = expression.AND([domain_matching, [('account_id.reconcile', '=', True)]])
+            # SOLO BANDO
+            #domain_matching = domain_matching
 
         # Let's add what applies to both
         domain = expression.OR([domain_reconciliation, domain_matching])
+        #domain = expression.OR([domain_reconciliation])
         if partner_id and not overlook_partner:
             domain = expression.AND([domain, [('partner_id', '=', partner_id)]])
 

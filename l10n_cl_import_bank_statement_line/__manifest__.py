@@ -3,16 +3,16 @@
 
 {
     'name': 'Import Chilean Bank Statement Lines from Excel/CSV file ',
-    'version': '11.0.0.2',
+    'version': '11.0.0.3',
     'summary': 'This module helps you to import chilean bank statement line on Odoo using Excel and CSV file',
     'description': """
 	Import Bank Statement Lines from Excel
     """,
     'author': 'Konos',
     'website': 'http://www.konos.cl',
-    'license': 'AGPL-3',
     'depends': ['account'],
-    'data': ["views/bank_statement.xml"
+    'data': ["views/bank_statement.xml",
+             "wizard/transit_payment_export.xml",
              ],
 	'qweb': [
 		],
