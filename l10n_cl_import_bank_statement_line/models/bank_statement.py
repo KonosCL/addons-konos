@@ -84,7 +84,7 @@ class account_bank_statement_wizard(models.TransientModel):
                         fecha=line[3].decode("utf-8")
                         date_string = datetime.strptime(fecha, '%d/%m/%Y').strftime('%Y-%m-%d')
                         values.update( {'date':date_string,
-                                        'ref': 'TEST',
+                                        'ref': '',
                                         'partner': line[7],
                                         'memo': line[1].decode("utf-8"),
                                         'amount': line[0],
@@ -152,24 +152,25 @@ class account_bank_statement_wizard(models.TransientModel):
                                                })
                             res = self._create_statement_lines(values)  
             else:
-                #Este es el fin y se recorre invertido
+                #ITAU Este es el fin y se recorre invertido
                 ano=sheet.cell(11,3).value
                 ano=ano[-5:]
-                for row_no in range(sheet.nrows-11):
-                    if row_no > 26:
+                for row_no in range(sheet.nrows-6):
+                    if row_no > 13:
                         line = list(map(lambda row:isinstance(row.value, str) and row.value.encode('utf-8') or str(row.value), sheet.row(row_no)))
-                        date_string = line[0].decode("utf-8")+ano
-                        date_string = datetime.strptime(date_string, '%d/%m/%Y').strftime('%Y-%m-%d')
+                        a1 = int(float(line[0]))
+                        a1_as_datetime = datetime(*xlrd.xldate_as_tuple(a1, workbook.datemode))
+                        date_string = a1_as_datetime.date().strftime('%Y-%m-%d')
                         if line[4] <= line[5]: 
                             values.update( {'date':date_string,
-                                        'ref': line[1].decode("utf-8"),
+                                        'ref': line[1],
                                         'partner': line[6],
                                         'memo': line[3].decode("utf-8"),
                                         'amount': int(line[5].replace('.0', ''))*(-1),
                                         })
                         else:
                             values.update( {'date':date_string,
-                                        'ref': line[1].decode("utf-8"),
+                                        'ref': line[1],
                                         'partner': line[6],
                                         'memo': line[3].decode("utf-8"),
                                         'amount': line[4],
@@ -198,3 +199,6 @@ class account_bank_statement_wizard(models.TransientModel):
             return partner_id.id
         else:
             return
+
+
+
