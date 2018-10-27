@@ -155,12 +155,19 @@ class account_bank_statement_wizard(models.TransientModel):
                 #ITAU Este es el fin y se recorre invertido
                 ano=sheet.cell(11,3).value
                 ano=ano[-5:]
-                for row_no in range(sheet.nrows-6):
-                    if row_no > 13:
+                for row_no in range(sheet.nrows-11):
+                    if row_no > 26:
                         line = list(map(lambda row:isinstance(row.value, str) and row.value.encode('utf-8') or str(row.value), sheet.row(row_no)))
-                        a1 = int(float(line[0]))
-                        a1_as_datetime = datetime(*xlrd.xldate_as_tuple(a1, workbook.datemode))
-                        date_string = a1_as_datetime.date().strftime('%Y-%m-%d')
+                        #a1 = int(float(line[0]))
+                        #a1_as_datetime = datetime(*xlrd.xldate_as_tuple(a1, workbook.datemode))
+                        #date_string = a1_as_datetime.date().strftime('%Y-%m-%d')
+                        _logger.warning('line[0]')
+                        _logger.warning(line[0])
+                        date_string = str(line[0]).replace("'", "").replace('b', '')+ano
+                        _logger.warning('date_string')
+                        _logger.warning(date_string)
+                        date_string = datetime.strptime(date_string, '%d/%m/%Y').strftime('%Y-%m-%d')
+                        
                         if line[4] <= line[5]: 
                             values.update( {'date':date_string,
                                         'ref': line[1],
