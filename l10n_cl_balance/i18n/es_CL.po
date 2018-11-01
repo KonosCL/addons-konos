@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20161123\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-22 19:57+0000\n"
-"PO-Revision-Date: 2017-11-22 16:58-0300\n"
+"PO-Revision-Date: 2018-10-31 16:58-0300\n"
 "Last-Translator: Nelson Ramírez <info@konos.cl>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -131,3 +131,10 @@ msgstr "Con saldo distinto a 0"
 #: model:ir.ui.view,arch_db:l10n_cl_balance.balance_de_8_columnas
 msgid "With movements"
 msgstr "Con movimientos"
+
+#. module: account
+#: model:ir.actions.act_window,name:account.action_account_balance_menu
+#: model:ir.actions.report,name:account.action_report_trial_balance
+#: model:ir.ui.menu,name:account.menu_general_Balance_report
+msgid "Trial Balance"
+msgstr "Balance 8 Columnas"
