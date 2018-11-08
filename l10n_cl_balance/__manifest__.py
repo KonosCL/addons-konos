@@ -12,10 +12,11 @@
     'author':'Konos',
     'website':'http://konos.cl',
     'data': [
-            'data/report_paperformat.xml',
-            'views/layout.xml',
+        'data/report_paperformat.xml',
+        'views/layout.xml',
     ],
     'depends': [
-                'account',
-            ],
+        'account',
+    ],
+    'installable': False,
 }

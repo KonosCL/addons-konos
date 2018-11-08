@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import api, models, fields, _
 
 
@@ -6,14 +5,14 @@ class AccountInvoiceTax(models.Model):
     _inherit = "account.invoice.tax"
 
     amount_retencion = fields.Monetary(
-            string="Retención",
-            default=0.00,
-        )
+        string="Retención",
+        default=0.00,
+    )
     retencion_account_id = fields.Many2one(
-            'account.account',
-            string='Tax Account',
-            domain=[('deprecated', '=', False)],
-        )
+        'account.account',
+        string='Retention Account',
+        domain=[('deprecated', '=', False)],
+    )
     
     def _getNeto(self, currency):
         neto = 0

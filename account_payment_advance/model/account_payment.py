@@ -2,7 +2,6 @@
 # Copyright 2016 Konos <info@konos.cl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import logging
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
 from odoo.tools.safe_eval import safe_eval as eval
@@ -25,19 +24,10 @@ class AccountPayment(models.Model):
         """ inherited and overwrite original method
             Add the condition that evaluates if exists account advance and it placed as has account destiny if condition applied.
         """
-        if self.invoice_ids:
-            self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.invoice_ids[0].account_id.id
-        elif self.payment_type == 'transfer':
-            if not self.company_id.transfer_account_id.id:
-                raise UserError(_('Transfer account not defined on the company.'))
-            self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.company_id.transfer_account_id.id
-        elif self.partner_id:
-            if self.partner_type == 'customer':
-                self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.partner_id.property_account_receivable_id.id
-            else:
-                self.destination_account_id = self.advance_ok and self.advance_account_id.id or self.partner_id.property_account_payable_id.id
-
-
+        if self.advance_ok and self.advance_account_id:
+            self.destination_account_id = self.advance_account_id.id
+        else:
+            super(AccountPayment, self)._compute_destination_account_id()
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):

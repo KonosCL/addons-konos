@@ -1,35 +1,12 @@
-# -*- encoding: utf-8 -*-
-##############################################################################
-#
-#    Odoo, Open Source Management Solution Chilean Payroll
-#
-#    Copyright (c) 2017 Konos
-#    http://konos.cl
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
 import time
 from odoo import models, api
-
+from odoo.exceptions import UserError, ValidationError
 
 class report_hr_salary_employee_bymonth(models.AbstractModel):
     _name = 'report.l10n_cl_hr.report_hrsalarybymonth'
 
     @api.model
-    def get_report_values(self, docids, data=None):
+    def _get_report_values(self, docids, data=None):
         if not data.get('form') or not self.env.context.get('active_model') or not self.env.context.get('active_id'):
             raise UserError(_("Form content is missing, this report cannot be printed."))
 
