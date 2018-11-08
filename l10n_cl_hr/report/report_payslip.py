@@ -1,11 +1,11 @@
-# -*- encoding: utf-8 -*-
 from odoo import api, models
+
 
 class payslip_report(models.AbstractModel):
     _inherit = 'report.hr_payroll.report_payslipdetails'
 
     @api.model
-    def get_report_values(self, docids, data=None):
+    def _get_report_values(self, docids, data=None):
         payslips = super(payslip_report, self).get_report_values(docids, data)
         #payslips.update({
 #        	'get_payslip_lines': self.get_payslip_lines(),
@@ -33,19 +33,12 @@ class payslip_report(models.AbstractModel):
 
     @api.multi
     def get_leave(self, obj):
-          res = []
-          ids = []
-          for rec in self:
-              if rec.type == 'leaves':
-                 ids.append(rec.id)
-          payslip_line = self.env['hr.payslip.line']
-          if ids:
-              res = payslip_line.browse(ids)
-          return res
-
-
-#class wrapped_report_payslip(models.AbstractModel):
-#    _name = 'report.hr_payroll.report_payslip'
-#    #_inherit = 'report.abstract_report'
-#    _template = 'hr_payroll.report_payslip'
-#    _wrapped_report_class = payslip_report
+        res = []
+        ids = []
+        for rec in self:
+            if rec.type == 'leaves':
+                ids.append(rec.id)
+            payslip_line = self.env['hr.payslip.line']
+            if ids:
+                res = payslip_line.browse(ids)
+        return res

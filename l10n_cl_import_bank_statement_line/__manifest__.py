@@ -18,7 +18,7 @@
 		],
     'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     "images":['static/description/Banner.png'],
 }

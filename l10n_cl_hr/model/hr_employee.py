@@ -1,15 +1,15 @@
-# coding=utf-8
-from odoo import models, fields, api
 import re
-from odoo.exceptions import UserError
 import logging
-_logger = logging.getLogger(__name__)
 
-UPDATE_PARTNER_FIELDS = ['name', 'user_id', 'address_home_id']
+from odoo import models, fields, api
+from odoo.exceptions import UserError
+
+_logger = logging.getLogger(__name__)
 
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
+    
     firstname = fields.Char("Firstname")
     last_name = fields.Char("Last Name")
     middle_name = fields.Char("Middle Name", help='Employees middle name')
@@ -19,38 +19,32 @@ class HrEmployee(models.Model):
 
     @api.model
     def _get_computed_name(self, last_name, firstname, last_name2=None, middle_name=None):
-        names = list()
+        names = []
         if firstname:
-        	names.append(firstname)
+            names.append(firstname)
         if middle_name:
-        	names.append(middle_name)
+            names.append(middle_name)
         if last_name:
-        	names.append(last_name)
+            names.append(last_name)
         if last_name2:
-        	names.append(last_name2)
-
+            names.append(last_name2)
         return " ".join(names)
 
-    @api.multi
     @api.onchange('firstname', 'mothers_name', 'middle_name', 'last_name')
     def get_name(self):
-        for employee in self:
-            if employee.firstname and employee.last_name:
-                employee.name = self._get_computed_name(
-                    employee.last_name, employee.firstname, employee.mothers_name, employee.middle_name)
+        if self.firstname and self.last_name:
+            self.name = self._get_computed_name(self.last_name, self.firstname, self.mothers_name, self.middle_name)
 
     @api.onchange('identification_id')
     def onchange_document(self):
         identification_id = (
             re.sub('[^1234567890Kk]', '',
             str(self.identification_id))).zfill(9).upper()
-
-
         self.identification_id = '%s.%s.%s-%s' % (
             identification_id[0:2], identification_id[2:5], identification_id[5:8],
             identification_id[-1])
 
-    def check_identification_id_cl (self, identification_id):
+    def check_identification_id_cl(self, identification_id):
         body, vdig = '', ''
         if len(identification_id) > 9:
             identification_id = identification_id.replace('-','',1).replace('.','',2)

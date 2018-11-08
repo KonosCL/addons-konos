@@ -1,7 +1,3 @@
-
-# -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-
 {
     'name': 'Chilean Payroll & Human Resources',
     'category': 'Localization',
@@ -62,6 +58,7 @@ Chilean Payroll & Human Resources.
         'data/l10n_cl_hr_isapre.xml',
         'data/l10n_cl_hr_afp.xml',
         'data/l10n_cl_hr_mutual.xml',
+        'data/l10n_cl_hr_ccaf.xml',
         'data/hr_type_employee.xml',
         'data/resource_calendar_attendance.xml',
         'data/hr_holidays_status.xml',

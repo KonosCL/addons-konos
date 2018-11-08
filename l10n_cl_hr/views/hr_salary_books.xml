@@ -23,7 +23,7 @@
             <field name="model">hr.salary.employee.month</field>
             <field name="arch" type="xml">
             <form string="Libro de Remuneraciones">
-                <label string="Este wizard permite imprimir el total haberes."/>
+                <span class="o_form_label">Este wizard permite imprimir el total haberes</span>
                     <footer>
                         <button name="print_report" string="Print" type="object" class="oe_highlight"/>or
                         <button string="Cancel" class="oe_link" special="cancel" />
