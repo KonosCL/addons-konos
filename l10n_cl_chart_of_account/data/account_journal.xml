@@ -10,6 +10,19 @@
             <field name="show_on_dashboard" eval="True"/>
         </record>
 
+        <record id="pcga_journal" model="account.journal">
+            <field name="name">Sólo PCGA</field>
+            <field name="code">PCGA</field>
+            <field name="type">general</field>
+            <field name="show_on_dashboard" eval="False"/>
+        </record>
+
+        <record id="ifrs_journal" model="account.journal">
+            <field name="name">Sólo IFRS</field>
+            <field name="code">IFRS</field>
+            <field name="type">general</field>
+            <field name="show_on_dashboard" eval="False"/>
+        </record>
 
     </data>						
 </odoo>						
