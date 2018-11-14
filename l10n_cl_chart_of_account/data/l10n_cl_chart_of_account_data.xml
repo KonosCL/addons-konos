@@ -203,6 +203,30 @@
             <field name="chart_template_id" ref="cl_chart_template_sii"/>
         </record>
         
+        <record id="110605" model="account.account.template">
+			<field name="name">Cuenta de entrada de stock</field>
+			<field name="code">110605</field>
+			<field name="reconcile" eval="False" />
+			<field ref="account.data_account_type_current_assets" name="user_type_id" />
+			<field name="chart_template_id" ref="cl_chart_template_sii" />
+		</record>
+		
+		<record id="110606" model="account.account.template">
+			<field name="name">Cuenta de salida de stock</field>
+			<field name="code">110606</field>
+			<field name="reconcile" eval="False" />
+			<field ref="account.data_account_type_current_assets" name="user_type_id" />
+			<field name="chart_template_id" ref="cl_chart_template_sii" />
+		</record>
+	
+		<record id="110607" model="account.account.template">
+			<field name="name">Cuenta de valoración de stock</field>
+			<field name="code">110607</field>
+			<field name="reconcile" eval="False" />
+			<field ref="account.data_account_type_current_assets" name="user_type_id" />
+			<field name="chart_template_id" ref="cl_chart_template_sii" />
+		</record>	
+        
         <record id="110701" model="account.account.template">
             <field name="name">IVA Crédito Fiscal</field>
             <field name="code">110701</field>
@@ -1188,5 +1212,8 @@
         <field name="property_account_income_categ_id" ref="410201"/>
         <field name="income_currency_exchange_account_id" ref="620201"/>
         <field name="expense_currency_exchange_account_id" ref="620201"/>
+        <field name="property_stock_account_input_categ_id" ref="110605" />
+		<field name="property_stock_account_output_categ_id" ref="110606" />
+		<field name="property_stock_valuation_account_id" ref="110607" />
     </record>
 </odoo>
