@@ -206,7 +206,7 @@
         <record id="110605" model="account.account.template">
 			<field name="name">Cuenta de entrada de stock</field>
 			<field name="code">110605</field>
-			<field name="reconcile" eval="False" />
+			<field name="reconcile" eval="True" />
 			<field ref="account.data_account_type_current_assets" name="user_type_id" />
 			<field name="chart_template_id" ref="cl_chart_template_sii" />
 		</record>
@@ -214,7 +214,7 @@
 		<record id="110606" model="account.account.template">
 			<field name="name">Cuenta de salida de stock</field>
 			<field name="code">110606</field>
-			<field name="reconcile" eval="False" />
+			<field name="reconcile" eval="True" />
 			<field ref="account.data_account_type_current_assets" name="user_type_id" />
 			<field name="chart_template_id" ref="cl_chart_template_sii" />
 		</record>
@@ -222,7 +222,7 @@
 		<record id="110607" model="account.account.template">
 			<field name="name">Cuenta de valoración de stock</field>
 			<field name="code">110607</field>
-			<field name="reconcile" eval="False" />
+			<field name="reconcile" eval="True" />
 			<field ref="account.data_account_type_current_assets" name="user_type_id" />
 			<field name="chart_template_id" ref="cl_chart_template_sii" />
 		</record>	
