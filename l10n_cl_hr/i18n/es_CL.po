@@ -817,11 +817,6 @@ msgstr "Mothers Name"
 msgid "Movilización"
 msgstr "Movilización"
 
-#. module: l10n_cl_hr
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip_movimientos_personal
-#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip_run_movimientos_personal
-msgid "Movimientos Perosnal"
-msgstr "Movimientos Perosnal"
 
 #. module: l10n_cl_hr
 #: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract_mutual_seguridad

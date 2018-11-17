@@ -50,7 +50,7 @@ class HrPayslip(models.Model):
     movimientos_personal = fields.Selection((('0', 'Sin Movimiento en el Mes'),
      ('1', 'Contratación a plazo indefinido'),
      ('2', 'Retiro'),
-     ('3', 'Subsidios'),
+     ('3', 'Subsidios (L Médicas)'),
      ('4', 'Permiso Sin Goce de Sueldos'),
      ('5', 'Incorporación en el Lugar de Trabajo'),
      ('6', 'Accidentes del Trabajo'),
@@ -58,7 +58,10 @@ class HrPayslip(models.Model):
      ('8', 'Cambio Contrato plazo fijo a plazo indefinido'),
      ('11', 'Otros Movimientos (Ausentismos)'),
      ('12', 'Reliquidación, Premio, Bono')     
-     ), 'Movimientos Perosnal', default="0")
+     ), 'Código Movimiento', default="0")
+
+    date_start_mp = fields.Date('Fecha Inicio MP',  help="Fecha de inicio del movimiento de personal")
+    date_end_mp = fields.Date('Fecha Fin MP',  help="Fecha del fin del movimiento de personal")
 
 
 
@@ -113,7 +116,7 @@ class HrPayslip(models.Model):
             work_data = contract.employee_id.get_work_days_data(day_from, day_to, calendar=contract.resource_calendar_id)
             #Dias laborados reales para calcular la semana corrida
             effective = {
-                'name': _("Effective Working Days"),
+                'name': _("Dias de trabajo efectivos"),
                 'sequence': 2,
                 'code': 'EFF100',
                 'number_of_days': work_data['days'],

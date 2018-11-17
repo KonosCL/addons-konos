@@ -6,9 +6,13 @@
             <field name="model">hr.indicadores</field>
             <field name="arch" type="xml">
                 <form string="Indicadores Previsionales">
+                <header>
+                    <button string="Update" type="object" name="update_document" context="{'force_update':True}" />
+                </header>
                     <sheet>
                         <div>
                             <field name="name" invisible="1"/>
+
                             <group col="4" string="Período"> 
                                   <field name="month"/>
                                   <field name="year"/>
@@ -94,15 +98,17 @@
                                  <page string="Instituciones Relacionadas">
                                         <group col="2">
                                            <group col="2" name="quotations" string="Cotizaciones">
-                                                            <field name="ccaf_id" string="Caja de Compensación"/>
-                                                            <field name="caja_compensacion" string="Tasa"> </field>
-                                                            <field name="fonasa"> </field>
-                                                            <field name="pensiones_ips" string="Fondo de Pensiones"> </field>
-                                                            <field name="tope_imponible_salud" string="Tope Imponible Salud %"> </field>
+                                                <field name="ccaf_id" string="Caja de Compensación"/>
+                                                <field name="caja_compensacion" string="Tasa"> </field>
+                                                <field name="fonasa"> </field>
+                                                <field name="pensiones_ips" string="Fondo de Pensiones"> </field>
+                                                <field name="tope_imponible_salud" string="Tope Imponible Salud %"> </field>
                                             </group>   
                                             <group col="2" name="mutual_insurance" string="Instituciones de Seguridad">
-                                                            <field name="mutualidad_id" string="Nombre"/>       
-                                                            <field name="mutual_seguridad"> </field>
+                                                <field name="mutual_seguridad_bool" string="Tiene Mutual"/>  
+                                                <field name="mutualidad_id" string="Nombre" attrs="{'invisible': [('mutual_seguridad_bool', '=', False)]}"/>       
+                                                <field name="mutual_seguridad" attrs="{'invisible': [('mutual_seguridad_bool', '=', False)]}"/> 
+                                               <field name="isl" attrs="{'invisible': [('mutual_seguridad_bool', '=', True)]}"/> 
                                             </group>
                                         </group>
                                 </page>
@@ -185,6 +191,22 @@
                   action="hr_mutual_action"
                   sequence="13"
         />  
+
+        <act_window id="hr_apv_action"
+                    name="Institución Autorizada APV"
+                    res_model="hr.apv"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="hr_apv_menu"
+                  parent="menu_cl_hr_payroll_configuration"
+                  action="hr_apv_action"
+                  sequence="14"
+        /> 
+
+
+
 
 
     </data>

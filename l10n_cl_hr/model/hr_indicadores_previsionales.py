@@ -32,7 +32,11 @@
 
 from odoo import api, fields, models, tools, _
 from datetime import datetime
+import logging
+import requests
 
+
+_logger = logging.getLogger(__name__)
 MONTH_LIST= [('1', 'Enero'), 
         ('2', 'Febrero'), ('3', 'Marzo'), 
         ('4', 'Abril'), ('5', 'Mayo'), 
@@ -89,6 +93,8 @@ class hr_indicadores_previsionales(models.Model):
     fonasa = fields.Float('Fonasa',  help="Fonasa")
     mutual_seguridad = fields.Float(
         'Mutualidad',  help="Mutual de Seguridad")
+    isl = fields.Float(
+        'ISL',  help="Instituto de Seguridad Laboral")
     pensiones_ips = fields.Float(
         'Pensiones IPS',  help="Pensiones IPS")
     sueldo_minimo = fields.Float(
@@ -166,3 +172,94 @@ class hr_indicadores_previsionales(models.Model):
     @api.onchange('month')
     def get_name(self):
         self.name = str(self.month).replace('10', 'Octubre').replace('11', 'Noviembre').replace('12', 'Diciembre').replace('1', 'Enero').replace('2', 'Febrero').replace('3', 'Marzo').replace('4', 'Abril').replace('5', 'Mayo').replace('6', 'Junio').replace('7', 'Julio').replace('8', 'Agosto').replace('9', 'Septiembre') + " " + str(self.year)
+
+    def find_between_r(self, s, first, last ):
+        try:
+            start = s.rindex( first ) + len( first )
+            end = s.rindex( last, start )
+            return s[start:end]
+        except ValueError:
+            return ""
+
+    def find_month(self, s):
+        if s == '1':
+            return 'Enero'
+        if s == '2':
+            return 'Febrero'
+        if s == '3':
+            return 'Marzo'
+        if s == '4':
+            return 'Abril'
+        if s == '5':
+            return 'Mayo'
+        if s == '6':
+            return 'Junio'
+        if s == '7':
+            return 'Julio'
+        if s == '8':
+            return 'Agosto'
+        if s == '9':
+            return 'Septiembre'
+        if s == '10':
+            return 'Octubre'
+        if s == '11':
+            return 'Noviembre'
+        if s == '12':
+            return 'Diciembre'
+
+
+
+    def clean_string(self, s):
+        s = s.replace("<strong>", "")
+        s = s.replace("</strong>", "")
+        s = s.replace("</td>", "")
+        s = s.replace("<td>", "")
+        s = s.replace("$ ", "")        
+        s = s.replace("</div>", "")
+        s = s.replace("<div>", "")
+        s = s.replace(".", "")
+        s = s.replace(" ", "")
+        s = s.replace("%", "")
+        s = s.replace("RI", "")
+        s = s.replace("</tr>", "")
+        s = s.replace("<tr>", "")
+        s = s.replace('<tdwidth="20">', '')
+        s = s.replace("<tbody>", "")
+        s = s.replace("</tbody>", "")
+        s = s.replace("</table>", "")
+        s = s.replace("<table>", "")
+        s = s.replace('<tdwidth="80">', '')
+        s = s.replace('colspan="2">', '')
+        s = s.replace("width", "")
+        s = s.replace('"', '')
+
+        
+        return s
+
+
+    @api.one
+    def update_document(self):
+        url = "https://www.previred.com/web/previred/indicadores-previsionales"
+        response = requests.get(url,params="nombre")
+        if response and response.status_code!=200:
+            _logger.warning("error %s" %(response))
+            vals= {'detail':"Not found."}
+        else:
+            vals = response.text
+            vals = self.clean_string(vals)
+            fecha = self.find_month(self.month) + str(self.year)
+            fecha = "de" + fecha.strip()
+            try:
+                _logger.warning(vals)
+                self.uf = self.find_between_r( vals, fecha, '<' ).replace(",", ".")[:8]
+                self.utm = self.find_between_r( vals, '2018<tdalign=center>', '<' )[:5]
+                self.uta = self.find_between_r( vals, '2018<tdalign=center>', '<divclass=entry-links>' )[21:27]
+                #self.tope_imponible_afp = self.find_between_r( vals, 'ParaafiliadosaunaAFP(', 'UF):' )[:5]
+
+            except ValueError:
+                return ""
+
+
+            
+
+

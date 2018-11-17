@@ -33,9 +33,20 @@
                         <xpath expr="//field[@name='type_id']" position="replace">
                             <field name="type_id" select="3"/>
                         </xpath>
+                        <xpath expr="//field[@name='struct_id']" position="replace">
+                            <field name="struct_id" select="2"/>
+                        </xpath>
                         <xpath expr="//field[@name='journal_id']" position="replace">
                             <field name="journal_id" select="payroll_journal"/>
                         </xpath>
+
+
+
+                        
+
+
+
+
                         <xpath expr="//field[@name='resource_calendar_id']" position="replace">
                             <field name="resource_calendar_id" select="hr_resource_monthly_cl"/>
                         </xpath>
@@ -95,7 +106,10 @@
                                         <div name="sin_afp">
                                             <field name="sin_afp"/><label string="" nolabel="1"  />
                                         </div>
-
+                                        <label for="sin_afp_sis"/>
+                                        <div name="sin_afp_sis">
+                                            <field name="sin_afp_sis"/><label string="" nolabel="1"  />
+                                        </div>
 
 
 
@@ -106,7 +120,7 @@
                                         </div>
                                     </group>
                                     <group name="APV" string="Aporte Previsional Voluntario">
-                                        <label for="apv_id" string="Institución Autorizada APV - APVC : Cias Seguros de Vida"/>
+                                        <label for="apv_id" string="Instituc. APV-APVC"/>
                                         <div name="apv_id">
                                             <field name="apv_id"/>
                                         </div>

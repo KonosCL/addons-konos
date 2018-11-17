@@ -40,7 +40,7 @@ class hr_payslip_run(models.Model):
     movimientos_personal = fields.Selection((('0', 'Sin Movimiento en el Mes'),
      ('1', 'Contratación a plazo indefinido'),
      ('2', 'Retiro'),
-     ('3', 'Subsidios'),
+     ('3', 'Subsidios (L Médicas)'),
      ('4', 'Permiso Sin Goce de Sueldos'),
      ('5', 'Incorporación en el Lugar de Trabajo'),
      ('6', 'Accidentes del Trabajo'),

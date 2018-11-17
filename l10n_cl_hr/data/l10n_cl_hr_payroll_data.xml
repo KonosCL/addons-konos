@@ -7,10 +7,12 @@
 
         <record id="contrib_register_previred" model="hr.contribution.register">
             <field name="name">Previred</field>
+            <field name='partner_id' ref='previred'/>
         </record>
 
         <record id="contrib_register_sii" model="hr.contribution.register">
-            <field name="name">SII</field>
+            <field name="name">Sii</field>
+            <field name='partner_id' ref='sii'/>
         </record>
 
 
@@ -404,7 +406,7 @@ else:
 
 if contract.pension is True:
     result = 0
-elif contract.sin_afp is True:
+elif contract.sin_afp_sis is True:
     result = 0
 elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
     result = round(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)*tasa /100)
@@ -423,7 +425,7 @@ else:
             <field name="appears_on_payslip" eval="False"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">if contract.mutual_seguridad is False:
+            <field name="amount_python_compute">if payslip.indicadores_id.mutual_seguridad_bool is False:
      result = 0
 elif contract.type_id.name == 'Sueldo Empresarial':
      result = 0
@@ -729,7 +731,24 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="amount_python_compute">result = HAB - TDE</field>
         </record>
 
-
+        <record id="hr_rule_45" model="hr.salary.rule">
+            <field name="name">COTIZACION ACC. TRABAJO ISL</field>
+            <field name="sequence" eval="23"/>
+            <field name="code">ISL</field>
+            <field name="category_id" ref="COMP"/>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">if payslip.indicadores_id.mutual_seguridad_bool is True:
+     result = 0
+elif contract.type_id.name == 'Sueldo Empresarial':
+     result = 0
+elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
+     result = round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf) * payslip.indicadores_id.isl /100
+else:
+     result = round(round(TOTIM)*payslip.indicadores_id.isl /100)</field>
+            <field name="register_id" ref="contrib_register_previred"/>
+        </record>
 
 
 
@@ -789,13 +808,16 @@ result = round(SECEEMP) + round(SIS) + round(MUT) + round(SC)</field>
             <field name="name">ANTICIPO DE SUELDO</field>
             <field name="input_id" ref="hr_rule_38"/>
         </record>
+
+
+
  <!-- Estructura Inputs -->
 
     <record id="hr_struct_cl" model="hr.payroll.structure">
             <field name="name">Codigo del Trabajo</field>
             <field name="code">Codigo del Trabajo de Chile</field>
             <field name="parent_id"></field>
-            <field eval="[(6, 0, [ref('hr_rule_1'), ref('hr_rule_2'),ref('hr_rule_3'),ref('hr_rule_4'),ref('hr_rule_5'),ref('hr_rule_6'),ref('hr_rule_7'),ref('hr_rule_8'),ref('hr_rule_9'),ref('hr_rule_10'),ref('hr_rule_11'),ref('hr_rule_12'),ref('hr_rule_13'),ref('hr_rule_14'),ref('hr_rule_15'),ref('hr_rule_16'),ref('hr_rule_17'),ref('hr_rule_18'),ref('hr_rule_19'),ref('hr_rule_20'),ref('hr_rule_21'),ref('hr_rule_22'),ref('hr_rule_23'),ref('hr_rule_24'),ref('hr_rule_25'),ref('hr_rule_26'),ref('hr_rule_27'),ref('hr_rule_28'),ref('hr_rule_33'),ref('hr_rule_34'),ref('hr_rule_35'),ref('hr_rule_36'),ref('hr_rule_37'),ref('hr_rule_38'),ref('hr_rule_38_1'),ref('hr_rule_38_2'),ref('hr_rule_39'),ref('hr_rule_40'),ref('hr_rule_41'),ref('hr_rule_42'),ref('hr_rule_43'),ref('hr_rule_44')])]" name="rule_ids"/>
+            <field eval="[(6, 0, [ref('hr_rule_1'), ref('hr_rule_2'),ref('hr_rule_3'),ref('hr_rule_4'),ref('hr_rule_5'),ref('hr_rule_6'),ref('hr_rule_7'),ref('hr_rule_8'),ref('hr_rule_9'),ref('hr_rule_10'),ref('hr_rule_11'),ref('hr_rule_12'),ref('hr_rule_13'),ref('hr_rule_14'),ref('hr_rule_15'),ref('hr_rule_16'),ref('hr_rule_17'),ref('hr_rule_18'),ref('hr_rule_19'),ref('hr_rule_20'),ref('hr_rule_21'),ref('hr_rule_22'),ref('hr_rule_23'),ref('hr_rule_24'),ref('hr_rule_25'),ref('hr_rule_26'),ref('hr_rule_27'),ref('hr_rule_28'),ref('hr_rule_33'),ref('hr_rule_34'),ref('hr_rule_35'),ref('hr_rule_36'),ref('hr_rule_37'),ref('hr_rule_38'),ref('hr_rule_38_1'),ref('hr_rule_38_2'),ref('hr_rule_39'),ref('hr_rule_40'),ref('hr_rule_41'),ref('hr_rule_42'),ref('hr_rule_43'),ref('hr_rule_44'),ref('hr_rule_45')])]" name="rule_ids"/>
         </record>
 
 

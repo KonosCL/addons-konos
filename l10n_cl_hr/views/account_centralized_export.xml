@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record model="ir.ui.view" id="wizard_export_account_centralized_form_view">
+            <field name="name">wizard.export.account.centralized.form</field>
+            <field name="model">wizard.export.account.centralized</field>
+            <field name="arch" type="xml">
+                <form string="Centralización Contable">
+                    <group colspan="2">
+                        <field name="date_to"/> 
+                        <field name="libro_id"  required="1"/>   
+                    </group>
+                    <footer>
+                        <div class="oe_left">
+                            <button string="Generar reporte" name="account_centralized_history_excel"
+                                type="object"  class="oe_highlight" />
+                            <button string="Cerrar" special="cancel" type="object"
+                                 class="oe_link" />
+                        </div>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_export_account_centralized_wizard" model="ir.actions.act_window">
+            <field name="name">Account Centralized Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.export.account.centralized</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="view_account_centralized_history_excel" model="ir.ui.view">
+            <field name="name">account.centralized.excel.form</field>
+            <field name="model">account.centralized.excel</field>
+            <field name="arch" type="xml">
+                <form string="Excel Report file" version="7.0">
+                    <group>
+                        <field name="excel_file" readonly="1" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_wizard_export_account_centralized_tree_view">
+            <field name="name">Centralización Contable</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.centralized.excel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_account_centralized_history_excel" />
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem 
+            id="wizard_account_centralized_menu" 
+            name="Centralización Contable"
+            sequence="3"
+            parent="menu_cl_hr_payroll_reports"
+            action="action_export_account_centralized_wizard"
+        />
+
+
+</odoo>

@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <field name="credit_note" position="before">
                     <field name="indicadores_id"/>  
-                    <field name="movimientos_personal"/>
+                    <field name="movimientos_personal" invisible="1"/>
                 </field>
             </field>
         </record>
