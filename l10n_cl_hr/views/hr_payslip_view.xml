@@ -10,9 +10,10 @@
                     <field name="indicadores_id" required="1"/>
                 </field>
                 <field name="credit_note" position="replace">
-                    <field name="movimientos_personal"/>
+                    <field name="movimientos_personal" String="Código Movimiento"/>
+                    <field name="date_start_mp" String="Inicio MP" attrs="{'invisible': [('movimientos_personal', '=', '0')]}"/>
+                    <field name="date_end_mp" String="Fin MP" attrs="{'invisible': [('movimientos_personal', '=', '0')]}"/>
                 </field>
-
             </field>
     </record>
 
