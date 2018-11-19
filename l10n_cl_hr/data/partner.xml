@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='res.partner' id='sii'>
+                <field name='name'>SII</field>
+                <field name='document_number'>60.803.000-K</field>
+        </record> 
+    
+        <record model='res.partner' id='previred'>
+                <field name='name'>PREVIRED</field>
+                <field name='document_number'>96.929.390-0</field>
+        </record> 
+
+
+
+    </data>
+</odoo>
