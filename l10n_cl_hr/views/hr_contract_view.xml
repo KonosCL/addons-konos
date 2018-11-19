@@ -96,7 +96,7 @@
 							</div>
 						 	<label for="sin_afp_sis"/>
 							<div name="sin_afp_sis">
-								<field name="sin_afp_sis"/><label string="" nolabel="1"  />
+								<field name="sin_afp_sis"/>
 							</div>
 							<label for="afp_id" />
 							<div name="afp_id">

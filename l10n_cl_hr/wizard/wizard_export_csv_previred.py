@@ -1,71 +1,48 @@
-# -*- encoding: utf-8 -*-
-########################################################################
-#
-# @authors: Carlos Lopez Mite(celm1990@hotmail.com), - Nelson Ramírez Sánchez (info@konos.com)
-#    
-#    
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
 
 import io
 import csv
 import base64
-from datetime import datetime, date, time
 import logging
-from odoo import models, api, fields
 import time
+from datetime import datetime
+from dateutil import relativedelta
+
+from odoo import models, api, fields
 import odoo.addons.decimal_precision as dp
 from odoo.tools.translate import _
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DF
-from dateutil import relativedelta
-
 
 class WizardExportCsvPrevired(models.TransientModel):
 
     _name = 'wizard.export.csv.previred'
     _description = 'wizard.export.csv.previred'
     
-    delimiter = ";"
-    quotechar = '"'
-    date_from = fields.Date('Fecha Inicial', required=True)
-    date_to = fields.Date('Fecha Final', required=True)
-    file_data = fields.Binary('Archivo csv', filters=None, help="",)
-    file_name = fields.Char('Nombre de archivo', size=256, required=False, help="",)
-
-    _defaults = {
-        'date_from': lambda *a: time.strftime('%Y-%m-01'),
-        'date_to': lambda *a: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10],
-
+    delimiter = {
+        'comma':  ',',
+        'dot_coma':  ';',
+        'tab':  '\t',
     }
-
-
-    def getrecord_treeview(self, name):  
-        res = self.env['wizard.export.csv.previred'].search([])
-        res_id = res and res[1] or False
-        return{
-                    'name':_('wizard.export.csv.previred'),
-                    'res_model':'wizard.export.csv.previred',
-                    'type': 'ir.actions.act_window',
-                    'view_type': 'tree',
-                    'view_mode': 'tree',
-                    'view_id': [res_id],
-                    'context':{},
-                    'target':'new'
-                    }
-
+    quotechar = {
+        'colon':  '"',
+        'semicolon':  "'",
+        'none':  '',
+    } 
+    
+    date_from = fields.Date('Fecha Inicial', required=True, default=lambda self: time.strftime('%Y-%m-01'))
+    date_to = fields.Date('Fecha Final', required=True, default=lambda self: str(datetime.now() + relativedelta.relativedelta(months=+1, day=1, days=-1))[:10])
+    file_data = fields.Binary('Archivo Generado')
+    file_name = fields.Char('Nombre de archivo')
+    delimiter_option = fields.Selection([
+        ('colon','Comillas Dobles(")'),
+        ('semicolon',"Comillas Simples(')"),
+        ('none',"Ninguno"),
+        ], string='Separador de Texto', default='colon', required=True)
+    delimiter_field_option = fields.Selection([
+        ('comma','Coma(,)'),
+        ('dot_coma',"Punto y coma(;)"),
+        ('tab',"Tabulador"),
+        ], string='Separador de Campos', default='comma', required=True)
+    
     @api.multi
     def show_view(self, name):
         search_ids = self.env['wizard.export.csv.previred'].search([])
@@ -81,11 +58,9 @@ class WizardExportCsvPrevired(models.TransientModel):
             'target': 'new',
         }
 
-
-
-    
     @api.model
     def get_nacionalidad(self, employee):
+        #0 chileno, 1 extranjero, comparar con el pais de la compañia
         if employee == 47:
             return 0
         else:
@@ -110,9 +85,9 @@ class WizardExportCsvPrevired(models.TransientModel):
     def get_tipo_trabajador(self, employee):
 
         if employee.type_id is False:
-          return 0
-        else:           
-            tipo_trabajador = employee.type_id
+            return 0
+        else:
+            tipo_trabajador = employee.type_id.id_type
 
         #Codigo    Glosa
         #id_type
@@ -150,9 +125,9 @@ class WizardExportCsvPrevired(models.TransientModel):
                 if payslip.indicadores_id.asignacion_familiar_primer >= valor:
                     return 'A'
                 elif payslip.indicadores_id.asignacion_familiar_segundo  >= valor:
-                   return 'B'
+                    return 'B'
                 elif payslip.indicadores_id.asignacion_familiar_tercer  >= valor:
-                   return 'C'
+                    return 'C'
             else:
                 return 'D' 
         except:
@@ -177,38 +152,38 @@ class WizardExportCsvPrevired(models.TransientModel):
     @api.model
     def get_imponible_afp(self, payslip, TOTIM):
         if payslip.contract_id.pension is True:
-          return '0'
+            return '0'
         elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
-          return round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)
+            return round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)
         else:
-          return round(TOTIM)
+            return round(TOTIM)
 
     @api.model
     def get_imponible_afp_2(self, payslip, TOTIM, LIC):
         if LIC > 0:
-          TOTIM=LIC
+            TOTIM=LIC
         if payslip.contract_id.pension is True:
-          return '0'
+            return '0'
         elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
-          return int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))      
+            int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))      
         else:
-          return int(round(TOTIM))
+            return int(round(TOTIM))
 
     @api.model
     def get_imponible_mutual(self, payslip, TOTIM):
         if payslip.contract_id.mutual_seguridad is False:
-          return 0
+            return 0
         elif payslip.contract_id.type_id.name == 'Sueldo Empresarial':
-          return 0 
+            return 0 
         elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
-          return round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)
+            return round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf)
         else:
-          return round(TOTIM)    
+            return round(TOTIM)    
 
     @api.model
     def get_imponible_seguro_cesantia(self, payslip, TOTIM, LIC):
         if LIC > 0:
-          TOTIM=LIC
+            TOTIM=LIC
         if payslip.contract_id.pension is True:
             return 0
         elif payslip.contract_id.type_id.name == 'Sueldo Empresarial':
@@ -222,9 +197,9 @@ class WizardExportCsvPrevired(models.TransientModel):
     def get_imponible_salud(self, payslip, TOTIM):
         result = 0
         if TOTIM >= round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
-          return int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))
+            return int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))
         else:
-          return int(round(TOTIM))
+            return int(round(TOTIM))
 
     @api.model
     def _acortar_str(self, texto, size=1):
@@ -241,27 +216,27 @@ class WizardExportCsvPrevired(models.TransientModel):
         c = 0
         cadena = ""
         special_chars = [
-         [u'á', 'a'],
-         [u'é', 'e'],
-         [u'í', 'i'],
-         [u'ó', 'o'],
-         [u'ú', 'u'],
-         [u'ñ', 'n'],
-         [u'Á', 'A'],
-         [u'É', 'E'],
-         [u'Í', 'I'],
-         [u'Ó', 'O'],
-         [u'Ú', 'U'],
-         [u'Ñ', 'N']]
+         ['á', 'a'],
+         ['é', 'e'],
+         ['í', 'i'],
+         ['ó', 'o'],
+         ['ú', 'u'],
+         ['ñ', 'n'],
+         ['Á', 'A'],
+         ['É', 'E'],
+         ['Í', 'I'],
+         ['Ó', 'O'],
+         ['Ú', 'U'],
+         ['Ñ', 'N']]
 
         while c < size and c < len(texto):
             cadena += texto[c]
             c += 1
         for char in special_chars:
-          try:
-            cadena = cadena.replace(char[0], char[1])
-          except:
-            pass
+            try:
+                cadena = cadena.replace(char[0], char[1])
+            except:
+                pass
         return cadena
     
     @api.multi
@@ -275,16 +250,18 @@ class WizardExportCsvPrevired(models.TransientModel):
         _logger = logging.getLogger(__name__)
         country_company = self.env.user.company_id.country_id
         output = io.StringIO()
-        writer = csv.writer(output, delimiter=self.delimiter, quotechar=self.quotechar, quoting=csv.QUOTE_NONE)
-        csvdata = [1,2,'a','He said "what do you mean?"',"Whoa!\nNewlines!"]        
+        if self.delimiter_option == 'none':
+            writer = csv.writer(output, delimiter=self.delimiter[self.delimiter_field_option], quoting=csv.QUOTE_NONE)
+        else:
+            writer = csv.writer(output, delimiter=self.delimiter[self.delimiter_field_option], quotechar=self.quotechar[self.delimiter_option], quoting=csv.QUOTE_ALL)
         #Debemos colocar que tome todo el mes y no solo el día exacto TODO
         payslip_recs = payslip_model.search([('date_from','=',self.date_from),
                                              ])
 
         date_start = self.date_from
         date_stop = self.date_to
-        date_start_format = datetime.strptime(date_start, DF).strftime("%m%Y")
-        date_stop_format = datetime.strptime(date_stop, DF).strftime("%m%Y")
+        date_start_format = date_start.strftime("%m%Y")
+        date_stop_format = date_stop.strftime("%m%Y")
         line_employee = []
         rut = ""
         rut_dv = ""
@@ -296,6 +273,8 @@ class WizardExportCsvPrevired(models.TransientModel):
             rut_emp = rut_emp.replace('.','')
         except:
             pass  
+
+
         for payslip in payslip_recs:
             payslip_line_recs = payslip_line_model.search([('slip_id','=',payslip.id)])
             rut = ""
@@ -326,10 +305,10 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #16 Fecha inicio movimiento personal (dia-mes-año)
                              #Si declara mov. personal 1, 3, 4, 5, 6, 7, 8 y 11 Fecha Desde
                              #es obligatoria y debe estar dentro del periodo de remun
-                             datetime.strptime(payslip.date_start_mp, DF).strftime("%d/%m/%Y") if payslip.movimientos_personal != '0' else '00/00/0000', 
+                             payslip.date_from.strftime("%d/%m/%Y") if payslip.movimientos_personal != '0' else '00/00/0000', 
                              #payslip.date_from if payslip.date_from else '00/00/0000', 
                              #17 Fecha fin movimiento personal (dia-mes-año)
-                             datetime.strptime(payslip.date_end_mp, DF).strftime("%d/%m/%Y") if payslip.movimientos_personal != '0' else '00/00/0000', 
+                             payslip.date_to.strftime("%d/%m/%Y") if payslip.movimientos_personal != '0' else '00/00/0000', 
                              #Si declara mov. personal 1, 3, 4, 5, 6, 7, 8 y 11 Fecha Desde
                              #es obligatoria y debe estar dentro del periodo de remun
                              #payslip.date_to if payslip.date_to else '00-00-0000', 
@@ -545,12 +524,9 @@ class WizardExportCsvPrevired(models.TransientModel):
                              #105 Centro de Costos, Sucursal, Agencia 
                              "1"
                              ]
-            writer.writerow(line_employee)
-      
-
-        content = output.getvalue()
-        self.write({'file_data': base64.b64encode(content.encode('utf-8')),
-                    'file_name': "Previred_%s.txt" % (date_stop_format),
+            writer.writerow([str(l) for l in line_employee])
+        self.write({'file_data': base64.encodebytes(output.getvalue().encode()),
+                    'file_name': "Previred_%s.txt" % (self.date_to),
                     })
                 
         return self.show_view(u'Previred Generado')
