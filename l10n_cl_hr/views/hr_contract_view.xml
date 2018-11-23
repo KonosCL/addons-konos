@@ -25,6 +25,10 @@
                             <div name="anticipo_sueldo">
                                 <field name="anticipo_sueldo" string="Anticipo de Sueldo"/>
                             </div>
+                            <label for="gratificacion_legal" string="Gratificación Manual"/>
+                            <div name="gratificacion_legal" >
+                                <field name="gratificacion_legal" string="Gratificación Manual"/>
+                            </div>
 
                         </xpath>
 

@@ -25,7 +25,7 @@
         "Francisco Lorca <fcolorca1979@gmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '11.0.1.2.8',
+    'version': '11.0.1.2.9',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
