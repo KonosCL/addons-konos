@@ -10,6 +10,7 @@
     """,
     'author': 'Konos',
     'website': 'http://www.konos.cl',
+    'category': 'Localization/Chile',
     'depends': ['account'],
     'data': ["views/bank_statement.xml",
              "wizard/transit_payment_export.xml",

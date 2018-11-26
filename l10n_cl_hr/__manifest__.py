@@ -4,7 +4,6 @@
 
 {
     'name': 'Chilean Payroll & Human Resources',
-    'category': 'Localization',
     'author': 'Konos',
     'website': 'http://konos.cl',
     'license': 'AGPL-3',
@@ -43,6 +42,7 @@ Chilean Payroll & Human Resources.
     , ...
     Report
   """,
+    'category': 'Localization/Chile',
     'active': True,
     'data': [
         'views/hr_indicadores_previsionales_view.xml',
