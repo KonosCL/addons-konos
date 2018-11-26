@@ -8,6 +8,7 @@
     'description': """
 	Import Bank Statement Lines from Excel
     """,
+    'category': 'Localization/Chile',
     'author': 'Konos',
     'website': 'http://www.konos.cl',
     'depends': ['account'],
