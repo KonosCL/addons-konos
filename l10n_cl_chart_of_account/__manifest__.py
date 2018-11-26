@@ -15,7 +15,7 @@ basado en plan de cuentas del Servicio de Impuestos Internos
     """,
     'author': 'Konos',
     'website': 'http://www.konos.cl',
-    'category': 'Localization',
+    'category': 'Localization/Chile',
     'depends': ['account'],
     'data': [
         'data/l10n_cl_chart_of_account_data.xml',

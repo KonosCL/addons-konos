@@ -6,7 +6,7 @@
 {
     'name':'Chilean 8 Column Balance',
     'description':'Formato de Balance de 8 Columnas para Chile',
-    'category': 'Localization',
+    'category': 'Localization/Chile',
     'version':'0.1',
     'author':'Konos',
     'website':'http://konos.cl',
