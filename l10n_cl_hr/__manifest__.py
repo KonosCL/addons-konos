@@ -43,7 +43,6 @@ Chilean Payroll & Human Resources.
     Report
   """,
     'category': 'Localization/Chile',
-    'active': True,
     'data': [
         'views/hr_indicadores_previsionales_view.xml',
         'views/hr_salary_rule_view.xml',
