@@ -295,4 +295,56 @@
       <field name="account_id" ref="110704"/>
     </record>
 
+    <record id="especifico_compra_diesel" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Específico Diesel - Compra</field>
+      <field name="description">Especifico</field>
+      <field name="amount">63</field>
+      <field name="sii_code">28</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="9"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+    </record>
+
+    <record id="especifico_compra_gasolina" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Específico Gasolina - Compra</field>
+      <field name="description">Específico Gasolina</field>
+      <field name="amount">63</field>
+      <field name="sii_code">35</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="10"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+    </record>
+
+    <record id="especifico_art_42_d" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Art. 42, letra D y E</field>
+      <field name="description">Art. 42, letra D y E</field>
+      <field name="amount">63</field>
+      <field name="sii_code">27</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="11"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+    </record>
+
+    <record id="especifico_art_42_c" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Art. 42, letra C</field>
+      <field name="description">Art. 42, letra C</field>
+      <field name="amount">63</field>
+      <field name="sii_code">25</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="12"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+    </record>
+
 </odoo>
