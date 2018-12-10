@@ -34,20 +34,9 @@
             </form>
             </field>
         </record>
-        <report 
-            id="hr_salary_books"
-            string="Libro de Remuneraciones"
-            model="hr.salary.employee.month"
-            report_type="qweb-pdf"
-            file="l10n_cl_hr.report_hrsalarybymonth"
-            name="l10n_cl_hr.report_hrsalarybymonth"/>
-
-    </data>
-
-           <!-- 
-
         <record id="report_paper_format_nuevo" model="report.paperformat">
             <field name="name">A4 Horizontal</field>
+            <field name="default" eval="True"/>
             <field name="format">A4</field>
             <field name="orientation">Landscape</field>
             <field name="margin_top">5</field>
@@ -57,10 +46,14 @@
             <field name="header_spacing">10</field>
             <field name="dpi">90</field>
         </record>
-        
-        <record id="hr_salary_books" model="ir.actions.report.xml">
-            <field name="paperformat_id" ref="report_paper_format_nuevo" />
-        </record>
+        <report 
+            id="hr_salary_books"
+            string="Libro de Remuneraciones"
+            model="hr.salary.employee.month"
+            report_type="qweb-pdf"
+            file="l10n_cl_hr.report_hrsalarybymonth"
+            name="l10n_cl_hr.report_hrsalarybymonth"
+            paperformat="l10n_cl_hr.report_paper_format_nuevo"/>
 
-        FIX -->
+    </data>
 </odoo>
