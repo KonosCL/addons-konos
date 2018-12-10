@@ -13,7 +13,6 @@ class HRHolidaysStatus(models.Model):
     is_continued = fields.Boolean('Disccount Weekends')
 
 
-
 class HRHolidays(models.Model):
     _inherit = 'hr.holidays'
 
@@ -22,7 +21,7 @@ class HRHolidays(models.Model):
         from_dt = fields.Datetime.from_string(date_from)
         to_dt = fields.Datetime.from_string(date_to)
 
-        #En el caso de las licencias descontamos dias corridos
+        #Función Original: Agregamos la opción de días contínuos para licencias dias corridos
         if employee_id and self.holiday_status_id.is_continued:
             time_delta = to_dt - from_dt
             return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
@@ -33,13 +32,20 @@ class HRHolidays(models.Model):
         return math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
 
 
-    @api.onchange('holiday_status_id')
-    def _onchange_holiday_status_id(self):
-        self._check_and_recompute_days()
+    #Función Original: Agregamos el recálculo al cambiar holiday_status_id
+    @api.multi
+    @api.depends('number_of_days_temp', 'type', 'holiday_status_id')
+    def _compute_number_of_days(self):
+        for holiday in self:
+            if holiday.type == 'remove':
+                holiday.number_of_days = -holiday.number_of_days_temp
+            else:
+                holiday.number_of_days = holiday.number_of_days_temp
 
 
 
 
+    #Función Original: Agregamos el recálculo al cambiar holiday_status_id
     @api.onchange('date_from','holiday_status_id','employee_id')
     def _onchange_date_from(self):
         """ If there are no date set for date_to, automatically set one 8 hours later than
@@ -59,6 +65,8 @@ class HRHolidays(models.Model):
         else:
             self.number_of_days_temp = 0
 
+
+    #Función Original: Agregamos el recálculo al cambiar holiday_status_id
     @api.onchange('date_to','holiday_status_id','employee_id')
     def _onchange_date_to(self):
         """ Update the number_of_days. """
@@ -70,8 +78,3 @@ class HRHolidays(models.Model):
             self.number_of_days_temp = self._get_number_of_days(date_from, date_to, self.employee_id.id)
         else:
             self.number_of_days_temp = 0
-
-    ####################################################
-    # ORM Overrides methods
-    ####################################################
-
