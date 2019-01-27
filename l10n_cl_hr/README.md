@@ -8,7 +8,7 @@ https://youtu.be/6m9fuuCny7g
 
 ## Credits
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
+<img width="200" alt="Logo Konos" src="https://www.konos.cl/web/image/res.company/1/logo?unique=445cd30" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -35,7 +35,7 @@ https://youtu.be/6m9fuuCny7g
  - Daniel Blanco Martín <daniel@blancomartin.com>
  - Carlos Lopez Mite <celm1990@hotmail.com>
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
- - Francisco Lorca <fcolorca1979@gmail.com>
+
 
  
 
@@ -47,12 +47,12 @@ Odoo - Chilean Payroll & Human Resources
 ========================================
 
 Personalización para manejo de Recursos Humanos y Remuneraciones en Chile
-Puede chequear la funcionalidad del este módulo en el siguiente video:
+Puede revisar la funcionalidad del este módulo en el siguiente video:
 https://youtu.be/6m9fuuCny7g
  
 ## Créditos
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
+<img width="200" alt="Logo Konos" src="https://www.konos.cl/web/image/res.company/1/logo?unique=445cd30" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -80,4 +80,4 @@ https://youtu.be/6m9fuuCny7g
  - Daniel Blanco Martín <daniel@blancomartin.com>
  - Carlos Lopez Mite <celm1990@hotmail.com>
  - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
- - Francisco Lorca <fcolorca1979@gmail.com>
+
