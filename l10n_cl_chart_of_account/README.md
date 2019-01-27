@@ -21,16 +21,3 @@ Contributors
 - Carlos Lopez Mite <celm1990@hotmail.com>
 - Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>
 
-
-
-Maintainer
-----------
-
-.. image:: https://blancomartin.cl/logo.png
-   :alt: Blanco Martin y Asociados' logo
-   :target: https://blancomartin.cl
-
-
-This module is maintained by Blanco Martín & Asociados.
-
-To contribute to this module, please visit https://blancomartin.cl.
