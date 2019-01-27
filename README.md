@@ -3,7 +3,7 @@ Addons - Konos
 This repository´s main purpose is to group basic chilean and accounting modules
 ## Credits
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/1149" />
+<img width="200" alt="Logo Konos" src="https://www.konos.cl/web/image/res.company/1/logo?unique=445cd30" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -16,6 +16,7 @@ This repository´s main purpose is to group basic chilean and accounting modules
  - Francisco Lorca <fcolorca1979@gmail.com>
  - Marcel Rodríguez <jmrv1981@hotmail.com>
  - Carlos Soto <odoo.soporte@gmail.com>
+ - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
 
 
 
@@ -29,7 +30,7 @@ Este repositorio tiene como finalidad agrupar algunos módulos básicos para la 
 
 ## Créditos
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/1149" />
+<img width="200" alt="Logo Konos" src="https://www.konos.cl/web/image/res.company/1/logo?unique=445cd30" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -42,3 +43,4 @@ Este repositorio tiene como finalidad agrupar algunos módulos básicos para la 
  - Francisco Lorca <fcolorca1979@gmail.com>
  - Marcel Rodríguez <jmrv1981@hotmail.com>
  - Carlos Soto <odoo.soporte@gmail.com>
+ - Rodolfo Bermúdez Neubauer <odoo@intellego-bi.com>
