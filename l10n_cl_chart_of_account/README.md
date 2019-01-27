@@ -1,8 +1,3 @@
-=============
-l10n_cl_chart_of_account
-=============
-
-
 Chilean Accounting Chart and Tax Localization.
 ==============================================
 Plan contable chileno e impuestos de acuerdo a disposiciones vigentes,
