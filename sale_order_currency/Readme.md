@@ -1,8 +1,9 @@
-2. Sale order en USD , Factura en CLP anexo modulo, video e instrucciones
+Módulo que permite seleccionar si queremos facturar una venta en la moneda de la cotización o la moneda local. 
+Esto se usa en Chile para cotizar en UF, USD, ETC. 
  
 https://youtu.be/TLgGE-veWh4
 
-Para poder configurar el punto 2 hay que:
+Para poder configurar hay que tener en cuenta lo siguiente:
 
 a. Moneda Principal CLP
 b. Instalar Financial Indicators
