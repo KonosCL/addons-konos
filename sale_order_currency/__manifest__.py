@@ -22,15 +22,16 @@
 
 {
     'name': 'Cotizaciones de Venta en Otra Moneda',
-    'version': '11.0',
+    'version': '11.0.1',
     'category': 'Sale',
     'license': 'AGPL-3',
     'summary': 'Cotizaciones de Venta en Otra Moneda',
     'author': 'Konos Soluciones y Servicios Limitada',
     'website': 'http://konos.cl',
-    'depends': ['base', 'sale', 'sale_order_dates'],
+    'depends': ['base', 'sale', 'account'],
     'data': [
-        'views/sale_views.xml',
     ],
     'installable': True,
+    'auto_install': False,
+    'application': True,
 }
