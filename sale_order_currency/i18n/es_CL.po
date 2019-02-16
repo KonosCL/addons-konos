@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180818\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-01 02:49+0000\n"
+"PO-Revision-Date: 2018-08-31 23:50-0300\n"
+"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_CL\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: sale_order_currency
+#: model:ir.model.fields,field_description:sale_order_currency.field_sale_order_invoice_currency
+msgid "Home Currency"
+msgstr "Factura Moneda Local"
+
+#. module: sale_order_currency
+#: code:addons/sale_order_currency/models/sale.py:23
+#, python-format
+msgid "Please define an accounting sales journal for this company."
+msgstr "Por favor, defina un diario contable de ventas para esta compañía."
+
+#. module: sale_order_currency
+#: code:addons/sale_order_currency/models/sale.py:69
+#, python-format
+msgid "Please define income account for this product: \"%s\" (id:%d) - or for its category: \"%s\"."
+msgstr "Por favor defina la cuenta de entrada de existencias para este producto: \"%s\" (id:%d) o su categoría: \"%s\"."
+
+#. module: sale_order_currency
+#: model:ir.model,name:sale_order_currency.model_sale_order
+msgid "Quotation"
+msgstr "Cotización"
+
+#. module: sale_order_currency
+#: model:ir.model,name:sale_order_currency.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
