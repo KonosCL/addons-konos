@@ -26,7 +26,7 @@
     'category': 'Sale',
     'license': 'AGPL-3',
     'summary': 'Cotizaciones de Venta en Otra Moneda',
-    'author': 'Konos Soluciones y Servicios Limitada',
+    'author': u'Konos, Daniel Santibáñez Polanco',
     'website': 'http://konos.cl',
     'depends': ['base', 'sale', 'account'],
     'data': [
