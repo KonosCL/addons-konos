@@ -10,18 +10,10 @@ b. Instalar Financial Indicators Preferiblemente
 
 c. Colocar el Token del SBIF
 
-d. Quitar el Update Rate Currency de Odoo
+d. Instalar Sale Order Currency
 
-e. Colocar Precisión Decimal
+e. Activar Multimoneda
 
-f. Currency Rate 14
+f. Activar el Cron Job Update Chilean Financial Indicators para que actualice la tasas a las 9 am.
 
-g. Currency 14
 
-h. Instalar Sale Order Currency
-
-i. Colocar Redondeo Global
-
-j. Factor Redondeo CLP = 1
-
-k. Activar el Cron Job Update Chilean Financial Indicators para que actualice la tasas a las 9 am.
