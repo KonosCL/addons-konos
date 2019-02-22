@@ -8,7 +8,7 @@ https://youtu.be/6m9fuuCny7g
 
 ## Credits
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
+<img width="200" alt="Logo Konos" src="https://www.konos.cl/web/image/res.company/1/logo?unique=445cd30" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
@@ -52,7 +52,7 @@ https://youtu.be/6m9fuuCny7g
  
 ## Créditos
 <p>
-<img width="200" alt="Logo Konos" src="http://www.konos.cl/web/image/666" />
+<img width="200" alt="Logo Konos" src="https://www.konos.cl/web/image/res.company/1/logo?unique=445cd30" />
 </p>
 **Konos** - http://konos.cl
  - Nelson Ramírez <info@konos.cl>
