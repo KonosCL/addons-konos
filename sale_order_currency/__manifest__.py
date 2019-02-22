@@ -21,11 +21,11 @@
 ##############################################################################
 
 {
-    'name': 'Cotizaciones de Venta en Otra Moneda',
+    'name': 'Sale Order Currency',
     'version': '11.0.1',
     'category': 'Sale',
     'license': 'AGPL-3',
-    'summary': 'Cotizaciones de Venta en Otra Moneda',
+    'summary': 'Converts the amount and currency in the sale order into the local currency',
     'author': u'Konos, Daniel Santibáñez Polanco',
     'website': 'http://konos.cl',
     'depends': ['base', 'sale', 'account'],
