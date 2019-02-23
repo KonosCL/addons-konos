@@ -4,6 +4,7 @@ from odoo.exceptions import UserError, ValidationError
 
 class report_hr_salary_employee_bymonth(models.AbstractModel):
     _name = 'report.l10n_cl_hr.report_hrsalarybymonth'
+    _description = 'Monthly Salary Report'
 
     @api.model
     def _get_report_values(self, docids, data=None):
