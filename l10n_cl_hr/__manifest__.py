@@ -17,10 +17,9 @@
         "Daniel Blanco Martin <daniel@blancomartin.com>",
         "Carlos Lopez Mite <celm1990@hotmail.com>",
         "Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>",
-        "Francisco Lorca <fcolorca1979@gmail.com>",
     ],
     'license': 'AGPL-3',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================

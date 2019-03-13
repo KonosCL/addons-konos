@@ -98,10 +98,10 @@
                         </td>
                         <td>
                           <t t-if="('FONASA' == o.contract_id.isapre_id.name)">
-                              <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('SALUD' == p.code)"><span t-esc="round(p.amount)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
+                              <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('SALUD' == p.code)"><span t-esc="round(p.amount)" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
                           </t>
                           <t t-if="('FONASA' != o.contract_id.isapre_id.name)">
-                              <span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                              <span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                           </t>
                         </td>
                       </tr>
@@ -152,14 +152,14 @@
                       <td>
                         <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                           <t t-if="('TOTIM' == p.code)">
-                            <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                           </t>
                         </t>
                       </td>
                       <td>
                         <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                           <t t-if="'TRIBU' == p.code">
-                            <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                           </t>
                         </t>
                       </td>
@@ -191,10 +191,10 @@
                                    </td>
                                     <td style="text-align:right">
                                      <t t-if=" ('Subtotal' ==p.category_id.name)">
-                                       <strong><span t-esc="p.total" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
+                                       <strong><span t-esc="p.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
                                      </t>
                                      <t t-if=" ('Subtotal' !=p.category_id.name)">
-                                       <span t-esc="p.total" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                       <span t-esc="p.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                                      </t>
                                    </td>
                                </t>
@@ -204,7 +204,7 @@
                        <td style="vertical-align:top;">
                           <table class="table-condensed" width="100%">
                              <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
-                                <t t-if="('Prevision' ==p.category_id.name) or ('Previsión' ==p.category_id.name) or ('Salud' ==p.category_id.name) or ('Descuentos' ==p.category_id.name) or ('Otros Descuentos' ==p.category_id.name) or ('TOD' == p.code) or ('TODELE' == p.code)">
+                                <t t-if="('Prevision' ==p.category_id.name) or ('Salud' ==p.category_id.name) or ('Descuentos' ==p.category_id.name) or ('Otros Descuentos' ==p.category_id.name) or ('TOD' == p.code) or ('TODELE' == p.code)">
                                    <td>
                                        <t t-if=" ('Subtotal' ==p.category_id.name)">
                                          <strong><span t-field="p.name"/></strong>
@@ -217,10 +217,10 @@
 
                                     <td style="text-align:right">
                                      <t t-if=" ('Subtotal' ==p.category_id.name)">
-                                       <strong><span t-esc="p.total" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
+                                       <strong><span t-esc="p.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></strong>
                                      </t>
                                      <t t-if=" ('Subtotal' !=p.category_id.name)">
-                                       <span t-esc="p.total" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                       <span t-esc="p.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                                      </t>
 
                                    </td>
@@ -236,15 +236,15 @@
                 <thead>
                   <tr>
                     <td><strong>TOTAL HABERES</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)"> <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
+                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)"> <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
                     <td><strong>TOTAL DESCUENTOS</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)"> <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
+                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)"> <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
                   </tr>
                   <tr>
                     <td><strong>FECHA</strong></td>
                     <td><span t-field="o.date_to"/></td>
                     <td><strong>ALCANCE LIQUIDO</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"> <span t-esc="p.amount" t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
+                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"> <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
                   </tr>
                   <tr>
                     <th>SON</th>
