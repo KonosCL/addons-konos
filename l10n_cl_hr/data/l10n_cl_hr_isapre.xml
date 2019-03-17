@@ -37,7 +37,7 @@
 
         <record id="hr_isapre_nuevamasvida" model="hr.isapre">
             <field name="codigo">10</field>
-            <field name="rut"> </field>
+            <field name="rut">96504160-5</field>
             <field name="name">NUEVA MAS VIDA</field>
         </record>
      
@@ -49,13 +49,13 @@
         </record>
 
         <record id="hr_isapre_cruzblanca" model="hr.isapre">
-            <field name="codigo">12</field>
+            <field name="codigo">05</field>
             <field name="rut"> </field>
             <field name="name">CRUZ BLANCA</field>
         </record>
 
         <record id="hr_isapre_bancoestado" model="hr.isapre">
-            <field name="codigo">05</field>
+            <field name="codigo">12</field>
             <field name="rut"> </field>
             <field name="name">ISAPRE BCO. ESTADO</field>
         </record>
