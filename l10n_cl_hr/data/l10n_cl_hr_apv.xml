@@ -4,7 +4,7 @@
 
 
               <!-- Institución Autorizada APV - APVC : Cias Seguros de Vida -->
-        <record id="hr_apv_metlife" model="hr.apv">
+        <record id="hr_apv_abn" model="hr.apv">
             <field name="codigo">100</field>
             <field name="name">ABN AMRO (CHILE) SEGUROS DE VIDA S.A</field>
         </record>
