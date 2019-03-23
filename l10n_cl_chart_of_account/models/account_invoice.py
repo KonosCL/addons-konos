@@ -13,7 +13,7 @@ class AccountInvoiceTax(models.Model):
         string='Retention Account',
         domain=[('deprecated', '=', False)],
     )
-    
+
     def _getNeto(self, currency):
         neto = 0
         for tax in self:
@@ -22,7 +22,7 @@ class AccountInvoiceTax(models.Model):
             #amount_tax +=tax.amount
             for line in tax.invoice_id.invoice_line_ids:
                 if tax.tax_id in line.invoice_line_tax_ids and tax.tax_id.price_include:
-                    price_tax_included += line.price_tax_included
+                    price_tax_included += line.price_total
             if price_tax_included > 0 and  tax.tax_id.sii_type in ["R"] and tax.tax_id.amount > 0:
                 base = currency.round(price_tax_included)
             elif price_tax_included > 0 and tax.tax_id.amount > 0:
