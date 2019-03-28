@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from odoo import api, fields, models, tools
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT as DTF
 
+HOURS_PER_DAY = 8
 
 class HRHolidaysStatus(models.Model):
     _inherit = 'hr.holidays.status'
