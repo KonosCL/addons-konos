@@ -41,7 +41,7 @@ class WizardExportCsvPrevired(models.TransientModel):
         ('comma','Coma(,)'),
         ('dot_coma',"Punto y coma(;)"),
         ('tab',"Tabulador"),
-        ], string='Separador de Campos', default='comma', required=True)
+        ], string='Separador de Campos', default='dot_coma', required=True)
     
     @api.multi
     def show_view(self, name):
