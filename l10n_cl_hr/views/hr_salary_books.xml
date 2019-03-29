@@ -35,9 +35,9 @@
             </field>
         </record>
         <record id="report_paper_format_nuevo" model="report.paperformat">
-            <field name="name">A4 Horizontal</field>
+            <field name="name">B4 Horizontal</field>
             <field name="default" eval="True"/>
-            <field name="format">A4</field>
+            <field name="format">B4</field>
             <field name="orientation">Landscape</field>
             <field name="margin_top">5</field>
             <field name="margin_bottom">10</field>
