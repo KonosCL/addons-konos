@@ -70,3 +70,4 @@ class hr_contract(models.Model):
     aporte_voluntario_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
     forma_pago_apv = fields.Selection((('1', 'Directa'), ('2', 'Indirecta')), 'Forma de Pago', default="1")
     seguro_complementario_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
+    centro_costo_id = fields.Many2one('hr.centroscostos', 'Centros Costos')

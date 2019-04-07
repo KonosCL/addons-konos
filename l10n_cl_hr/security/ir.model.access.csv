@@ -9,3 +9,4 @@ access_hr_mutual,hr.mutual,model_hr_mutual,hr_payroll.group_hr_payroll_manager,1
 access_hr_ccaf,hr.ccaf,model_hr_ccaf,hr_payroll.group_hr_payroll_manager,1,1,1,1
 access_hr_seguro_complementario,hr.seguro.complementario,model_hr_seguro_complementario,hr_payroll.group_hr_payroll_manager,1,1,1,1
 access_hr_apv,hr.apv,model_hr_apv,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_manager_hr_centroscostos,hr.centroscostos,model_hr_centroscostos,hr_payroll.group_hr_payroll_manager,1,1,1,1

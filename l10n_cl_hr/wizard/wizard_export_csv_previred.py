@@ -543,7 +543,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              # yo pensaba rut_emp_dv,
                              "",
                              #105 Centro de Costos, Sucursal, Agencia 
-                             "1"
+                             int(payslip.contract_id.centro_costo_id.name) if payslip.contract_id.centro_costo_id.name else "0",
                              ]
             writer.writerow(line_employee)
       

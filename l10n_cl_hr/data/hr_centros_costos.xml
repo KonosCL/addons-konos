@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>
+    <data>
+        <record id="01" model="hr.centroscostos">
+            <field name="name">01</field>
+            <field name="desc">ADMINISTRACION</field>
+        </record>
+    </data>
+</odoo>

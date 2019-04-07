@@ -42,6 +42,7 @@
                         </xpath>
                         <xpath expr="//field[@name='journal_id']" position="replace">
                             <field name="journal_id" select="payroll_journal"/>
+                            <field name="centro_costo_id"/>
                         </xpath>
 
 
