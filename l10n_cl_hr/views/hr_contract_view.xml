@@ -41,8 +41,7 @@
                             <field name="struct_id" select="2"/>
                         </xpath>
                         <xpath expr="//field[@name='journal_id']" position="replace">
-                            <field name="journal_id" select="payroll_journal"/>
-                            <field name="centro_costo_id"/>
+                            <field name="journal_id"/>
                         </xpath>
 
 

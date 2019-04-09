@@ -42,10 +42,10 @@
                         <td><span t-field="o.employee_id.identification_id"/></td>
                         <td><span t-field="o.employee_id.name"/></td>
 
-                        <t t-if="o.contract_id.centro_costo_id">
-                            <td><span t-field="o.contract_id.centro_costo_id.name"/></td>   
+                        <t t-if="o.contract_id.analytic_account_id">
+                            <td><span t-field="o.contract_id.analytic_account_id.code"/></td>   
                         </t>
-                        <t t-if="not o.contract_id.centro_costo_id">
+                        <t t-if="not o.contract_id.analytic_account_id">
                             <td>001</td>
                         </t>
 

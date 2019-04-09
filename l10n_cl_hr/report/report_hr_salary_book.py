@@ -73,10 +73,10 @@ and (to_char(date_to,'yyyy')= %s) and ('WORK100' = p.code)
 
     def get_centro_costo(self, id):
         valor = "01"
-        lineas = self.env['hr.centroscostos']
+        lineas = self.env['account.analytic.account']
         detalle = lineas.search([('id','=',id)], limit=1)
         if detalle:
-            valor = detalle.name
+            valor = detalle.code
         return valor  
 
 
@@ -168,13 +168,13 @@ group by r.name, p.date_to,emp.id''', (emp_id, cod_id, mes, ano,))
         cont = 0
 
         self.env.cr.execute(
-            '''select emp.id, emp.identification_id, emp.firstname, emp.middle_name, emp.last_name, emp.mothers_name, r.centro_costo_id
+            '''select emp.id, emp.identification_id, emp.firstname, emp.middle_name, emp.last_name, emp.mothers_name, r.analytic_account_id
 from hr_payslip as p left join hr_employee as emp on emp.id = p.employee_id
 left join hr_contract as r on r.id = p.contract_id
 where p.state = 'done'  and (to_char(p.date_to,'mm')=%s)
 and (to_char(p.date_to,'yyyy')=%s)
-group by emp.id, emp.name, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id, r.centro_costo_id
-order by r.centro_costo_id, last_name''', (last_month, last_year,))
+group by emp.id, emp.name, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id, r.analytic_account_id
+order by r.analytic_account_id, last_name''', (last_month, last_year,))
 
         id_data = self.env.cr.fetchall()
         if id_data is None:
@@ -238,13 +238,13 @@ order by r.centro_costo_id, last_name''', (last_month, last_year,))
         cont = 0
 
         self.env.cr.execute(
-            '''select emp.id, emp.identification_id, emp.firstname, emp.middle_name, emp.last_name, emp.mothers_name, r.centro_costo_id
+            '''select emp.id, emp.identification_id, emp.firstname, emp.middle_name, emp.last_name, emp.mothers_name, r.analytic_account_id
 from hr_payslip as p left join hr_employee as emp on emp.id = p.employee_id
 left join hr_contract as r on r.id = p.contract_id
 where p.state = 'done'  and (to_char(p.date_to,'mm')=%s)
 and (to_char(p.date_to,'yyyy')=%s)
-group by emp.id, emp.name, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id, r.centro_costo_id
-order by r.centro_costo_id, last_name''', (last_month, last_year))
+group by emp.id, emp.name, emp.middle_name, emp.last_name, emp.mothers_name, emp.identification_id, r.analytic_account_id
+order by r.analytic_account_id, last_name''', (last_month, last_year))
 
         id_data = self.env.cr.fetchall()
         if id_data is None:
