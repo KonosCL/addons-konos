@@ -4,16 +4,14 @@
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 from odoo.tools import float_compare, float_is_zero
-from odoo.tools.translate import _
 
-
-
-
-class HrPayslipAnalytic(models.Model):
+class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
+
 
     @api.multi
     def action_payslip_done(self):
+        res = super(HrPayslip, self).action_payslip_done()
         precision = self.env['decimal.precision'].precision_get('Payroll')
 
         for slip in self:
@@ -21,6 +19,7 @@ class HrPayslipAnalytic(models.Model):
             debit_sum = 0.0
             credit_sum = 0.0
             date = slip.date or slip.date_to
+
             name = _('Payslip of %s') % (slip.employee_id.name)
             move_dict = {
                 'narration': name,
@@ -36,9 +35,8 @@ class HrPayslipAnalytic(models.Model):
                 debit_account_id = line.salary_rule_id.account_debit.id
                 credit_account_id = line.salary_rule_id.account_credit.id
                 cost_center = line.salary_rule_id.analytic_account_id.id
-
                 if line.salary_rule_id.account_analytic_true:
-                    cost_center = slip.contract_id.analytic_account_id.id
+                    cost_center = slip.contract_id.analytic_account_id.id                
                 if debit_account_id:
                     debit_line = (0, 0, {
                         'name': line.name,
@@ -66,6 +64,7 @@ class HrPayslipAnalytic(models.Model):
                         'analytic_account_id': cost_center,
                         'tax_line_id': line.salary_rule_id.account_tax_id.id,
                     })
+                    line_ids.append(credit_line)
                     credit_sum += credit_line[2]['credit'] - credit_line[2]['debit']
 
             if float_compare(credit_sum, debit_sum, precision_digits=precision) == -1:
@@ -101,15 +100,9 @@ class HrPayslipAnalytic(models.Model):
             move = self.env['account.move'].create(move_dict)
             slip.write({'move_id': move.id, 'date': date})
             move.post()
-        
-
-
-
+        return res
 
 
 class HrSalaryRule(models.Model):
     _inherit = 'hr.salary.rule'
     account_analytic_true = fields.Boolean('Analytic Account in Contract')
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
