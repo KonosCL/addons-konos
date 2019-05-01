@@ -6,27 +6,27 @@
           <t t-foreach="docs" t-as="o">
             <div class="page">
                 <div class="text-center">
-	                <h2>Libro de Remuneraciones</h2>
-	                <p>
-	                    Fecha <u><span t-field="o.end_date"/></u>
-	                </p>
+                    <h2>Libro de Remuneraciones</h2>
+                    <p>
+                        Fecha <u><span t-field="o.end_date"/></u>
+                    </p>
                 </div>
                 <table class="table table-condensed">
                     <thead>
                         <tr style="border-top: 1px solid black">
-                            <th>Cód</th>
+                            <th>C.C</th>
                             <th>R.U.T</th>
                             <th>Nombre</th>
                             <th>DT</th>
-                            <th>Sueldo Base</th>
-                            <th>H. Extra</th>
-                            <th>Grat. Legal</th>
-                            <th>Otros Imp</th>
-                            <th>Total Imp</th>
-                            <th>Asig Familiar</th>
-                            <th>Otro No Imp</th>
-                            <th>Tot. No Imp</th>
-                            <th>Haberes</th>
+                            <th class="text-center">Sueldo Base</th>
+                            <th class="text-center">H. Extra</th>
+                            <th class="text-center">Grat. Legal</th>
+                            <th class="text-center">Otros Imp</th>
+                            <th class="text-center">Total Imp</th>
+                            <th class="text-center">Asig Familiar</th>
+                            <th class="text-center">Otro No Imp</th>
+                            <th class="text-center">Tot. No Imp</th>
+                            <th class="text-center">Haberes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +47,7 @@
                                 <td align="left"><span t-esc="e[1]"/></td>
                                 <td align="left"><span t-esc="e[2]"/> <span t-esc="e[3]"/> <span t-esc="e[4]"/> <span t-esc="e[5]"/></td>
                                 <td align="left"><span t-raw="int(e[6])"/></td>
-                                <td align="left"><span t-esc="round(e[7])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[7])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[8])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[9])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[10])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
@@ -56,6 +56,7 @@
                                 <td align="right"><span t-esc="round(e[13])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[14])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[15])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+
 
                                 
                                 <t t-set="sb" t-value="sb+round(e[7])"/>
@@ -78,7 +79,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                 <td  class="text-left"><span t-esc="sb" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="sb" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                                  <td  class="text-right"><span t-esc="hex" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                                  <td  class="text-right"><span t-esc="gl" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                                  <td  class="text-right"><span t-esc="oi" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
@@ -100,27 +101,27 @@
         <t t-foreach="docs" t-as="o">
             <div class="page">
                 <div class="text-center">
-	                <h2>Libro de Remuneraciones</h2>
-	                <p>
-	                    To <u><span t-field="o.end_date"/></u>
-	                </p>
+                    <h2>Libro de Remuneraciones</h2>
+                    <p>
+                        To <u><span t-field="o.end_date"/></u>
+                    </p>
                 </div>
                 <table class="table table-condensed">
                     <thead>
                         <tr style="border-top: 1px solid black">
-                            <th>Cód</th>
+                            <th>C.C</th>
                             <th>R.U.T</th>
                             <th>Nombre</th>
                             <th>DT</th>
-                            <th>     Prevision</th>
-                            <th>Salud</th>
-                            <th>Imp. Unico</th>
-                            <th>Seg. Ces.</th>
-                            <th>Otros D.Leg.</th>
-                            <th>Tot. D.Leg</th>
-                            <th>Desc. Varios</th>
-                            <th>Tot. Desc</th>
-                            <th>Líquido</th>
+                            <th class="text-center">Prevision</th>
+                            <th class="text-center">Salud</th>
+                            <th class="text-center">Imp. Unico</th>
+                            <th class="text-center">Seg. Ces.</th>
+                            <th class="text-center">Otros D.Leg.</th>
+                            <th class="text-center">Tot. D.Leg</th>
+                            <th class="text-center">Desc. Varios</th>
+                            <th class="text-center">Tot. Desc</th>
+                            <th class="text-center">Líquido</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -140,7 +141,7 @@
                                 <td align="left"><span t-esc="e[1]"/></td>
                                 <td align="left"><span t-esc="e[2]"/> <span t-esc="e[3]"/> <span t-esc="e[4]"/> <span t-esc="e[5]"/></td>
                                 <td align="left"><span t-raw="int(e[6])"/></td>
-                                <td align="left"><span t-esc="round(e[7])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+                                <td align="right"><span t-esc="round(e[7])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[8])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[9])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[10])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
@@ -149,6 +150,8 @@
                                 <td align="right"><span t-esc="round(e[13])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[14])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
                                 <td align="right"><span t-esc="round(e[15])" t-options="{'widget':'monetary', 'display_currency': company_id.currency_id, 'digits':'Payroll'}"/></td>
+
+
 
 
 
@@ -170,7 +173,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                 <td  class="text-left"><span t-esc="sb" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
+                                 <td  class="text-right"><span t-esc="sb" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                                  <td  class="text-right"><span t-esc="hex" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                                  <td  class="text-right"><span t-esc="gl" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>
                                  <td  class="text-right"><span t-esc="oi" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></td>

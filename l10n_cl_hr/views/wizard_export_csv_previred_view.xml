@@ -20,9 +20,9 @@
 				<footer>
 					<div class="oe_left">
 						<button string="Generar reporte" name="action_generate_csv"
-							type="object" icon="gtk-print" class="oe_highlight" />
+							type="object" class="oe_highlight" />
 						<button string="Cerrar" special="cancel" type="object"
-							icon="gtk-cancel" class="oe_link" />
+						    class="oe_link" />
 					</div>
 				</footer>
 			</form>

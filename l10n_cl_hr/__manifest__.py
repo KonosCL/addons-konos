@@ -19,7 +19,7 @@
         "Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>",
     ],
     'license': 'AGPL-3',
-    'version': '12.0.1.0.1',
+    'version': '12.0.1.0.2',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
@@ -53,6 +53,7 @@ Chilean Payroll & Human Resources.
         'views/hr_holiday_views.xml',
         'views/wizard_export_csv_previred_view.xml',
         'data/hr_salary_rule_category.xml',
+        'data/hr_centros_costos.xml',
         'data/l10n_cl_hr_indicadores.xml',
         'data/l10n_cl_hr_isapre.xml',
         'data/l10n_cl_hr_afp.xml',

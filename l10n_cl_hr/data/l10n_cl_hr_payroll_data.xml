@@ -23,7 +23,10 @@
             <field name="digits">0</field>
         </record>
 
-
+        <record forcecreate="True" id="hr_payroll.decimal_payroll_rate" model="decimal.precision">
+            <field name="name">Payroll Rate</field>
+            <field name="digits">0</field>
+        </record>
 
 
 

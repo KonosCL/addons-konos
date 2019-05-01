@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>
+    <data>
+
+	    <record id="account_analytic_account_administration" model="account.analytic.account">
+	        <field name="name">ADMINISTRACION</field>
+	        <field name="code">01</field>
+	        <field name="active" eval="True"/>
+	    </record>
+
+    </data>
+
+</odoo>

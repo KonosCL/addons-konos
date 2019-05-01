@@ -106,7 +106,12 @@ class WizardExportCsvPrevired(models.TransientModel):
                         worked_days = line.number_of_days
         return worked_days
 
-
+    @api.model
+    def get_cost_center(self, contract):
+        cost_center = "1"
+        if contract.analytic_account_id:
+            cost_center = contract.analytic_account_id.code
+        return cost_center
 
 
     @api.model
@@ -253,7 +258,7 @@ class WizardExportCsvPrevired(models.TransientModel):
         if self.delimiter_option == 'none':
             writer = csv.writer(output, delimiter=self.delimiter[self.delimiter_field_option], quoting=csv.QUOTE_NONE)
         else:
-            writer = csv.writer(output, delimiter=self.delimiter[self.delimiter_field_option], quotechar=self.quotechar[self.delimiter_option], quoting=csv.QUOTE_ALL)
+            writer = csv.writer(output, delimiter=self.delimiter[self.delimiter_field_option], quotechar=self.quotechar[self.delimiter_option], quoting=csv.QUOTE_NONE)
         #Debemos colocar que tome todo el mes y no solo el día exacto TODO
         payslip_recs = payslip_model.search([('date_from','=',self.date_from),
                                              ])
@@ -522,7 +527,7 @@ class WizardExportCsvPrevired(models.TransientModel):
                              # yo pensaba rut_emp_dv,
                              "",
                              #105 Centro de Costos, Sucursal, Agencia 
-                             "1"
+                             int(self.get_cost_center(payslip.contract_id)),
                              ]
             writer.writerow([str(l) for l in line_employee])
         self.write({'file_data': base64.encodebytes(output.getvalue().encode()),
