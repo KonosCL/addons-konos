@@ -45,7 +45,7 @@ class HrPayslipAnalytic(models.Model):
             }
             for line in slip.details_by_salary_rule_category:
                 cost_center = False 
-                no_cost_center = False # Insert Rodolfo B
+                no_cost_center = False
                 amount = slip.credit_note and -line.total or line.total
                 if float_is_zero(amount, precision_digits=precision):
                     continue
@@ -118,6 +118,7 @@ class HrPayslipAnalytic(models.Model):
             move = self.env['account.move'].create(move_dict)
             slip.write({'move_id': move.id, 'date': date})
             move.post()
+            return self.write({'state': 'done'})
         
 
 
