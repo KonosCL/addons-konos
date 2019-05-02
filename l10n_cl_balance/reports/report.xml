@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <record id="paperformat_balance" model="report.paperformat">
+          <field name="name">Horizontal Oficio</field>
+          <field name="default" eval="True"/>
+          <field name="format">custom</field>
+          <field name="page_height">280</field>
+          <field name="page_width">216</field>
+          <field name="orientation">Landscape</field>
+          <field name="margin_top">20</field>
+          <field name="margin_bottom">20</field>
+          <field name="margin_left">7</field>
+          <field name="margin_right">7</field>
+          <field name="header_line" eval="False" />
+          <field name="header_spacing">15</field>
+          <field name="dpi">90</field>
+      </record>
+
+
+
+
+        <report
+            id="action_report_trial_balance"
+            model="account.balance.report"
+            string="Trial Balance"
+            report_type="qweb-pdf"
+            name="l10n_cl_balance.report_trialbalance"
+            file="l10n_cl_balance.report_trialbalance"
+            paperformat="l10n_cl_balance.paperformat_balance"/>
+
+
+
+
+    </data>
+</odoo>

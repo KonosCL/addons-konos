@@ -9,10 +9,10 @@
       <field name="orientation">Landscape</field>
       <field name="margin_top">20</field>
       <field name="margin_bottom">20</field>
-      <field name="margin_left">7</field>
-      <field name="margin_right">7</field>
+      <field name="margin_left">3</field>
+      <field name="margin_right">3</field>
       <field name="header_line" eval="False" />
-      <field name="header_spacing">15</field>
+      <field name="header_spacing">12</field>
       <field name="dpi">90</field>
   </record>
 </odoo>
