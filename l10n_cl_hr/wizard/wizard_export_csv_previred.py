@@ -61,7 +61,7 @@ class WizardExportCsvPrevired(models.TransientModel):
     @api.model
     def get_nacionalidad(self, employee):
         #0 chileno, 1 extranjero, comparar con el pais de la compañia
-        if employee == 47:
+        if employee == 46:
             return 0
         else:
             return 1
