@@ -10,6 +10,7 @@
     'external_dependencies': {
         'python': [
                 'num2words',
+                'beautifulsoup4'
                 ]
         },
     'contributors': [

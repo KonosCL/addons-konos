@@ -1,0 +1,2 @@
+beautifulsoup4==4.6.0
+num2words==0.5.4
