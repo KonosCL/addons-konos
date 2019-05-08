@@ -14,7 +14,8 @@ class hr_contract(models.Model):
     colacion = fields.Float('Asig. Colación', help="Colación")
     isapre_id = fields.Many2one('hr.isapre', 'Nombre')
     isapre_cotizacion_uf = fields.Float('Cotización', digits=(6, 4),  help="Cotización Pactada")  
-    isapre_fun = fields.Char('Número de FUN',  help="Indicar N° Contrato de Salud a Isapre")    
+    isapre_fun = fields.Char('Número de FUN',  help="Indicar N° Contrato de Salud a Isapre") 
+    isapre_cuenta_propia = fields.Boolean('Isapre Cuenta Propia')   
     movilizacion = fields.Float('Asig. Movilización', help="Movilización")
     mutual_seguridad = fields.Boolean('Mutual Seguridad', default=True)
     otro_no_imp = fields.Float('Otros No Imponible', help="Otros Haberes No Imponibles")
@@ -34,4 +35,3 @@ class hr_contract(models.Model):
     aporte_voluntario_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
     forma_pago_apv = fields.Selection((('1', 'Directa'), ('2', 'Indirecta')), 'Forma de Pago', default="1")
     seguro_complementario_moneda= fields.Selection((('uf', 'UF'), ('clp', 'Pesos')), 'Tipo de Moneda', default="uf")
-

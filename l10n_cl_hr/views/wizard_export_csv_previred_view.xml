@@ -22,7 +22,7 @@
 						<button string="Generar reporte" name="action_generate_csv"
 							type="object" class="oe_highlight" />
 						<button string="Cerrar" special="cancel" type="object"
-						    class="oe_link" />
+							 class="oe_link" />
 					</div>
 				</footer>
 			</form>

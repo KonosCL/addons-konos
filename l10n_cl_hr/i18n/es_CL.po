@@ -1,0 +1,1906 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cl_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e-20190410\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-07 22:36+0000\n"
+"PO-Revision-Date: 2019-05-07 18:38-0400\n"
+"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_CL\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.view_salary_employee_month
+msgid "<span class=\"o_form_label\">Este wizard permite imprimir el total haberes</span>"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_27
+msgid "ADICIONAL ISAPRE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__afp_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_afp_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "AFP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_25
+msgid "AFP X PAGAR"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_10
+msgid "AGUINALDO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_2
+msgid "AJUSTE LEY SUELDO BASE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_44
+msgid "ALCANCE LIQUIDO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_38
+msgid "ANTICIPO DE SUELDO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_20
+msgid "APORTE AL AHORRO VOLUNTARIO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_12
+msgid "ASIGNACION FAMILIAR"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Abril"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Accidentes del Trabajo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Agosto"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Ahorro Previsional Voluntario"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__aporte_voluntario
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__aporte_voluntario
+msgid "Ahorro Previsional Voluntario (APV)"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__anticipo_sueldo
+msgid "Anticipo De Sueldo Realizado Contablemente"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__anticipo_sueldo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Anticipo de Sueldo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.COMP
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__sis
+msgid "Aporte Empresa"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Aporte Previsional Voluntario"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Aporte Voluntario"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__file_data
+msgid "Archivo Generado"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Asig Familiar"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_primer
+msgid "Asig Familiar Primer Tramo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_segundo
+msgid "Asig Familiar Segundo Tramo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_tercer
+msgid "Asig Familiar Tercer Tramo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__colacion
+msgid "Asig. Colación"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__movilizacion
+msgid "Asig. Movilización"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__viatico_santiago
+msgid "Asig. Viático"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Asig. de Colación"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Asig. de Movilización"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Asig. de Viático"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Asignación Familiar"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_primer
+msgid "Asignación Familiar Tramo 1"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_segundo
+msgid "Asignación Familiar Tramo 2"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_tercer
+msgid "Asignación Familiar Tramo 3"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__viatico_santiago
+msgid "Asignación de Viático"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__year
+msgid "Año"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_7
+msgid "BONO DE PRODUCCION"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "C.C"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_33
+msgid "CAJA DE COMPENSACION"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.hr_ccaf_action
+#: model:ir.model,name:l10n_cl_hr.model_hr_ccaf
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__ccaf_id
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_ccaf_menu
+msgid "CCAF"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_13
+msgid "COLACION"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_8
+msgid "COMISIONES"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_45
+msgid "COTIZACION ACC. TRABAJO ISL"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__caja_compensacion
+msgid "Caja Compensación"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__caja_compensacion
+msgid "Caja de Compensacion"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Caja de Compensación"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Cambio Contrato plazo fijo a plazo indefinido"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.view_salary_employee_month
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_afp_capital
+msgid "Capital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Carga Familiar"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__carga_familiar_invalida
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Carga Inválida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__carga_familiar_maternal
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Carga Maternal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__carga_familiar
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Carga Simple"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__carga_familiar_invalida
+msgid "Carga familiar para el cálculo de asignación familiar inválida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__carga_familiar_maternal
+msgid "Carga familiar para el cálculo de asignación familiar maternal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__carga_familiar
+msgid "Carga familiar para el cálculo de asignación familiar simple"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.wizard_export_csv_previred_form_view
+msgid "Cerrar"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.menu_cl_hr_payroll_configuration
+msgid "Chilean Configuration"
+msgstr "Configuración Chile"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__codigo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__codigo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__codigo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract_type__codigo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__codigo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__codigo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__codigo
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_afp_form
+msgid "Codigo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__colacion
+msgid "Colación"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:wizard.export.csv.previred,delimiter_field_option:0
+msgid "Coma(,)"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:wizard.export.csv.previred,delimiter_option:0
+msgid "Comillas Dobles(\")"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:wizard.export.csv.previred,delimiter_option:0
+msgid "Comillas Simples(')"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Contratación a plazo fijo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Contratación a plazo indefinido"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_empleador
+msgid "Contrato Plazo Fijo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__contrato_plazo_fijo_empleador
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__contrato_plazo_fijo_empleador
+msgid "Contrato Plazo Fijo Empleador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__contrato_plazo_fijo_trabajador
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__contrato_plazo_fijo_trabajador
+msgid "Contrato Plazo Fijo Trabajador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_empleador_otro
+msgid "Contrato Plazo Indefinido 11 anos Empleador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_trabajador_otro
+msgid "Contrato Plazo Indefinido 11 anos Trabajador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_empleador_otro
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_trabajador_otro
+msgid "Contrato Plazo Indefinido 11 anos o mas"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_empleador
+msgid "Contrato Plazo Indefinido Empleador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_trabajador
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__contrato_plazo_indefinido_trabajador
+msgid "Contrato Plazo Indefinido Trabajador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Cotizaciones"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__isapre_cotizacion_uf
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__seguro_complementario
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Cotización"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__isapre_cotizacion_uf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Cotización Pactada"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__create_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_afp_cuprum
+msgid "Cuprum"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__id_type
+msgid "Código"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip__movimientos_personal
+msgid "Código Movimiento"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "DT"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_payslip__indicadores_id
+msgid "Defines Previred Forecast Indicators"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__deposito_convenido
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__deposito_convenido
+msgid "Deposito Convenido"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Depósito Convenido"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Desc. Varios"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.DED
+msgid "Descuentos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: code:addons/l10n_cl_hr/model/hr_payslip.py:57
+#, python-format
+msgid "Dias de trabajo efectivos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Diciembre"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.contract,forma_pago_apv:0
+msgid "Directa"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_leave_type__is_continued
+msgid "Disccount Weekends"
+msgstr "Descuenta Fines de Semana"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_report_l10n_cl_hr_report_hrsalarybymonth__display_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee__middle_name
+msgid "Employees middle name"
+msgstr "Segundo Nombre"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee__mothers_name
+msgid "Employees mothers name"
+msgstr "Segundo Apellido"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__end_date
+msgid "End Date"
+msgstr "Fecha finalización"
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Enero"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_34
+msgid "FONASA"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_afp_form
+msgid "FONDOS DE PENSION"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.leave.type,name:l10n_cl_hr.hr_holidays_sin_pago
+msgid "Falta"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Febrero"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Fecha"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip_line__date_end
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_rule__date_end
+msgid "Fecha Fin"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip__date_end_mp
+msgid "Fecha Fin MP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__date_to
+msgid "Fecha Final"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__date_from
+msgid "Fecha Inicial"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip_line__date_start
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_rule__date_start
+msgid "Fecha Inicio"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip__date_start_mp
+msgid "Fecha Inicio MP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_payslip_line__date_start
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_salary_rule__date_start
+msgid "Fecha de inicio de la regla salarial"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_payslip__date_start_mp
+msgid "Fecha de inicio del movimiento de personal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_payslip_line__date_end
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_salary_rule__date_end
+msgid "Fecha del fin de la regla salarial"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_payslip__date_end_mp
+msgid "Fecha del fin del movimiento de personal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Fijo Empleador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__complete_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee__firstname
+msgid "Firstname"
+msgstr "Primer Nombre"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__fonasa
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__fonasa
+msgid "Fonasa"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Fondo de Pensiones"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_afp
+msgid "Fondos de Pension"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.hr_afp_action
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_afp_menu
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Fondos de Pensión"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: code:addons/l10n_cl_hr/report/report_hr_salary_book.py:11
+#: code:addons/l10n_cl_hr/report/report_hr_salary_book.py:12
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__forma_pago_apv
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Forma de Pago"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_6
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_9
+msgid "GRATIFICACION LEGAL"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.wizard_export_csv_previred_form_view
+msgid "Generar reporte"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_payslip_employees
+msgid "Generate payslips for all selected employees"
+msgstr "Generar las nóminas para todos los empleados seleccionados"
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Grat. Legal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__gratificacion_legal
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__gratificacion_legal
+msgid "Gratificación L. Manual"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Gratificación Manual"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "H. Extra"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_5
+msgid "HORAS DESCUENTO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_4
+msgid "HORAS EXTRA ART 32"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Haberes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_afp_habitat
+msgid "Habitat"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "I. Empleador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "I. Empleador 11"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "I. Trabajador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_report_l10n_cl_hr_report_hrsalarybymonth__id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_36
+msgid "IMPUESTO UNICO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__ipc
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "IPC"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_28
+msgid "ISAPRES X PAGAR"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__isl
+msgid "ISL"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Imp. Unico"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.IMPONIBLE
+msgid "Imponible"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Incorporación en el Lugar de Trabajo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__independiente
+msgid "Independientes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.hr_indicadores_previsionales_action
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip__indicadores_id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip_run__indicadores_id
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_indicadores_previsionales_menu
+msgid "Indicadores"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_indicadores
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Indicadores Previsionales"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__isapre_fun
+msgid "Indicar N° Contrato de Salud a Isapre"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__ipc
+msgid "Indice de Precios al Consumidor (IPC)"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.contract,forma_pago_apv:0
+msgid "Indirecta"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Instituc. APV-APVC"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Instituciones Relacionadas"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Instituciones de Seguridad"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.hr_apv_action
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_apv_menu
+msgid "Institución Autorizada APV"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_apv
+msgid "Institución Autorizada APV - APVC : Cias Seguros de Vida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Institución de Salud"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Instituto Nacional de Estadísticas"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__isl
+msgid "Instituto de Seguridad Laboral"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__isapre_cuenta_propia
+msgid "Isapre Cuenta Propia"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.hr_isapre_action
+#: model:ir.model,name:l10n_cl_hr.model_hr_isapre
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_isapres_menu
+msgid "Isapres"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Julio"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Junio"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_report_l10n_cl_hr_report_hrsalarybymonth____last_update
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__last_name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee__last_name
+msgid "Last Name"
+msgstr "Apellido"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_salary_employee_month__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__write_date
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_leave
+msgid "Leave"
+msgstr "Ausencia"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_leave_type
+msgid "Leave Type"
+msgstr "Tipo de ausencia"
+
+#. module: l10n_cl_hr
+#: model:ir.actions.report,name:l10n_cl_hr.hr_salary_books
+#: model:ir.ui.menu,name:l10n_cl_hr.menu_salary_books
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.view_salary_employee_month
+msgid "Libro de Remuneraciones"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.action_salary_books
+#: model:ir.model,name:l10n_cl_hr.model_hr_salary_employee_month
+msgid "Libro de Remuneraciones Haberes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.leave.type,name:l10n_cl_hr.hr_holidays_status_licencia
+msgid "Licencia"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Líquido"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_14
+msgid "MOVILIZACION"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__mutualidad_id
+msgid "MUTUAL"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_23
+msgid "MUTUAL SEGURIDAD"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Marzo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Mayo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__sueldo_minimo_otro
+msgid "Menores de 18 y Mayores de 65:"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__month
+msgid "Mes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee__middle_name
+msgid "Middle Name"
+msgstr "Segundo Nombre"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_afp_modelo
+msgid "Modelo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_report_l10n_cl_hr_report_hrsalarybymonth
+msgid "Monthly Salary Report"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_monto_a
+msgid "Monto A"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_monto_b
+msgid "Monto B"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_monto_c
+msgid "Monto C"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_monto_b
+msgid "Monto Tramo Dos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_monto_c
+msgid "Monto Tramo Tres"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__asignacion_familiar_monto_a
+msgid "Monto Tramo Uno"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee__mothers_name
+msgid "Mothers Name"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__movilizacion
+msgid "Movilización"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_payslip_run__movimientos_personal
+msgid "Movimientos Personal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__mutual_seguridad
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__mutual_seguridad_bool
+msgid "Mutual Seguridad"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__mutual_seguridad
+msgid "Mutual de Seguridad"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.hr_mutual_action
+#: model:ir.model,name:l10n_cl_hr.model_hr_mutual
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__mutual_seguridad
+#: model:ir.ui.menu,name:l10n_cl_hr.hr_mutual_menu
+msgid "Mutualidad"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:wizard.export.csv.previred,delimiter_option:0
+msgid "Ninguno"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__sin_afp
+msgid "No Calcula AFP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__sin_afp_sis
+msgid "No Calcula AFP SIS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.NOIMPO
+msgid "No Imponible"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_apv__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_ccaf__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__apv_id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__isapre_id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__seguro_complementario_id
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_mutual__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_seguro_complementario__name
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_type_employee__name
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Nombre"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__file_name
+msgid "Nombre de archivo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Noviembre"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__isapre_fun
+msgid "Número de FUN"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_39
+msgid "OTROS DESCUENTOS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_3
+msgid "OTROS IMPONIBLES"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_15
+msgid "OTROS NO IMPONIBLE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Octubre"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Otro No Imp"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Otros D.Leg."
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.ODESC
+msgid "Otros Descuentos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__otros_imp
+msgid "Otros Haberes Imponibles"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__otro_no_imp
+msgid "Otros Haberes No Imponibles"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Otros Imp"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__otros_imp
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Otros Imponible"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Otros Indicadores"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Otros Movimientos (Ausentismos)"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__otro_no_imp
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Otros No Imponible"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Otros Valores"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_38_2
+msgid "PRESTAMOS CCAF"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_38_1
+msgid "PRESTAMOS EMPRESA"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_18
+msgid "PREVISION"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_22
+msgid "PREVISION EMPRESA AFP SIS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.menu_cl_hr_payroll_indicators
+msgid "Payroll Indicators"
+msgstr "Indicadores Previred"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_report_hr_payroll_report_payslipdetails
+msgid "Payslip Details Report"
+msgstr "Reporte de Liquidaciones"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_payslip_run
+msgid "Payslip Run"
+msgstr "Procesar Nómina"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__pension
+msgid "Pensionado"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__pensiones_ips
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__pensiones_ips
+msgid "Pensiones IPS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Permiso Sin Goce de Sueldos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Período"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.contract,aporte_voluntario_moneda:0
+#: selection:hr.contract,isapre_moneda:0
+#: selection:hr.contract,seguro_complementario_moneda:0
+msgid "Pesos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_afp_planvital
+msgid "PlanVital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.actions.act_window,name:l10n_cl_hr.action_wizard_export_csv_previred_tree_view
+#: model:ir.ui.menu,name:l10n_cl_hr.wizard_export_csv_menu
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.wizard_export_csv_previred_form_view
+msgid "Previred"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.PREV
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Prevision"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.view_salary_employee_month
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee__formated_vat
+msgid "Printable VAT"
+msgstr "RUT Imprimible"
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_afp_provida
+msgid "ProVida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:wizard.export.csv.previred,delimiter_field_option:0
+msgid "Punto y coma(;)"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "R.U.T"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__rut
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_isapre__rut
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_afp_form
+msgid "RUT"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Reliquidación, Premio, Bono"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Rentas Mínimas Imponibles"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Rentas Topes Imponibles"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.ui.menu,name:l10n_cl_hr.menu_cl_hr_payroll_reports
+msgid "Reports"
+msgstr "Informes"
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Retiro"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_26
+msgid "SALUD"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_19
+msgid "SEGURO CESANTIA"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_21
+msgid "SEGURO CESANTIA APORTE EMPRESA"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_24
+msgid "SEGURO COMPLEMENTARIO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_independiente_capital
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_independiente_cuprum
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_independiente_habitat
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_independiente_modelo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_independiente_planvital
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_independiente_provida
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_sis_capital
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_sis_cuprum
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_sis_habitat
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_sis_modelo
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_sis_planvital
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tasa_sis_provida
+msgid "SIS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_1
+msgid "SUELDO BASE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Regla Salarial"
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.SALUD
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Salud"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Seg. Ces."
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Seguro Censantía"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_seguro_complementario
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_contract__seguro_complementario
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Seguro Complementario"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Seguro de Cesantía AFC"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__delimiter_field_option
+msgid "Separador de Campos"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_wizard_export_csv_previred__delimiter_option
+msgid "Separador de Texto"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.indicadores,month:0
+msgid "Septiembre"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_employee__formated_vat
+msgid "Show formatted vat"
+msgstr "Formato RUT"
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Sin Movimiento en el Mes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.payslip,movimientos_personal:0
+#: selection:hr.payslip.run,movimientos_personal:0
+msgid "Subsidios (L Médicas)"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule.category,name:l10n_cl_hr.SUBT
+msgid "Subtotal"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Sueldo Base"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__sueldo_minimo
+msgid "Sueldo Minimo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Sueldo Mínimo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Sueldo Mínimo Otro"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__sueldo_minimo_otro
+msgid "Sueldo Mínimo para Menores de 18 y Mayores a 65"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_43
+msgid "TOTAL APORTE PATRONAL"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_37
+msgid "TOTAL DESC. LEGALES"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_41
+msgid "TOTAL DESCUENTOS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_40
+msgid "TOTAL GASTOS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_42
+msgid "TOTAL HABERES"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_11
+msgid "TOTAL IMPONIBLE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_17
+msgid "TOTAL NO IMPONIBLE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_35
+msgid "TRIBUTABLE"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:wizard.export.csv.previred,delimiter_field_option:0
+msgid "Tabulador"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_afp__rate
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tasa"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_afp_capital
+msgid "Tasa AFP Capital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_afp_cuprum
+msgid "Tasa AFP Cuprum"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_afp_habitat
+msgid "Tasa AFP Habitat"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_afp_modelo
+msgid "Tasa AFP Modelo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_afp_planvital
+msgid "Tasa AFP PlanVital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_afp_provida
+msgid "Tasa AFP Provida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tasa Cotización Obligatorio AFP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_independiente_capital
+msgid "Tasa Independientes Capital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_independiente_cuprum
+msgid "Tasa Independientes Cuprum"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_independiente_habitat
+msgid "Tasa Independientes Habitat"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_independiente_modelo
+msgid "Tasa Independientes Modelo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_independiente_planvital
+msgid "Tasa Independientes PlanVital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_independiente_provida
+msgid "Tasa Independientes Provida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_sis_capital
+msgid "Tasa SIS Capital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_sis_cuprum
+msgid "Tasa SIS Cuprum"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_sis_habitat
+msgid "Tasa SIS Habitat"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_sis_modelo
+msgid "Tasa SIS Modelo"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_sis_planvital
+msgid "Tasa SIS PlanVital"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tasa_sis_provida
+msgid "Tasa SIS Provida"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tiene Mutual"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_contract_chile_view
+msgid "Tipo Moneda"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_contract_type
+msgid "Tipo de Contrato"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_hr_type_employee
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_employee__type_id
+msgid "Tipo de Empleado"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__aporte_voluntario_moneda
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__isapre_moneda
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_contract__seguro_complementario_moneda
+msgid "Tipo de Moneda"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "To"
+msgstr "Para"
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tope"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tope AFP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tope Anual"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tope_anual_apv
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tope_anual_apv
+msgid "Tope Anual APV"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tope IPS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tope_imponible_afp
+msgid "Tope Imponible AFP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tope_imponible_ips
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tope_imponible_ips
+msgid "Tope Imponible IPS"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tope_imponible_salud
+msgid "Tope Imponible Salud"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tope Imponible Salud %"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tope_imponible_seguro_cesantia
+msgid "Tope Imponible Seguro Cesantía"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tope_imponible_seguro_cesantia
+msgid "Tope Imponible Seguro de Cesantía"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tope Mensual"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tope_mensual_apv
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__tope_mensual_apv
+msgid "Tope Mensual APV"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__tope_imponible_afp
+msgid "Tope imponible AFP"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Tot. D.Leg"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Tot. Desc"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Tot. No Imp"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.report_hrsalarybymonth
+msgid "Total Imp"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__sueldo_minimo
+msgid "Trab. Dependientes e Independientes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tramo A"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tramo B"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Tramo C"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: selection:hr.contract,aporte_voluntario_moneda:0
+#: selection:hr.contract,isapre_moneda:0
+#: selection:hr.contract,seguro_complementario_moneda:0
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__uf
+msgid "UF"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__uf_otros
+msgid "UF Otros"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "UF Previred"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__uf_otros
+msgid "UF Seguro Complementario"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__uf
+msgid "UF fin de Mes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__uta
+msgid "UTA"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__uta
+msgid "UTA Fin de Mes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,field_description:l10n_cl_hr.field_hr_indicadores__utm
+msgid "UTM"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model:ir.model.fields,help:l10n_cl_hr.field_hr_indicadores__utm
+msgid "UTM Fin de Mes"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Update"
+msgstr "Actualizar"
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_leave_type_form_inherit
+msgid "Use this to discount weekends"
+msgstr "Use esto para descontar fines de semana"
+
+#. module: l10n_cl_hr
+#: model:hr.salary.rule,name:l10n_cl_hr.hr_rule_16
+msgid "VIATICO"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.hr_indicadores_previsionales_view
+msgid "Valor UF"
+msgstr ""
+
+#. module: l10n_cl_hr
+#: model_terms:ir.ui.view,arch_db:l10n_cl_hr.view_salary_employee_month
+msgid "or"
+msgstr "o"
+
+#. module: l10n_cl_hr
+#: model:ir.model,name:l10n_cl_hr.model_wizard_export_csv_previred
+msgid "wizard.export.csv.previred"
+msgstr ""

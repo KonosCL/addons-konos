@@ -485,7 +485,9 @@ else:
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = 0
 Salud=round(7 * round(TOTIM)/100)
-if Salud >= round((payslip.indicadores_id.tope_imponible_salud*payslip.indicadores_id.tope_imponible_afp/100)*payslip.indicadores_id.uf):
+if contract.isapre_cuenta_propia:
+     result = False
+elif Salud >= round((payslip.indicadores_id.tope_imponible_salud*payslip.indicadores_id.tope_imponible_afp/100)*payslip.indicadores_id.uf):
     result = round((payslip.indicadores_id.tope_imponible_salud*payslip.indicadores_id.tope_imponible_afp/100)*payslip.indicadores_id.uf)
 else:
     result = round(7 * round(TOTIM)/100)</field>
@@ -501,6 +503,8 @@ else:
             <field name="condition_python">if contract.isapre_id.name == 'FONASA':
     result = False
 elif worked_days.WORK100.number_of_days == 0:
+     result = False
+elif contract.isapre_cuenta_propia:
      result = False
 else:
     result = round((payslip.indicadores_id.uf / 30 * (worked_days.WORK100.number_of_days)) * contract.isapre_cotizacion_uf) > round(SALUD)</field>
@@ -758,7 +762,7 @@ else:
             <field name="register_id" ref="contrib_register_previred"/>
         </record>
 
-
+COTIZACION ACC. TRABAJO ISL
 
 
         <!-- Rule Inputs -->
