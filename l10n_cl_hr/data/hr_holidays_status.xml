@@ -25,11 +25,11 @@
             <field name="is_continued">True</field>
         </record>
 
-        <record id="hr_holidays_vacations" model="hr.holidays.status">
+        <record id="hr_holidays_vacations" model="hr.leave.type">
             <field name="name">Vacaciones</field>
         </record>
 
-         <record id="hr_holidays_progressive_vacations" model="hr.holidays.status">
+         <record id="hr_holidays_progressive_vacations" model="hr.leave.type">
             <field name="name">Vacaciones (Progresivas)</field>
         </record>
 
