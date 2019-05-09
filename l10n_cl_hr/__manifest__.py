@@ -9,8 +9,7 @@
         ],
     'external_dependencies': {
         'python': [
-                'num2words',
-                'beautifulsoup4'
+                'num2words'
                 ]
         },
     'contributors': [
@@ -20,7 +19,7 @@
         "Daniel Santibáñez Polanco <dsantibanez@globalresponse.cl>",
     ],
     'license': 'AGPL-3',
-    'version': '12.0.1.0.3',
+    'version': '12.0.1.0.4',
     'description': """
 Chilean Payroll & Human Resources.
 ==================================
