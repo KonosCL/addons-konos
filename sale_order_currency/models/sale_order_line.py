@@ -11,11 +11,10 @@ class SaleOrderLine(models.Model):
     def _prepare_invoice_line(self, qty):
         self.ensure_one()
         res = super(SaleOrderLine, self)._prepare_invoice_line(qty)
-        price_unit = self.price_unit
         if self.currency_id and self.company_id and self.currency_id != self.company_id.currency_id:
-            currency_id = self.currency_id.with_context(date=self.order_id.date_order)
-            price_unit = currency_id.compute(price_unit, self.company_id.currency_id)
-        res.update({
-            'price_unit': price_unit,
-        })
+            company = self.env.user.company_id
+            currency = self.order_id.pricelist_id.currency_id
+            res.update({
+                'price_unit': currency._convert(self.price_unit, company.currency_id, company, self.order_id.date_order or fields.Date.today()),
+            })
         return res
