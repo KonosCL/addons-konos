@@ -21,16 +21,17 @@
 ##############################################################################
 
 {
-    'name': 'Cotizaciones de Venta en Otra Moneda',
-    'version': '0.0.1',
+    'name': 'Sale Order Currency',
+    'version': '11.0.1',
     'category': 'Sale',
     'license': 'AGPL-3',
-    'summary': 'Cotizaciones de Venta en Otra Moneda',
-    'author': 'Konos Soluciones y Servicios Limitada',
+    'summary': 'Converts the amount and currency in the sale order into the local currency',
+    'author': u'Konos, Daniel Santibáñez Polanco',
     'website': 'http://konos.cl',
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale', 'account'],
     'data': [
-        'views/sale_views.xml',
     ],
     'installable': True,
+    'auto_install': False,
+    'application': True,
 }
