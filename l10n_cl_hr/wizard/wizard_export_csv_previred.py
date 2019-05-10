@@ -170,7 +170,7 @@ class WizardExportCsvPrevired(models.TransientModel):
         if payslip.contract_id.pension is True:
             return '0'
         elif TOTIM >=round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf):
-            int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))      
+            return int(round(payslip.indicadores_id.tope_imponible_afp*payslip.indicadores_id.uf))      
         else:
             return int(round(TOTIM))
 
