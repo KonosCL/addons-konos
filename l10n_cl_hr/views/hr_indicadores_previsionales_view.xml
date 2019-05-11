@@ -10,13 +10,20 @@
                     <button string="Update" type="object" name="update_document" context="{'force_update':True}" />
                 </header>
                     <sheet>
+                    	<div class="oe_button_box" name="button_box">
+	                        <a href="https://www.previred.com/web/previred/indicadores-previsionales" class="rounded-circle btn btn-beta" role="button" target="_blank">Ir a Previred</a>
+	                    </div>
                         <div>
-                            <field name="name" invisible="1"/>
-
-                            <group col="4" string="Período"> 
+                        	<group>
+                        		<group string="Período"> 
                                   <field name="month"/>
                                   <field name="year"/>
-                            </group>
+                            	</group>
+                        		<group>
+                        		</group>
+                        	</group>
+                            <field name="name" invisible="1"/>
+
                             <notebook>
                                 <page string="Previred" name="previred">
                                     <table > 
