@@ -1,127 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<odoo>
-	<data>
+<odoo>
 	<template id="hr_payroll.report_payslip">
 	<t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
-					<t t-call="web.external_layout">
-            <div class="page">
-                <h3 align="center">LIQUIDACION DE SUELDO</h3>
-                <span  t-raw="o.name"/>
-
-                <table class="table-condensed " width="100%">
+			<t t-call="web.external_layout">
+            <div class="page small">
+                <h5 align="center">
+					<span t-field="o.name" />
+				</h5>
+                <table class="table table-sm" style="border-top: 2px solid black; margin-bottom: 0px;">
                   <thead>
                      <tr>
-                        <th colspan="2" width="50%"><strong>RAZON SOCIAL:</strong></th>
-                        <th colspan="2"><strong>RUT EMPRESA:</strong></th>
+                        <th><strong>RAZON SOCIAL:</strong></th>
+                        <th><strong class="float-right">RUT EMPRESA:</strong></th>
                      </tr>
                   </thead>
                   <tbody>
                       <tr>
-                          <th colspan="2"><span t-field="res_company.name"/></th>
-                          <t t-if="res_company.vat">
-                            <th colspan="2"><span  t-raw="res_company.vat.replace('CL', ' ')"/></th>
-                          </t>
-                          <t t-if="not res_company.vat">
-                            <th colspan="2">55.555.555-5</th>
-                          </t>
+                          <th><span t-field="res_company.name"/></th>
+                         <th><span class="float-right" t-esc="res_company.vat and res_company.vat.replace('CL', ' ') or '55.555.555-5'"/></th>
                       </tr>
                   </tbody>
                 </table>
-
-                <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="datos_trabajador">
+                <table class="table table-sm" style="border-top: 2px solid black; margin-bottom: 0px;" name="datos_trabajador">
                   <thead>
                     <tr>
-                        <th><strong>R.U.T</strong></th>
-                        <th><strong>TRABAJADOR</strong></th>
-                        <th><strong>C.C.</strong></th>
+                        <th><strong>Nombre Trabajador</strong></th>
+                        <th><strong>Fecha Ingreso</strong></th>
+                        <th><strong class="float-right">RUT Trabajador</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <td><span t-field="o.employee_id.identification_id"/></td>
                         <td><span t-field="o.employee_id.name"/></td>
-                        <t t-if="o.contract_id.analytic_account_id">
-                            <td><span t-field="o.contract_id.analytic_account_id.code"/></td>   
-                        </t>
-                        <t t-if="not o.contract_id.analytic_account_id">
-                            <td>001</td>
-                        </t>
+                        <td><span t-field="o.contract_id.date_start" /></td>
+                        <td><span t-field="o.employee_id.identification_id" class="float-right"/></td>
                     </tr>
                   </tbody>
                 </table>
-
-                <table class="table-condensed" width="100%" name="puesto_trabajador">
+                <table class="table table-sm" name="puesto_trabajador" style="border-top: 2px solid black; margin-bottom: 0px;">
                    <thead>
                       <tr>
-                          <th colspan="3"><strong>CARGO</strong></th>
-                          <th colspan="2"><strong>FECHA INGRESO</strong></th>
+                          <th width="31%"><strong>Departamento</strong></th>
+                          <th width="22%"><strong>Cargo</strong></th>
+                          <th width="22%"><strong>Tipo Contrato</strong></th>
+                          <th width="25%"><strong class="float-right">Centro Costo</strong></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                          <td colspan="3"><span t-field="o.contract_id.job_id"/></td>
-                          <td colspan="2"><span t-field="o.contract_id.date_start"/></td>
+                      	  <td><span t-field="o.contract_id.department_id" /></td>
+                          <td><span t-field="o.contract_id.job_id"/></td>
+                          <td><span t-field="o.contract_id.type_id"/></td>
+                          <td><span t-esc="o.contract_id.analytic_account_id.code or '001'" class="float-right"/></td>
                       </tr>
                     </tbody>
                 </table>
-
-                <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="prevision">
+                <table class="table table-sm" style="border-top: 2px solid black; margin-bottom: 0px;" name="prevision">
                     <thead>
                       <tr>
-                          <th width="35%"><strong>A.F.P</strong></th>
-                          <th width="35%"><strong>ISAPRE</strong></th>
-                          <th width="30%"><strong t-field="o.contract_id.afp_id"/></th>
+                      	<th width="17%"><strong>Nombre AFP</strong></th>
+						<th width="14%"><strong>Tasa AFP</strong></th>
+						<th width="22%"><strong>Nombre ISAPRE</strong></th>
+						<th width="18%"><strong>FUN ISAPRE</strong></th>
+						<th width="14%" style="text-align:left"><strong>Cotiz. UF</strong></th>
+						<th width="15%" style="text-align:right"><strong>Cotiz. CLP</strong></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                          <td><span t-field="o.contract_id.afp_id"/></td>
-                          <td><span t-field="o.contract_id.isapre_id"/></td>
-                          <td>UF <strong t-field="o.contract_id.isapre_cotizacion_uf"/></td>
-                      </tr>
-                      <tr>
+                      	<td><span t-field="o.contract_id.afp_id"/></td>
                         <td>
-                          <t t-if="('MODELO' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_modelo"/>
-                          </t>
-                          <t t-if="('CUPRUM' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_cuprum"/>
-                          </t>
-                          <t t-if="('HABITAT' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_habitat"/>
-                          </t>
-                          <t t-if="('PLANVITAL' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_planvital"/>
-                          </t>
-                          <t t-if="('PROVIDA' == o.contract_id.afp_id.name)">
-                              <strong t-raw="o.indicadores_id.tasa_afp_provida"/>
-                          </t>
-                          <t t-if="('CAPITAL' == o.contract_id.afp_id.name)">
-                            <strong t-raw="o.indicadores_id.tasa_afp_capital"/>
-                          </t>
+                        	<t t-if="('MODELO' == o.contract_id.afp_id.name)">
+								<span t-raw="o.indicadores_id.tasa_afp_modelo" />
+							</t>
+							<t t-if="('CUPRUM' == o.contract_id.afp_id.name)">
+								<span t-raw="o.indicadores_id.tasa_afp_cuprum" />
+							</t>
+							<t t-if="('HABITAT' == o.contract_id.afp_id.name)">
+								<span t-raw="o.indicadores_id.tasa_afp_habitat" />
+							</t>
+							<t t-if="('PLANVITAL' == o.contract_id.afp_id.name)">
+								<span t-raw="o.indicadores_id.tasa_afp_planvital" />
+							</t>
+							<t t-if="('PROVIDA' == o.contract_id.afp_id.name)">
+								<span t-raw="o.indicadores_id.tasa_afp_provida" />
+							</t>
+							<t t-if="('CAPITAL' == o.contract_id.afp_id.name)">
+								<span t-raw="o.indicadores_id.tasa_afp_capital" />
+							</t>
+							%
                         </td>
-                        <td>
+                        <td><span t-field="o.contract_id.isapre_id"/></td>
+                        <td><span t-field="o.contract_id.isapre_fun"/></td>
+                        <td>UF <strong t-field="o.contract_id.isapre_cotizacion_uf"/></td>
+                        <td style="text-align:right">
                           <t t-if="('FONASA' == o.contract_id.isapre_id.name)">
                               <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('SALUD' == p.code)"><span t-esc="round(p.amount)" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t>
                           </t>
-                          <t t-if="('FONASA' != o.contract_id.isapre_id.name)">
+                          <t t-if="('FONASA' != o.contract_id.isapre_id.name)" >
                               <span t-esc="round(o.indicadores_id.uf*o.contract_id.isapre_cotizacion_uf)" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
                           </t>
                         </td>
                       </tr>
                   </tbody>
                 </table>
-
-                <table class="table-condensed" width="100%" style="border-top: 1px solid black;" name="jornada">
+                <table class="table table-sm" style="border-top: 2px solid black; margin-bottom: 0px;" name="jornada">
                   <thead>
                     <tr>
-                      <th><strong>DIAS</strong></th>
-                      <th><strong>HORAS EXTRA</strong></th>
-                      <th><strong>DESCUENTO</strong></th>
-                      <th colspan="3"><strong>CARGAS</strong></th>
-                      <th><strong>IMPONIBLE</strong></th>
-                      <th><strong>TRIBUTABLE</strong></th>
+                      <th width="17%"><strong>DIAS</strong></th>
+                      <th width="14%"><strong>H.EXTRA</strong></th>
+                      <th width="22%"><strong>DESCUENTOS</strong></th>
+                      <th width="18%"><strong>CARGAS</strong></th>
+                      <th width="14%" style="text-align:left"><strong>Imponible</strong></th>
+                      <th width="15%" style="text-align:right"><strong>Tributable</strong></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -149,9 +141,9 @@
                           </t>
                         </t>
                       </td>
-                      <td colspan="3">
-                        <span t-field="o.contract_id.carga_familiar"/>
-                        <span t-field="o.contract_id.carga_familiar_maternal"/>
+                      <td>
+                        <span t-field="o.contract_id.carga_familiar"/>/
+                        <span t-field="o.contract_id.carga_familiar_maternal"/>/
                         <span t-field="o.contract_id.carga_familiar_invalida"/>
                       </td>
                       <td>
@@ -161,7 +153,7 @@
                           </t>
                         </t>
                       </td>
-                      <td>
+                      <td style="text-align:right">
                         <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                           <t t-if="'TRIBU' == p.code">
                             <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
@@ -171,8 +163,8 @@
                     </tr>
                   </tbody>
                </table>
-
-              <table class="table-condensed" width="100%" style="border-top: 1px solid black;">
+               <br />
+              <table class="table table-sm" style="border-top: 1px solid black; margin-bottom: 0px;">
                   <thead>
                      <tr>
                         <th align="center"><strong>HABERES</strong></th>
@@ -182,7 +174,7 @@
                   <tbody>
                    <tr>
                        <td style="vertical-align:top;">
-                         <table class="table-condensed" width="95%">
+                         <table class="table table-sm" width="95%">
                            <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                                <t t-if=" ('No Imponible' ==p.category_id.name) or ('No Imponible - Otros' ==p.category_id.name) or ('Imponible' ==p.category_id.name) or ('TOTIM' == p.code) or ('TOTNOI' == p.code)">
                                    <td>
@@ -207,7 +199,7 @@
                          </table>
                        </td>
                        <td style="vertical-align:top;">
-                          <table class="table-condensed" width="95%">
+                          <table class="table table-sm" width="95%">
                              <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p">
                                 <t t-if="('Prevision' ==p.category_id.name) or ('Previsión' ==p.category_id.name) or ('Salud' ==p.category_id.name) or ('Descuentos' ==p.category_id.name) or ('Otros Descuentos' ==p.category_id.name) or ('TOD' == p.code) or ('TODELE' == p.code)">
                                    <td>
@@ -234,49 +226,81 @@
                           </table>
                       </td>
                     </tr>
+                    <tr>
+						<td><h5><strong>TOTAL HABERES</strong>
+								<t t-foreach="o.line_ids.filtered('appears_on_payslip')" t-as="p">
+									<t t-if="('HAB' == p.code)">
+										<span class="float-right" t-field="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
+									</t>
+								</t>
+							</h5>
+						</td>
+						<td><h5><strong class="ml32">TOTAL DESCUENTOS</strong>
+								<t t-foreach="o.line_ids.filtered('appears_on_payslip')" t-as="p">
+									<t t-if="('TDE' == p.code)">
+										<span class="float-right" t-field="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
+									</t>
+								</t>
+							</h5>
+						</td>
+					</tr>
                  </tbody>
               </table>
-
-              <table class="table-condensed" width="100%" style="margin-top:20px; border-top:1px 0px solid black;">
+              <table class="table table-sm" style="margin-top:20px; border-top:1px 0px solid black;">
                 <thead>
                   <tr>
-                    <td><strong>TOTAL HABERES</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('HAB' == p.code)"> <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
-                    <td><strong>TOTAL DESCUENTOS</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('TDE' == p.code)"> <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
+                    <td><strong>Fecha</strong></td>
+                    <td style="text-align:right"><span t-field="o.date_to"/></td>
                   </tr>
                   <tr>
-                    <td><strong>FECHA</strong></td>
-                    <td><span t-field="o.date_to"/></td>
-                    <td><strong>ALCANCE LIQUIDO</strong></td>
-                    <td> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"> <span t-esc="p.amount" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
+                    <td><strong>Alcance Líquido</strong></td>
+                    <td style="text-align:right"> <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code)"> <span t-esc="p.amount" class="float-right" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></t></t></td>
                   </tr>
                   <tr>
-                    <th>SON</th>
-                    <th colspan="3"><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code) and (p.amount>0)"> <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" /></t></t></th>
+                  	<td><strong>Alcance Líquido (en palabras):</strong></td>
+                    <td style="text-align:right"><t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="p"><t t-if="('LIQ' == p.code) and (p.amount>0)"> <span t-esc="o.company_id.currency_id.amount_to_text(p.amount)" /></t></t></td>
                   </tr>
                 </thead>
               </table>
-
-              <table class="table-condensed" width="100%">
+              <br />
+              <table class="table table-sm">
                 <tr>
-                  <td colspan="3">Recibí conforme el alcance el alcance líquido de la presente liquidación, no teniendo cargo o cobro alguna que hacer por otro concepto</td><td/>
+                  	<td colspan="3">
+						Certifico que recibí de
+						<span t-field="res_company.name" />
+						a mi entera satisifación el saldo líquido de la presente
+						liquidación, no teniendo cobro alguno que hacer o reclamar por
+						los conceptos correspondientes a ella.
+						<br></br>
+					</td>
                 </tr>
                 <tr>
                   <td colspan="3"></td><td/>
                 </tr>
               </table>
-
-              <table class="table-condensed" width="100%" style="margin-top: 100px;">
-                <tr>
-                  <td colspan="3"><strong>FIRMA DEL EMPLEADOR</strong></td>
-                  <td align="right"><strong>FIRMA DEL TRABAJADOR</strong></td>
-                </tr>
-              </table>
+              <br /><br /><br />
+              <table class="table table-sm text-center"
+				style="margin-top: 1px; border-bottom:3px 1px solid black;">
+				<tr>
+					<th colspan="4">
+						<strong>FIRMA DEL EMPLEADOR</strong>
+					</th>
+					<th>
+						<strong>FIRMA DEL TRABAJADOR</strong>
+					</th>
+				</tr>
+				<tr>
+					<th colspan="4">
+						<span t-field="res_company.name" />
+					</th>
+					<th>
+						<span t-field="o.employee_id.name" />
+					</th>
+				</tr>
+			</table>
             </div>
-					</t>
+		</t>
         </t>
       </t>
     </template>
-  </data>
 </odoo>
