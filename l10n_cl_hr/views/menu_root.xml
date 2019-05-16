@@ -15,7 +15,7 @@
 
 	<menuitem id="menu_cl_hr_payroll_master_data"
 		name="Master Data" parent="hr_payroll.menu_hr_payroll_root"
-		sequence="5" />
+		sequence="5" groups="hr_payroll.group_hr_payroll_user" />
 
 	<menuitem id="menu_cl_hr_payroll_reports" name="Reports"
 		parent="hr_payroll.menu_hr_payroll_root" sequence="6"
