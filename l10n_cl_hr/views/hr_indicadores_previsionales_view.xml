@@ -7,8 +7,13 @@
 		<field name="arch" type="xml">
 			<form string="Indicadores Previsionales">
 				<header>
+					<button string="Validar" type="object" name="action_done" states="draft" class="oe_highlight"
+						groups="hr_payroll.group_hr_payroll_user" />
+					<button string="Volver a borrador" type="object" name="action_draft" states="done" 
+						groups="hr_payroll.group_hr_payroll_manager" />
 					<button string="Update" type="object" name="update_document"
-						context="{'force_update':True}" />
+						context="{'force_update':True}" states="draft" />
+					<field name="state" widget="statusbar" />
 				</header>
 				<sheet>
 					<div class="oe_button_box" name="button_box">
