@@ -32,6 +32,7 @@
 from . import hr_employee
 from . import hr_payslip
 from . import hr_afp
+from . import hr_centro_costos
 from . import hr_contract_type
 from . import hr_indicadores_previsionales
 from . import hr_isapre
