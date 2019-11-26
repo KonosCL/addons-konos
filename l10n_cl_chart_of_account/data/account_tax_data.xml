@@ -282,11 +282,24 @@
       <field name="account_id" ref="110704"/>
     </record>
 
+    <record id="cervezas_venta" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Cervezas y Bebidas Alcohólicas - Ventas</field>
+      <field name="description">ILA 20.5%</field>
+      <field name="amount">20.5</field>
+      <field name="sii_code">26</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">sale</field>
+      <field name="sequence" eval="8"/>
+      <field name="refund_account_id" ref="110704"/>
+      <field name="account_id" ref="110704"/>
+    </record>
+
     <record id="cervezas_compra" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
       <field name="name">Cervezas y Bebidas Alcohólicas - Compras</field>
-      <field name="description">15%</field>
-      <field name="amount">15</field>
+      <field name="description">ILA 20.5%</field>
+      <field name="amount">20.5</field>
       <field name="sii_code">26</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
