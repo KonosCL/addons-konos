@@ -11,7 +11,7 @@ class SaleOrderLine(models.Model):
     def _prepare_invoice_line(self, qty):
         self.ensure_one()
         res = super(SaleOrderLine, self)._prepare_invoice_line(qty)
-        if self.currency_id and self.company_id and self.currency_id != self.company_id.currency_id:
+        if self.order_id.convert_to_company_currency and self.currency_id and self.company_id and self.currency_id != self.company_id.currency_id:
             company = self.env.user.company_id
             currency = self.order_id.pricelist_id.currency_id
             res.update({

@@ -30,6 +30,7 @@
     'website': 'http://konos.cl',
     'depends': ['base', 'sale', 'account'],
     'data': [
+        'views/sale_order_view.xml',
     ],
     'installable': True,
     'auto_install': False,
