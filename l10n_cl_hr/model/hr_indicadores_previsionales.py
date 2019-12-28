@@ -39,11 +39,11 @@ import requests
 
 
 _logger = logging.getLogger(__name__)
-MONTH_LIST= [('1', 'Enero'), 
-        ('2', 'Febrero'), ('3', 'Marzo'), 
-        ('4', 'Abril'), ('5', 'Mayo'), 
-        ('6', 'Junio'), ('7', 'Julio'), 
-        ('8', 'Agosto'), ('9', 'Septiembre'), 
+MONTH_LIST= [('1', 'Enero'),
+        ('2', 'Febrero'), ('3', 'Marzo'),
+        ('4', 'Abril'), ('5', 'Mayo'),
+        ('6', 'Junio'), ('7', 'Julio'),
+        ('8', 'Agosto'), ('9', 'Septiembre'),
         ('10', 'Octubre'), ('11', 'Noviembre'),
         ('12', 'Diciembre')]
 
@@ -55,13 +55,13 @@ class hr_indicadores_previsionales(models.Model):
 
     name = fields.Char('Nombre')
     asignacion_familiar_primer = fields.Float(
-        'Asignación Familiar Tramo 1', 
+        'Asignación Familiar Tramo 1',
         help="Asig Familiar Primer Tramo")
     asignacion_familiar_segundo = fields.Float(
-        'Asignación Familiar Tramo 2', 
+        'Asignación Familiar Tramo 2',
         help="Asig Familiar Segundo Tramo")
     asignacion_familiar_tercer = fields.Float(
-        'Asignación Familiar Tramo 3', 
+        'Asignación Familiar Tramo 3',
         help="Asig Familiar Tercer Tramo")
     asignacion_familiar_monto_a = fields.Float(
         'Monto Tramo Uno', help="Monto A")
@@ -70,25 +70,25 @@ class hr_indicadores_previsionales(models.Model):
     asignacion_familiar_monto_c = fields.Float(
         'Monto Tramo Tres',  help="Monto C")
     contrato_plazo_fijo_empleador = fields.Float(
-        'Contrato Plazo Fijo Empleador', 
+        'Contrato Plazo Fijo Empleador',
         help="Contrato Plazo Fijo Empleador")
     contrato_plazo_fijo_trabajador = fields.Float(
-        'Contrato Plazo Fijo Trabajador', 
-        help="Contrato Plazo Fijo Trabajador")    
+        'Contrato Plazo Fijo Trabajador',
+        help="Contrato Plazo Fijo Trabajador")
     contrato_plazo_indefinido_empleador = fields.Float(
-        'Contrato Plazo Indefinido Empleador', 
+        'Contrato Plazo Indefinido Empleador',
         help="Contrato Plazo Fijo")
     contrato_plazo_indefinido_empleador_otro = fields.Float(
-        'Contrato Plazo Indefinido 11 anos o mas', 
+        'Contrato Plazo Indefinido 11 anos o mas',
         help="Contrato Plazo Indefinido 11 anos Empleador")
     contrato_plazo_indefinido_trabajador_otro = fields.Float(
-        'Contrato Plazo Indefinido 11 anos o mas', 
+        'Contrato Plazo Indefinido 11 anos o mas',
         help="Contrato Plazo Indefinido 11 anos Trabajador")
     contrato_plazo_indefinido_trabajador = fields.Float(
-        'Contrato Plazo Indefinido Trabajador', 
+        'Contrato Plazo Indefinido Trabajador',
         help="Contrato Plazo Indefinido Trabajador")
     caja_compensacion = fields.Float(
-        'Caja Compensación', 
+        'Caja Compensación',
         help="Caja de Compensacion")
     deposito_convenido = fields.Float(
         'Deposito Convenido', help="Deposito Convenido")
@@ -102,7 +102,7 @@ class hr_indicadores_previsionales(models.Model):
     sueldo_minimo = fields.Float(
         'Trab. Dependientes e Independientes',  help="Sueldo Minimo")
     sueldo_minimo_otro = fields.Float(
-        'Menores de 18 y Mayores de 65:', 
+        'Menores de 18 y Mayores de 65:',
         help="Sueldo Mínimo para Menores de 18 y Mayores a 65")
     tasa_afp_cuprum = fields.Float(
         'Cuprum',  help="Tasa AFP Cuprum")
@@ -151,7 +151,7 @@ class hr_indicadores_previsionales(models.Model):
     tope_imponible_salud = fields.Float(
         'Tope Imponible Salud')
     tope_imponible_seguro_cesantia = fields.Float(
-        'Tope Imponible Seguro Cesantía', 
+        'Tope Imponible Seguro Cesantía',
         help="Tope Imponible Seguro de Cesantía")
     uf = fields.Float(
         'UF',  required=True, help="UF fin de Mes")
@@ -173,7 +173,7 @@ class hr_indicadores_previsionales(models.Model):
     @api.multi
     @api.onchange('month')
     def get_name(self):
-        self.name = str(self.month).replace('10', 'Octubre').replace('11', 'Noviembre').replace('12', 'Diciembre').replace('1', 'Enero').replace('2', 'Febrero').replace('3', 'Marzo').replace('4', 'Abril').replace('5', 'Mayo').replace('6', 'Junio').replace('7', 'Julio').replace('8', 'Agosto').replace('9', 'Septiembre') + " " + str(self.year)
+        self.name = "%s %s" %(self.find_month(self.month), self.year)
 
     def find_between_r(self, s, first, last ):
         try:
@@ -209,7 +209,19 @@ class hr_indicadores_previsionales(models.Model):
         if s == '12':
             return 'Diciembre'
 
+    @api.model
+    def _cron_crear_indicadores(self):
+        mes = datetime.now().strftime('%m')
+        rec = self.create({
+                     'month': str(int(mes)),
+                     'name': "%s %s" %(self.find_month(str(int(mes))), datetime.now().strftime('%Y')),
+                     'uf': 0,
+                     'utm': 0,
+                     'ipc': 0,
+                     'year': datetime.now().strftime('%Y'),
 
+        })
+        rec.update_document()
 
     @api.one
     def update_document(self):
@@ -304,8 +316,3 @@ class hr_indicadores_previsionales(models.Model):
 
         except ValueError:
             return ""
-
-
-            
-
-
