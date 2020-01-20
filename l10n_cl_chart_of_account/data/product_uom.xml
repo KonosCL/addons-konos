@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="product.product_uom_mcub" model="product.uom">
+    <field name="name">MCUB</field>
+    <field name="category_id" ref="product.product_uom_categ_vol"/>
+    <field name="uom_type">bigger</field>
+  </record>
+</odoo>

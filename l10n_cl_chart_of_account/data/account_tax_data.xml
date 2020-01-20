@@ -322,6 +322,51 @@
       <field name="account_id" ref="620208"/>
     </record>
 
+    <record id="especifico_venta_diesel" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Específico Diesel - Venta</field>
+      <field name="description">Especifico Diesel</field>
+      <field name="amount">1</field>
+      <field name="sii_code">28</field>
+      <field name="amount_type">fixed</field>
+      <field name="type_tax_use">sale</field>
+      <field name="sequence" eval="9"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+      <field name="uom_id" ref="product.product_uom_mcub" />
+      <field name="mepco">diesel</field>
+    </record>
+
+    <record id="especifico_venta_gasolina_93" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Específico Gasolina 93 - Venta</field>
+      <field name="description">Especifico Gasolina 93</field>
+      <field name="amount">1</field>
+      <field name="sii_code">35</field>
+      <field name="amount_type">fixed</field>
+      <field name="type_tax_use">sale</field>
+      <field name="sequence" eval="9"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+      <field name="uom_id" ref="product.product_uom_mcub" />
+      <field name="mepco">gasolina_93</field>
+    </record>
+
+    <record id="especifico_venta_gasolina_97" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Impuesto Específico Gasolina 97 - Venta</field>
+      <field name="description">Especifico Gasolina 97</field>
+      <field name="amount">1</field>
+      <field name="sii_code">35</field>
+      <field name="amount_type">fixed</field>
+      <field name="type_tax_use">sale</field>
+      <field name="sequence" eval="9"/>
+      <field name="refund_account_id" ref="620208"/>
+      <field name="account_id" ref="620208"/>
+      <field name="uom_id" ref="product.product_uom_mcub" />
+      <field name="mepco">gasolina_97</field>
+    </record>
+
     <record id="especifico_compra_gasolina" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
       <field name="name">Impuesto Específico Gasolina - Compra</field>
