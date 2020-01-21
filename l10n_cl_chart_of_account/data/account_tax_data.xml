@@ -333,7 +333,7 @@
       <field name="sequence" eval="9"/>
       <field name="refund_account_id" ref="620208"/>
       <field name="account_id" ref="620208"/>
-      <field name="uom_id" ref="product.product_uom_mcub" />
+      <field name="uom_id" ref="product_uom_mcub" />
       <field name="mepco">diesel</field>
     </record>
 
@@ -348,7 +348,7 @@
       <field name="sequence" eval="9"/>
       <field name="refund_account_id" ref="620208"/>
       <field name="account_id" ref="620208"/>
-      <field name="uom_id" ref="product.product_uom_mcub" />
+      <field name="uom_id" ref="product_uom_mcub" />
       <field name="mepco">gasolina_93</field>
     </record>
 
@@ -363,7 +363,7 @@
       <field name="sequence" eval="9"/>
       <field name="refund_account_id" ref="620208"/>
       <field name="account_id" ref="620208"/>
-      <field name="uom_id" ref="product.product_uom_mcub" />
+      <field name="uom_id" ref="product_uom_mcub" />
       <field name="mepco">gasolina_97</field>
     </record>
 
