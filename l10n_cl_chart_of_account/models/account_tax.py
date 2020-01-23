@@ -105,6 +105,13 @@ class AccountTax(models.Model):
         string="Indicador Mepco",
     )
 
+    def compute_factor(self, uom_id):
+        amount_tax = self.amount or 0.0
+        if self.uom_id and self.uom_id != uom_id:
+            factor = self.uom_id._compute_quantity(1, uom_id)
+            amount_tax = (amount_tax / factor)
+        return amount_tax
+
     def _compute_amount(self, base_amount, price_unit, quantity=1.0, product=None, partner=None, uom_id=None):
         """ Returns the amount of a single tax. base_amount is the actual amount on which the tax is applied, which is
             price_unit * quantity eventually affected by previous taxes (if tax is include_base_amount XOR price_include)
@@ -119,10 +126,7 @@ class AccountTax(models.Model):
             # sign of the price unit.
             # When the price unit is equal to 0, the sign of the quantity is absorbed in base_amount then
             # a "else" case is needed
-            amount_tax = self.amount or 0.0
-            if self.uom_id != uom_id:
-                factor = self.uom_id._compute_quantity(1, uom_id)
-                amount_tax = (amount_tax / factor)
+            amount_tax = self.compute_factor(uom_id)
             if base_amount:
                 return math.copysign(quantity, base_amount) * amount_tax
             else:
