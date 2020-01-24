@@ -93,7 +93,7 @@ class AccountTax(models.Model):
             default=False,
         )
     uom_id = fields.Many2one(
-        'product.uom',
+        'uom.uom',
         string="Force Uom"
     )
     mepco = fields.Selection(
