@@ -12,6 +12,8 @@
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
+                <field name="mepco" />
+                <field name="uom_id" />
             </field>
 
         </field>
@@ -44,6 +46,8 @@
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
+                <field name="mepco" />
+                <field name="uom_id" />
             </field>
 
         </field>
@@ -60,6 +64,8 @@
                 <field name="retencion" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
+                <field name="mepco" />
+                <field name="uom_id" />
             </field>
         </field>
     </record>
