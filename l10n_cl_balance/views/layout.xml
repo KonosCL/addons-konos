@@ -144,11 +144,11 @@
                   <th class="text-right"></th>
                   <th class="text-right"><span t-esc="activo-pasivo" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
                 </t>
-                <t t-if="0 > perdida-ganancia">
+                <t t-if="0 > ganancia-perdida">
                   <th class="text-right"><span t-esc="ganancia-perdida" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
                   <th class="text-right"></th>
                 </t>
-                <t t-if="0 > ganancia-perdida">
+                <t t-if="0 > perdida-ganancia">
                   <th class="text-right"></th>
                   <th class="text-right"><span t-esc="perdida-ganancia" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/></th>
                 </t>
