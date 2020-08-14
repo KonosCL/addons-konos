@@ -99,7 +99,9 @@ class hr_indicadores_previsionales(models.Model):
     tasa_afp_planvital = fields.Float(
         'PlanVital', readonly=True, states=STATES, help="Tasa AFP PlanVital")
     tasa_afp_habitat = fields.Float(
-        'Habitat', readonly=True, states=STATES, help="Tasa AFP Habitat")
+        'Habitat',  help="Tasa AFP Habitat")
+    tasa_afp_uno = fields.Float(
+        'Uno', help="Tasa AFP Uno")
     tasa_sis_cuprum = fields.Float(
         'SIS', readonly=True, states=STATES, help="Tasa SIS Cuprum")
     tasa_sis_capital = fields.Float(
@@ -111,7 +113,9 @@ class hr_indicadores_previsionales(models.Model):
     tasa_sis_habitat = fields.Float(
         'SIS', readonly=True, states=STATES, help="Tasa SIS Habitat")
     tasa_sis_modelo = fields.Float(
-        'SIS', readonly=True, states=STATES, help="Tasa SIS Modelo")
+        'SIS',  help="Tasa SIS Modelo")
+    tasa_sis_uno = fields.Float(
+        'SIS', help="Tasa SIS Uno")
     tasa_independiente_cuprum = fields.Float(
         'SIS', readonly=True, states=STATES, help="Tasa Independientes Cuprum")
     tasa_independiente_capital = fields.Float(
@@ -123,7 +127,9 @@ class hr_indicadores_previsionales(models.Model):
     tasa_independiente_habitat = fields.Float(
         'SIS', readonly=True, states=STATES, help="Tasa Independientes Habitat")
     tasa_independiente_modelo = fields.Float(
-        'SIS', readonly=True, states=STATES, help="Tasa Independientes Modelo")
+        'SIS',  help="Tasa Independientes Modelo")
+    tasa_independiente_uno = fields.Float(
+        'SIS', help="Tasa Independientes Uno")
     tope_anual_apv = fields.Float(
         'Tope Anual APV', readonly=True, states=STATES, help="Tope Anual APV")
     tope_mensual_apv = fields.Float(
@@ -289,12 +295,16 @@ class hr_indicadores_previsionales(models.Model):
             self.tasa_afp_modelo = clear_string(letters[7].select("strong")[23].get_text())
             self.tasa_sis_modelo = clear_string(letters[7].select("strong")[24].get_text())
 
+            self.tasa_afp_uno = clear_string(letters[7].select("strong")[23].get_text())
+            self.tasa_sis_uno = clear_string(letters[7].select("strong")[24].get_text())
+
             self.tasa_independiente_capital = clear_string(letters[7].select("strong")[10].get_text())[:5]
             self.tasa_independiente_cuprum = clear_string(letters[7].select("strong")[13].get_text())
             self.tasa_independiente_habitat = clear_string(letters[7].select("strong")[16].get_text())
             self.tasa_independiente_planvital = clear_string(letters[7].select("strong")[19].get_text())
             self.tasa_independiente_provida = clear_string(letters[7].select("strong")[22].get_text())
             self.tasa_independiente_modelo = clear_string(letters[7].select("strong")[25].get_text())
+            self.tasa_independiente_uno = clear_string(letters[7].select("strong")[25].get_text())
 
         except ValueError:
             return ""

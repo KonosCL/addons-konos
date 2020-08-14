@@ -68,6 +68,9 @@
 												<field name="tasa_afp_modelo" />
 												<field name="tasa_sis_modelo" nolabel="1" />
 												<field name="tasa_independiente_modelo" nolabel="1" />
+												<field name="tasa_afp_uno" />
+												<field name="tasa_sis_uno" nolabel="1" />
+												<field name="tasa_independiente_uno" nolabel="1" />
 											</group>
 										</td>
 									</tr>
