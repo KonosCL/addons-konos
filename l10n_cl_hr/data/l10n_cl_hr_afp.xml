@@ -59,6 +59,15 @@
             <field name="independiente">12.59</field>
         </record>
 
+        <record id="hr_afp_uno" model="hr.afp">
+            <field name="codigo">35</field>
+            <field name="rut"> </field>
+            <field name="name">UNO</field>
+            <field name="rate">10.62</field>
+            <field name="sis">1.99</field>
+            <field name="independiente">12.61</field>
+        </record>
+
         <record id="hr_afp_no" model="hr.afp">
             <field name="codigo">00</field>
             <field name="rut"> </field>

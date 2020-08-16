@@ -109,7 +109,7 @@ else:
 if (contract.type_id.name == 'Sueldo Empresarial'):
     result = 0
 elif GRATI > (4.75 * payslip.indicadores_id.sueldo_minimo /12):
-    result = round (4.75 * payslip.indicadores_id.sueldo_minimo / 12)
+    result = round(((4.75 * payslip.indicadores_id.sueldo_minimo / 12) / 30) * worked_days.WORK100.number_of_days)
 else:
     result = GRATI</field>
         </record>
@@ -273,6 +273,8 @@ elif contract.afp_id.name == 'PLANVITAL':
     tasa = payslip.indicadores_id.tasa_afp_planvital
 elif contract.afp_id.name == 'PROVIDA':
     tasa = payslip.indicadores_id.tasa_afp_provida
+elif contract.afp_id.name == 'UNO':
+    tasa = payslip.indicadores_id.tasa_afp_uno
 else:
     tasa = 0
 
@@ -398,6 +400,8 @@ elif contract.afp_id.name == 'PLANVITAL':
     tasa = payslip.indicadores_id.tasa_sis_planvital
 elif contract.afp_id.name == 'PROVIDA':
     tasa = payslip.indicadores_id.tasa_sis_provida
+elif contract.afp_id.name == 'UNO':
+    tasa = payslip.indicadores_id.tasa_sis_uno
 else:
     tasa = 0
 
