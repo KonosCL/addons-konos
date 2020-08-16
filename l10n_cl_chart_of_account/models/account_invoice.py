@@ -107,7 +107,7 @@ class AccountInvoice(models.Model):
         round_curr = self.currency_id.round
         for line in self.invoice_line_ids:
             price_unit = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
-            taxes = line.invoice_line_tax_ids.compute_all(price_unit, self.currency_id, line.quantity, line.product_id, self.partner_id, uom_id=line.uom_id)['taxes']
+            taxes = line.invoice_line_tax_ids.compute_all(price_unit, self.currency_id, line.quantity, line.product_id, self.partner_id)['taxes']
             for tax in taxes:
                 val = self._prepare_tax_line_vals(line, tax)
                 key = self.env['account.tax'].browse(tax['id']).get_grouping_key(val)
