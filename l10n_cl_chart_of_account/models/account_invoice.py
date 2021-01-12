@@ -36,7 +36,7 @@ class AccountInvoiceTax(models.Model):
 class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
-    @api.one
+    
     @api.depends('price_unit', 'discount', 'invoice_line_tax_ids', 'quantity',
         'product_id', 'invoice_id.partner_id', 'invoice_id.currency_id', 'invoice_id.company_id',
         'invoice_id.date_invoice', 'invoice_id.date')
@@ -66,7 +66,7 @@ class AccountInvoice(models.Model):
         compute='_compute_amount',
     )
 
-    @api.one
+    
     @api.depends('invoice_line_ids.price_subtotal', 'tax_line_ids.amount', 'tax_line_ids.amount_rounding',
                  'currency_id', 'company_id', 'date_invoice', 'type')
     def _compute_amount(self):
@@ -101,7 +101,7 @@ class AccountInvoice(models.Model):
         self.amount_untaxed_signed = amount_untaxed_signed * sign
 
 
-    @api.multi
+    
     def get_taxes_values(self):
         tax_grouped = {}
         round_curr = self.currency_id.round

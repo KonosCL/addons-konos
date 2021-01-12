@@ -3,111 +3,133 @@
      <!-- Account Tags -->
 
      <record id="tag_cl_01" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuestos Directos a Pagar</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_02" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto a la Renta Primera Categoría a Pagar</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_03" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto General a las Ventas (IVA) Total a Pagar</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_04" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Pagado</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_05" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Pagado IVA</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_06" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Pagado de Exonerados al IVA</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_07" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Pagado Fuera de Ámbito</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_08" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Cobrado</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_09" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Cobrado IVA</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_10" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Cobrado de Exonerados al IVA</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_11" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Cobrado Fuera de Ámbito</field>
         <field name="applicability">taxes</field>
     </record>
 
    <record id="tag_cl_12" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Base Imponible</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_13" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Base Imponible - Ventas</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_14" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Ventas Gravadas con IVA</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_15" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Ventas NO Gravadas (Exoneradas)</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_16" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Ventas Gravadas Fuera de Ámbito</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_17" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Base Imponible - Compras</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_18" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Compras Gravadas con IVA</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_19" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Compras NO Gravadas (Exoneradas)</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_20" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Compras Gravadas Fuera de Ámbito</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_21" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Compras Retención a la Renta 2da Categoría a Pagar</field>
         <field name="applicability">taxes</field>
     </record>
 
     <record id="tag_cl_22" model="account.account.tag">
+        <field name="country_id" ref="base.cl"/>
         <field name="name">Impuesto Retenido 2da Categoría</field>
         <field name="applicability">taxes</field>
     </record>
@@ -122,9 +144,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="1"/>
-      <field name="refund_account_id" ref="210701"/>
-      <field name="account_id" ref="210701"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
     </record>
 
     <record id="IVAC_19" model="account.tax.template">
@@ -136,9 +155,6 @@
       <field name="sequence" eval="1"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="refund_account_id" ref="110701"/>
-      <field name="account_id" ref="110701"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
     </record>
 
     <record id="IVAV_17" model="account.tax.template">
@@ -150,9 +166,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="2"/>
-      <field name="refund_account_id" ref="210701"/>
-      <field name="account_id" ref="210701"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
       <field name="sii_type" >R</field>
       <field name="retencion">5.000</field>
     </record>
@@ -166,9 +179,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="3"/>
-      <field name="refund_account_id" ref="210701"/>
-      <field name="account_id" ref="210701"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
       <field name="sii_type" >R</field>
       <field name="retencion">5.000</field>
     </record>
@@ -181,9 +191,6 @@
       <field name="sequence" eval="2"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="refund_account_id" ref="210704"/>
-      <field name="account_id" ref="210704"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_22'), ref('tag_cl_21')])]"/>
       <field name="sii_type">R</field>
       <field name="retencion">10.750</field>
     </record>
@@ -197,9 +204,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="4"/>
-      <field name="refund_account_id" ref="210701"/>
-      <field name="account_id" ref="210701"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
       <field name="sii_type" >R</field>
       <field name="retencion">19.000</field>
     </record>
@@ -213,7 +217,6 @@
        <field name="sequence" eval="3"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
     </record>
 
     <record id="exento_venta" model="account.tax.template">
@@ -225,7 +228,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="2"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_09'), ref('tag_cl_14')])]"/>
     </record>
 
     <record id="especifico_compra" model="account.tax.template">
@@ -237,9 +239,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="5"/>
-      <field name="refund_account_id" ref="110701"/>
-      <field name="account_id" ref="110701"/>
-      <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
     </record>
 
     <record id="iva_activo_fijo" model="account.tax.template">
@@ -252,8 +251,6 @@
       <field name="type_tax_use">purchase</field>
       <field name="activo_fijo" eval="True"/>
       <field name="sequence" eval="6"/>
-      <field name="refund_account_id" ref="110704"/>
-      <field name="account_id" ref="110704"/>
     </record>
 
     <record id="ila_compra" model="account.tax.template">
@@ -265,8 +262,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="7"/>
-      <field name="refund_account_id" ref="110704"/>
-      <field name="account_id" ref="110704"/>
     </record>
 
     <record id="ila_vinos_compra" model="account.tax.template">
@@ -278,8 +273,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="8"/>
-      <field name="refund_account_id" ref="110704"/>
-      <field name="account_id" ref="110704"/>
     </record>
 
     <record id="cervezas_compra" model="account.tax.template">
@@ -291,8 +284,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="8"/>
-      <field name="refund_account_id" ref="110704"/>
-      <field name="account_id" ref="110704"/>
     </record>
 
     <record id="especifico_compra_diesel" model="account.tax.template">
@@ -304,8 +295,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="9"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
     </record>
 
     <record id="especifico_venta_diesel" model="account.tax.template">
@@ -317,8 +306,6 @@
       <field name="amount_type">fixed</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="9"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
       <field name="uom_id" ref="product_uom_mcub" />
       <field name="mepco">diesel</field>
     </record>
@@ -332,8 +319,6 @@
       <field name="amount_type">fixed</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="9"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
       <field name="uom_id" ref="product_uom_mcub" />
       <field name="mepco">gasolina_93</field>
     </record>
@@ -347,8 +332,6 @@
       <field name="amount_type">fixed</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="9"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
       <field name="uom_id" ref="product_uom_mcub" />
       <field name="mepco">gasolina_97</field>
     </record>
@@ -362,8 +345,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="10"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
     </record>
 
     <record id="especifico_art_42_d" model="account.tax.template">
@@ -375,8 +356,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="11"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
     </record>
 
     <record id="especifico_art_42_c" model="account.tax.template">
@@ -388,8 +367,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="12"/>
-      <field name="refund_account_id" ref="620208"/>
-      <field name="account_id" ref="620208"/>
     </record>
 
 </odoo>

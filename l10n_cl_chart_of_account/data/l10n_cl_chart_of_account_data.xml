@@ -6,6 +6,8 @@
 	<!-- Account Types -->
 	<record id="account_account_type_NCLASIFICADO" model="account.account.type">
 		<field name="name">Cuentas No Clasificadas</field>
+		<field name="type">other</field>
+		<field name="internal_group">asset</field>
 	</record>
 
 	<record id="cl_chart_template_sii" model="account.chart.template">
@@ -195,7 +197,7 @@
 		<field ref="account.data_account_type_current_assets" name="user_type_id" />
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
-	
+
 	<record id="110605" model="account.account.template">
 		<field name="name">Cuenta de entrada de stock</field>
 		<field name="code">110605</field>
@@ -203,7 +205,7 @@
 		<field ref="account.data_account_type_current_assets" name="user_type_id" />
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
-	
+
 	<record id="110606" model="account.account.template">
 		<field name="name">Cuenta de salida de stock</field>
 		<field name="code">110606</field>
@@ -218,7 +220,7 @@
 		<field name="reconcile" eval="False" />
 		<field ref="account.data_account_type_current_assets" name="user_type_id" />
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
-	</record>	
+	</record>
 
 	<record id="110701" model="account.account.template">
 		<field name="name">IVA Crédito Fiscal</field>
