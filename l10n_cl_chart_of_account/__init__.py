@@ -3,10 +3,7 @@
 
 # Copyright (c) 2017 Konos http://www.konos.cl
 
-from . import controllers
 from . import models
-from . import wizard
-from . import report
 
 from odoo import api, SUPERUSER_ID
 from odoo.addons.account import SYSCOHADA_LIST
