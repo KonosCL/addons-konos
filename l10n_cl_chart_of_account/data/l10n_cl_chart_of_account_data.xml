@@ -101,6 +101,14 @@
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
+	<record id="110403" model="account.account.template">
+			<field name="code">110403</field>
+			<field name="name">Deudores por Ventas (Pos)</field>
+			<field ref="account.data_account_type_receivable" name="user_type_id"/>
+			<field name="reconcile" eval="True"/>
+			<field name="chart_template_id" ref="cl_chart_template_sii"/>
+	</record>
+
 	<record id="110501" model="account.account.template">
 		<field name="name">Anticipo de Remuneraciones</field>
 		<field name="code">110501</field>
@@ -1225,6 +1233,7 @@
 		<field name="property_account_income_categ_id" ref="410201" />
 		<field name="income_currency_exchange_account_id" ref="620201" />
 		<field name="expense_currency_exchange_account_id" ref="620201" />
+		<field name="default_pos_receivable_account_id" ref="110403"/>
 		<field name="property_stock_account_input_categ_id" ref="110605" />
 		<field name="property_stock_account_output_categ_id" ref="110606" />
 		<field name="property_stock_valuation_account_id" ref="110607" />
