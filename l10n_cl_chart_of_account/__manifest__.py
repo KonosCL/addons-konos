@@ -15,7 +15,7 @@ basado en plan de cuentas del Servicio de Impuestos Internos
     """,
     'author': 'Konos',
     'website': 'http://www.konos.cl',
-    'category': 'Localization',
+    'category': 'Accounting/Localizations/Account Charts',
     'sequence': 50,
     'license': 'AGPL-3',
     'depends': ['account'],
