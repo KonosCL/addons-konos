@@ -20,6 +20,7 @@ basado en plan de cuentas del Servicio de Impuestos Internos
     'license': 'AGPL-3',
     'depends': ['account'],
     'data': [
+        'views/account_tax_report_line.xml',
         'views/account_tax.xml',
         'data/product_uom.xml',
         'data/l10n_cl_chart_of_account_data.xml',

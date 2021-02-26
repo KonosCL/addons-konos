@@ -144,6 +144,32 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="1"/>
+      <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'base',
+              'plus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
+          }),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'tax',
+              'account_id': ref('210701'),
+              'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+      ]"/>
+      <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'base',
+              'minus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
+          }),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'tax',
+              'account_id': ref('210701'),
+              'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+      ]"/>
     </record>
 
     <record id="IVAC_19" model="account.tax.template">
@@ -155,6 +181,32 @@
       <field name="sequence" eval="1"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
+      <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_compras_netas_gr_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('110701'),
+                'plus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_compras_netas_gr_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('110701'),
+                'minus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+            }),
+        ]"/>
     </record>
 
     <record id="IVAV_17" model="account.tax.template">
