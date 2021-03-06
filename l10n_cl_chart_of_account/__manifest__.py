@@ -21,6 +21,7 @@ basado en plan de cuentas del Servicio de Impuestos Internos
     'depends': ['account'],
     'data': [
         'views/account_tax.xml',
+        'data/account_tax_report_line.xml',
         'data/product_uom.xml',
         'data/l10n_cl_chart_of_account_data.xml',
         'data/account_tax_data.xml',
