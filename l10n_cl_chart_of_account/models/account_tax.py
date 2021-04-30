@@ -13,6 +13,7 @@ class AccountTaxTemplate(models.Model):
             [
                     ('A','Anticipado'),
                     ('R','Retención'),
+                    ('RH','Retención Honorarios'),
             ],
             string="Tipo de impuesto para el SII",
         )
@@ -73,6 +74,7 @@ class AccountTax(models.Model):
             [
                     ('A','Anticipado'),
                     ('R','Retención'),
+                    ('RH','Retención Honorarios'),
             ],
             string="Tipo de impuesto para el SII",
         )
