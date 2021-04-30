@@ -8,7 +8,7 @@
             <field name="name" position="before">
                 <field name="sii_code" />
                 <field name="sii_type" />
-                <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="retencion" attrs="{'required':[('sii_type','in',['R', 'RH'])], 'invisible':[('sii_type','=',False)]}" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
@@ -42,7 +42,7 @@
             <field name="name" position="before">
                 <field name="sii_code" />
                 <field name="sii_type" />
-                <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="retencion" attrs="{'required':[('sii_type','in',['R', 'RH'])], 'invisible':[('sii_type','=',False)]}" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
