@@ -861,6 +861,22 @@
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
+	<record id="410103" model="account.account.template">
+		<field name="name">Descuento Global</field>
+		<field name="code">410103</field>
+		<field name="reconcile" eval="False" />
+		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="chart_template_id" ref="cl_chart_template_sii" />
+	</record>
+
+	<record id="410104" model="account.account.template">
+		<field name="name">Pérdida por Redondeo Efectivo</field>
+		<field name="code">410104</field>
+		<field name="reconcile" eval="False" />
+		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="chart_template_id" ref="cl_chart_template_sii" />
+	</record>
+
 	<record id="410201" model="account.account.template">
 		<field name="name">Ventas de Productos</field>
 		<field name="code">410201</field>
@@ -903,8 +919,24 @@
 	</record>
 
 	<record id="420103" model="account.account.template">
-		<field name="name">Otros Ingresos</field>
+		<field name="name">Recargo Global</field>
 		<field name="code">420103</field>
+		<field name="reconcile" eval="False" />
+		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="chart_template_id" ref="cl_chart_template_sii" />
+	</record>
+
+	<record id="420104" model="account.account.template">
+		<field name="name">Ganancia por Redondeo Efectivo</field>
+		<field name="code">420104</field>
+		<field name="reconcile" eval="False" />
+		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="chart_template_id" ref="cl_chart_template_sii" />
+	</record>
+
+	<record id="420105" model="account.account.template">
+		<field name="name">Otros Ingresos</field>
+		<field name="code">420105</field>
 		<field name="reconcile" eval="False" />
 		<field ref="account.data_account_type_other_income" name="user_type_id" />
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
