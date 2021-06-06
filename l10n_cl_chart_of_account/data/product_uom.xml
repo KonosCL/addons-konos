@@ -4,6 +4,6 @@
     <field name="name">MCUB</field>
     <field name="category_id" ref="product.product_uom_categ_vol"/>
     <field name="uom_type">bigger</field>
-    <field name="ratio_inv" eval="1000" />
+    <field name="factor_inv" eval="1000" />
   </record>
 </odoo>

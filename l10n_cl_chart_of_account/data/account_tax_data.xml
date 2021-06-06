@@ -184,8 +184,8 @@
       <field name="refund_account_id" ref="210704"/>
       <field name="account_id" ref="210704"/>
       <field name="tag_ids" eval="[(6,0,[ref('tag_cl_22'), ref('tag_cl_21')])]"/>
-      <field name="sii_type">R</field>
-      <field name="retencion">10.000</field>
+      <field name="sii_type">RH</field>
+      <field name="retencion">11.5</field>
     </record>
 
     <record id="retencion_iva" model="account.tax.template">
