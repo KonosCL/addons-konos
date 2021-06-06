@@ -15,24 +15,6 @@ class AccountInvoiceTax(models.Model):
             domain=[('deprecated', '=', False)],
         )
 
-    def _getNeto(self, currency):
-        neto = 0
-        for tax in self:
-            base = tax.base
-            price_tax_included = 0
-            #amount_tax +=tax.amount
-            if tax.tax_id.amount_type == 'percent':
-                for line in tax.invoice_id.invoice_line_ids:
-                    if tax.tax_id in line.invoice_line_tax_ids and tax.tax_id.price_include:
-                        price_tax_included += line.price_total
-                if price_tax_included > 0 and tax.tax_id.sii_type in ["R"] and tax.tax_id.amount > 0:
-                    base = currency.round(price_tax_included)
-                elif price_tax_included > 0 and tax.tax_id.amount > 0:
-                    base = currency.round(price_tax_included / ( 1 + tax.tax_id.amount / 100.0))
-            neto += base
-        return neto
-
-
 class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
@@ -79,11 +61,10 @@ class AccountInvoice(models.Model):
             amount_tax += tax.amount
             amount_retencion += tax.amount_retencion
         self.amount_retencion = amount_retencion
-        if included:
-            neto += self.tax_line_ids._getNeto(self.currency_id)
-            amount_retencion += amount_retencion
-        else:
-            neto += sum(line.price_subtotal for line in self.invoice_line_ids)
+        neto += sum((line.price_subtotal.with_context(round=False).compute_all(
+            line.price_unit,self.currency_id, line.quantity,
+            line.product_id, self.partner_id, discount=line.discount
+            )['total_excluded']) for line in self.invoice_line_ids)
         self.amount_untaxed = neto
         self.amount_tax = amount_tax
         self.amount_total = neto + amount_tax - amount_retencion
