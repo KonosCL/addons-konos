@@ -44,6 +44,9 @@ class AccountTaxTemplate(models.Model):
         ],
         string="Indicador Mepco",
     )
+    credec = fields.Boolean(
+        string="¿Es Crédito empresa Constructora?"
+    )
 
     def _get_tax_vals(self, company, tax_template_to_tax):
         """ This method generates a dictionnary of all the values for the tax that will be created.
@@ -59,6 +62,7 @@ class AccountTaxTemplate(models.Model):
             'sii_detailed': self.sii_detailed,
             'uom_id': self.uom_id.id,
             'mepco': self.mepco,
+            'credec': self.credec,
         })
         return val
 
@@ -103,6 +107,9 @@ class AccountTax(models.Model):
             ('gasolina_97', 'Gasolina 97'),
         ],
         string="Indicador Mepco",
+    )
+    credec = fields.Boolean(
+        string="¿Es Crédito Empresa Constructora?"
     )
 
     def compute_factor(self, uom_id):
