@@ -278,6 +278,14 @@
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
+	<record id="110708" model="account.account.template">
+		<field name="name">Retención IVA Crédito Fiscal</field>
+		<field name="code">110708</field>
+		<field name="reconcile" eval="False" />
+		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="chart_template_id" ref="cl_chart_template_sii" />
+	</record>
+
 	<record id="110801" model="account.account.template">
 		<field name="name">Cuentas por Cobrar Socios</field>
 		<field name="code">110801</field>
@@ -716,7 +724,13 @@
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
-
+	<record id="210709" model="account.account.template">
+		<field name="name">Retención IVA Débito Fiscal</field>
+		<field name="code">210709</field>
+		<field name="reconcile" eval="False" />
+		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="chart_template_id" ref="cl_chart_template_sii" />
+	</record>
 
 	<record id="220102" model="account.account.template">
 		<field name="name">Obligaciones Leasing L/Plazo</field>

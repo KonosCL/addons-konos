@@ -7,8 +7,7 @@
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="sii_code" />
-                <field name="sii_type" />
-                <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="credec" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
@@ -26,10 +25,20 @@
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="sii_code" />
-                <field name="sii_type" />
-                <field name="retencion" />
+                <field name="credec" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
+            </field>
+        </field>
+    </record>
+
+    <record id="tax_repartition_line_tree" model="ir.ui.view">
+        <field name="name">tax_repartition_line_tree.tree</field>
+        <field name="model">account.tax.repartition.line</field>
+        <field name="inherit_id" ref="account.tax_repartition_line_tree" />
+        <field name="arch" type="xml">
+            <field name="account_id" position="before">
+                <field name="sii_type" />
             </field>
         </field>
     </record>

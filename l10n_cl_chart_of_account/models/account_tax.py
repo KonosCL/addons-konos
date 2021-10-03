@@ -9,17 +9,6 @@ class AccountTaxTemplate(models.Model):
     sii_code = fields.Integer(
             string='SII Code',
         )
-    sii_type = fields.Selection(
-            [
-                    ('A','Anticipado'),
-                    ('R','Retención'),
-            ],
-            string="Tipo de impuesto para el SII",
-        )
-    retencion = fields.Float(
-            string="Valor retención",
-            default=0.00,
-        )
     no_rec = fields.Boolean(
             string="Es No Recuperable",
             default=False,
@@ -55,8 +44,6 @@ class AccountTaxTemplate(models.Model):
         val = super(AccountTaxTemplate, self)._get_tax_vals(company, tax_template_to_tax)
         val.update({
             'sii_code': self.sii_code,
-            'sii_type': self.sii_type,
-            'retencion': self.retencion,
             'no_rec': self.no_rec,
             'activo_fijo': self.activo_fijo,
             'sii_detailed': self.sii_detailed,
@@ -72,17 +59,6 @@ class AccountTax(models.Model):
 
     sii_code = fields.Integer(
             string='SII Code',
-        )
-    sii_type = fields.Selection(
-            [
-                    ('A','Anticipado'),
-                    ('R','Retención'),
-            ],
-            string="Tipo de impuesto para el SII",
-        )
-    retencion = fields.Float(
-            string="Valor retención",
-            default=0.00,
         )
     no_rec = fields.Boolean(
             string="Es No Recuperable",

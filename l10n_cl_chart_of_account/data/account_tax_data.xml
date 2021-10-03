@@ -153,7 +153,7 @@
           (0,0, {
               'factor_percent': 100,
               'repartition_type': 'tax',
-              'account_id': ref('210701'),
+              'account_id': ref('210709'),
               'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
           }),
       ]"/>
@@ -166,7 +166,7 @@
           (0,0, {
               'factor_percent': 100,
               'repartition_type': 'tax',
-              'account_id': ref('210701'),
+              'account_id': ref('210709'),
               'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
           }),
       ]"/>
@@ -190,7 +190,7 @@
             (0,0, {
                 'factor_percent': 100,
                 'repartition_type': 'tax',
-                'account_id': ref('110701'),
+                'account_id': ref('110708'),
                 'plus_report_line_ids': [ref('tax_report_compras_iva_recup')],
             }),
         ]"/>
@@ -203,7 +203,7 @@
             (0,0, {
                 'factor_percent': 100,
                 'repartition_type': 'tax',
-                'account_id': ref('110701'),
+                'account_id': ref('110708'),
                 'minus_report_line_ids': [ref('tax_report_compras_iva_recup')],
             }),
         ]"/>
@@ -218,8 +218,46 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="2"/>
-      <field name="sii_type" >R</field>
-      <field name="retencion">5.000</field>
+      <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'base',
+              'plus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
+          }),
+          (0,0, {
+              'factor_percent': 95,
+              'repartition_type': 'tax',
+              'account_id': ref('210701'),
+              'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+          (0,0, {
+              'factor_percent': 5,
+              'repartition_type': 'tax',
+              'account_id': ref('210709'),
+              'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+              'sii_type': 'R'
+          }),
+      ]"/>
+      <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'base',
+              'minus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
+          }),
+          (0,0, {
+              'factor_percent': 95,
+              'repartition_type': 'tax',
+              'account_id': ref('210701'),
+              'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+          (0,0, {
+              'factor_percent': 5,
+              'repartition_type': 'tax',
+              'account_id': ref('210709'),
+              'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+              'sii_type': 'R'
+          }),
+      ]"/>
     </record>
 
     <record id="IVAV_18" model="account.tax.template">
@@ -231,47 +269,56 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="3"/>
-      <field name="sii_type" >R</field>
-      <field name="retencion">5.000</field>
+      <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'base',
+              'plus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
+          }),
+          (0,0, {
+              'factor_percent': 95,
+              'repartition_type': 'tax',
+              'account_id': ref('210701'),
+              'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+          (0,0, {
+              'factor_percent': 5,
+              'repartition_type': 'tax',
+              'account_id': ref('210709'),
+              'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+              'sii_type': 'R'
+          }),
+      ]"/>
+      <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+          (0,0, {
+              'factor_percent': 100,
+              'repartition_type': 'base',
+              'minus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
+          }),
+          (0,0, {
+              'factor_percent': 95,
+              'repartition_type': 'tax',
+              'account_id': ref('210701'),
+              'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+          (0,0, {
+              'factor_percent': 5,
+              'repartition_type': 'tax',
+              'account_id': ref('210709'),
+              'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+              'sii_type': 'R'
+          }),
+      ]"/>
     </record>
 
     <record id="I_IU2C" model="account.tax.template">
       <field name="chart_template_id" ref="cl_chart_template_sii"/>
       <field name="name">Impuesto Unico de Segunda Categoría</field>
       <field name="description">Impuesto Unico de 2da Categoría</field>
-      <field name="amount">0</field>
+      <field name="amount">10.750</field>
       <field name="sequence" eval="2"/>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
-      <field name="sii_type">R</field>
-      <field name="retencion">10.750</field>
-    </record>
-
-    <record id="retencion_iva" model="account.tax.template">
-      <field name="chart_template_id" ref="cl_chart_template_sii"/>
-      <field name="name">Retención Total IVA</field>
-      <field name="description">Retención</field>
-      <field name="amount">19</field>
-      <field name="sii_code">15</field>
-      <field name="amount_type">percent</field>
-      <field name="type_tax_use">purchase</field>
-      <field name="sequence" eval="4"/>
-      <field name="sii_type" >R</field>
-      <field name="retencion">19.000</field>
-    </record>
-
-    <record id="credec_compra" model="account.tax.template">
-      <field name="chart_template_id" ref="cl_chart_template_sii"/>
-      <field name="name">Crédito Empresa Constructora Compras</field>
-      <field name="description">19</field>
-      <field name="amount">19</field>
-      <field name="sii_code">14</field>
-      <field name="amount_type">percent</field>
-      <field name="type_tax_use">purchase</field>
-      <field name="sequence" eval="4"/>
-      <field name="sii_type" >R</field>
-      <field name="credec" eval="True"></field>
-      <field name="retencion">12.35</field>
       <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
                 'factor_percent': 100,
@@ -281,8 +328,9 @@
             (0,0, {
                 'factor_percent': 100,
                 'repartition_type': 'tax',
-                'account_id': ref('110701'),
+                'account_id': ref('210704'),
                 'plus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+                'sii_type': 'R'
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
@@ -294,8 +342,100 @@
             (0,0, {
                 'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': ref('210704'),
+                'minus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+                'sii_type': 'R'
+            }),
+        ]"/>
+    </record>
+
+    <record id="retencion_iva" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Retención Total IVA</field>
+      <field name="description">Retención</field>
+      <field name="amount">19</field>
+      <field name="sii_code">15</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="4"/>
+      <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_compras_netas_gr_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('110708'),
+                'plus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+                'sii_type': 'R'
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_compras_netas_gr_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('110708'),
+                'minus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+                'sii_type': 'R'
+            }),
+        ]"/>
+    </record>
+
+    <record id="credec_compra" model="account.tax.template">
+      <field name="chart_template_id" ref="cl_chart_template_sii"/>
+      <field name="name">Crédito Empresa Constructora Compras</field>
+      <field name="description">19</field>
+      <field name="amount">19</field>
+      <field name="sii_code">14</field>
+      <field name="amount_type">percent</field>
+      <field name="type_tax_use">purchase</field>
+      <field name="sequence" eval="4"/>
+      <field name="credec" eval="True"></field>
+      <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_compras_netas_gr_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 35,
+                'repartition_type': 'tax',
+                'account_id': ref('110701'),
+                'plus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 65,
+                'repartition_type': 'tax',
+                'account_id': ref('110708'),
+                'plus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+                'sii_type': 'R'
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_compras_netas_gr_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 35,
+                'repartition_type': 'tax',
                 'account_id': ref('110701'),
                 'minus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+            }),
+            (0,0, {
+                'factor_percent': 65,
+                'repartition_type': 'tax',
+                'account_id': ref('110708'),
+                'minus_report_line_ids': [ref('tax_report_compras_iva_recup')],
+                'sii_type': 'R'
             }),
         ]"/>
     </record>
@@ -309,9 +449,7 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="4"/>
-      <field name="sii_type" >R</field>
       <field name="credec" eval="True"></field>
-      <field name="retencion">12.35</field>
       <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
           (0,0, {
               'factor_percent': 100,
@@ -319,10 +457,17 @@
               'plus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
           }),
           (0,0, {
-              'factor_percent': 100,
+              'factor_percent': 35,
               'repartition_type': 'tax',
               'account_id': ref('210701'),
               'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+          (0,0, {
+              'factor_percent': 65,
+              'repartition_type': 'tax',
+              'account_id': ref('210709'),
+              'plus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+              'sii_type': 'R'
           }),
       ]"/>
       <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
@@ -332,10 +477,17 @@
               'minus_report_line_ids': [ref('tax_report_ventas_netas_gravadas_c_iva')],
           }),
           (0,0, {
-              'factor_percent': 100,
+              'factor_percent': 35,
               'repartition_type': 'tax',
               'account_id': ref('210701'),
               'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+          }),
+          (0,0, {
+              'factor_percent': 65,
+              'repartition_type': 'tax',
+              'account_id': ref('210709'),
+              'minus_report_line_ids': [ref('tax_report_iva_debito_fiscal')],
+              'sii_type': 'R'
           }),
       ]"/>
     </record>
