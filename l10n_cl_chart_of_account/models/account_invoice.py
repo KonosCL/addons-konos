@@ -11,7 +11,7 @@ class AccountInvoiceTax(models.Model):
         )
     retencion_account_id = fields.Many2one(
             'account.account',
-            string='Tax Account',
+            string='Retention Tax Account',
             domain=[('deprecated', '=', False)],
         )
 
