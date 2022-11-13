@@ -69,7 +69,7 @@ class AccountTax(models.Model):
             default=False,
         )
     sii_detailed = fields.Boolean(
-            string='Desglose de IVA',
+            string='Desglose de Impuesto',
             default=False,
         )
     uom_id = fields.Many2one(
