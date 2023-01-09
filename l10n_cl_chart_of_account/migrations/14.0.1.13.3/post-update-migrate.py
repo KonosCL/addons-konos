@@ -16,6 +16,13 @@ def migrate(cr, installed_version):
         ]):
         r.account_id = account_id
 
+    account_id = env.ref('l10n_cl_chart_of_account.110701').id
+    for r in env["account.tax.repartition.line"].sudo().search([
+            ("sii_type", "!=", 'R'),
+            ("account_id.code", "=", '110708'),
+        ]):
+        r.account_id = account_id
+
     cr.execute('''UPDATE account_move_line aml
                 SET account_id = rl.account_id
                 FROM account_tax_repartition_line rl
