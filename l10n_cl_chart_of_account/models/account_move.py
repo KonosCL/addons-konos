@@ -3,7 +3,7 @@ from odoo import api, models, fields, _
 
 
 class AccountInvoiceTax(models.Model):
-    _inherit = "account.invoice.tax"
+    _inherit = "account.move.tax"
 
     amount_retencion = fields.Monetary(
             string="Retención",
@@ -22,7 +22,7 @@ class AccountInvoiceTax(models.Model):
             price_tax_included = 0
             #amount_tax +=tax.amount
             if tax.tax_id.amount_type == 'percent':
-                for line in tax.invoice_id.invoice_line_ids:
+                for line in tax.move_id.invoice_line_ids:
                     if tax.tax_id in line.invoice_line_tax_ids and tax.tax_id.price_include:
                         price_tax_included += line.price_total
                 if price_tax_included > 0 and tax.tax_id.sii_type in ["R"] and tax.tax_id.amount > 0:
@@ -34,31 +34,31 @@ class AccountInvoiceTax(models.Model):
 
 
 class AccountInvoiceLine(models.Model):
-    _inherit = "account.invoice.line"
+    _inherit = "account.move.line"
 
-    
+
     @api.depends('price_unit', 'discount', 'invoice_line_tax_ids', 'quantity',
-        'product_id', 'invoice_id.partner_id', 'invoice_id.currency_id', 'invoice_id.company_id',
-        'invoice_id.date_invoice', 'invoice_id.date')
+        'product_id', 'move_id.partner_id', 'move_id.currency_id', 'move_id.company_id',
+        'move_id.date_invoice', 'move_id.date')
     def _compute_price(self):
-        currency = self.invoice_id and self.invoice_id.currency_id or None
+        currency = self.move_id and self.move_id.currency_id or None
         price = self.price_unit * (1 - (self.discount or 0.0) / 100.0)
         taxes = False
         if self.invoice_line_tax_ids:
-            taxes = self.invoice_line_tax_ids.compute_all(price, currency, self.quantity, product=self.product_id, partner=self.invoice_id.partner_id, uom_id=self.uom_id)
+            taxes = self.invoice_line_tax_ids.compute_all(price, currency, self.quantity, product=self.product_id, partner=self.move_id.partner_id, uom_id=self.uom_id)
         self.price_subtotal = price_subtotal_signed = taxes['total_excluded'] if taxes else self.quantity * price
         self.price_total = taxes['total_included'] if taxes else self.price_subtotal
-        if self.invoice_id.currency_id and self.invoice_id.currency_id != self.invoice_id.company_id.currency_id:
-            currency = self.invoice_id.currency_id
-            date = self.invoice_id._get_currency_rate_date()
-            price_subtotal_signed = currency._convert(price_subtotal_signed, self.invoice_id.company_id.currency_id, self.company_id or self.env.user.company_id, date or fields.Date.today())
-        sign = self.invoice_id.type in ['in_refund', 'out_refund'] and -1 or 1
+        if self.move_id.currency_id and self.move_id.currency_id != self.move_id.company_id.currency_id:
+            currency = self.move_id.currency_id
+            date = self.move_id._get_currency_rate_date()
+            price_subtotal_signed = currency._convert(price_subtotal_signed, self.move_id.company_id.currency_id, self.company_id or self.env.user.company_id, date or fields.Date.today())
+        sign = self.move_id.type in ['in_refund', 'out_refund'] and -1 or 1
         self.price_subtotal_signed = price_subtotal_signed * sign
 
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = 'account.move'
 
     amount_retencion = fields.Monetary(
         string="Retención",
@@ -66,7 +66,7 @@ class AccountInvoice(models.Model):
         compute='_compute_amount',
     )
 
-    
+
     @api.depends('invoice_line_ids.price_subtotal', 'tax_line_ids.amount', 'tax_line_ids.amount_rounding',
                  'currency_id', 'company_id', 'date_invoice', 'type')
     def _compute_amount(self):
@@ -101,7 +101,7 @@ class AccountInvoice(models.Model):
         self.amount_untaxed_signed = amount_untaxed_signed * sign
 
 
-    
+
     def get_taxes_values(self):
         tax_grouped = {}
         round_curr = self.currency_id.round
