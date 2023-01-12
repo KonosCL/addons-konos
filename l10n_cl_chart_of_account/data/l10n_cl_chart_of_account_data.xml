@@ -17,8 +17,6 @@
 		<field name="cash_account_code_prefix">11011</field>
 		<field name="transfer_account_code_prefix">117000</field>
 		<field name="use_anglo_saxon" eval="True" />
-		<field name="country_id" ref="base.cl"/>
-		<field name="code_digits">6</field>
 	</record>
 
 	<!-- Account Templates -->
