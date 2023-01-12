@@ -3,12 +3,6 @@
 	<menuitem id="account_reports_cl_statements_menu" name="Chilean Statements"
 		parent="account.menu_finance_reports" sequence="3"
 		groups="account.group_account_user" />
-	<!-- Account Types -->
-	<record id="account_account_type_NCLASIFICADO" model="account.account.type">
-		<field name="name">Cuentas No Clasificadas</field>
-		<field name="type">other</field>
-		<field name="internal_group">asset</field>
-	</record>
 
 	<record id="cl_chart_template_sii" model="account.chart.template">
 		<field name="name">Chile - Plan de Cuentas SII</field>
@@ -26,7 +20,7 @@
 		<field name="name">Fondos Mutuos</field>
 		<field name="code">110201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -34,7 +28,7 @@
 		<field name="name">Depósitos a Plazo</field>
 		<field name="code">110202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -42,7 +36,7 @@
 		<field name="name">Cuentas por Cobrar</field>
 		<field name="code">110301</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">asset_receivable</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -51,7 +45,7 @@
 		<field name="name">Deudores por Ventas Nacionales</field>
 		<field name="code">110302</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">asset_receivable</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -60,7 +54,7 @@
 		<field name="name">Deudores por Ventas Importadas</field>
 		<field name="code">110303</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">asset_receivable</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -69,7 +63,7 @@
 		<field name="name">Anticipo Proveedores Nacionales</field>
 		<field name="code">110304</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -78,7 +72,7 @@
 		<field name="name">Anticipo Proveedores Internacionales</field>
 		<field name="code">110305</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -87,7 +81,7 @@
 		<field name="name">Cheques a Fecha Por Cobrar</field>
 		<field name="code">110401</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -96,7 +90,7 @@
 		<field name="name">Cheques Protestados</field>
 		<field name="code">110402</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -104,7 +98,7 @@
 	<record id="110403" model="account.account.template">
 			<field name="code">110403</field>
 			<field name="name">Deudores por Ventas (Pos)</field>
-			<field ref="account.data_account_type_receivable" name="user_type_id"/>
+			<field name="account_type">asset_receivable</field>
 			<field name="reconcile" eval="True"/>
 			<field name="chart_template_id" ref="cl_chart_template_sii"/>
 	</record>
@@ -113,7 +107,7 @@
 		<field name="name">Anticipo de Remuneraciones</field>
 		<field name="code">110501</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -122,7 +116,7 @@
 		<field name="name">Préstamos al Personal</field>
 		<field name="code">110502</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">asset_receivable</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -131,7 +125,7 @@
 		<field name="name">Anticipos de Viáticos</field>
 		<field name="code">110503</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">asset_prepayments</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -140,7 +134,7 @@
 		<field name="name">Fondos x Rendir</field>
 		<field name="code">110504</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">asset_receivable</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -149,7 +143,7 @@
 		<field name="name">Anticipo de Honorarios</field>
 		<field name="code">110505</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">asset_prepayments</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -158,7 +152,7 @@
 		<field name="name">Anticipo de Aguinaldo</field>
 		<field name="code">110506</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">asset_prepayments</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -168,7 +162,7 @@
 		<field name="name">Asignación Familiar</field>
 		<field name="code">110507</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">asset_receivable</field>
 		<field name="reconcile">1</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
@@ -177,7 +171,7 @@
 		<field name="name">Insumos</field>
 		<field name="code">110601</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -186,7 +180,7 @@
 		<field name="name">Equipos</field>
 		<field name="code">110602</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -194,7 +188,7 @@
 		<field name="name">Repuestos</field>
 		<field name="code">110603</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -202,7 +196,7 @@
 		<field name="name">Existencias en Tránsito</field>
 		<field name="code">110604</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -210,7 +204,7 @@
 		<field name="name">Cuenta de entrada de stock</field>
 		<field name="code">110605</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -218,7 +212,7 @@
 		<field name="name">Cuenta de salida de stock</field>
 		<field name="code">110606</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -226,7 +220,7 @@
 		<field name="name">Cuenta de valoración de stock</field>
 		<field name="code">110607</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -234,7 +228,7 @@
 		<field name="name">IVA Crédito Fiscal</field>
 		<field name="code">110701</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -242,7 +236,7 @@
 		<field name="name">IVA Crédito Fiscal (DIN)</field>
 		<field name="code">110702</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -250,7 +244,7 @@
 		<field name="name">Remanente Crédito Fiscal</field>
 		<field name="code">110703</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -258,7 +252,7 @@
 		<field name="name">Crédito por Activo Fijo</field>
 		<field name="code">110704</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -266,7 +260,7 @@
 		<field name="name">Pago Provisiones Mensuales (P.P.M.)</field>
 		<field name="code">110705</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -274,7 +268,7 @@
 		<field name="name">Crédito Sence</field>
 		<field name="code">110706</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -282,7 +276,7 @@
 		<field name="name">Retención IVA Crédito Fiscal</field>
 		<field name="code">110708</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -290,7 +284,7 @@
 		<field name="name">Cuentas por Cobrar Socios</field>
 		<field name="code">110801</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -299,7 +293,7 @@
 		<field name="name">Gastos Pagados Por Anticipado</field>
 		<field name="code">110901</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_assets" name="user_type_id" />
+		<field name="account_type">asset_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -308,7 +302,7 @@
 		<field name="name">Terreno</field>
 		<field name="code">120101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -316,7 +310,7 @@
 		<field name="name">Maquinaria</field>
 		<field name="code">120102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -324,7 +318,7 @@
 		<field name="name">Vehículos</field>
 		<field name="code">120103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -332,7 +326,7 @@
 		<field name="name">Contrucciones y Obras de Infraestructura</field>
 		<field name="code">120104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -340,7 +334,7 @@
 		<field name="name">Obras de Infraestructura en Construcción</field>
 		<field name="code">120105</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -348,7 +342,7 @@
 		<field name="name">Otros Activos</field>
 		<field name="code">120106</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -357,7 +351,7 @@
 		<field name="name">Depreciación Maquinaria</field>
 		<field name="code">120201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -365,7 +359,7 @@
 		<field name="name">Depreciación Vehículos</field>
 		<field name="code">120202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -373,7 +367,7 @@
 		<field name="name">Depreciación Construcciones</field>
 		<field name="code">120203</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -381,7 +375,7 @@
 		<field name="name">Depreciación Acum Otros Activos</field>
 		<field name="code">120204</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_fixed_assets" name="user_type_id" />
+		<field name="account_type">asset_fixed</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -390,7 +384,7 @@
 		<field name="name">Inversiones en Otras Entidades</field>
 		<field name="code">130101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_assets" name="user_type_id" />
+		<field name="account_type">asset_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -398,7 +392,7 @@
 		<field name="name">Patentes</field>
 		<field name="code">130102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_assets" name="user_type_id" />
+		<field name="account_type">asset_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -407,7 +401,7 @@
 			Relacionadas Largo Plazo</field>
 		<field name="code">130103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_assets" name="user_type_id" />
+		<field name="account_type">asset_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -416,7 +410,7 @@
 		</field>
 		<field name="code">130104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_assets" name="user_type_id" />
+		<field name="account_type">asset_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -425,7 +419,7 @@
 			Obligaciones de Terceros</field>
 		<field name="code">130105</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_assets" name="user_type_id" />
+		<field name="account_type">asset_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -433,7 +427,7 @@
 		<field name="name">Otros Intangibles</field>
 		<field name="code">130106</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_assets" name="user_type_id" />
+		<field name="account_type">asset_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -442,7 +436,7 @@
 		<field name="name">Tarjeta de Crédito Corporativa</field>
 		<field name="code">210101</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -450,7 +444,7 @@
 		<field name="name">Linea de Crédito Bancaria</field>
 		<field name="code">210102</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -458,7 +452,7 @@
 		<field name="name">Obligaciones con Instituciones Financieras</field>
 		<field name="code">210103</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -466,7 +460,7 @@
 		<field name="name">Crédito Comercial C/Plazo</field>
 		<field name="code">210104</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -474,7 +468,7 @@
 		<field name="name">Obligaciones Leasing Corto Plazo</field>
 		<field name="code">210105</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -482,14 +476,14 @@
 		<field name="name">Crédito Hipotecario C/Plazo</field>
 		<field name="code">210106</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 	<record id="210107" model="account.account.template">
 		<field name="name">Crédito Comercial LP Venc. C/Plazo</field>
 		<field name="code">210107</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -498,7 +492,7 @@
 		<field name="name">Cuentas por Pagar Nacionales</field>
 		<field name="code">210201</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_payable</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -506,7 +500,7 @@
 		<field name="name">Cuentas por Pagar Internacionales</field>
 		<field name="code">210202</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_payable</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -514,7 +508,7 @@
 		<field name="name">Anticipo de Clientes</field>
 		<field name="code">210203</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_receivable" name="user_type_id" />
+		<field name="account_type">liability_payable</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -522,7 +516,7 @@
 		<field name="name">Cheques Girados y No Cobrados</field>
 		<field name="code">210301</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -530,7 +524,7 @@
 		<field name="name">Documentos en Garantía</field>
 		<field name="code">210302</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -538,7 +532,7 @@
 		<field name="name">Boleta en Garantia</field>
 		<field name="code">210303</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -547,7 +541,7 @@
 		<field name="name">Leyes Sociales por Pagar (AFP)</field>
 		<field name="code">210401</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -555,7 +549,7 @@
 		<field name="name">C.C.A.F. x Pagar</field>
 		<field name="code">210402</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -563,7 +557,7 @@
 		<field name="name">INP x Pagar</field>
 		<field name="code">210403</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -571,7 +565,7 @@
 		<field name="name">ISAPRES x Pagar</field>
 		<field name="code">210404</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -579,7 +573,7 @@
 		<field name="name">Mutual Seg. x Pagar</field>
 		<field name="code">210405</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -588,7 +582,7 @@
 		<field name="name">Sueldos por Pagar</field>
 		<field name="code">210501</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -596,7 +590,7 @@
 		<field name="name">Honorarios por Pagar</field>
 		<field name="code">210502</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -604,7 +598,7 @@
 		<field name="name">Viáticos y Otros por Pagar</field>
 		<field name="code">210503</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -612,7 +606,7 @@
 		<field name="name">Finiquitos por Pagar</field>
 		<field name="code">210504</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -620,7 +614,7 @@
 		<field name="name">Rendiciones por Pagar</field>
 		<field name="code">210505</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_payable" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -628,8 +622,7 @@
 		<field name="name">Provisión de Impuesto a la Renta</field>
 		<field name="code">210601</field>
 		<field name="reconcile" eval="True" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -637,8 +630,7 @@
 		<field name="name">Provisión de Vacaciones</field>
 		<field name="code">210602</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -646,16 +638,14 @@
 		<field name="name">Otras Provisiones</field>
 		<field name="code">210603</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 	<record id="210604" model="account.account.template">
 		<field name="name">Cuenta Puente</field>
 		<field name="code">210604</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -664,7 +654,7 @@
 		<field name="name">IVA Débito Fiscal</field>
 		<field name="code">210701</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -672,7 +662,7 @@
 		<field name="name">PPM por Pagar</field>
 		<field name="code">210702</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -680,7 +670,7 @@
 		<field name="name">Impuesto Único Trabajadores</field>
 		<field name="code">210703</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -688,7 +678,7 @@
 		<field name="name">Impuesto Retención Segunda Categoría</field>
 		<field name="code">210704</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -696,7 +686,7 @@
 		<field name="name">Impuesto Renta 1a Categoría por Pagar</field>
 		<field name="code">210705</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -704,7 +694,7 @@
 		<field name="name">Impuesto Mensuales por Pagar</field>
 		<field name="code">210706</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -712,7 +702,7 @@
 		<field name="name">CCAF Créditos Personales</field>
 		<field name="code">210707</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -720,7 +710,7 @@
 		<field name="name">Seguro de Cesantía</field>
 		<field name="code">210708</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -728,7 +718,7 @@
 		<field name="name">Retención IVA Débito Fiscal</field>
 		<field name="code">210709</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -736,7 +726,7 @@
 		<field name="name">Obligaciones Leasing L/Plazo</field>
 		<field name="code">220102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -744,7 +734,7 @@
 		<field name="name">Crédito Comercial L/Plazo</field>
 		<field name="code">220103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -753,7 +743,7 @@
 		<field name="name">Provisión Indemnización por Años de Servicio</field>
 		<field name="code">220201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -762,8 +752,7 @@
 		<field name="name">Cta Corriente Empresa Relacionada</field>
 		<field name="code">220301</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -771,8 +760,7 @@
 		<field name="name">Impuesto Diferido Largo Plazo</field>
 		<field name="code">220302</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -780,8 +768,7 @@
 		<field name="name">Dividendos por Pagar</field>
 		<field name="code">220401</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_non_current_liabilities"
-			name="user_type_id" />
+		<field name="account_type">liability_non_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -789,7 +776,7 @@
 		<field name="name">Capital Social Suscrito</field>
 		<field name="code">310101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -797,7 +784,7 @@
 		<field name="name">Capital Social Pagado</field>
 		<field name="code">310102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -805,7 +792,7 @@
 		<field name="name">Reservas Futuros Dividendos</field>
 		<field name="code">310103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -813,7 +800,7 @@
 		<field name="name">Aportes por Enterar</field>
 		<field name="code">310104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -821,7 +808,7 @@
 		<field name="name">Corrección Monetaria</field>
 		<field name="code">310105</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -830,7 +817,7 @@
 		<field name="name">Resultado Acumulado</field>
 		<field name="code">310201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -838,7 +825,7 @@
 		<field name="name">Resultado del Ejercicio</field>
 		<field name="code">310202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_equity" name="user_type_id" />
+		<field name="account_type">equity</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -846,7 +833,7 @@
 		<field name="name">Fluctuación de Valores</field>
 		<field name="code">310203</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -854,7 +841,7 @@
 		<field name="name">Prestamos</field>
 		<field name="code">310302</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_current_liabilities" name="user_type_id" />
+		<field name="account_type">liability_current</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -863,7 +850,7 @@
 		<field name="name">Ingresos de la Explotación</field>
 		<field name="code">410101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -871,7 +858,7 @@
 		<field name="name">Ingresos por Consultoría</field>
 		<field name="code">410102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -879,7 +866,7 @@
 		<field name="name">Descuento Global</field>
 		<field name="code">410103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -887,7 +874,7 @@
 		<field name="name">Pérdida por Redondeo Efectivo</field>
 		<field name="code">410104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -895,7 +882,7 @@
 		<field name="name">Ventas de Productos</field>
 		<field name="code">410201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -903,7 +890,7 @@
 		<field name="name">Ventas de Exportación</field>
 		<field name="code">410202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -911,7 +898,7 @@
 		<field name="name">Comisiones por Ventas</field>
 		<field name="code">410203</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -920,7 +907,7 @@
 		<field name="name">Utilidad Venta Activo Fijo</field>
 		<field name="code">420101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_other_income" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -928,7 +915,7 @@
 		<field name="name">Intereses Sobre Préstamos Otorgados</field>
 		<field name="code">420102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_other_income" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -936,7 +923,7 @@
 		<field name="name">Recargo Global</field>
 		<field name="code">420103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -944,7 +931,7 @@
 		<field name="name">Ganancia por Redondeo Efectivo</field>
 		<field name="code">420104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_revenue" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -952,7 +939,7 @@
 		<field name="name">Otros Ingresos</field>
 		<field name="code">420105</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_other_income" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -960,7 +947,7 @@
 		<field name="name">Intereses Depósito a Plazo y Fondos Mutuos</field>
 		<field name="code">420104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_other_income" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -968,7 +955,7 @@
 		<field name="name">Corrección Monetaria Activos</field>
 		<field name="code">420201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_other_income" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -976,7 +963,7 @@
 		<field name="name">Corrección Monetaria Bienes Leasing</field>
 		<field name="code">420202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_other_income" name="user_type_id" />
+		<field name="account_type">income</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -985,7 +972,7 @@
 		<field name="name">Remuneraciones Operación</field>
 		<field name="code">510101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -993,7 +980,7 @@
 		<field name="name">Aporte Patronal Operación</field>
 		<field name="code">510102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1001,7 +988,7 @@
 		<field name="name">Viáticos</field>
 		<field name="code">510103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1009,7 +996,7 @@
 		<field name="name">Capacitación</field>
 		<field name="code">510104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1017,7 +1004,7 @@
 		<field name="name">Honorarios Pagados</field>
 		<field name="code">510105</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1025,7 +1012,7 @@
 		<field name="name">Asesorías</field>
 		<field name="code">510106</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1033,7 +1020,7 @@
 		<field name="name">Publicidad</field>
 		<field name="code">510107</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1041,7 +1028,7 @@
 		<field name="name">Teléfonos</field>
 		<field name="code">510108</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1049,7 +1036,7 @@
 		<field name="name">Gastos en Computación</field>
 		<field name="code">510109</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1057,7 +1044,7 @@
 		<field name="name">Compras - Categoría de productos 01</field>
 		<field name="code">530201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_direct_costs" name="user_type_id" />
+		<field name="account_type">expense_direct_cost</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1065,7 +1052,7 @@
 		<field name="name">Importaciones</field>
 		<field name="code">530202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_direct_costs" name="user_type_id" />
+		<field name="account_type">expense_direct_cost</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1073,7 +1060,7 @@
 		<field name="name">CIF</field>
 		<field name="code">530203</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_direct_costs" name="user_type_id" />
+		<field name="account_type">expense_direct_cost</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1081,7 +1068,7 @@
 		<field name="name">Compras de Materia Prima</field>
 		<field name="code">530301</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_direct_costs" name="user_type_id" />
+		<field name="account_type">expense_direct_cost</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1089,7 +1076,7 @@
 		<field name="name">Mano de Obra Directa</field>
 		<field name="code">530302</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_direct_costs" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1097,7 +1084,7 @@
 		<field name="name">Mercaderias Recibidas en Consignación</field>
 		<field name="code">540101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account_account_type_NCLASIFICADO" name="user_type_id" />
+		 <field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1107,7 +1094,7 @@
 		<field name="name">Servicios Básicos </field>
 		<field name="code">610101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1115,7 +1102,7 @@
 		<field name="name">Comunicaciones</field>
 		<field name="code">610102</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1123,7 +1110,7 @@
 		<field name="name">Servicios Legales</field>
 		<field name="code">610103</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1131,7 +1118,7 @@
 		<field name="name">Manutención y Reparación de Activos</field>
 		<field name="code">610104</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1139,7 +1126,7 @@
 		<field name="name">Papelería-Aseo-Gastos Diversos</field>
 		<field name="code">610105</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1147,7 +1134,7 @@
 		<field name="name">Remuneraciones Administración</field>
 		<field name="code">610106</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1155,7 +1142,7 @@
 		<field name="name">Aporte Patronal Administración</field>
 		<field name="code">610107</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1163,7 +1150,7 @@
 		<field name="name">Electricidad - Luz</field>
 		<field name="code">610108</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1171,7 +1158,7 @@
 		<field name="name">Gastos Comunes</field>
 		<field name="code">610109</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1179,14 +1166,14 @@
 		<field name="name">Arriendos Oficina</field>
 		<field name="code">610110</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 	<record id="610111" model="account.account.template">
 		<field name="name">Arriendos Bodega</field>
 		<field name="code">610111</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1194,7 +1181,7 @@
 		<field name="name">Gastos Bancarios</field>
 		<field name="code">620101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1203,7 +1190,7 @@
 		<field name="name">Diferencia Tipo de Cambio</field>
 		<field name="code">620201</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1211,7 +1198,7 @@
 		<field name="name">Corrección Monetaria</field>
 		<field name="code">620202</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1219,7 +1206,7 @@
 		<field name="name">Multas Fiscales</field>
 		<field name="code">620203</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1227,7 +1214,7 @@
 		<field name="name">Impuesto 1ra Categoría</field>
 		<field name="code">620204</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1235,7 +1222,7 @@
 		<field name="name">Pérdida por Venta Activo</field>
 		<field name="code">620205</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1243,7 +1230,7 @@
 		<field name="name">Ajuste Ejercicio Anterior</field>
 		<field name="code">620206</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1251,7 +1238,7 @@
 		<field name="name">Donación</field>
 		<field name="code">620207</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
@@ -1259,7 +1246,7 @@
         <field name="name">Combustible</field>
         <field name="code">620208</field>
         <field name="reconcile" eval="False"/>
-        <field ref="account.data_account_type_expenses" name="user_type_id"/>
+        <field name="account_type">expense</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -1268,7 +1255,7 @@
 		<field name="name">Otros Ingresos No Operacionales</field>
 		<field name="code">710101</field>
 		<field name="reconcile" eval="False" />
-		<field ref="account.data_account_type_expenses" name="user_type_id" />
+		<field name="account_type">expense</field>
 		<field name="chart_template_id" ref="cl_chart_template_sii" />
 	</record>
 
