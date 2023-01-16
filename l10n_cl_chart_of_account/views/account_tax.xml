@@ -8,12 +8,13 @@
             <field name="name" position="before">
                 <field name="sii_code" />
                 <field name="sii_type" />
-                <field name="retencion" attrs="{'required':[('sii_type','in',['R', 'RH'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="retencion" attrs="{'required':[('sii_type','in',['R', 'RH'])], 'invisible':[('sii_type', 'not in', ['R', 'RH'])]}" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
                 <field name="mepco" />
                 <field name="uom_id" />
+                <field name="credec" />
             </field>
 
         </field>
@@ -30,6 +31,7 @@
                 <field name="retencion" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
+                <field name="credec" />
             </field>
         </field>
     </record>
@@ -42,12 +44,13 @@
             <field name="name" position="before">
                 <field name="sii_code" />
                 <field name="sii_type" />
-                <field name="retencion" attrs="{'required':[('sii_type','in',['R', 'RH'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="retencion" attrs="{'required':[('sii_type','in',['R', 'RH'])], 'invisible':[('sii_type', 'not in',['R', 'RH'])]}" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
                 <field name="mepco" />
                 <field name="uom_id" />
+                <field name="credec" />
             </field>
 
         </field>
@@ -66,6 +69,7 @@
                 <field name="activo_fijo" />
                 <field name="mepco" />
                 <field name="uom_id" />
+                <field name="credec" />
             </field>
         </field>
     </record>
