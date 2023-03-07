@@ -7,10 +7,15 @@ class AccountTaxRepartitionLineTemplate(models.Model):
 
     sii_type = fields.Selection(
         [
+            ('N', 'Normal'),
             ('A','Anticipado'),
             ('R','Retención'),
         ],
         string="Tipo de impuesto para el SII",
+        default='N',
+    )
+    credec = fields.Boolean(
+        string="Credec"
     )
 
     def get_repartition_line_create_vals(self, company):
@@ -22,7 +27,8 @@ class AccountTaxRepartitionLineTemplate(models.Model):
                 'tag_ids': [Command.set(record._get_tags_to_add().ids)],
                 'company_id': company.id,
                 'use_in_tax_closing': record.use_in_tax_closing,
-                'sii_type': record.sii_type
+                'sii_type': record.sii_type,
+                'credec': record.credec,
             }))
         return rslt
 
@@ -32,8 +38,13 @@ class AccountTaxRepartitionLine(models.Model):
 
     sii_type = fields.Selection(
         [
+            ('N', 'Normal'),
             ('A','Anticipado'),
             ('R','Retención'),
         ],
         string="Tipo de impuesto para el SII",
+        default='N',
+    )
+    credec = fields.Boolean(
+        string="Credec"
     )

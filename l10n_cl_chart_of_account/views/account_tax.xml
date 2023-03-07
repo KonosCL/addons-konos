@@ -7,7 +7,6 @@
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="sii_code" />
-                <field name="credec" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
                 <field name="sii_detailed" />
@@ -25,7 +24,6 @@
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="sii_code" />
-                <field name="credec" />
                 <field name="no_rec" />
                 <field name="activo_fijo" />
             </field>
@@ -39,6 +37,7 @@
         <field name="arch" type="xml">
             <field name="account_id" position="before">
                 <field name="sii_type" />
+                <field name="credec" />
             </field>
         </field>
     </record>
