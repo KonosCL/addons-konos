@@ -397,7 +397,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">purchase</field>
       <field name="sequence" eval="4"/>
-      <field name="credec" eval="True"></field>
       <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
                 'factor_percent': 100,
@@ -415,7 +414,8 @@
                 'repartition_type': 'tax',
                 'account_id': ref('110708'),
                 'plus_report_expression_ids': [ref('tax_report_compras_iva_recup')],
-                'sii_type': 'R'
+                'sii_type': 'A',
+                'credec': True
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
@@ -435,7 +435,8 @@
                 'repartition_type': 'tax',
                 'account_id': ref('110708'),
                 'minus_report_expression_ids': [ref('tax_report_compras_iva_recup')],
-                'sii_type': 'R'
+                'sii_type': 'A',
+                'credec': True
             }),
         ]"/>
     </record>
@@ -449,7 +450,6 @@
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
       <field name="sequence" eval="4"/>
-      <field name="credec" eval="True"></field>
       <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
           (0,0, {
               'factor_percent': 100,
@@ -467,7 +467,8 @@
               'repartition_type': 'tax',
               'account_id': ref('210709'),
               'plus_report_expression_ids': [ref('tax_report_iva_debito_fiscal')],
-              'sii_type': 'R'
+              'sii_type': 'A',
+              'credec': True
           }),
       ]"/>
       <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
@@ -487,7 +488,8 @@
               'repartition_type': 'tax',
               'account_id': ref('210709'),
               'minus_report_expression_ids': [ref('tax_report_iva_debito_fiscal')],
-              'sii_type': 'R'
+              'sii_type': 'A',
+              'credec': True,
           }),
       ]"/>
     </record>
